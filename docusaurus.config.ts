@@ -130,6 +130,15 @@ const config: Config = {
       ]
     },
     footer: {
+      logo: {
+        alt: 'Creative Commons Attribution 4.0 International License',
+        src: 'img/cc-by.png',
+        href: 'https://creativecommons.org/licenses/by/4.0/',
+        target: '_blank',
+        width: 80,
+        height: 15,
+        className: 'footer-logo-license'
+      },
       links: [
         {
           label: 'Home',
@@ -164,7 +173,7 @@ const config: Config = {
           to: 'docs/docusaurus/intro'
         }
       ],
-      copyright: `© ${new Date().getFullYear()} Government of British Columbia. Built with Docusaurus.`
+      copyright: `Copyright © ${new Date().getFullYear()} Government of British Columbia. Built with Docusaurus.`
     },
     prism: {
       theme: prismThemes.github,
