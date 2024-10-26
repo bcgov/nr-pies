@@ -33,6 +33,10 @@ SECURITY.md                - Security Policy and Reporting
 
 ## Installation Guide
 
+### Get VSCode
+
+### Install Recommended Extensions
+
 ### Install
 
 ```sh
@@ -57,7 +61,12 @@ npm run build
 This command generates static content into the `build` directory and can be
 served using any static contents hosting service.
 
-### Deployment
+---
+
+### Deployment Notes
+
+The following steps are not necessary in order to contribute to PIES as this
+repository contains a dedicated CI/CD pipeline.
 
 Using SSH:
 

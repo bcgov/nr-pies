@@ -180,6 +180,10 @@ const config: Config = {
       darkTheme: prismThemes.dracula,
       additionalLanguages: ['mermaid']
     },
+    tableOfContents: {
+      minHeadingLevel: 2,
+      maxHeadingLevel: 4,
+    },
     mermaid: {
       theme: { light: 'default', dark: 'dark' }
     }
