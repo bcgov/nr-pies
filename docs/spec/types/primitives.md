@@ -79,7 +79,9 @@ shall be aligned to UTC time. Reference the
 [JSON Schema documentation](https://json-schema.org/understanding-json-schema/reference/string#dates-and-times) for more
 specific examples.
 
+:::warning
 Note that the `duration` format is not supported at this time as we are compliant with draft 07 of the JSON Schema standard.
+:::
 
 #### Email
 
@@ -92,9 +94,38 @@ details.
 
 #### Hostname
 
+Hostnames with format `hostname` shall be represented in
+[RFC 1123, section 2.1](https://datatracker.ietf.org/doc/html/rfc1123#section-2) format. Hostnames may also be conveyed
+in internationalized format `idn-hostname` which will be compliant to
+[RFC 5890, section 2.3.2.3](https://datatracker.ietf.org/doc/html/rfc5890#section-2.3.2.3). Reference the
+[JSON Schema documentation](https://json-schema.org/understanding-json-schema/reference/string#hostnames) for more
+details.
+
 #### IP Address
 
+IP Addresses may either be formatted in `ipv4` or `ipv6` formats. If IPv4 is used, it shall comply with
+[RFC 2673, section 3.2](https://datatracker.ietf.org/doc/html/rfc2673#section-3.2). If IPv6 is used, it shall comply
+with [RFC 2373, section 2.2](https://datatracker.ietf.org/doc/html/rfc2373#section-2.2). Reference the
+[JSON Schema documentation](https://json-schema.org/understanding-json-schema/reference/string#ip-addresses) for more
+details.
+
 #### Resource Identifier
+
+Universal resource identifiers will use format `uri` and comply with
+[RFC 3986](https://datatracker.ietf.org/doc/html/rfc3986). There are other less commonly used formats described in the
+[JSON Schema documentation](https://json-schema.org/understanding-json-schema/reference/string#resource-identifiers).
+
+:::warning
+Note that the `uuid` format is not supported at this time as we are compliant with draft 07 of the JSON Schema standard.
+Instead, uuid strings shall be constrained with the equivalent uuid versioned regular expression `pattern`. For most
+cases, uuid v4 will be used. When a uuid is used, it shall comply with
+[RFC 4122](https://datatracker.ietf.org/doc/html/rfc4122).
+
+  :::info
+  While there is [RFC 9562](https://datatracker.ietf.org/doc/html/rfc9562) which extends RFC 4122 by adding in uuid
+  versions 6-8, these are likely not supportable with the `uuid` format yet and will require further review if and when
+  these newer uuid versions are used.
+:::
 
 #### URI Template
 
@@ -169,12 +200,19 @@ to the absence of a value, or undefined. Reference the
 
 - [ECMA 262](https://ecma-international.org/publications-and-standards/standards/ecma-262/)
 - [JSON Schema Types](https://json-schema.org/understanding-json-schema/reference/type)
+- [RFC 1123](https://datatracker.ietf.org/doc/html/rfc1123) (Internet Hosts)
+- [RFC 2373](https://datatracker.ietf.org/doc/html/rfc2373) (IPv6)
+- [RFC 2673](https://datatracker.ietf.org/doc/html/rfc2673) (IPv4)
 - [RFC 3339](https://datatracker.ietf.org/doc/html/rfc3339) (Date and Time)
 - [RFC 3629](https://datatracker.ietf.org/doc/html/rfc3629) (UTF-8)
+- [RFC 3986](https://datatracker.ietf.org/doc/html/rfc3986) (URI)
+- [RFC 4122](https://datatracker.ietf.org/doc/html/rfc4122) (UUID v1-5)
 - [RFC 5321](https://datatracker.ietf.org/doc/html/rfc5321) (Email/SMTP)
+- [RFC 5890](https://datatracker.ietf.org/doc/html/rfc5890) (Internationalized Domain Names)
 - [RFC 6531](https://datatracker.ietf.org/doc/html/rfc6531) (Internationalized Email)
 - [RFC 6570](https://datatracker.ietf.org/doc/html/rfc6570) (URI Template)
 - [RFC 8259](https://datatracker.ietf.org/doc/html/rfc8259) (JSON)
+- [RFC 9562](https://datatracker.ietf.org/doc/html/rfc9562) (UUID v6-8)
 
 ### Errata
 
