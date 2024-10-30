@@ -75,7 +75,7 @@ internally stored and represented in a format compatible with [unix/epoch](https
 time.
 
 If the time is specified, such as when either the `time` or `date-time` formats are used, the time representations
-shall be aligned to UTC time. Reference the
+shall be encoded in UTC time. Reference the
 [JSON Schema documentation](https://json-schema.org/understanding-json-schema/reference/string#dates-and-times) for more
 specific examples.
 
@@ -115,7 +115,7 @@ Universal resource identifiers will use format `uri` and comply with
 [RFC 3986](https://datatracker.ietf.org/doc/html/rfc3986). There are other less commonly used formats described in the
 [JSON Schema documentation](https://json-schema.org/understanding-json-schema/reference/string#resource-identifiers).
 
-:::warning
+::::warning
 Note that the `uuid` format is not supported at this time as we are compliant with draft 07 of the JSON Schema standard.
 Instead, uuid strings shall be constrained with the equivalent uuid versioned regular expression `pattern`. For most
 cases, uuid v4 will be used. When a uuid is used, it shall comply with
@@ -125,7 +125,8 @@ cases, uuid v4 will be used. When a uuid is used, it shall comply with
   While there is [RFC 9562](https://datatracker.ietf.org/doc/html/rfc9562) which extends RFC 4122 by adding in uuid
   versions 6-8, these are likely not supportable with the `uuid` format yet and will require further review if and when
   these newer uuid versions are used.
-:::
+  :::
+::::
 
 #### URI Template
 

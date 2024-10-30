@@ -4,6 +4,16 @@ sidebar_position: 1
 
 # Tutorial Intro
 
+Welcome to Docusaurus! If you are here, you are probably looking at how to quickly add and update content here. To get
+started, please review the following:
+
+- [Create a Page](./tutorial-basics/create-a-page)
+- [Markdown Features](./tutorial-basics/markdown-features.mdx)
+
+Everything else below this line includes the original tutorial documentation for setting up and using Docusaurus.
+
+---
+
 Let's discover **Docusaurus in less than 5 minutes**.
 
 ## Getting Started

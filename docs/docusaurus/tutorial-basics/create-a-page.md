@@ -10,6 +10,9 @@ Add **Markdown or React** files to `src/pages` to create a **standalone page**:
 - `src/pages/foo.md` → `localhost:3000/foo`
 - `src/pages/foo/bar.js` → `localhost:3000/foo/bar`
 
+When you create a new `.md` or `.mdx` file, please make sure to add in the appropriate
+[Front Matter](../tutorial-basics/markdown-features.mdx#front-matter) so that your content is properly categorized.
+
 ## Create your first React Page
 
 Create a file at `src/pages/my-react-page.js`:

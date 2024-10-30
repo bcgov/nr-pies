@@ -4,7 +4,8 @@ sidebar_position: 4
 
 # Markdown Features
 
-Docusaurus supports **[Markdown](https://daringfireball.net/projects/markdown/syntax)** and a few **additional features**.
+Docusaurus supports **[Markdown](https://daringfireball.net/projects/markdown/syntax)** and a few **additional
+features**.
 
 ## Front Matter
 
@@ -17,6 +18,8 @@ id: my-doc-id
 title: My document title
 description: My document description
 slug: /my-custom-url
+tags:
+  - developer
 ---
 // highlight-end
 
@@ -24,6 +27,8 @@ slug: /my-custom-url
 
 Markdown text with [links](./hello.md)
 ```
+
+We recommend that all markdown pages should have at minimum a `title`, `description` and `tags` array defined.
 
 ## Links
 
@@ -51,7 +56,8 @@ You can use absolute paths to reference images in the static directory (`static/
 
 ![Docusaurus logo](/img/docusaurus.png)
 
-You can reference images relative to the current file as well. This is particularly useful to colocate images close to the Markdown files using them:
+You can reference images relative to the current file as well. This is particularly useful to colocate images close to
+the Markdown files using them:
 
 ```md
 ![Docusaurus logo](./img/docusaurus.png)
@@ -105,9 +111,83 @@ This action is dangerous
 
 :::
 
+## Mermaid Graphs
+
+Our Docusaurus instance supports **diagramming and charting** through [Mermaid](https://mermaid.js.org). The following
+are some quick examples that can be achieved using Mermaid. For more details on the wide range of charts supported,
+visit their [documentation](https://mermaid.js.org/intro/) for more details under the **Diagram Syntax** section on the
+sidebar.
+
+### State Machine
+
+````text
+```mermaid
+graph TD
+  A-->B
+  A-->C
+  B-->D
+  C-->D
+```
+````
+
+```mermaid
+graph TD
+  A-->B
+  A-->C
+  B-->D
+  C-->D
+```
+
+### Flowchart
+
+````text
+```mermaid
+graph LR
+  A[PIES] -->|Get spec| B(Stakeholder approval)
+  B --> C{Purpose}
+  B --> G[/Further Analysis/]
+  C ==>|One| D[Document Exchange]
+  C -->|Two| E[Event Alerts]
+  C -->|Three| F[Aggregation]
+  subgraph identification
+    A
+    B
+  end
+  subgraph execution
+    C
+    D
+    E
+    F
+    G
+  end
+```
+````
+
+```mermaid
+graph LR
+  A[PIES] -->|Get spec| B(Stakeholder approval)
+  B --> C{Purpose}
+  B --> G[/Further Analysis/]
+  C ==>|One| D[Document Exchange]
+  C -->|Two| E[Event Alerts]
+  C -->|Three| F[Aggregation]
+  subgraph identification
+    A
+    B
+  end
+  subgraph execution
+    C
+    D
+    E
+    F
+    G
+  end
+```
+
 ## MDX and React Components
 
-[MDX](https://mdxjs.com/) can make your documentation more **interactive** and allows using any **React components inside Markdown**:
+[MDX](https://mdxjs.com/) can make your documentation more **interactive** and allows using any **React components
+inside Markdown**:
 
 ```jsx
 export const Highlight = ({children, color}) => (
