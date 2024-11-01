@@ -14,7 +14,7 @@ Markdown documents have metadata at the top called [Front Matter](https://jekyll
 ```text title="my-doc.md"
 // highlight-start
 ---
-id: my-doc-id
+id: my_doc_id
 title: My document title
 description: My document description
 slug: /my-custom-url
@@ -28,21 +28,22 @@ tags:
 Markdown text with [links](./hello.md)
 ```
 
-We recommend that all markdown pages should have at minimum a `title`, `description` and `tags` array defined.
+We recommend that all markdown pages should have at minimum a `title`, `description` and `tags` array defined. An `id`
+may be specified, but can be derived off of the filename when omitted.
 
 ## Links
 
 Regular Markdown links are supported, using url paths or relative file paths.
 
 ```md
-Let's see how to [Create a page](/create-a-page).
+Let's see how to [Create a page](/create_a_page).
 ```
 
 ```md
-Let's see how to [Create a page](./create-a-page.md).
+Let's see how to [Create a page](./create_a_page.md).
 ```
 
-**Result:** Let's see how to [Create a page](./create-a-page.md).
+**Result:** Let's see how to [Create a page](./create_a_page.md).
 
 ## Images
 
@@ -211,7 +212,7 @@ This is <Highlight color="#25c2a0">Docusaurus green</Highlight> !
 This is <Highlight color="#1877F2">Facebook blue</Highlight> !
 ```
 
-export const Highlight = ({children, color}) => (
+export const Highlight = ({ children, color }) => (
   <span
     style={{
       backgroundColor: color,
