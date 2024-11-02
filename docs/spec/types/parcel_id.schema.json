@@ -1,0 +1,56 @@
+{
+  "$id": "https://github.com/bcgov/nr-pies/blob/main/docs/spec/types/parcel.schema.json",
+  "$schema": "https://json-schema.org/draft-07/schema",
+  "title": "Parcel Identifier",
+  "description": "An identifier for a specific area with clear boundaries.",
+  "type": "object",
+  "allOf": [
+    {
+      "type": "object",
+      "properties": {
+        "legal_description": {
+          "type": "string",
+          "description": "The full legal description of the parcel and is primarily recorded from the Land Title Register. Where recorded only in the Crown Land Registry, this attribute is to be populated from Tantalis for the fabric compilation, but maintained by PMBC during on-going operations.",
+          "maxLength": 2000
+        }
+      },
+      "required": ["legal_description"]
+    }
+  ],
+  "anyOf": [
+    {
+      "title": "crown_land_registry_id",
+      "type": "object",
+      "properties": {
+        "crown_land_registry_id": {
+          "type": "integer",
+          "description": "Parcel ID is the Land Title Register parcel identifier, a nine-digit number that uniquely identifies a parcel in the land title register of in British Columbia. The registrar assigns PID numbers to parcels for which a title is being entered as a registered title. The Land Title Act refers to the PID as the permanent parcel identifier.",
+          "minimum": 0,
+          "maximum": 999999999
+        }
+      }
+    },
+    {
+      "title": "land_title_register_id",
+      "type": "object",
+      "properties": {
+        "land_title_register_id": {
+          "type": "integer",
+          "description": "The parcel identification number (PIN) is the Crown Land Registry Parcel Identifier.",
+          "minimum": 0,
+          "maximum": 999999999
+        }
+      }
+    },
+    {
+      "title": "parcel_name",
+      "type": "object",
+      "properties": {
+        "parcel_name": {
+          "type": "string",
+          "description": "The same as the PID, if there is one. If there is a PIN but no PID, then parcel name is the PIN. If there is no PID nor PIN, then it is the parcel class value, e.g., COMMON OWNERSHIP, BUILDING STRATA, AIR SPACE, ROAD, PARK."
+        }
+      }
+    }
+  ]
+}
