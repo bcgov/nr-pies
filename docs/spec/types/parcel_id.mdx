@@ -1,7 +1,7 @@
 ---
 id: parcel_id
 title: Parcel Identifier
-description: An identifier for a specific area with clear boundaries
+description: An identifier for a specific area with clear boundaries.
 tags:
   - developer
 ---
@@ -10,9 +10,11 @@ import CodeBlock from "@theme/CodeBlock";
 import JSONSchemaViewer from "@theme/JSONSchemaViewer";
 import Tabs from "@theme/Tabs";
 import TabItem from "@theme/TabItem";
+
+import Example from "@site/docs/spec/types/parcel_id.example.json";
 import Schema from "@site/docs/spec/types/parcel_id.schema.json";
 
-An identifier for a specific area waith clear boundaries.
+An identifier for a specific area with clear boundaries.
 
 ## Overview
 
@@ -53,6 +55,11 @@ This data type is intended to represent a unique identifier for a specific area 
   <TabItem value="source" label="Source">
     <CodeBlock language="json" showLineNumbers>
       {JSON.stringify(Schema, null, 2)}
+    </CodeBlock>
+  </TabItem>
+  <TabItem value="example" label="Example">
+    <CodeBlock language="json" showLineNumbers>
+      {JSON.stringify(Example, null, 2)}
     </CodeBlock>
   </TabItem>
 </Tabs>
