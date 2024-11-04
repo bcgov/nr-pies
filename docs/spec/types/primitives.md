@@ -119,7 +119,9 @@ Universal resource identifiers will use format `uri` and comply with
 Note that the `uuid` format is not supported at this time as we are compliant with draft 07 of the JSON Schema standard.
 Instead, uuid strings shall be constrained with the equivalent uuid versioned regular expression `pattern`. For most
 cases, uuid v4 will be used. When a uuid is used, it shall comply with
-[RFC 4122](https://datatracker.ietf.org/doc/html/rfc4122).
+[RFC 4122](https://datatracker.ietf.org/doc/html/rfc4122). The regular expression to be used when specifying uuids will
+be `/^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$/i` in order to remain version agnostic and maximize
+compatibility.
 
   :::info
   While there is [RFC 9562](https://datatracker.ietf.org/doc/html/rfc9562) which extends RFC 4122 by adding in uuid
