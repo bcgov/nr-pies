@@ -32,7 +32,7 @@ jobs:
         uses: actions/setup-node@v4
         if: github.event.action != 'closed'
         with:
-          node-version: 20
+          node-version: 22
           cache: npm
       - name: Install dependencies
         if: github.event.action != 'closed'
