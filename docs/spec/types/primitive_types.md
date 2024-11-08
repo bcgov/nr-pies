@@ -1,39 +1,10 @@
 ---
-id: primitives
-title: Primitives
+id: primitive_types
+title: Primitive Types
 description: Fundamental basic data types supported by JSON Schema
 tags:
   - developer
 ---
-
-Every data standard must have a core set of fundamental data types that content will be transmitted in. Since the
-Permitting Interoperability Exchange Specification is built on top of the [JSON Schema](https://json-schema.org/)
-standard, it will leverage the conventions specified in that standard. The PIES specification will be compliant to the
-`draft 07` specification of the JSON Schema standard. While there exists more recent draft versions, notably the
-`draft 2020-12` standard, features that were introduced after `draft 07` will not be defined and used at this time in
-order to maximize compatibility with implementor systems.
-
-## JSON Schema Primer
-
-A JSON Schema is commonly used to define, annotate and verify JSON structured documents and content. It serves as a way
-to explicitly define the structural expectations for a specific type of document. While JSON Schema is good for
-describing expected structures, describing conceptual relationships between related topics and domains
-
-A JSON Schema will typically contain the following attributes:
-
-- `$schema` - This describes the draft level this JSON Schema complies to. For PIES, this property will normally be `https://json-schema.org/draft-07/schema`.
-- `$id` - The unique URI for this schema. The path should ideally contain an obvious versioning nomenclature.
-- `$comment` - A free text field for conveying out of band information about the schema. Comments are useful for
-specification readers and editors to understand further nuances for certain properties and structures, but should not
-be relied upon for implementation as they may be skipped over or stripped when parsed by machines.
-- `title` - The intent of the schema. This should be brief and concise.
-- `description` - A brief description about the schema. This should provide a quick overview for the context of usage.
-- `properties` - A set of attributes that are expected to show up in this document type.
-- `required` - An array defining the set of `properties` that must be present for the document to be considered valid.
-Anything defined that is not in this array is implied to be optional.
-- `type` - The type primitive constraint for the property.
-
-## JSON Schema Types
 
 The JSON Schema specifies fundamental
 [data types](https://json-schema.org/understanding-json-schema/reference/type)
@@ -54,7 +25,7 @@ may represent them with different names. We recommend referring to the
 source for standards representation guidance, followed by the [government standards guidance](#government-standards) and
 ensuring that the content represent meets both.
 
-### String
+## String
 
 Strings are used to represent textual information. For most scenarios, strings shall be represented in UTF-8 format, as
 specified in [RFC 3629](https://datatracker.ietf.org/doc/html/rfc3629), which is an extension of the [ISO 10646-1](https://www.iso.org/standard/76835.html)
@@ -66,7 +37,7 @@ Strings may be optionally constrained by properties such as `minLength`, `maxLen
 string may represent. While we outline some of the common formats here, please refer to the JSON Schema documentation
 for more detail on the available built-in format types.
 
-#### Date and Time
+### Date and Time
 
 Date and/or time formats shall be represented in
 [RFC 3339, section 5.6](https://datatracker.ietf.org/doc/html/rfc3339#section-5.6) format, also commonly known as
@@ -83,7 +54,7 @@ specific examples.
 Note that the `duration` format is not supported at this time as we are compliant with draft 07 of the JSON Schema standard.
 :::
 
-#### Email
+### Email
 
 Email addresses with format `email` shall be represented in
 [RFC 5321, section 4.1.2](https://datatracker.ietf.org/doc/html/rfc5321#section-4.1.2) format. Emails may also be
@@ -92,7 +63,7 @@ conveyed in internationalized format `idn-email` which will be compliant to
 [JSON Schema documentation](https://json-schema.org/understanding-json-schema/reference/string#email-addresses) for more
 details.
 
-#### Hostname
+### Hostname
 
 Hostnames with format `hostname` shall be represented in
 [RFC 1123, section 2.1](https://datatracker.ietf.org/doc/html/rfc1123#section-2) format. Hostnames may also be conveyed
@@ -101,7 +72,7 @@ in internationalized format `idn-hostname` which will be compliant to
 [JSON Schema documentation](https://json-schema.org/understanding-json-schema/reference/string#hostnames) for more
 details.
 
-#### IP Address
+### IP Address
 
 IP Addresses may either be formatted in `ipv4` or `ipv6` formats. If IPv4 is used, it shall comply with
 [RFC 2673, section 3.2](https://datatracker.ietf.org/doc/html/rfc2673#section-3.2). If IPv6 is used, it shall comply
@@ -109,7 +80,7 @@ with [RFC 2373, section 2.2](https://datatracker.ietf.org/doc/html/rfc2373#secti
 [JSON Schema documentation](https://json-schema.org/understanding-json-schema/reference/string#ip-addresses) for more
 details.
 
-#### Resource Identifier
+### Resource Identifier
 
 Universal resource identifiers will use format `uri` and comply with
 [RFC 3986](https://datatracker.ietf.org/doc/html/rfc3986). There are other less commonly used formats described in the
@@ -130,7 +101,7 @@ compatibility.
   :::
 ::::
 
-#### URI Template
+### URI Template
 
 URI Templates with format `uri-template` provide a way to specify a Unique Resource Identifier that contains parameters
 that must be substituted in before the URI may be resolved. This should comply with
@@ -138,14 +109,14 @@ that must be substituted in before the URI may be resolved. This should comply w
 [JSON Schema documentation](https://json-schema.org/understanding-json-schema/reference/string#uri-template) for
 more details.
 
-#### Regular Expression
+### Regular Expression
 
 Regular expressions with format `regex` should comply with the
 [ECMA 262](https://ecma-international.org/publications-and-standards/standards/ecma-262/) dialect. Check the
 [JSON Schema documentation](https://json-schema.org/understanding-json-schema/reference/string#regular-expressions) for
 more details.
 
-### Numeric
+## Numeric
 
 Decimals or floating-point numbers may be represented as a type of numeric value. Note that JSON lacks the ability to
 differentiate between integers and floating-point values. It is not possible to reliably infer if the value is an
@@ -157,7 +128,7 @@ Numbers and integers may be optionally constrained by properties such as `multip
 [JSON Schema documentation](https://json-schema.org/understanding-json-schema/reference/numeric) for more specific
 examples.
 
-### Object
+## Object
 
 Objects are used for unordered key-value mappings. In JSON, the key shall always be a [string](#string), and a
 key-value pair is conventionally called a "property". As objects can have various requirements, nestings, and
@@ -167,7 +138,7 @@ and/or expected properties, as well as define relationships and inclusion of oth
 More specific details on what can be done can be found in the
 [JSON Schema documentation](https://json-schema.org/understanding-json-schema/reference/object).
 
-### Array
+## Array
 
 Arrays are used to represent ordered elements. JSON permits array elements to consist of different types. As such,
 array definitions may either constrain the type of elements with the `items` keyword, or use the `contains` keyword to
@@ -177,14 +148,14 @@ Other array constraints such as `uniqueness`, `minContains`, `maxContains`, `min
 to describe the boundaries of the array. Reference the
 [JSON Schema documentation](https://json-schema.org/understanding-json-schema/reference/array) for more specific examples.
 
-### Boolean
+## Boolean
 
 Booleans are used to represent only two possible values: `true` or `false`. While certain languages may evaluate other
 values to true or false, they are not accepted by JSON Schema. Ensure that booleans are evaluated and casted first
 prior to encoding. Reference the
 [JSON Schema documentation](https://json-schema.org/understanding-json-schema/reference/boolean) for more details.
 
-### Null
+## Null
 
 Null is used to represent no value, and can only have a single acceptable value `null`. Note that null does not equate
 to the absence of a value, or undefined. Reference the
