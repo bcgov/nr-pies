@@ -2,6 +2,7 @@
 id: primitive_types
 title: Primitive Types
 description: Fundamental basic data types supported by JSON Schema
+sidebar_position: 4
 tags:
   - developer
 ---
