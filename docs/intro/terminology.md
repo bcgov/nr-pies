@@ -40,11 +40,39 @@ common definition and framework for traversing the coded concepts within PIES.
 
 The following terms describe the structural definitions of the specification ordered from specific to general.
 
-| Term | Definition |
-| --- | --- |
-| Data Type | A primitive data type is one of the most fundamental principles for defining what type of information a piece of data is. Common data types are: boolean, integer, string, and date. |
-| Identifiers | Identifiers provide a shorthand way to reference a unit of data or a specific entry in a codelist or classification scheme. Typically identifiers are intended to be unique within a local or global context (UIDs, and UUIDs). This can include both UUIDs intended to serve as their own widely used standards as well as commonly used code lists and classification schemes. For example, "CA" is the ISO 3166-1 alpha-2 code for Canada while 515112 is the North American Industry Classification System (NAICS) code for FM radio stations. |
-| Vocabulary | A vocabulary establishes standardized terms with consistent semantic definitions. These are typically constrained to a particular namespace or domain. The terms are the machine readable labels for individual data elements or a group of data elements. They can be thought of as the column headings in a spreadsheet of tabular data along with their definitions in a data dictionary. For example, the Dublin Core Metadata Initiative establishes a term and definition for a variety of common metadata elements like "publisher." |
-| Schema | A schema can be a data model or database schema defining relationships between different pieces of information. Schemas can be described using SQL, UML, XSD, or JSON Schema. |
-| Format | The format or "serialization format" is the syntax, encoding, and file format or media type for storing or transmitting your data. On the web, formats are associated with standardized media type identifiers, like application/json. Common data formats include JSON, CSV, and XML. |
-| API | An application programming interface (API) is a predefined protocol for reading and/or writing data using a filesystem, a database, or across a network. Common types of data APIs include OBDC and SQL for databases and REST APIs for the web. |
+### Data Type
+
+A primitive data type is one of the most fundamental principles for defining what type of information a piece of data
+is. Common data types are: boolean, integer, string, and date.
+
+### Identifiers
+
+Identifiers provide a shorthand way to reference a unit of data or a specific entry in a codelist or classification
+scheme. Typically identifiers are intended to be unique within a local or global context (UIDs, and UUIDs). This can
+include both UUIDs intended to serve as their own widely used standards as well as commonly used code lists and
+classification schemes. For example, "CA" is the ISO 3166-1 alpha-2 code for Canada while 515112 is the North American
+Industry Classification System (NAICS) code for FM radio stations.
+
+### Vocabulary
+
+A vocabulary establishes standardized terms with consistent semantic definitions. These are typically constrained to a
+particular namespace or domain. The terms are the machine readable labels for individual data elements or a group of
+data elements. They can be thought of as the column headings in a spreadsheet of tabular data along with their
+definitions in a data dictionary. For example, the Dublin Core Metadata Initiative establishes a term and definition
+for a variety of common metadata elements like "publisher."
+
+### Schema
+
+A schema can be a data model or database schema defining relationships between different pieces of information. Schemas
+can be described using SQL, UML, XSD, or JSON Schema.
+
+### Format
+
+The format or "serialization format" is the syntax, encoding, and file format or media type for storing or transmitting
+your data. On the web, formats are associated with standardized media type identifiers, like application/json. Common
+data formats include JSON, CSV, and XML.
+
+### API
+
+An application programming interface (API) is a predefined protocol for reading and/or writing data using a filesystem,
+a database, or across a network. Common types of data APIs include OBDC and SQL for databases and REST APIs for the web.
