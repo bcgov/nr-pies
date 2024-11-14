@@ -69,6 +69,8 @@
     'Segoe UI Symbol';
   --ifm-footer-background-color: var(--bc-primary-invert);
   --ifm-footer-padding-vertical: 1rem;
+  --ifm-line-height-base: 1.5;
+  --ifm-table-cell-padding: 0.6rem;
 }
 
 a:has(.footer-logo-license) {
