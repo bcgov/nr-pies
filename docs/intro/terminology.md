@@ -19,6 +19,40 @@ common definition and framework for traversing the coded concepts within PIES.
 
 ## Concepts
 
+The following terms outline the main concepts used within this specification and aim to provide a common lexicon for
+understanding and terminology usage.
+
+The following diagram outlines a high level relational map between all the actors (with rounded borders) and how they
+interact with specific parts of the process.
+
+```mermaid
+flowchart TB
+  PR([Proponent]) -->|Completes an| AP
+  PR -->|Seeking| AC
+  SU[Submission] -->|Supports an| AP
+  NA([Navigator]) -->|Finds| AU
+  NA -->|Assists| PR
+  NA -->|Coordinates with| DM
+  DM([Decision Maker]) -->|Decides on| AU
+  AP -->|Requests for| AU
+  AU -->|Grants permission for| AC
+  AU -->|May impact| IP([Interested Party])
+  AU -->|Notifies| RA
+  PE[Permit] ---|Bounded by| PA[Parcel]
+  AC[Activity] ---|Within a| PA
+  subgraph AP[Application]
+    SU
+  end
+  subgraph AU[Authorization]
+    PE
+  end
+  subgraph RA[Referral Agency]
+    DM
+    LG([Local Government])
+    SM([Subject Matter Expert])
+  end
+```
+
 ### Actors
 
 This section discusses the various roles that a person, group or an organization may act as within the context of PIES.
