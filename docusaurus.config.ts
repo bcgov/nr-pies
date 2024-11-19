@@ -9,14 +9,14 @@ const config: Config = {
   favicon: 'img/favicon.ico',
 
   // Set the production url of your site here
-  url: 'https://jujaga.github.io',
+  url: 'https://bcgov.github.io',
   // Set the /<baseUrl>/ pathname under which your site is served
   // For GitHub pages deployment, it is often '/<projectName>/'
   baseUrl: process.env.BASE_URL || '/',
 
   // GitHub pages deployment config.
   // If you aren't using GitHub pages, you don't need these.
-  organizationName: 'jujaga', // Usually your GitHub org/user name.
+  organizationName: 'bcgov', // Usually your GitHub org/user name.
   projectName: 'nr-pies', // Usually your repo name.
   deploymentBranch: 'gh-pages',
   trailingSlash: false,
@@ -56,14 +56,14 @@ const config: Config = {
           sidebarPath: './sidebars.ts',
           // Please change this to your repo.
           // Remove this to remove the "edit this page" links.
-          editUrl: 'https://github.com/jujaga/nr-pies/tree/main/',
+          editUrl: 'https://github.com/bcgov/nr-pies/tree/main/',
           showLastUpdateAuthor: true,
           showLastUpdateTime: true,
           tags: 'tags.yaml',
           onInlineTags: 'throw'
         },
-        blog: false,
         // To enable the blog, remove the blog: false line and uncomment below
+        blog: false,
         // blog: {
         //   showReadingTime: true,
         //   feedOptions: {
@@ -72,7 +72,7 @@ const config: Config = {
         //   },
         //   // Please change this to your repo.
         //   // Remove this to remove the "edit this page" links.
-        //   editUrl: 'https://github.com/jujaga/nr-pies/tree/main/',
+        //   editUrl: 'https://github.com/bcgov/nr-pies/tree/main/',
         //   // Useful options to enforce blogging best practices
         //   onInlineTags: 'warn',
         //   onInlineAuthors: 'warn',
@@ -128,7 +128,7 @@ const config: Config = {
         // },
         // { to: '/blog', label: 'Blog', position: 'right' },
         {
-          href: 'https://github.com/jujaga/nr-pies',
+          href: 'https://github.com/bcgov/nr-pies',
           position: 'right',
           className: 'header-github-logo',
           'aria-label': 'GitHub Repo'
