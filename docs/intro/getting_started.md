@@ -18,17 +18,16 @@ These will be reviewed and updated with relevant partners, data custodians, stew
 
 ## Purpose
 
-The common specifications are to
+Permitting is a complex space. B.C.'s Natural Resource Sector (NRS) alone has well over 600 permit types with just as
+many ways to collect, process and store information from intake to decision. Analytics and reporting and permitting
+reform is difficult for many reasons including data quality and inconsistencies with collection. Permitting systems
+can't integrate without a common language.
 
-- Create cross sector data governance
-- Feed intelligence to the sector
-- Moving towards harmonized statuses
-- Activity-based permit bundling and application process tracking
-- Enable consistent collection of data and metadata
-- Leverage for an integrated data schema for reporting and analytics
-- Identify opportunities to improve data quality, create data visualizations and identify gaps
-- Help develop patterns for data collection, integration and aggregation
-- Develop common schema patterns to use as a template for other interests
+This standard specifies the foundational set of core descriptive data types and elements required to enable the
+compatibility and interoperability of Natural Resource permitting and authorization ecosystems, as well as define the
+purpose and characteristics of permitting.  It will enable better business intelligence (ie. providing evidence for
+policy shifts) and permitting process improvements while enabling flexibility to adapt to shifts in direction on
+permitting.
 
 ## Schemas
 
