@@ -9,20 +9,20 @@
   "packageRules": [
     {
       "groupName": "Node.js",
-      "excludePackageNames": [
-        "calico/node",
-        "docker.io/calico/node",
-        "kindest/node"
-      ],
       "matchDatasources": ["docker"],
       "matchDepNames": ["node"],
-      "matchPackagePatterns": ["/node$"]
+      "matchPackageNames": [
+        "!calico/node",
+        "!docker.io/calico/node",
+        "!kindest/node",
+        "//node$/"
+      ]
     },
     {
       "groupName": "all dependencies",
       "groupSlug": "all",
-      "matchPackagePatterns": ["*"],
-      "separateMajorMinor": true
+      "separateMajorMinor": true,
+      "matchPackageNames": ["*"]
     }
   ],
   "prConcurrentLimit": 2,
