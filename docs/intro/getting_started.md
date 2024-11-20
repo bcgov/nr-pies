@@ -29,6 +29,56 @@ purpose and characteristics of permitting.  It will enable better business intel
 policy shifts) and permitting process improvements while enabling flexibility to adapt to shifts in direction on
 permitting.
 
+## Objectives
+
+The main objective of PIES is to deliver a published specification to enable better data quality and system
+interoperability. Understand the time, cost, and effort involved in requiring a mandatory data standard be included or
+usable in all NRM permitting systems to enhance data consistency, improve interoperability, and automate processes
+across the sector.
+
+- Make it easier to connect and work with the information in different permitting systems.
+  - Reduce the effort and cost of systems integrations and automation.
+  - Unlock the ability to provide consistent progress tracking to proponents.
+- Create technical guidelines that help various systems communicate smoothly and consistently.
+- Support different ways for systems to communicate with each other.
+- Unlock potential for evidence-based policy and transformative potential of AI.
+
+### Getting Everyone on the Same Page
+
+- Set up a working group for people interested to contribute and adopt PIES. See MS Teams.
+- Create clear rules for data governance.
+- Develop a common language so everyone understands the same terms.
+- Gather feedback to ensure data is represented accurately and clearly.
+
+### Documentation
+
+- Share best practices for documenting government data standards.
+- Identify and list common permitting concepts and data types.
+- Create a plan for implementing solutions using transformations and microservices.
+
+And of course, PIES are delicious! 😄
+
+## Goals
+
+- Enable a cross sector view
+  - Through appropriate data access
+  - Creates a single point of validated reporting
+- Provide a harmonized view to perform analysis to identify gaps, gain insights and to spot opportunities for improvement
+  - Data quality
+  - Data and information consistency
+  - Identify processing times
+  - Data harmonization cross sector level reporting
+  - Activity bundling and linking
+  - Coordinated First Nations Consultation
+
+Ultimately PIES goal is to achieve consistency in reporting and analytics across various permitting systems AND to
+achieve interoperability (the ability for the systems to understand the key elements of information they need to share
+and talk to each other in a common language).
+
+An Interoperability strategy and technology will be developed separately from the Data Standards. The strategy will
+focus on a stable, maintainable, scalable platform for data interchange with ability to transform data from LOB systems
+into the data standards.
+
 ## Schemas
 
 - [Core Schema](../spec/schemas/core)
