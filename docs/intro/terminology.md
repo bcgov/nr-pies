@@ -60,6 +60,9 @@ The following diagram outlines a high level relational map between all the actor
 interact with specific parts of the process.
 
 ```mermaid
+---
+title: Actor-Process Workflow
+---
 %% v11 broke and made all links have arrow heads
 %% Ref: https://github.com/mermaid-js/mermaid/issues/5813
 flowchart TB
@@ -85,11 +88,12 @@ flowchart TB
   AOI ---|Defined by| Parcel
   Applicant -->|Seeking| Activity
   Applicant ==>|Completes an| Application
-  Application ==>|Requests for| Authorization
+  Application -->|Requesting for an| Authorization
+  Application ==>|Notifies| RA & DM
   Authorization ==>|Grants permission for| Activity
   Authorization -->|May impact| IP
-  Authorization -->|Notifies| RA
-  DM --> Issues --> Authorization
+  DM ==> Issues ==> Authorization
+  DM <-..->|Communicates with| LG
   IP <-..->|Consults with| DM
   Navigator -.->|Identifies| Authorization
   Navigator -.->|Assists| Applicant
@@ -128,7 +132,10 @@ The following diagram outlines a high level categorization map between all of th
 each other.
 
 ```mermaid
-flowchart LR
+---
+title: Process Tracking Concept Map
+---
+flowchart TB
   Status@{ shape: processes }
 
   subgraph Lifecycle
