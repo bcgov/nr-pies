@@ -81,4 +81,4 @@ into the data standards.
 
 ## Schemas
 
-- [Core Schema](../spec/schemas/core)
+TBD

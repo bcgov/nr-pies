@@ -135,7 +135,7 @@ each other.
 ---
 title: Process Tracking Concept Map
 ---
-flowchart TB
+flowchart LR
   Status@{ shape: processes }
 
   subgraph Lifecycle
