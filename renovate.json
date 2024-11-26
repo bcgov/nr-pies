@@ -4,7 +4,8 @@
   "automerge": false,
   "dependencyDashboard": true,
   "lockFileMaintenance": {
-    "enabled": false
+    "enabled": true,
+    "schedule": ["before 4am on tuesday"]
   },
   "packageRules": [
     {
@@ -26,7 +27,7 @@
     }
   ],
   "prConcurrentLimit": 2,
-  "pruneStaleBranches": false,
-  "schedule": ["before 4am on the first day of the month"],
+  "pruneStaleBranches": true,
+  "schedule": ["before 4am on tuesday"],
   "timezone": "America/Los_Angeles"
 }
