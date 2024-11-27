@@ -99,6 +99,12 @@ const config: Config = {
       textColor: '#000000',
       isCloseable: true
     },
+    docs: {
+      sidebar: {
+        autoCollapseCategories: false, // Flip to true when we have more content to help with navigation focus
+        hideable: true
+      }
+    },
     navbar: {
       hideOnScroll: false,
       title: 'NR-PIES',
