@@ -43,7 +43,7 @@ This section outlines the definitions and common vocabulary used for representin
 
 | Term | Definition | ??? |
 | --- | --- | --- |
-| Activity | A single, specific defined intent of action an area of intent. An activity may require one or more authorizations, e.g., a housing development project. | |
+| Activity | A specific singular defined intent of action within an area of intent as defined by a referral agency. An activity may require one or more authorizations, e.g., a housing development project. An activity may be associated with a project. | |
 | Activity Bundling | The act of identifying the set of permits required for a certain activity. | This should be refined, not sure if this should belong here as it's not a formal process but a description of a relationship |
 | Application | A submitted form(s) with the intent to obtain or amend an authorization. | This might be getting muddled with the concept of a project. |
 | Area of Intent | A set of one or more parcels which define the location(s) an activity is to be performed. | |
@@ -52,7 +52,7 @@ This section outlines the definitions and common vocabulary used for representin
 | Disposition | The final decision or outcome made by a statutory decision maker regarding an application. It essentially indicates what action has been taken with respect to the application, and can be represented by a state. | First attempt at defining - needs review |
 | Parcel | A polygon representation of a designated area, location or jurisdiction. Parcels may have varying degrees of accuracy which may or may not come from surveyor submissions. | Rephrased from LTSA page |
 | Permit | An official document which grants permission to carry out a specific activity, such as land use, in a parcel within the Province of BC. In the context of permitting modernization, it is being used as a term for any type of authorization. | |
-| Project | A set of applications required for a permit | Is this a fancy synonym for an activity bundle? |
+| Project | An optional set of one or more activities as defined by an applicant. | |
 | Submission | The completed output of a single form as answered by an applicant. | Add a note like "Submissions require an adjective declaring their application context"? |
 | Workload | A quantifiable measurement of the number of client-driven applications in the queue. | |
 
@@ -87,6 +87,7 @@ flowchart TB
   Activity ==>|Within an| AOI
   AOI ---|Defined by| Parcel
   Applicant -->|Seeking| Activity
+  Applicant -->|May define a| Project
   Applicant ==>|Completes an| Application
   Application -->|Requesting for an| Authorization
   Application ==>|Notifies| RA & DM
@@ -99,8 +100,10 @@ flowchart TB
   Navigator -.->|Assists| Applicant
   Navigator <-.->|Coordinates with| DM
   Navigator <-.->|Works with| SME
-  SME -.->|Informs| DM
   Parcel ---|Constrains an| Authorization
+  Project -->|Specifies one or more| Activity
+  Project -.-|Associated with| Application
+  SME -.->|Informs| DM
 
   subgraph Application
     Submission
