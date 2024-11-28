@@ -30,9 +30,10 @@ This section discusses the various roles that a person, group or an organization
 | --- | --- |
 | Applicant | A person, group or organization seeking an authorization to perform a set of activities. |
 | Decision Maker | A statutory decision maker (SDM) are the persons with designated authority by their respective Ministry legislation to issue authorizations, approvals, and similar decisions. |
+| Facilitator | An established role which focuses on delivering dedicated support to applicants on application submissions. |
 | Interested Party | A person, or group which may be impacted by an authorization decision. |
 | Local Government | A Municipality or Regional District within the Province. They are the entity providing development, use and building approval on a parcel within their jurisdiction. |
-| Navigator | An established role which focuses on delivering dedicated support to applicants on application submissions. |
+| Navigator | A synonym for a facilitator. |
 | Proponent | A synonym for an applicant. |
 | Referral Agency | A provincial Ministry, local government, or government agency that receives notices for an application. They may be given the opportunity to provide input and comments on an application. |
 | Subject Matter Expert | A subject matter expert (SME) is a specialist of a specific domain, such as authorization processes, software, and policy. |
@@ -72,12 +73,12 @@ flowchart TB
     Interest" }
   DM@{ shape: stadium, label: "Decision
     Maker" }
+  Facilitator@{ shape: stadium }
   IP@{ shape: stadium, label: "Interested
     Party" }
   Issues@{ shape: diamond }
   LG@{ shape: stadium, label: "Local
     Government" }
-  Navigator@{ shape: stadium }
   Parcel@{ shape: docs }
   Permit@{ shape: docs }
   SME@{ shape: stadium, label: "Subject
@@ -95,11 +96,11 @@ flowchart TB
   Authorization -->|May impact| IP
   DM ==> Issues ==> Authorization
   DM <-..->|Communicates with| LG
+  Facilitator -.->|Identifies| Authorization
+  Facilitator -.->|Assists| Applicant
+  Facilitator <-.->|Coordinates with| DM
+  Facilitator <-.->|Works with| SME
   IP <-..->|Consults with| DM
-  Navigator -.->|Identifies| Authorization
-  Navigator -.->|Assists| Applicant
-  Navigator <-.->|Coordinates with| DM
-  Navigator <-.->|Works with| SME
   Parcel ---|Constrains an| Authorization
   Project -->|Specifies one or more| Activity
   Project -.-|Associated with| Application
@@ -113,8 +114,8 @@ flowchart TB
   end
   subgraph RA[Referral Agency]
     DM
+    Facilitator
     LG
-    Navigator
     SME
   end
 ```
