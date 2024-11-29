@@ -1,0 +1,9 @@
+{
+  "event": "2017-01-01T00:00:00.000Z",
+  "process": {
+    "description": "The authorization request is under review by subject matter expert.",
+    "kind": "status",
+    "system": "http://bcgov.github.io/nr-pies/docs/intro/terminology#process-tracking",
+    "value": "pending review"
+  }
+}

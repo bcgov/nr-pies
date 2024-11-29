@@ -1,0 +1,6 @@
+{
+  "description": "The authorization request is under review by subject matter expert.",
+  "kind": "status",
+  "system": "http://bcgov.github.io/nr-pies/docs/intro/terminology#process-tracking",
+  "value": "pending review"
+}

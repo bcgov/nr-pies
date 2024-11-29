@@ -1,0 +1,55 @@
+---
+id: process_event
+title: Process Event
+description: Represents a process concept at a specific moment in time.
+tags:
+  - developer
+---
+
+import CodeBlock from "@theme/CodeBlock";
+import JSONSchemaViewer from "@theme/JSONSchemaViewer";
+import Tabs from "@theme/Tabs";
+import TabItem from "@theme/TabItem";
+
+import Example from "@site/docs/spec/data/process_event.example.json";
+// import Schema from "@site/docs/spec/data/process_event.schema.json";
+
+Represents a process concept at a specific moment in time.
+
+## Scope
+
+This data type is intended to represent an instance of a temporal event within a defined process.
+
+Loosely taking inspiration from [HL7 Timing](https://www.hl7.org/fhir/datatypes.html#timing).
+
+## Structure
+
+| Name | Cardinality | Type | Description & Constraints |
+| --- | --- | --- | --- |
+| TBD | 1..1 | `string` | TBD |
+
+## Specification
+
+<Tabs queryString="tab">
+  {/* <TabItem value="schema" label="Schema" default>
+    <JSONSchemaViewer schema={Schema} viewerOptions={{ showExamples: true }} />
+  </TabItem>
+  <TabItem value="source" label="Source">
+    <CodeBlock language="json" showLineNumbers>
+      {JSON.stringify(Schema, null, 2)}
+    </CodeBlock>
+  </TabItem> */}
+  <TabItem value="example" label="Example">
+    <CodeBlock language="json" showLineNumbers>
+      {JSON.stringify(Example, null, 2)}
+    </CodeBlock>
+  </TabItem>
+</Tabs>
+
+## Implementation Notes
+
+TBD
+
+## References
+
+TBD
