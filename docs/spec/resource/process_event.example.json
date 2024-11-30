@@ -9,9 +9,11 @@
     }
   ],
   "process": {
+    "class": "status",
     "description": "The authorization request is under review by subject matter expert.",
-    "kind": "status",
-    "system": "http://bcgov.github.io/nr-pies/docs/intro/terminology#process-tracking",
+    "parent_class": "stage",
+    "parent_concept": "underreview",
+    "system": "http://bcgov.github.io/nr-pies/docs/concept/process_tracking",
     "value": "pending review"
   }
 }
