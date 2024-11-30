@@ -1,5 +1,13 @@
 {
-  "event": "2017-01-01T00:00:00.000Z",
+  "event": [
+    {
+      "start": "2017-01-01T00:00:00.000Z",
+      "end": "2017-01-02T00:00:00.000Z"
+    },
+    {
+      "start": "2017-01-03T00:00:00.000Z"
+    }
+  ],
   "process": {
     "description": "The authorization request is under review by subject matter expert.",
     "kind": "status",
