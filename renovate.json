@@ -27,6 +27,7 @@
   ],
   "prConcurrentLimit": 2,
   "pruneStaleBranches": true,
-  "schedule": ["before 4am on the first day of the month"],
-  "timezone": "America/Los_Angeles"
+  "rangeStrategy": "pin",
+  "schedule": ["before 4am on tuesday"],
+  "timezone": "America/Vancouver"
 }
