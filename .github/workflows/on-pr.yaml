@@ -1,6 +1,7 @@
 name: Deploy PR to Github Pages
 
 on:
+  merge_group:
   pull_request:
     branches:
       - main
@@ -44,6 +45,7 @@ jobs:
         run: npm run build
       - name: Deploy to/Cleanup GitHub Pages
         uses: rossjrw/pr-preview-action@v1
+        if: github.event_name != 'merge_group'
         with:
           source-dir: ./build
           preview-branch: gh-pages
