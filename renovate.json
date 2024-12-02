@@ -6,27 +6,9 @@
   "lockFileMaintenance": {
     "enabled": false
   },
-  "packageRules": [
-    {
-      "groupName": "Node.js",
-      "matchDatasources": ["docker"],
-      "matchDepNames": ["node"],
-      "matchPackageNames": [
-        "!calico/node",
-        "!docker.io/calico/node",
-        "!kindest/node",
-        "//node$/"
-      ]
-    },
-    {
-      "groupName": "all dependencies",
-      "groupSlug": "all",
-      "separateMajorMinor": true,
-      "matchPackageNames": ["*"]
-    }
-  ],
   "prConcurrentLimit": 2,
   "pruneStaleBranches": true,
-  "schedule": ["before 4am on the first day of the month"],
-  "timezone": "America/Los_Angeles"
+  "rangeStrategy": "pin",
+  "schedule": ["before 4am on tuesday"],
+  "timezone": "America/Vancouver"
 }
