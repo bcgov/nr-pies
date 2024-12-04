@@ -11,7 +11,7 @@ type FeatureItem = {
 const FeatureList: FeatureItem[] = [
   {
     title: 'Easy to Use',
-    Svg: require('@site/static/img/undraw-code-review.svg').default,
+    Svg: require('@site/static/img/easytouse.svg').default,
     description: (
       <>
         PIES was designed from the ground up to be easily understood and
@@ -21,7 +21,7 @@ const FeatureList: FeatureItem[] = [
   },
   {
     title: 'Interoperable',
-    Svg: require('@site/static/img/gear-tools.svg').default,
+    Svg: require('@site/static/img/interoperable.svg').default,
     description: (
       <>
         PIES lets you focus on your data. Let your systems communicate to each
@@ -31,7 +31,7 @@ const FeatureList: FeatureItem[] = [
   },
   {
     title: 'Open Source',
-    Svg: require('@site/static/img/opensource-icon.svg').default,
+    Svg: require('@site/static/img/opensource.svg').default,
     description: (
       <>
         Want to improve PIES? We welcome your{' '}

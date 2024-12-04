@@ -95,7 +95,7 @@ footer {
 }
 
 .hero--primary {
-  --ifm-hero-background-color: var(--ifm-color-primary-dark);
+  --ifm-hero-background-color: var(--ifm-color-primary-darkest);
 }
 
 /**
