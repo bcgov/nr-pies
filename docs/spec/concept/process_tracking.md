@@ -18,17 +18,13 @@ behind each classification level.
 
 ```mermaid
 ---
-title: Process Concept Hierarchy
+title: Application Process Concept Hierarchy
 ---
 flowchart LR
   AppType@{ shape: comment, label: "New
   Amendment
   Transfer
   Cancel" }
-  AuthType@{ shape: comment, label: "Permit
-  License
-  Right
-  Grant"}
 
   Application --> Screening
   Application --> Submission
@@ -36,12 +32,6 @@ flowchart LR
   Application --> Decision
   Application --> Effect
   Application --> AppType
-
-  Authorization --> Active
-  Authorization --> Inactive
-  Authorization --> Requested
-  Authorization --> Suspended
-  Authorization --> AuthType
 
   Submission --> Draft
   Submission --> Submitted
@@ -67,12 +57,10 @@ flowchart LR
 
   subgraph Lifecycle
     Application
-    Authorization
   end
 
   subgraph Type
     AppType
-    AuthType
   end
 
   subgraph Phase
@@ -81,10 +69,6 @@ flowchart LR
     Review
     Decision
     Effect
-    Active
-    Inactive
-    Requested
-    Suspended
   end
 
   subgraph Stage
@@ -109,6 +93,40 @@ flowchart LR
     Conditional
     Offered
     Issued
+  end
+```
+
+```mermaid
+---
+title: Authorization Process Concept Hierarchy
+---
+flowchart LR
+  AuthType@{ shape: comment, label: "Permit
+  License
+  Right
+  Grant"}
+
+  Authorization --> Active
+  Authorization --> Inactive
+  Authorization --> Requested
+  Authorization --> Suspended
+  Authorization --> AuthType
+
+  Phase --> Status
+
+  subgraph Lifecycle
+    Authorization
+  end
+
+  subgraph Type
+    AuthType
+  end
+
+  subgraph Phase
+    Active
+    Inactive
+    Requested
+    Suspended
   end
 ```
 
