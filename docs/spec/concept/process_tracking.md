@@ -38,7 +38,7 @@ flowchart LR
   Review --> Assessment
   Review --> OnHold
   Decision --> Approved
-  Decision --> Denied
+  Decision --> Declined
   Decision --> Cancelled
   Decision --> Abandoned
   Effect --> Withdrawn
@@ -77,7 +77,7 @@ flowchart LR
     Assessment
     OnHold
     Approved
-    Denied
+    Declined
     Cancelled
     Abandoned
     Withdrawn
