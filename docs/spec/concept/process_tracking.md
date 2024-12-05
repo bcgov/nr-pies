@@ -53,8 +53,6 @@ flowchart LR
   Approved --> Offered
   Approved --> Issued
 
-  State --> Status
-
   subgraph Lifecycle
     Application
   end
@@ -84,7 +82,7 @@ flowchart LR
     Expired
   end
 
-  subgraph State
+  subgraph Status
     UnderReview
     InReferral
     WithClient
