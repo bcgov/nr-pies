@@ -3,6 +3,7 @@
   "extends": ["local>bcgov/renovate-config"],
   "automerge": false,
   "dependencyDashboard": true,
+  "draftPR": true,
   "lockFileMaintenance": {
     "enabled": false
   },
