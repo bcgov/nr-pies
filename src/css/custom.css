@@ -73,6 +73,14 @@
   --ifm-table-cell-padding: 0.6rem;
 }
 
+.acknowledgement {
+  background-color: var(--bc-gray-100);
+  border-top: 0.25rem solid var(--bc-primary-gold);
+  border-bottom: 0.25rem solid var(--bc-primary-gold);
+  color: var(--bc-gray-white);
+  padding: 2rem;
+}
+
 a:has(.footer-logo-license) {
   opacity: 0.9;
 }
