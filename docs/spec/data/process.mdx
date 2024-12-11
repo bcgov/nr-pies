@@ -1,7 +1,7 @@
 ---
 id: process
 title: Process
-description: Represents a process concept.
+description: Represents a process tracking concept.
 tags:
   - developer
 ---
@@ -12,9 +12,9 @@ import Tabs from "@theme/Tabs";
 import TabItem from "@theme/TabItem";
 
 import Example from "@site/docs/spec/data/process.example.json";
-// import Schema from "@site/docs/spec/data/process.schema.json";
+import Schema from "@site/docs/spec/data/process.schema.json";
 
-Represents a process concept.
+Represents a process tracking concept.
 
 ## Scope
 
@@ -31,14 +31,14 @@ Loosely taking inspiration from [HL7 Timing](https://www.hl7.org/fhir/datatypes.
 ## Specification
 
 <Tabs queryString="tab">
-  {/* <TabItem value="schema" label="Schema" default>
+  <TabItem value="schema" label="Schema" default>
     <JSONSchemaViewer schema={Schema} viewerOptions={{ showExamples: true }} />
   </TabItem>
   <TabItem value="source" label="Source">
     <CodeBlock language="json" showLineNumbers>
       {JSON.stringify(Schema, null, 2)}
     </CodeBlock>
-  </TabItem> */}
+  </TabItem>
   <TabItem value="example" label="Example">
     <CodeBlock language="json" showLineNumbers>
       {JSON.stringify(Example, null, 2)}

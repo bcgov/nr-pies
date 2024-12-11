@@ -41,5 +41,6 @@
       "title": "pin",
       "required": ["pin"]
     }
-  ]
+  ],
+  "additionalProperties": false
 }

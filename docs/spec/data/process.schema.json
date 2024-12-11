@@ -1,23 +1,35 @@
 {
   "$id": "https://github.com/bcgov/nr-pies/blob/main/docs/spec/types/project_bundle.schema.json",
-  "$schema": "https://json-schema.org/draft-07/schema",
-  "title": "Project Bundle",
-  "description": "An identifier for a specific area with clear boundaries.",
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "Process",
+  "description": "Represents a process tracking concept.",
   "type": "object",
   "properties": {
-    "project_id": {
-      "type": "string",
-      "description": "A unique key to track all permits related to a project or activity across all permitting systems.",
-      "pattern": "/^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$/i"
+    "class": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "description": "A process tracking term."
+      },
+      "minItems": 1,
+      "maxItems": 3,
+      "uniqueItems": true
     },
-    "project_name": {
+    "concept": {
       "type": "string",
-      "description": "Short name of the project."
+      "description": "A reference to the concept map encodings used.",
+      "format": "uri",
+      "pattern": "^https://bcgov.github.io/nr-pies/docs/concept/*$"
     },
-    "project_description": {
-      "type": "string",
-      "description": "Full description of the project. This may contain information to better understand a project."
+    "description": {
+      "description": "An optional description of the status if present.",
+      "type": "string"
+    },
+    "status": {
+      "description": "A description of the current condition or update of an application or authorization. Additional details about the current state are frequently conveyed (e.g., 'Pending Review', 'Under Inspection'). Statuses may be defined by the line of business.",
+      "type": "string"
     }
   },
-  "required": ["project_id", "project_name"]
+  "required": ["class", "concept"],
+  "additionalProperties": false
 }
