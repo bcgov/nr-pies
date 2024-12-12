@@ -26,7 +26,11 @@
       "type": "string"
     },
     "status": {
-      "description": "A description of the current condition or update of an application or authorization. Additional details about the current state are frequently conveyed (e.g., 'Pending Review', 'Under Inspection'). Statuses may be defined by the line of business.",
+      "description": "An optional description of the current condition or update of an application or authorization. Additional details about the current state are frequently conveyed (e.g., 'Pending Review', 'Under Inspection'). Statuses may be defined by the line of business.",
+      "type": "string"
+    },
+    "status_code": {
+      "description": "An optional codified representation of the status attribute. Status codes may be defined by the line of business.",
       "type": "string"
     }
   },
