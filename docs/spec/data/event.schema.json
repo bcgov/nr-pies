@@ -1,23 +1,101 @@
 {
-  "$id": "https://github.com/bcgov/nr-pies/blob/main/docs/spec/types/project_bundle.schema.json",
-  "$schema": "https://json-schema.org/draft-07/schema",
-  "title": "Project Bundle",
-  "description": "An identifier for a specific area with clear boundaries.",
+  "$id": "https://github.com/bcgov/nr-pies/blob/main/docs/spec/types/event.schema.json",
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "Event",
+  "description": "Represents an event concept.",
   "type": "object",
   "properties": {
-    "project_id": {
+    "start_date": {
       "type": "string",
-      "description": "A unique key to track all permits related to a project or activity across all permitting systems.",
-      "pattern": "/^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$/i"
+      "format": "date",
+      "description": "The start date of the event or activity, in YYYY-MM-DD format."
     },
-    "project_name": {
+    "start_datetime": {
       "type": "string",
-      "description": "Short name of the project."
+      "format": "date-time",
+      "description": "The start date and time of the event or activity, in ISO 8601 format (YYYY-MM-DDTHH:MM:SSZ)."
     },
-    "project_description": {
+    "end_date": {
       "type": "string",
-      "description": "Full description of the project. This may contain information to better understand a project."
+      "format": "date",
+      "description": "The end date of the event or activity, in YYYY-MM-DD format."
+    },
+    "end_datetime": {
+      "type": "string",
+      "format": "date-time",
+      "description": "The end date and time of the event or activity, in ISO 8601 format (YYYY-MM-DDTHH:MM:SSZ)."
+    },
+    "active": {
+      "type": "boolean",
+      "enum": [true],
+      "description": "If present, `active` must be true."
     }
   },
-  "required": ["project_id", "project_name"]
+  "oneOf": [
+    {
+      "title": "Date (Start Only)",
+      "description": "Allows `start_date` with optional `active`. Does not allow `start_datetime`, `end_date`, or `end_datetime`.",
+      "properties": {
+        "start_date": { "type": "string", "format": "date" },
+        "start_datetime": {
+          "not": { "type": "string", "format": "date-time" }
+        },
+        "end_date": { "not": { "type": "string", "format": "date" } },
+        "end_datetime": { "not": { "type": "string", "format": "date-time" } },
+        "active": { "type": "boolean", "enum": [true] }
+      },
+      "required": ["start_date"],
+      "not": {
+        "required": ["start_datetime", "end_date", "end_datetime"]
+      }
+    },
+    {
+      "title": "DateTime (Start Only)",
+      "description": "Allows `start_datetime` with optional `active`. Does not allow `start_date`, `end_date`, or `end_datetime`.",
+      "properties": {
+        "start_datetime": { "type": "string", "format": "date-time" },
+        "start_date": { "not": { "type": "string", "format": "date" } },
+        "end_datetime": { "not": { "type": "string", "format": "date-time" } },
+        "end_date": { "not": { "type": "string", "format": "date" } },
+        "active": { "type": "boolean", "enum": [true] }
+      },
+      "required": ["start_datetime"],
+      "not": {
+        "required": ["start_date", "end_date", "end_datetime"]
+      }
+    },
+    {
+      "title": "Date (Range)",
+      "description": "Allows `start_date` and `end_date`. `active` cannot be defined in this case.",
+      "properties": {
+        "start_date": { "type": "string", "format": "date" },
+        "start_datetime": {
+          "not": { "type": "string", "format": "date-time" }
+        },
+        "end_date": { "type": "string", "format": "date" },
+        "end_datetime": { "not": { "type": "string", "format": "date-time" } },
+        "active": { "not": { "type": "boolean" } }
+      },
+      "required": ["start_date", "end_date"],
+      "not": {
+        "required": ["active", "start_datetime", "end_datetime"]
+      }
+    },
+    {
+      "title": "DateTime (Range)",
+      "description": "Allows `start_datetime` and `end_datetime`. `active` cannot be defined in this case.",
+      "properties": {
+        "start_datetime": { "type": "string", "format": "date-time" },
+        "start_date": { "not": { "type": "string", "format": "date" } },
+        "end_datetime": { "type": "string", "format": "date-time" },
+        "end_date": { "not": { "type": "string", "format": "date" } },
+        "active": { "not": { "type": "boolean" } }
+      },
+      "required": ["start_datetime", "end_datetime"],
+      "not": {
+        "required": ["active", "start_date", "end_date"]
+      }
+    }
+  ],
+  "additionalProperties": false
 }

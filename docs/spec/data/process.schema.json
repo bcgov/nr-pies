@@ -1,5 +1,5 @@
 {
-  "$id": "https://github.com/bcgov/nr-pies/blob/main/docs/spec/types/project_bundle.schema.json",
+  "$id": "https://github.com/bcgov/nr-pies/blob/main/docs/spec/types/process.schema.json",
   "$schema": "http://json-schema.org/draft-07/schema#",
   "title": "Process",
   "description": "Represents a process tracking concept.",
@@ -7,6 +7,7 @@
   "properties": {
     "class": {
       "type": "array",
+      "description": "A process tracking term.",
       "items": {
         "type": "string",
         "description": "A process tracking term."
