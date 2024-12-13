@@ -44,7 +44,7 @@ This section outlines the definitions and common vocabulary used for representin
 
 | Term | Definition | ??? |
 | --- | --- | --- |
-| Activity | A specific singular defined intent of action within an area of intent as defined by a referral agency. An activity may require one or more authorizations, e.g., a housing development project. An activity may be associated with a project. | |
+| Activity | A singular defined and regulated intent of action within an area of intent as defined by a referral agency. An activity may require one or more authorizations, e.g., a housing development project. An activity may be associated with a project. | |
 | Activity Bundling | The act of identifying the set of permits required for a certain activity. | This should be refined, not sure if this should belong here as it's not a formal process but a description of a relationship |
 | Application | A submitted form(s) with the intent to obtain or amend an authorization. | This might be getting muddled with the concept of a project. |
 | Area of Intent | A set of one or more parcels which define the location(s) an activity is to be performed. | |
