@@ -11,22 +11,34 @@ import JSONSchemaViewer from "@theme/JSONSchemaViewer";
 import Tabs from "@theme/Tabs";
 import TabItem from "@theme/TabItem";
 
-import Example from "@site/docs/spec/data/event.example.json";
+import ExampleDateRange from "@site/docs/spec/data/event.example.date_range.json";
+import ExampleDateStart from "@site/docs/spec/data/event.example.date_start.json";
+import ExampleDateTimeRange from "@site/docs/spec/data/event.example.datetime_range.json";
+import ExampleDateTimeStart from "@site/docs/spec/data/event.example.datetime_start.json";
 import Schema from "@site/docs/spec/data/event.schema.json";
 
-Represents an event concept.
+Represents an event concept. It allows either a date or a datetime, but not a mix of both. One of the start properties is required, but the end properties are optional.
 
 ## Scope
 
-This data type is intended to represent the core concept of a temporal event. It may contain a set of timestamps.
-
-Loosely taking inspiration from [HL7 Timing](https://www.hl7.org/fhir/datatypes.html#timing).
+This data type is intended to represent the raw known factual information a specific temporal event. The interpretation
+and context of an event will be dependent on which [resource type](../../category/resource-types) is using it.
 
 ## Structure
 
+- An Event shall always contain some `start_*` attribute.
+  - A valid Event shall at minimum contain either a `start_date` or a `start_datetime`.
+- An Event shall be defined using either `date` or `date-time` specificity.
+  - Mixed usage of `date` and `date-time is prohibited`
+  - If `start_date` is defined, an optional `end_date` may be specified.
+  - If `start_datetime` is defined, an optional `end_datetime` may be specified.
+
 | Name | Cardinality | Type | Description & Constraints |
 | --- | --- | --- | --- |
-| TBD | 1..1 | `string` | TBD |
+| start_date | 0..1 | `string` | The start date of the event in `YYYY-MM-DD` format. |
+| start_datetime | 0..1 | `string` | The start datetime of the event in ISO 8601 format (e.g., `2024-12-01T10:00:00Z`). |
+| end_date | 0..1 | `string` | The end date of the event in `YYYY-MM-DD` format. This is optional if `start_date` is used. |
+| end_datetime | 0..1 | `string` | The end datetime of the event in ISO 8601 format. This is optional if `start_datetime` is used. |
 
 ## Specification
 
@@ -39,9 +51,22 @@ Loosely taking inspiration from [HL7 Timing](https://www.hl7.org/fhir/datatypes.
       {JSON.stringify(Schema, null, 2)}
     </CodeBlock>
   </TabItem>
-  <TabItem value="example" label="Example">
+  <TabItem value="example" label="Examples">
+    **Date Start**
     <CodeBlock language="json" showLineNumbers>
-      {JSON.stringify(Example, null, 2)}
+      {JSON.stringify(ExampleDateStart, null, 2)}
+    </CodeBlock>
+    **Date Range**
+    <CodeBlock language="json" showLineNumbers>
+      {JSON.stringify(ExampleDateRange, null, 2)}
+    </CodeBlock>
+    **DateTime Start**
+    <CodeBlock language="json" showLineNumbers>
+      {JSON.stringify(ExampleDateTimeStart, null, 2)}
+    </CodeBlock>
+    **DateTime Range**
+    <CodeBlock language="json" showLineNumbers>
+      {JSON.stringify(ExampleDateTimeRange, null, 2)}
     </CodeBlock>
   </TabItem>
 </Tabs>

@@ -1,13 +1,8 @@
 {
-  "event": [
-    {
-      "start": "2017-01-02T00:00:00.000Z",
-      "end": "2017-01-03T00:00:00.000Z"
-    },
-    {
-      "start": "2017-01-04T00:00:00.000Z"
-    }
-  ],
+  "event": {
+    "start_date": "2024-12-01",
+    "end_date": "2024-12-31"
+  },
   "process": {
     "class": ["Application", "Review", "Assessment"],
     "concept": "http://bcgov.github.io/nr-pies/docs/concept/process_tracking",
@@ -15,3 +10,4 @@
     "status": "UnderReview"
   }
 }
+

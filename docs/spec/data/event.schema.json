@@ -2,98 +2,51 @@
   "$id": "https://github.com/bcgov/nr-pies/blob/main/docs/spec/types/event.schema.json",
   "$schema": "http://json-schema.org/draft-07/schema#",
   "title": "Event",
-  "description": "Represents an event concept.",
+  "description": "Represents an event concept. It allows either a date or a datetime, but not a mix of both. One of the start properties is required, but the end properties are optional.",
   "type": "object",
   "properties": {
     "start_date": {
       "type": "string",
       "format": "date",
-      "description": "The start date of the event or activity, in YYYY-MM-DD format."
+      "description": "The start date of the event in YYYY-MM-DD format."
     },
     "start_datetime": {
       "type": "string",
       "format": "date-time",
-      "description": "The start date and time of the event or activity, in ISO 8601 format (YYYY-MM-DDTHH:MM:SSZ)."
+      "description": "The start datetime of the event in ISO 8601 format (e.g., 2024-12-01T10:00:00Z)."
     },
     "end_date": {
       "type": "string",
       "format": "date",
-      "description": "The end date of the event or activity, in YYYY-MM-DD format."
+      "description": "The end date of the event in YYYY-MM-DD format. This is optional if `start_date` is used."
     },
     "end_datetime": {
       "type": "string",
       "format": "date-time",
-      "description": "The end date and time of the event or activity, in ISO 8601 format (YYYY-MM-DDTHH:MM:SSZ)."
-    },
-    "active": {
-      "type": "boolean",
-      "enum": [true],
-      "description": "If present, `active` must be true."
+      "description": "The end datetime of the event in ISO 8601 format. This is optional if `start_datetime` is used."
     }
   },
   "oneOf": [
     {
-      "title": "Date (Start Only)",
-      "description": "Allows `start_date` with optional `active`. Does not allow `start_datetime`, `end_date`, or `end_datetime`.",
-      "properties": {
-        "start_date": { "type": "string", "format": "date" },
-        "start_datetime": {
-          "not": { "type": "string", "format": "date-time" }
-        },
-        "end_date": { "not": { "type": "string", "format": "date" } },
-        "end_datetime": { "not": { "type": "string", "format": "date-time" } },
-        "active": { "type": "boolean", "enum": [true] }
-      },
+      "title": "Date",
+      "description": "This schema is used when the event starts with a date (`start_date`), and optionally, an end date (`end_date`) can be specified. Mixing a start date with a datetime is not allowed.",
       "required": ["start_date"],
-      "not": {
-        "required": ["start_datetime", "end_date", "end_datetime"]
-      }
-    },
-    {
-      "title": "DateTime (Start Only)",
-      "description": "Allows `start_datetime` with optional `active`. Does not allow `start_date`, `end_date`, or `end_datetime`.",
-      "properties": {
-        "start_datetime": { "type": "string", "format": "date-time" },
-        "start_date": { "not": { "type": "string", "format": "date" } },
-        "end_datetime": { "not": { "type": "string", "format": "date-time" } },
-        "end_date": { "not": { "type": "string", "format": "date" } },
-        "active": { "type": "boolean", "enum": [true] }
-      },
-      "required": ["start_datetime"],
-      "not": {
-        "required": ["start_date", "end_date", "end_datetime"]
-      }
-    },
-    {
-      "title": "Date (Range)",
-      "description": "Allows `start_date` and `end_date`. `active` cannot be defined in this case.",
       "properties": {
         "start_date": { "type": "string", "format": "date" },
-        "start_datetime": {
-          "not": { "type": "string", "format": "date-time" }
-        },
+        "start_datetime": { "type": "string", "format": "date-time", "not": {} },
         "end_date": { "type": "string", "format": "date" },
-        "end_datetime": { "not": { "type": "string", "format": "date-time" } },
-        "active": { "not": { "type": "boolean" } }
-      },
-      "required": ["start_date", "end_date"],
-      "not": {
-        "required": ["active", "start_datetime", "end_datetime"]
+        "end_datetime": { "type": "string", "format": "date-time", "not": {} }
       }
     },
     {
-      "title": "DateTime (Range)",
-      "description": "Allows `start_datetime` and `end_datetime`. `active` cannot be defined in this case.",
+      "title": "DateTime",
+      "description": "This schema is used when the event starts with a datetime (`start_datetime`), and optionally, an end datetime (`end_datetime`) can be specified. Mixing a start datetime with a date is not allowed.",
+      "required": ["start_datetime"],
       "properties": {
         "start_datetime": { "type": "string", "format": "date-time" },
-        "start_date": { "not": { "type": "string", "format": "date" } },
+        "start_date": { "type": "string", "format": "date", "not": {} },
         "end_datetime": { "type": "string", "format": "date-time" },
-        "end_date": { "not": { "type": "string", "format": "date" } },
-        "active": { "not": { "type": "boolean" } }
-      },
-      "required": ["start_datetime", "end_datetime"],
-      "not": {
-        "required": ["active", "start_date", "end_date"]
+        "end_date": { "type": "string", "format": "date", "not": {} }
       }
     }
   ],
