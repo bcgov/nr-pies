@@ -106,7 +106,7 @@ const config: Config = {
       }
     },
     navbar: {
-      hideOnScroll: false,
+      hideOnScroll: true,
       title: 'NR-PIES',
       logo: {
         alt: 'Government of B.C.',
