@@ -1,5 +1,5 @@
 {
-  "$id": "https://github.com/bcgov/nr-pies/blob/main/docs/spec/types/process.schema.json",
+  "$id": "https://github.com/bcgov/nr-pies/blob/main/docs/spec/data/process.schema.json",
   "$schema": "http://json-schema.org/draft-07/schema#",
   "title": "Process",
   "description": "Represents a process tracking concept.",
@@ -35,6 +35,5 @@
       "type": "string"
     }
   },
-  "required": ["class", "concept"],
-  "additionalProperties": false
+  "required": ["class", "concept"]
 }

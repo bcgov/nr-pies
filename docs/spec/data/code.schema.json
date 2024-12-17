@@ -1,5 +1,5 @@
 {
-  "$id": "https://github.com/bcgov/nr-pies/blob/main/docs/spec/types/code.schema.json",
+  "$id": "https://github.com/bcgov/nr-pies/blob/main/docs/spec/data/code.schema.json",
   "$schema": "https://json-schema.org/draft-07/schema",
   "title": "Code",
   "description": "Code Data Type",
