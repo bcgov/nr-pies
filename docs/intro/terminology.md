@@ -144,9 +144,7 @@ flowchart LR
   subgraph Lifecycle
     subgraph Phase
       subgraph Stage
-        subgraph State
-          Status
-        end
+        Status
       end
     end
   end
