@@ -1,7 +1,7 @@
 ---
 id: process_event
 title: Process Event
-description: Represents a process concept at a specific moment in time.
+description: Represents a process concept at a specific event in time.
 tags:
   - developer
 ---
@@ -11,10 +11,11 @@ import JSONSchemaViewer from "@theme/JSONSchemaViewer";
 import Tabs from "@theme/Tabs";
 import TabItem from "@theme/TabItem";
 
-import Example from "@site/docs/spec/resource/process_event.example.json";
-// import Schema from "@site/docs/resource/data/process_event.schema.json";
+import generateResolverOptions from "@site/src/components/shared/generateResolverOptions";
+import example from "@site/docs/spec/resource/process_event.example.json";
+import schema from "@site/docs/spec/resource/process_event.schema.json";
 
-Represents a process concept at a specific moment in time.
+Represents a process concept at a specific event in time.
 
 ## Scope
 
@@ -32,17 +33,21 @@ Loosely taking inspiration from [HL7 Timing](https://www.hl7.org/fhir/datatypes.
 ## Specification
 
 <Tabs queryString="tab">
-  {/* <TabItem value="schema" label="Schema" default>
-    <JSONSchemaViewer schema={Schema} viewerOptions={{ showExamples: true }} />
+  <TabItem value="schema" label="Schema" default>
+    <JSONSchemaViewer
+      resolverOptions={generateResolverOptions({ "remote": true })}
+      schema={schema}
+      viewerOptions={{ showExamples: true }}
+    />
   </TabItem>
   <TabItem value="source" label="Source">
     <CodeBlock language="json" showLineNumbers>
-      {JSON.stringify(Schema, null, 2)}
+      {JSON.stringify(schema, null, 2)}
     </CodeBlock>
-  </TabItem> */}
+  </TabItem>
   <TabItem value="example" label="Example">
     <CodeBlock language="json" showLineNumbers>
-      {JSON.stringify(Example, null, 2)}
+      {JSON.stringify(example, null, 2)}
     </CodeBlock>
   </TabItem>
 </Tabs>

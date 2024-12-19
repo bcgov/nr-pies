@@ -11,11 +11,11 @@ import JSONSchemaViewer from "@theme/JSONSchemaViewer";
 import Tabs from "@theme/Tabs";
 import TabItem from "@theme/TabItem";
 
-import ExampleDateRange from "@site/docs/spec/data/event.example.date_range.json";
-import ExampleDateStart from "@site/docs/spec/data/event.example.date_start.json";
-import ExampleDateTimeRange from "@site/docs/spec/data/event.example.datetime_range.json";
-import ExampleDateTimeStart from "@site/docs/spec/data/event.example.datetime_start.json";
-import Schema from "@site/docs/spec/data/event.schema.json";
+import exampleDateRange from "@site/docs/spec/data/event.example.date_range.json";
+import exampleDateStart from "@site/docs/spec/data/event.example.date_start.json";
+import exampleDateTimeRange from "@site/docs/spec/data/event.example.datetime_range.json";
+import exampleDateTimeStart from "@site/docs/spec/data/event.example.datetime_start.json";
+import schema from "@site/docs/spec/data/event.schema.json";
 
 Represents an event concept. It allows either a date or a datetime, but not a mix of both. One of the start properties is required, but the end properties are optional.
 
@@ -44,29 +44,29 @@ and context of an event will be dependent on which [resource type](../../categor
 
 <Tabs queryString="tab">
   <TabItem value="schema" label="Schema" default>
-    <JSONSchemaViewer schema={Schema} viewerOptions={{ showExamples: true }} />
+    <JSONSchemaViewer schema={schema} viewerOptions={{ showExamples: true }} />
   </TabItem>
   <TabItem value="source" label="Source">
     <CodeBlock language="json" showLineNumbers>
-      {JSON.stringify(Schema, null, 2)}
+      {JSON.stringify(schema, null, 2)}
     </CodeBlock>
   </TabItem>
   <TabItem value="example" label="Examples">
     **Date Start**
     <CodeBlock language="json" showLineNumbers>
-      {JSON.stringify(ExampleDateStart, null, 2)}
+      {JSON.stringify(exampleDateStart, null, 2)}
     </CodeBlock>
     **Date Range**
     <CodeBlock language="json" showLineNumbers>
-      {JSON.stringify(ExampleDateRange, null, 2)}
+      {JSON.stringify(exampleDateRange, null, 2)}
     </CodeBlock>
     **DateTime Start**
     <CodeBlock language="json" showLineNumbers>
-      {JSON.stringify(ExampleDateTimeStart, null, 2)}
+      {JSON.stringify(exampleDateTimeStart, null, 2)}
     </CodeBlock>
     **DateTime Range**
     <CodeBlock language="json" showLineNumbers>
-      {JSON.stringify(ExampleDateTimeRange, null, 2)}
+      {JSON.stringify(exampleDateTimeRange, null, 2)}
     </CodeBlock>
   </TabItem>
 </Tabs>

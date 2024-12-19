@@ -11,8 +11,8 @@ import JSONSchemaViewer from "@theme/JSONSchemaViewer";
 import Tabs from "@theme/Tabs";
 import TabItem from "@theme/TabItem";
 
-import Example from "@site/docs/spec/data/process.example.json";
-import Schema from "@site/docs/spec/data/process.schema.json";
+import example from "@site/docs/spec/data/process.example.json";
+import schema from "@site/docs/spec/data/process.schema.json";
 
 Represents a process tracking concept.
 
@@ -36,16 +36,16 @@ Loosely taking inspiration from [HL7 Timing](https://www.hl7.org/fhir/datatypes.
 
 <Tabs queryString="tab">
   <TabItem value="schema" label="Schema" default>
-    <JSONSchemaViewer schema={Schema} viewerOptions={{ showExamples: true }} />
+    <JSONSchemaViewer schema={schema} viewerOptions={{ showExamples: true }} />
   </TabItem>
   <TabItem value="source" label="Source">
     <CodeBlock language="json" showLineNumbers>
-      {JSON.stringify(Schema, null, 2)}
+      {JSON.stringify(schema, null, 2)}
     </CodeBlock>
   </TabItem>
   <TabItem value="example" label="Example">
     <CodeBlock language="json" showLineNumbers>
-      {JSON.stringify(Example, null, 2)}
+      {JSON.stringify(example, null, 2)}
     </CodeBlock>
   </TabItem>
 </Tabs>
