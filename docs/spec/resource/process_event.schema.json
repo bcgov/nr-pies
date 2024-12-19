@@ -1,23 +1,16 @@
 {
-  "$id": "https://github.com/bcgov/nr-pies/blob/main/docs/spec/types/project_bundle.schema.json",
+  "$id": "https://raw.githubusercontent.com/bcgov/nr-pies/refs/heads/main/docs/spec/resource/process_event.schema.json",
   "$schema": "https://json-schema.org/draft-07/schema",
-  "title": "Project Bundle",
-  "description": "An identifier for a specific area with clear boundaries.",
+  "title": "Process Event",
+  "description": "Represents a process concept at a specific moment in time.",
   "type": "object",
   "properties": {
-    "project_id": {
-      "type": "string",
-      "description": "A unique key to track all permits related to a project or activity across all permitting systems.",
-      "pattern": "/^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$/i"
+    "event": {
+      "$ref": "https://raw.githubusercontent.com/bcgov/nr-pies/refs/heads/main/docs/spec/data/event.schema.json"
     },
-    "project_name": {
-      "type": "string",
-      "description": "Short name of the project."
-    },
-    "project_description": {
-      "type": "string",
-      "description": "Full description of the project. This may contain information to better understand a project."
+    "process": {
+      "$ref": "https://raw.githubusercontent.com/bcgov/nr-pies/refs/heads/main/docs/spec/data/process.schema.json"
     }
   },
-  "required": ["project_id", "project_name"]
+  "required": ["event", "process"]
 }

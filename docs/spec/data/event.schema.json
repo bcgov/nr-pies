@@ -1,5 +1,5 @@
 {
-  "$id": "https://github.com/bcgov/nr-pies/blob/main/docs/spec/data/event.schema.json",
+  "$id": "https://raw.githubusercontent.com/bcgov/nr-pies/refs/heads/main/docs/spec/data/event.schema.json",
   "$schema": "http://json-schema.org/draft-07/schema#",
   "title": "Event",
   "description": "Represents an event concept. It allows either a date or a datetime, but not a mix of both. One of the start properties is required, but the end properties are optional.",
