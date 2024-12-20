@@ -101,7 +101,7 @@ const config: Config = {
     },
     docs: {
       sidebar: {
-        autoCollapseCategories: false, // Flip to true when we have more content to help with navigation focus
+        autoCollapseCategories: true, // Flip to true when we have more content to help with navigation focus
         hideable: true
       }
     },
