@@ -11,6 +11,8 @@
     "deploy": "docusaurus deploy",
     "clear": "docusaurus clear",
     "serve": "docusaurus serve",
+    "version": "docusaurus docs:version",
+    "version:fix": "node --experimental-strip-types ./publish-utils.mts",
     "write-translations": "docusaurus write-translations",
     "write-heading-ids": "docusaurus write-heading-ids",
     "typecheck": "tsc"
@@ -33,6 +35,8 @@
     "@docusaurus/module-type-aliases": "3.6.3",
     "@docusaurus/tsconfig": "3.6.3",
     "@docusaurus/types": "3.6.3",
+    "@types/semver": "7.5.8",
+    "semver": "7.6.3",
     "typescript": "5.7.2"
   },
   "browserslist": {

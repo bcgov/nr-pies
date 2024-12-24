@@ -10,10 +10,10 @@ trim_trailing_whitespace = true
 indent_style = space
 indent_size = 2
 
-[*.{css,js,json,jsx,md,mdx,scss,ts,tsx,vue}]
+[*.{css,js,json,jsx,md,mdx,mts,scss,ts,tsx,vue}]
 indent_style = space
 indent_size = 2
 
-[.{babelrc,eslintrc}]
+[.{babelrc,eslintrc,prettierrc}]
 indent_style = space
 indent_size = 2
