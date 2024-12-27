@@ -101,7 +101,7 @@ const config: Config = {
     },
     docs: {
       sidebar: {
-        autoCollapseCategories: true, // Flip to true when we have more content to help with navigation focus
+        autoCollapseCategories: true,
         hideable: true
       }
     },
@@ -114,6 +114,7 @@ const config: Config = {
         srcDark: 'img/BCID_H_rgb_rev.png'
       },
       items: [
+        // TODO: Uncomment this when we do our first version release
         // {
         //   type: 'docsVersionDropdown',
         //   position: 'left',

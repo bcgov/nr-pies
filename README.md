@@ -11,24 +11,31 @@ static website generator.
 ## Directory Structure
 
 ```txt
-.github/                   - PR, Issue templates
+.github/                   - GitHub PR and Issue templates
 .vscode/                   - VSCode environment configurations
 blog/                      - Blog Content Root (Dormant)
 docs/                      - Docs Content Root
 ├── docusaurus/            - Docusaurus Tutorials
 ├── intro/                 - PIES General Information
 ├── spec/                  - PIES Technical Specification
-│   ├── schemas/           - PIES Schema Documentation
-│   ├── types/             - PIES Data Types Documentation
+│   ├── concept/           - PIES Concept Maps
+│   ├── data/              - PIES Data Type Schemas
+│   ├── message/           - PIES Message Type Schemas
+│   ├── resource/          - PIES Resource Type Schemas
 │   └── tags.yaml          - Canonical documentation tags
 ├── src/                   - Docusaurus Source Code
 └── static/                - Site Static Assets
+bcgovpubcode.yml           - BCGov Repository Metadata
 CODE-OF-CONDUCT.md         - Code of Conduct
 COMPLIANCE.yaml            - BCGov PIA/STRA compliance status
 CONTRIBUTING.md            - Contributing Guidelines
+docusaurus.config.ts       - Main Docusaurus configuration
 LICENSE                    - License (Code)
 LICENSE-docs               - License (Documentation)
+renovate.json              - Mend Renovate configuration
 SECURITY.md                - Security Policy and Reporting
+sidebars.ts                - Main Docusaurus sidebar configuration
+versionUtils.mts           - PIES Versioning Utilities
 ```
 
 ## Installation Guide
@@ -42,6 +49,8 @@ SECURITY.md                - Security Policy and Reporting
 ```sh
 npm ci
 ```
+
+This command installs the dependencies as defined by the lockfile.
 
 ### Run Local Development
 
@@ -60,6 +69,19 @@ npm run build
 
 This command generates static content into the `build` directory and can be
 served using any static contents hosting service.
+
+### Versioning
+
+Releasing a version requires the following actions to be done in order:
+
+1. Run `npm version` with argument `patch`, `minor` or `major` depending on the
+desired outcome (e.g. `npm version minor`).
+2. Run `npm run version` with the semver version to be published (e.g.
+`npm run version 0.1.0`). This will create a new Docusaurus version, and run a
+script to align all the schema references appropriately.
+
+_Note: You may run `npm run postversion` directly in the event you need to
+manually align all the schema references._
 
 ---
 
@@ -102,8 +124,8 @@ project you agree to abide by its terms.
 This repository is dual licensed.
 
 - _Software or code_ by the Province of British Columbia is licensed under an
-[AGPL v3 License](./LICENSE)
-[![AGPL v3](https://img.shields.io/badge/License-AGPL_v3-blue.svg)](https://www.gnu.org/licenses/agpl-3.0)
+  [AGPL v3 License](./LICENSE)
+  [![AGPL v3](https://img.shields.io/badge/License-AGPL_v3-blue.svg)](https://www.gnu.org/licenses/agpl-3.0)
 
   ```txt
   NR Permitting Interoperability Exchange Specification
@@ -124,5 +146,5 @@ This repository is dual licensed.
   ```
 
 - _Documentation_ by the Province of British Columbia is licensed under a
-[Creative Commons Attribution 4.0 International License](./LICENSE-docs)
-[![Creative Commons Attribution 4.0 International License](https://i.creativecommons.org/l/by/4.0/80x15.png)](http://creativecommons.org/licenses/by/4.0/)
+  [Creative Commons Attribution 4.0 International License](./LICENSE-docs)
+  [![Creative Commons Attribution 4.0 International License](https://i.creativecommons.org/l/by/4.0/80x15.png)](http://creativecommons.org/licenses/by/4.0/)

@@ -1,31 +1,29 @@
 // This script updates all path references to use the right directory
-import {
-  existsSync,
-  readdirSync,
-  readFileSync,
-  statSync,
-  writeFileSync
-} from 'fs';
+import { readdirSync, readFileSync, statSync, writeFileSync } from 'fs';
 import { join } from 'path';
-import { valid } from 'semver';
 
 const SPEC_DIR = 'spec';
+const VERSIONS_FILE = 'versions.json';
 const VERSIONED_DOCS_DIR = 'versioned_docs';
 
 try {
-  const args = process.argv.slice(2);
-  if (!args.length) throw new Error('Missing arguments.');
+  const versions = JSON.parse(
+    readFileSync(VERSIONS_FILE, { encoding: 'utf-8' })
+  );
+  if (!Array.isArray(versions))
+    throw new Error(`File ${VERSIONS_FILE} is not a JSON array.`);
 
-  const version = args[0];
-  if (!valid(version)) throw new Error(`Argument '${version}' is not semver.`);
+  versions.forEach((version: string) => {
+    const working_dir = `${VERSIONED_DOCS_DIR}/version-${version}/${SPEC_DIR}`;
 
-  const working_dir = `${VERSIONED_DOCS_DIR}/version-${version}/${SPEC_DIR}`;
-  if (!existsSync(working_dir))
-    throw new Error(`Directory ${working_dir} does not exist.`);
-
-  const files = walk(working_dir);
-  patch(files, '.mdx', '@site/docs/spec', `@site/${working_dir}`);
-  patch(files, '.schema.json', 'docs/spec', `${working_dir}`);
+    if (!statSync(working_dir, { throwIfNoEntry: false })) {
+      console.warn(`Version directory ${working_dir} does not exist.`);
+    } else {
+      const files = walk(working_dir);
+      patch(files, '.mdx', '@site/docs/spec', `@site/${working_dir}`);
+      patch(files, '.schema.json', 'docs/spec', `${working_dir}`);
+    }
+  });
 } catch (err) {
   console.error(err);
   process.exit(1);
@@ -49,9 +47,11 @@ function patch(files: Array<string>, ext: string, from: string, to: string) {
 
   schemas.forEach((file) => {
     const oldSchema = readFileSync(file, { encoding: 'utf-8' });
-    const newSchema = oldSchema.replaceAll(from, to);
-    writeFileSync(file, newSchema, { encoding: 'utf-8' });
-    console.log(`Patched file ${file}`);
+    if (oldSchema.match(from)) {
+      const newSchema = oldSchema.replaceAll(from, to);
+      writeFileSync(file, newSchema, { encoding: 'utf-8' });
+      console.log(`Patched file ${file}`);
+    }
   });
 }
 
@@ -69,6 +69,7 @@ function walk(dir: string): Array<string> {
   list.forEach((file) => {
     file = join(dir, file);
     const stat = statSync(file);
+
     if (stat && stat.isDirectory()) {
       results = [...results, ...walk(file)];
     } else {

@@ -19,23 +19,23 @@ product_information:
   product_name: Permitting Interoperability Exchange Specification
   product_status: maturing
   product_urls:
-    - https://bcgov.github.io/nr-permit-interoperability-exchange-specification
+    - https://bcgov.github.io/nr-pies
   program_area: Permitting and Data Solutions Branch
 product_technology_information:
   backend_frameworks:
     - name: Docusaurus
-      version: 3.5.2
+      version: 3.6.3
   backend_languages_version:
     - name: TypeScript
-      version: 5.6.3
+      version: 5.7.2
   ci_cd_tools:
     - GitHub-Actions
   frontend_frameworks:
     - name: React
-      version: 18.0.0
+      version: 18.3.1
   frontend_languages:
     - name: TypeScript
-      version: 5.6.3
+      version: 5.7.2
   hosting_platforms:
     - Other
   hosting_platforms_custom: GitHub Pages
