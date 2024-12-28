@@ -73,8 +73,43 @@ and context of an event will be dependent on which [resource type](../../categor
 
 ## Implementation Notes
 
-TBD
+### Date vs DateTime Specificity
+
+The Event data type supports either Date or DateTime specificity. When choosing which specificity to transmit an Event,
+consider the intent of the transmission, and whether the time component would aid in providing meaningful context to
+the conveyed information. We offer the following guidance:
+
+- Reporting normally uses day resolution. If you know your message is intended to be used for reporting purposes, use
+the `date` format over `date-time`.
+- System logging and auditing uses should lean towards using the `date-time` format if the time component is available.
+- When the usage intent is unknown and the time component is available, use the `date-time` format as it will contain
+a higher degree of information fidelity.
+
+### Transformation Specificity
+
+Conversion and inference between the `date` and `date-time` formats can be tricky as it is not possible to do a lossless
+bidirectional transformation between the two formats (i.e. if you drop the time from date-time, you will have a hard
+time getting the time value back).
+
+- When converting from `date-time` to `date`, the transformation shall account for the timezone offset.
+  - As all dates are recorded in UTC time, it is not sufficient to simply truncate the time portion.
+  - Use the local time of the system where it is operating at as a frame of reference.
+  - For most situations, anticipate using either Pacific Daylight Time (PDT) or Pacific Standard Time (PST).
+- We advise against converting from `date` to `date-time` as assumptions for the time component would be necessary.
+
+### Ongoing Events
+
+The Event data type only supports representing a specific moment with just a start, or a finite duration with a start and an end. Event does not support conveying an ongoing event (e.g. there exists a start date, but no end date is
+provided because it is still current or ongoing). This is because the message specification needs to support
+asynchronous communication workloads; it may be possible for an ongoing event to no longer hold true by the time the
+message has been parsed by the recipient system.
+
+While inferences may be made about values that only have the start defined, they should not be interpreted when
+handling their values, and should instead be used "at face value" to describe only the specific moment when a start
+occurs.
 
 ## References
 
-TBD
+- [ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html)
+- [RFC 3339](https://datatracker.ietf.org/doc/html/rfc3339)
+- [Unix / Epoch Time](https://en.wikipedia.org/wiki/Unix_time)
