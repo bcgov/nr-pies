@@ -54,8 +54,12 @@ Loosely taking inspiration from [HL7 Timing](https://www.hl7.org/fhir/datatypes.
 
 ## Implementation Notes
 
-TBD
+The Process Event type is designed to act as a container data type representing a cartesian product between the
+[Event](../data/event) and [Process](../data/process) data types. Both data types are required in order to have a
+semantically coherent Process Event. Recipient systems will be able to associate a specific process happening at a
+defined time using this data type.
 
 ## References
 
-TBD
+- [Event](../data/event)
+- [Process](../data/process)

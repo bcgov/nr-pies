@@ -1,7 +1,7 @@
 ---
 id: code
 title: Code
-description: A code type
+description: A code type.
 tags:
   - developer
 ---
@@ -23,7 +23,10 @@ concept, element or idea.
 
 ## Structure
 
-Type: `string`
+| Attribute | Value | Description & Constraints |
+| --- | --- | --- |
+| Type | `string` | |
+| Regex Pattern | `^[^\s]+( [^\s]+)*$` | String which has at least one character and no leading or trailing whitespace, and where there is no whitespace other than single spaces in the contents. |
 
 ## Specification
 
@@ -44,8 +47,10 @@ Type: `string`
 
 ## Implementation Notes
 
-TBD
+This data structure is mainly meant to illustrate and restrict what is allowed to be encoded for an arbitrary code
+value. This is meant to only be used as a semantic reference point. This data structure is loosely inspired by the
+[FHIR Code Type](https://www.hl7.org/fhir/datatypes.html#code).
 
 ## References
 
-TBD
+- [FHIR Code Type](https://www.hl7.org/fhir/datatypes.html#code)
