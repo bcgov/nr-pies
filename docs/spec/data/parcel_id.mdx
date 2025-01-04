@@ -11,6 +11,7 @@ import JSONSchemaViewer from "@theme/JSONSchemaViewer";
 import Tabs from "@theme/Tabs";
 import TabItem from "@theme/TabItem";
 
+import { generateResolverOptions } from "@site/src/components/shared";
 import example from "@site/docs/spec/data/parcel_id.example.json";
 import schema from "@site/docs/spec/data/parcel_id.schema.json";
 
@@ -42,7 +43,11 @@ The parcel identification number (PIN) is the Crown Land Registry Parcel Identif
 
 <Tabs queryString="tab">
   <TabItem value="schema" label="Schema" default>
-    <JSONSchemaViewer schema={schema} viewerOptions={{ showExamples: true }} />
+    <JSONSchemaViewer
+      resolverOptions={generateResolverOptions({ "remote": true })}
+      schema={schema}
+      viewerOptions={{ showExamples: true }}
+    />
   </TabItem>
   <TabItem value="source" label="Source">
     <CodeBlock language="json" showLineNumbers>

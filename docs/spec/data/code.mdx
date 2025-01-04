@@ -11,6 +11,7 @@ import JSONSchemaViewer from "@theme/JSONSchemaViewer";
 import Tabs from "@theme/Tabs";
 import TabItem from "@theme/TabItem";
 
+import { generateResolverOptions } from "@site/src/components/shared";
 import schema from "@site/docs/spec/data/code.schema.json";
 
 Indicates that the value is taken from a set of controlled strings defined elsewhere. Technically, a code is restricted
@@ -28,7 +29,11 @@ Type: `string`
 
 <Tabs queryString="tab">
   <TabItem value="schema" label="Schema" default>
-    <JSONSchemaViewer schema={schema} viewerOptions={{ showExamples: true }} />
+    <JSONSchemaViewer
+      resolverOptions={generateResolverOptions({ "remote": true })}
+      schema={schema}
+      viewerOptions={{ showExamples: true }}
+    />
   </TabItem>
   <TabItem value="source" label="Source">
     <CodeBlock language="json" showLineNumbers>

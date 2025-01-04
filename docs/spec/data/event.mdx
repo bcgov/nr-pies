@@ -11,6 +11,7 @@ import JSONSchemaViewer from "@theme/JSONSchemaViewer";
 import Tabs from "@theme/Tabs";
 import TabItem from "@theme/TabItem";
 
+import { generateResolverOptions } from "@site/src/components/shared";
 import exampleDateRange from "@site/docs/spec/data/event.example.date_range.json";
 import exampleDateStart from "@site/docs/spec/data/event.example.date_start.json";
 import exampleDateTimeRange from "@site/docs/spec/data/event.example.datetime_range.json";
@@ -44,7 +45,11 @@ and context of an event will be dependent on which [resource type](../../categor
 
 <Tabs queryString="tab">
   <TabItem value="schema" label="Schema" default>
-    <JSONSchemaViewer schema={schema} viewerOptions={{ showExamples: true }} />
+    <JSONSchemaViewer
+      resolverOptions={generateResolverOptions({ "remote": true })}
+      schema={schema}
+      viewerOptions={{ showExamples: true }}
+    />
   </TabItem>
   <TabItem value="source" label="Source">
     <CodeBlock language="json" showLineNumbers>
