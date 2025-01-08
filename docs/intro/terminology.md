@@ -44,18 +44,18 @@ This section outlines the definitions and common vocabulary used for representin
 
 | Term | Definition | ??? |
 | --- | --- | --- |
-| Action | A regulated action is a specific defined piece of work that may be bounded by an Area of Intent as defined by a referral agency. | |
-| Activity | A specific task that may be a part of a larger ongoing or routine process. It is defined by a set of one or more regulated actions within an area of intent as defined by a referral agency. An activity may require one or more authorizations. | |
+| Action | A regulated action is a specific defined piece of work that may be bounded by an Area of Interest as defined by a referral agency. | |
+| Activity | A specific task that may be a part of a larger ongoing or routine process. It is defined by a set of one or more regulated actions within an area of interest as defined by a referral agency. An activity may require one or more authorizations. | |
 | Activity Bundling | The act of identifying the set of permits required for a certain activity. | This should be refined, not sure if this should belong here as it's not a formal process but a description of a relationship |
 | Application | A submitted form(s) with the intent to obtain or amend an authorization. | This might be getting muddled with the concept of a project. |
-| Area of Intent | A set of one or more parcels which define the location(s) an action is to be performed. | |
+| Area of Interest | A defined location where an action is to be performed. It may be specified by Coordinates, GeoJSON, or by Parcels. | Addresses may potentially be usable. |
 | Authorization | The act of granting permission to perform a specific action in a parcel within the Province of BC. Authorizations may take various forms, including a permit, license, tenure, lease, right-of-way, agreement, grant, statutory right, interest or title. | We might need to expand this definition over time as this is the formal umbrella  term for many things. |
 | Caseload | Work happening with the LOB to facilitate, capture and maintain a permit. | |
 | Disposition | The final decision or outcome made by a statutory decision maker regarding an application. It essentially indicates what action has been taken with respect to the application, and can be represented by a state. | First attempt at defining - needs review |
 | License | A formal authorization permission to engage in a particular action, often for commercial purposes. Licenses are usually granted for a set duration and can be subject to conditions, fees, and regulations. | |
 | Parcel | A polygon representation of a designated area, location or jurisdiction. Parcels may have varying degrees of accuracy which may or may not come from surveyor submissions. | Rephrased from LTSA page |
 | Permit | A temporary, conditional authorization granting permission for a specific action within a defined period. It outlines the scope, requirements, and limitations of the action and may be subject to renewal or revocation. | In permitting modernization, the term broadly refers to various types of authorization. |
-| Project | A temporary, goal-oriented effort designed to achieve a particular outcome within a defined timeframe and scope. It is defined by a set of one or more regulated actions within an area of intent as defined by a referral agency. A project may require one or more authorizations. | |
+| Project | A temporary, goal-oriented effort designed to achieve a particular outcome within a defined timeframe and scope. It is defined by a set of one or more regulated actions within an area of interest as defined by a referral agency. A project may require one or more authorizations. | |
 | Submission | The completed output of a single form as answered by an applicant. | Add a note like "Submissions require an adjective declaring their application context"? |
 | Tenure | A long-term, often transferable authorization for the right to use, occupy, or control land or resources. It establishes a legal claim to land or resources, often with conditions on usage and maintenance. | |
 | Workload | A quantifiable measurement of the number of client-driven applications in the queue. | |
@@ -71,8 +71,6 @@ title: Actor-Process Workflow
 %% Ref: https://github.com/mermaid-js/mermaid/issues/5813
 flowchart TB
   Action@{ shape: dbl-circ }
-  AOI@{ shape: rect, label: "Area of
-    Intent" }
   AP@{ label: "Activity /\nProject"}
   Applicant@{ shape: stadium }
   DM@{ shape: stadium, label: "Decision
@@ -92,7 +90,6 @@ flowchart TB
   Tenure@{ shape: docs }
 
   Action ==>|Within an| AOI
-  AOI ---|Defined by| Parcel
   AP -->|Specifies one or more| Action
   AP -.-|Requires one or more| Application
   Applicant -->|May define an| AP
@@ -100,7 +97,7 @@ flowchart TB
   Application -->|Seeking an| Authorization
   Application ==>|Notifies| DM
   Authorization ==>|Grants permission for| Action
-  Authorization ---|Bounded by| Parcel
+  Authorization ---|Bounded by| AOI
   Authorization -->|May impact| IP
   DM ==> Issues ==> Authorization
   DM <-..->|Communicates with| LG
@@ -111,6 +108,11 @@ flowchart TB
   IP <-..->|Consults with| DM
   SME -.->|Informs| DM
 
+  subgraph AOI[Area of Interest]
+    Coordinates
+    GeoJSON
+    Parcel
+  end
   subgraph Application
     Submission
   end
