@@ -57,6 +57,7 @@ This section outlines the definitions and common vocabulary used for representin
 | Permit | A temporary, conditional authorization granting permission for a specific action within a defined period. It outlines the scope, requirements, and limitations of the action and may be subject to renewal or revocation. | In permitting modernization, the term broadly refers to various types of authorization. |
 | Project | A temporary, goal-oriented effort designed to achieve a particular outcome within a defined timeframe and scope. It is defined by a set of one or more regulated actions within an area of interest as defined by a referral agency. A project may require one or more authorizations. | |
 | Submission | The completed output of a single form as answered by an applicant. | Add a note like "Submissions require an adjective declaring their application context"? |
+| System | A collection of interconnected software and/or hardware components that supports business operations. Permitting systems will typically facilitate the application process for a specific authorization. | |
 | Tenure | A long-term, often transferable authorization for the right to use, occupy, or control land or resources. It establishes a legal claim to land or resources, often with conditions on usage and maintenance. | |
 | Workload | A quantifiable measurement of the number of client-driven applications in the queue. | |
 
@@ -126,6 +127,10 @@ flowchart TB
     Facilitator
     LG
     SME
+  end
+  subgraph System
+    Application
+    Authorization
   end
 ```
 
