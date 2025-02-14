@@ -55,8 +55,20 @@ record in the source system.
 
 ## Security Considerations
 
-TBD Confidentiality, Integrity, Availability
+As with any messaging protocol, we need to factor in how we intend to cover the security of the message. This includes
+considerations for message confidentiality as well as integrity.
+
+For most communication scenarios, PIES is intended for transfer between systems on a point-to-point basis. While there
+are future plans for potentially having a pub/sub model for message transfer, this will be out of scope in the interim.
+The best way for us to ensure point-to-point confidentiality is to make sure we are using standard protocols such as
+HTTPS/TLS connections, as this would be sufficient.
+
+To potentially address future concerns of integrity in a pub/sub model, things such as the JSON Canonicalization Scheme
+(JCS) in [RFC 8785](https://datatracker.ietf.org/doc/html/rfc8785) may be used to ensure that the PIES messages haven't
+been tampered with via some form of JWT/JOSE signing pattern. However, this will be out of scope for now and revisited
+when it becomes required.
 
 ## References
 
+- [RFC 8785](https://datatracker.ietf.org/doc/html/rfc8785)
 - [RFC 9562, section 5.7](https://datatracker.ietf.org/doc/html/rfc9562#section-5.7)
