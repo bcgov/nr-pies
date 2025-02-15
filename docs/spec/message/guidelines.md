@@ -51,7 +51,8 @@ may be an array of strings, should it be derived from multiple systems.
 
 Finally, to ensure that the content is properly attributed to the right record in the system, we will have an attribute
 named `record_id`. This field will have a type of `string`, and will likely be representative of the primary key of the
-record in the source system.
+record in the source system. An associated `record_kind` will describe what kind of record it represents. This
+attribute will also be a `string`.
 
 ## Security Considerations
 
