@@ -1,9 +1,8 @@
 ---
 id: header
 title: Header
-description: Standard header attributes present for all PIES message data types
+description: Standard message header attributes present for all PIES message data types
 tags:
-  - business
   - developer
 ---
 
@@ -13,10 +12,11 @@ import Tabs from "@theme/Tabs";
 import TabItem from "@theme/TabItem";
 
 import { generateResolverOptions } from "@site/src/components/shared";
-import example from "@site/docs/spec/message/header.example.json";
-import schema from "@site/docs/spec/message/header.schema.json";
+import example from "@site/docs/spec/data/header.example.json";
+import schema from "@site/docs/spec/data/header.schema.json";
 
-Represents a set of standardized attributes needed for identification and attribution.
+Standard message header attributes present for all PIES message data types. All defined attributes are needed for
+identification and attribution.
 
 ## Scope
 
@@ -58,8 +58,8 @@ data structure is not intended for standalone use.
 
 ## Implementation Notes
 
-All header attributes are considered mandatory. A valid PIES message datagram must define all of the header attributes.
+All header attributes are mandatory. A valid PIES message datagram must define all of the header attributes.
 
 ## References
 
-- [Guidelines](./guidelines)
+- [Guidelines](../message/guidelines)
