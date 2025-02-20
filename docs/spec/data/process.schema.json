@@ -20,7 +20,7 @@
       "type": "string",
       "description": "A URI reference to the concept map encodings used.",
       "format": "uri",
-      "pattern": "^https://bcgov.github.io/nr-pies/docs/concept/*$"
+      "pattern": "^https://bcgov.github.io/nr-pies/docs/spec/concept/.*$"
     },
     "description": {
       "description": "An optional description of the status if present.",

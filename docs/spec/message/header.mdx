@@ -3,6 +3,7 @@ id: header
 title: Header
 description: Standard header attributes present for all PIES message data types
 tags:
+  - business
   - developer
 ---
 
@@ -31,7 +32,7 @@ data structure is not intended for standalone use.
 | kind | 1..1 | `string` | The specific kind of PIES message data type this message represents. |
 | system_id | 1..* | `string \| string[]` | A valid URI or set of URIs that identifies the source system, service or asset that the data comes from. This is typically a string; however an array of URIs can be used to indicate that multiple systems were used to compile the data in this message. This URI should point to an authoritative asset tracking system or equivalent. However, the URI does not need to be machine readable. |
 | record_id | 1..1 | `string` | The record or primary key representing what the data this message is directly associated to. |
-| record_kind | 1..1 | `string` | The kind of record the source system stores this record as (i.e. Permit, Project, etc.) |
+| record_kind | 1..1 | `string` | The kind of record the source system stores this record as (i.e. Permit, Project, Submission or Tracking). |
 
 ## Specification
 

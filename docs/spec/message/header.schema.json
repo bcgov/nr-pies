@@ -8,7 +8,7 @@
     "tx_id": {
       "type": "string",
       "description": "A unique UUIDv7 assigned for this specific message.",
-      "pattern": "/^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$/i"
+      "pattern": "^[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-7[0-9a-fA-F]{3}-[0-9a-fA-F]{4}-[0-9a-fA-F]{12}$"
     },
     "version": {
       "type": "string",
@@ -34,7 +34,7 @@
     },
     "record_kind": {
       "type": "string",
-      "description": "The kind of record the source system stores this record as (i.e. Permit, Project, etc.)",
+      "description": "The kind of record the source system stores this record as (i.e. Permit, Project, Submission or Tracking).",
       "enum": [
         "Permit",
         "Project",
