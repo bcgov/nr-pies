@@ -6,13 +6,22 @@
   "type": "object",
   "properties": {
     "tx_id": {
-      "type": "string"
+      "type": "string",
+      "description": "A unique UUIDv7 assigned for this specific message.",
+      "pattern": "/^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$/i"
     },
     "version": {
-      "type": "string"
+      "type": "string",
+      "description": "The PIES specification version this message complies to. Value shall be a valid semantic version formatted string.",
+      "pattern": "^(0|[1-9]\\d*)\\.(0|[1-9]\\d*)\\.(0|[1-9]\\d*)(?:-((?:0|[1-9]\\d*|\\d*[a-zA-Z-][0-9a-zA-Z-]*)(?:\\.(?:0|[1-9]\\d*|\\d*[a-zA-Z-][0-9a-zA-Z-]*))*))?(?:\\+([0-9a-zA-Z-]+(?:\\.[0-9a-zA-Z-]+)*))?$"
     },
     "kind": {
-      "type": "string"
+      "type": "string",
+      "description": "The specific kind of PIES message data type this message represents.",
+      "enum": [
+        "RecordLinkage",
+        "ProcessEventSet"
+      ]
     },
     "system_id": {
       "type": "string",
@@ -20,10 +29,18 @@
       "format": "uri"
     },
     "record_id": {
-      "type": "string"
+      "type": "string",
+      "description": "The record or primary key representing what the data this message is directly associated to."
     },
     "record_kind": {
-      "type": "string"
+      "type": "string",
+      "description": "The kind of record the source system stores this record as (i.e. Permit, Project, etc.)",
+      "enum": [
+        "Permit",
+        "Project",
+        "Submission",
+        "Tracking"
+      ]
     }
   },
   "required": [
