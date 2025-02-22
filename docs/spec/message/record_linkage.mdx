@@ -1,0 +1,68 @@
+---
+id: record_linkage
+title: Record Linkage
+description: Represents an assertion for a specific record to be related or linked together
+tags:
+  - business
+  - developer
+---
+
+import CodeBlock from "@theme/CodeBlock";
+import JSONSchemaViewer from "@theme/JSONSchemaViewer";
+import Tabs from "@theme/Tabs";
+import TabItem from "@theme/TabItem";
+
+import { generateResolverOptions } from "@site/src/components/shared";
+import example from "@site/docs/spec/message/record_linkage.example.json";
+import schema from "@site/docs/spec/message/record_linkage.schema.json";
+
+Represents an assertion for specific records to be related or linked together.
+
+## Scope
+
+This message type is intended to allow systems to assert that two records are related and should be linked
+However, this message only serves as an assertion; validation of the relationship between the records is left to the
+consuming system.
+
+## Structure
+
+A Process Event Set shall contain every standard message [Header](../data/header#structure) property, in addition to
+the following properties:
+
+| Name | Cardinality | Type | Description & Constraints |
+| --- | --- | --- | --- |
+| linked_system_id | 1..* | `string` | A valid URI that identifies the source system, service or asset that the linked data comes from. This URI should point to an authoritative asset tracking system or equivalent. However, the URI does not need to be machine readable. |
+| linked_record_id | 1..1 | `string` | The record or primary key representing what record should be linked with the primary header record. |
+| linked_record_kind | 1..1 | `string` | The kind of record the source system stores this linked record as (i.e. Permit, Project, Submission or Tracking). |
+
+## Specification
+
+<Tabs queryString="tab">
+  <TabItem value="schema" label="Schema" default>
+    <JSONSchemaViewer
+      resolverOptions={generateResolverOptions({ "remote": true })}
+      schema={schema}
+      viewerOptions={{ showExamples: true }}
+    />
+  </TabItem>
+  <TabItem value="source" label="Source">
+    <CodeBlock language="json" showLineNumbers>
+      {JSON.stringify(schema, null, 2)}
+    </CodeBlock>
+  </TabItem>
+  <TabItem value="example" label="Example">
+    <CodeBlock language="json" showLineNumbers>
+      {JSON.stringify(example, null, 2)}
+    </CodeBlock>
+  </TabItem>
+</Tabs>
+
+## Implementation Notes
+
+The sole purpose of the Record Linkage message type is to define a specific link between two different records. This message may be used by the consuming system to either bind the different records together, or to use it as a way to remove a specific link between two specific records.
+
+This message type should only specify one `system_id`; while the specification permits defining an unordered array of system ids, this is not recommended as it introduces ambiguity. If multiple links must be expressed, each link should have their own message.
+
+## References
+
+- [Header](../data/header)

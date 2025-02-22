@@ -1,7 +1,7 @@
 {
   "$id": "https://raw.githubusercontent.com/bcgov/nr-pies/refs/heads/main/docs/spec/message/process_event_set.schema.json",
   "$schema": "https://json-schema.org/draft-07/schema",
-  "title": "Process Event",
+  "title": "Process Event Set",
   "description": "Represents a process concept at a specific event in time.",
   "type": "object",
   "properties": {
