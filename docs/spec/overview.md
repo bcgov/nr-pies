@@ -1,11 +1,33 @@
 ---
-id: formatting
-title: Formatting
-description: The syntax, encoding and file format used by PIES
+id: overview
+title: Overview
+description: PIES specification maturity, syntax, encoding and the file format used by PIES
 sidebar_position: 1
 tags:
   - developer
 ---
+
+![Maturity:Standard](https://img.shields.io/badge/Maturity-Standard-blue)
+
+This article outlines PIES specification maturity, syntax, encoding and the file format used by PIES.
+
+## Maturity
+
+The PIES specification is still actively being developed. While it has been developed to a point where it may be used
+for practical purposes, some areas of the specification will not be as fully defined or have not yet been tested.
+Refer to the following table for a description of each maturity level.
+
+| Maturity Level | Emoji | Badge | Description |
+| --- | --- | --- | --- |
+| Planning | 🚧 | ![Maturity:Planning](https://img.shields.io/badge/Maturity-Planning-orange) | This artifact is still in the early stages, where brainstorming, research, and organization are taking place. It is not yet ready for use yet. |
+| Draft | 📝 | ![Maturity:Draft](https://img.shields.io/badge/Maturity-Draft-yellow) | This artifact has a preliminary structure and is being reviewed for accuracy, completeness, and usability. It could be used, but some areas may still need improvement and may have major changes over time. |
+| Candidate | ⏳ | ![Maturity:Candidate](https://img.shields.io/badge/Maturity-Candidate-green) | This artifact has been developed to a point where it may be used for practical purposes. It may be used, but some areas may still need refinement and may have minor changes over time. |
+| Standard | None | ![Maturity:Standard](https://img.shields.io/badge/Maturity-Standard-blue) | This artifact has been fully developed and has been ratified as a part of the standard. It can be used in production environments. |
+
+Each artifact in the specification may potentially be suffixed by an emoji indicating their maturity level. In
+addition, each artifact's page will also contain a maturity level badge.
+
+## Formatting
 
 Every data standard must have a core set of fundamental data types that content will be transmitted in. Since the
 Permitting Interoperability Exchange Specification is built on top of the [JSON Schema](https://json-schema.org/)
@@ -15,7 +37,7 @@ to the `draft 07` specification of the JSON Schema standard. While there exists 
 `draft 2020-12` standard, features that were introduced after `draft 07` will not be defined and used at this time in
 order to maximize compatibility with implementor systems.
 
-## JSON Schema Primer
+### JSON Schema Primer
 
 A JSON Schema is commonly used to define, annotate and verify JSON structured documents and content. It serves as a way
 to explicitly define the structural expectations for a specific type of document. While JSON Schema is good for

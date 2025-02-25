@@ -1,11 +1,13 @@
 ---
 id: guidelines
-title: Guidelines
+title: Guidelines 📝
 description: PIES Message transmission guidelines and best practices.
 tags:
   - business
   - developer
 ---
+
+![Maturity:Draft](https://img.shields.io/badge/Maturity-Draft-yellow)
 
 PIES Message Data Types play an integral role in defining the expected structure of messages. This document outlines
 the general guidelines and best practices for system to system communication.

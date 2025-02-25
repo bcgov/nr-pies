@@ -2,10 +2,12 @@
 id: primitive_types
 title: Primitive Types
 description: Fundamental basic data types supported by JSON Schema
-sidebar_position: 4
+sidebar_position: 1
 tags:
   - developer
 ---
+
+![Maturity:Standard](https://img.shields.io/badge/Maturity-Standard-blue)
 
 The JSON Schema specifies fundamental
 [data types](https://json-schema.org/understanding-json-schema/reference/type)
