@@ -7,7 +7,7 @@ tags:
   - developer
 ---
 
-![Maturity:Planning](https://img.shields.io/badge/Maturity-Planning-orange)
+[![Maturity:Planning](https://img.shields.io/badge/Maturity-Planning-orange)](../overview#maturity)
 
 This page outlines the conceptual hierarchy and terminology embeddings which can describe the tracking of a process.
 

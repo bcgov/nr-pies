@@ -7,7 +7,7 @@ tags:
   - developer
 ---
 
-![Maturity:Standard](https://img.shields.io/badge/Maturity-Standard-blue)
+[![Maturity:Standard](https://img.shields.io/badge/Maturity-Standard-blue)](../overview#maturity)
 
 The JSON Schema specifies fundamental
 [data types](https://json-schema.org/understanding-json-schema/reference/type)

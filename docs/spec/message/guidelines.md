@@ -7,7 +7,7 @@ tags:
   - developer
 ---
 
-![Maturity:Draft](https://img.shields.io/badge/Maturity-Draft-yellow)
+[![Maturity:Draft](https://img.shields.io/badge/Maturity-Draft-yellow)](../overview#maturity)
 
 PIES Message Data Types play an integral role in defining the expected structure of messages. This document outlines
 the general guidelines and best practices for system to system communication.
