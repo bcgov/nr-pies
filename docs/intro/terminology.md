@@ -145,7 +145,7 @@ This section outlines the definitions and common vocabulary used for representin
 | Lifecycle | Represents the complete ordered sequencing of phases that an application and an authorization may pass through. A lifecycle should describe the entire scope of processing that can occur from beginning to end. |
 | Phase | A distinct period or division within a lifecycle. A phase will represent a broader set of stages and usually comes with specific objectives or outcomes. A phase shall be a defined member of a specific lifecycle. |
 | Stage | A discrete, ordered set or collection of statuses. A stage defines a sequential order of statuses that the process must go through. A stage shall be a defined member of a phase. |
-| Status | A description of the current condition or update of an application or authorization. Additional details about the current state are frequently conveyed (e.g., "Pending Review", "Under Inspection"). Statuses may be defined by the line of business. All defined statuses shall have a concept mapping to a broader stage definition. |
+| Status | A description of the current condition or update of an application or authorization. Additional details about the current state are frequently conveyed (e.g., "Pending Review", "Under Inspection"). Statuses may be defined by the line of business. All defined statuses shall have a concept mapping to a broader stage definition or above. |
 
 The following diagram outlines a high level categorization map between all of the process terms and how they relate to
 each other.
@@ -164,7 +164,6 @@ flowchart LR
       end
     end
   end
-
 ```
 
 ## Structure
