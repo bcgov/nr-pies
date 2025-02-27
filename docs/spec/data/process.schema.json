@@ -13,7 +13,7 @@
         "description": "A process tracking term."
       },
       "minItems": 1,
-      "maxItems": 3,
+      "maxItems": 4,
       "uniqueItems": true
     },
     "concept": {

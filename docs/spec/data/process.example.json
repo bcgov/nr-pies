@@ -1,7 +1,7 @@
 {
-  "class": ["Application", "Review", "Assessment"],
+  "class": ["Application", "Review", "Assessment", "UnderReview"],
   "concept": "https://bcgov.github.io/nr-pies/docs/spec/concept/process_tracking",
   "description": "The authorization request is under review by subject matter expert.",
-  "status": "UnderReview",
-  "status_code": "UR"
+  "status": "Auditing",
+  "status_code": "AU"
 }
