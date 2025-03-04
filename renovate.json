@@ -5,7 +5,8 @@
   "dependencyDashboard": true,
   "draftPR": false,
   "lockFileMaintenance": {
-    "enabled": false
+    "enabled": true,
+    "schedule": ["before 4am on tuesday"]
   },
   "minimumReleaseAge": "3 days",
   "prConcurrentLimit": 2,
