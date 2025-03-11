@@ -23,78 +23,78 @@ behind each classification level.
 title: Application Process Concept Hierarchy
 ---
 flowchart LR
-  AppType@{ shape: comment, label: "New
-  Amendment
-  Transfer
-  Cancel" }
+  app_type@{ shape: comment, label: "new
+  amendment
+  transfer
+  cancel" }
 
-  Application --> Screening
-  Application --> Submission
-  Application --> Review
-  Application --> Decision
-  Application --> Effect
-  Application --> AppType
+  application --> screening
+  application --> submission
+  application --> review
+  application --> decision
+  application --> effect
+  application --> app_type
 
-  Submission --> Draft
-  Submission --> Submitted
-  Review --> Assessment
-  Review --> OnHold
-  Decision --> Approved
-  Decision --> Declined
-  Decision --> Cancelled
-  Decision --> Abandoned
-  Effect --> Withdrawn
-  Effect --> Expired
+  submission --> draft
+  submission --> submitted
+  review --> assessment
+  review --> on_hold
+  decision --> approved
+  decision --> declined
+  decision --> cancelled
+  decision --> abandoned
+  effect --> withdrawn
+  effect --> expired
 
-  Assessment --> UnderReview
-  Assessment --> InReferral
-  Assessment --> WithClient
-  OnHold --> Deferred
-  OnHold --> Paused
-  Approved --> Conditional
-  Approved --> Offered
-  Approved --> Issued
+  assessment --> under_review
+  assessment --> in_referral
+  assessment --> with_client
+  on_hold --> deferred
+  on_hold --> paused
+  approved --> conditional
+  approved --> offered
+  approved --> issued
 
-  State --> Status
+  state --> status
 
-  subgraph Lifecycle
-    Application
+  subgraph lifecycle
+    application
   end
 
-  subgraph Type
-    AppType
+  subgraph type
+    app_type
   end
 
-  subgraph Phase
-    Screening
-    Submission
-    Review
-    Decision
-    Effect
+  subgraph phase
+    screening
+    submission
+    review
+    decision
+    effect
   end
 
-  subgraph Stage
-    Draft
-    Submitted
-    Assessment
-    OnHold
-    Approved
-    Declined
-    Cancelled
-    Abandoned
-    Withdrawn
-    Expired
+  subgraph stage
+    draft
+    submitted
+    assessment
+    on_hold
+    approved
+    declined
+    cancelled
+    abandoned
+    withdrawn
+    expired
   end
 
-  subgraph State
-    UnderReview
-    InReferral
-    WithClient
-    Deferred
-    Paused
-    Conditional
-    Offered
-    Issued
+  subgraph state
+    under_review
+    in_referral
+    with_client
+    deferred
+    paused
+    conditional
+    offered
+    issued
   end
 ```
 
@@ -103,38 +103,47 @@ flowchart LR
 title: Authorization Process Concept Hierarchy
 ---
 flowchart LR
-  AuthType@{ shape: comment, label: "Permit
-  License
-  Right
-  Grant"}
+  auth_type@{ shape: comment, label: "permit
+  license
+  right
+  grant"}
 
-  Authorization --> Active
-  Authorization --> Inactive
-  Authorization --> Requested
-  Authorization --> Suspended
-  Authorization --> AuthType
+  authorization --> active
+  authorization --> inactive
+  authorization --> requested
+  authorization --> suspended
+  authorization --> auth_type
 
-  Phase --> Status
+  phase --> status
 
-  subgraph Lifecycle
-    Authorization
+  subgraph lifecycle
+    authorization
   end
 
-  subgraph Type
-    AuthType
+  subgraph type
+    auth_type
   end
 
-  subgraph Phase
-    Active
-    Inactive
-    Requested
-    Suspended
+  subgraph phase
+    active
+    inactive
+    requested
+    suspended
   end
 ```
 
 ## Code Sets
 
 Each classification within the context of a specific kind of lifecycle will have a codified and enumerated concept. TBD.
+
+### Code Formatting
+
+All classification codes shall be encoded in UTF-8. However, only ASCII characters will be allowed. In a nutshell, the
+following characters are allowed:
+
+- **a-z** (lowercase only)
+- **0-9** (digits - *Permitted, but discouraged for use in classification codes.*)
+- **_** (underscore)
 
 ## Type Descriptors
 

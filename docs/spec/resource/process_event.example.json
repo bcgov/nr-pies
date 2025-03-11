@@ -4,7 +4,7 @@
     "end_date": "2024-12-31"
   },
   "process": {
-    "class": ["Application", "Review", "Assessment", "UnderReview"],
+    "class": ["application", "review", "assessment", "under-review"],
     "concept": "http://bcgov.github.io/nr-pies/docs/concept/process_tracking",
     "description": "The authorization request is under review by subject matter expert.",
     "status": "Auditing",

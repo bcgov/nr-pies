@@ -10,7 +10,8 @@
       "description": "An ordered set of process tracking terms.",
       "items": {
         "type": "string",
-        "description": "A process tracking term."
+        "description": "A process tracking term.",
+        "pattern": "^[a-z0-9_]+$"
       },
       "minItems": 1,
       "maxItems": 4,
