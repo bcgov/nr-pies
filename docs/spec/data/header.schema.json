@@ -21,19 +21,9 @@
       "enum": ["RecordLinkage", "ProcessEventSet"]
     },
     "system_id": {
-      "oneOf": [
-        {
-          "$ref": "#/$defs/system_id"
-        },
-        {
-          "type": "array",
-          "items": {
-            "$ref": "#/$defs/system_id"
-          },
-          "minItems": 1,
-          "uniqueItems": true
-        }
-      ]
+      "type": "string",
+      "description": "A valid NRIDS IT Service Management code which identifies the source system, service or asset that the data originates from.",
+      "pattern": "^ITSM-\\d{4,5}$"
     },
     "record_id": {
       "type": "string",
@@ -52,12 +42,5 @@
     "system_id",
     "record_id",
     "record_kind"
-  ],
-  "$defs": {
-    "system_id": {
-      "type": "string",
-      "description": "A valid URI or set of URIs that identifies the source system, service or asset that the data comes from. This is typically a string; however an array of unordered URIs can be used to indicate that multiple systems were used to compile the data in this message. This URI should point to an authoritative asset tracking system or equivalent. However, the URI does not need to be machine readable.",
-      "format": "uri"
-    }
-  }
+  ]
 }

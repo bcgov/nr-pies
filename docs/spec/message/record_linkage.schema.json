@@ -7,8 +7,8 @@
   "properties": {
     "linked_system_id": {
       "type": "string",
-      "description": "A valid URI that identifies the source system, service or asset that the linked data comes from. This URI should point to an authoritative asset tracking system or equivalent. However, the URI does not need to be machine readable.",
-      "format": "uri"
+      "description": "A valid NRIDS IT Service Management code which identifies the source system, service or asset that the linked data originates from.",
+      "pattern": "^ITSM-\\d{4,5}$"
     },
     "linked_record_id": {
       "type": "string",

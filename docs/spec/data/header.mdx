@@ -32,7 +32,7 @@ data structure is not intended for standalone use.
 | transaction_id | 1..1 | `string` | A unique UUIDv7 assigned for this specific message. |
 | version | 1..1 | `string` | The PIES specification version this message complies to. Value shall be a valid semantic version formatted string. |
 | kind | 1..1 | `string` | The specific kind of PIES message data type this message represents. |
-| system_id | 1..* | `string \| string[]` | A valid URI or set of URIs that identifies the source system, service or asset that the data comes from. This is typically a string; however an array of unordered URIs can be used to indicate that multiple systems were used to compile the data in this message. This URI should point to an authoritative asset tracking system or equivalent. However, the URI does not need to be machine readable. |
+| system_id | 1..1 | [Code](./code) | A valid [NRIDS IT Service Management](https://apps.nrs.gov.bc.ca/int/jira/secure/ObjectSchema.jspa?id=1&typeId=5) code which identifies the source system, service or asset that the data originates from. |
 | record_id | 1..1 | `string` | The record or primary key representing what the data this message is directly associated to. |
 | record_kind | 1..1 | `string` | The kind of record the source system stores this record as (i.e. Permit, Project, Submission or Tracking). |
 
