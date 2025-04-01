@@ -5,7 +5,7 @@
   "description": "Represents a set of standardized attributes needed for identification and attribution.",
   "type": "object",
   "properties": {
-    "tx_id": {
+    "transaction_id": {
       "type": "string",
       "description": "A unique UUIDv7 assigned for this specific message.",
       "pattern": "^[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-7[0-9a-fA-F]{3}-[0-9a-fA-F]{4}-[0-9a-fA-F]{12}$"
@@ -18,10 +18,7 @@
     "kind": {
       "type": "string",
       "description": "The specific kind of PIES message data type this message represents.",
-      "enum": [
-        "RecordLinkage",
-        "ProcessEventSet"
-      ]
+      "enum": ["RecordLinkage", "ProcessEventSet"]
     },
     "system_id": {
       "oneOf": [
@@ -45,16 +42,11 @@
     "record_kind": {
       "type": "string",
       "description": "The kind of record the source system stores this record as (i.e. Permit, Project, Submission or Tracking).",
-      "enum": [
-        "Permit",
-        "Project",
-        "Submission",
-        "Tracking"
-      ]
+      "enum": ["Permit", "Project", "Submission", "Tracking"]
     }
   },
   "required": [
-    "tx_id",
+    "transaction_id",
     "version",
     "kind",
     "system_id",

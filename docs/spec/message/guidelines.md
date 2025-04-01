@@ -29,7 +29,7 @@ The PIES standard uses UUIDv7, as specified in
 [RFC 9562, section 5.7](https://datatracker.ietf.org/doc/html/rfc9562#section-5.7), to address timestamping and
 uniqueness. The first 48 bits of the UUID is used for the timestamp, while the rest of the bits are used for UUID
 version identification and pseudo-randomity. The UUIDv7 attribute will be used to ensure that the message it is on is
-unique. This attribute is named `tx_id` and will be a `string` .
+unique. This attribute is named `transaction_id` and will be a `string` .
 
 In addition, as PIES is a versioned specification, it requires a declaration of which version it is compliant to. As the
 version value follows semver, this attribute is named `version` and will also be a `string`.

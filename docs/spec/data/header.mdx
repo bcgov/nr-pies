@@ -29,7 +29,7 @@ data structure is not intended for standalone use.
 
 | Name | Cardinality | Type | Description & Constraints |
 | --- | --- | --- | --- |
-| tx_id | 1..1 | `string` | A unique UUIDv7 assigned for this specific message. |
+| transaction_id | 1..1 | `string` | A unique UUIDv7 assigned for this specific message. |
 | version | 1..1 | `string` | The PIES specification version this message complies to. Value shall be a valid semantic version formatted string. |
 | kind | 1..1 | `string` | The specific kind of PIES message data type this message represents. |
 | system_id | 1..* | `string \| string[]` | A valid URI or set of URIs that identifies the source system, service or asset that the data comes from. This is typically a string; however an array of unordered URIs can be used to indicate that multiple systems were used to compile the data in this message. This URI should point to an authoritative asset tracking system or equivalent. However, the URI does not need to be machine readable. |
