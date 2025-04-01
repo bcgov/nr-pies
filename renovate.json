@@ -6,12 +6,12 @@
   "draftPR": false,
   "lockFileMaintenance": {
     "enabled": true,
-    "schedule": ["before 4am on tuesday"]
+    "schedule": ["* 0-4,22-23 * * 2"]
   },
   "minimumReleaseAge": "3 days",
   "prConcurrentLimit": 2,
   "pruneStaleBranches": true,
   "rangeStrategy": "pin",
-  "schedule": ["before 4am on tuesday"],
+  "schedule": ["* 0-4,22-23 * * 2"],
   "timezone": "America/Vancouver"
 }
