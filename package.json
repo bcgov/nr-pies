@@ -3,6 +3,8 @@
   "version": "0.1.0",
   "license": "(AGPL-3.0-or-later OR CC-BY-4.0)",
   "private": true,
+  "description": "NR Permitting Interoperability Exchange Specification",
+  "author": "NRM Permitting and Data Solutions <NRM.PermittingAndData@gov.bc.ca>",
   "scripts": {
     "docusaurus": "docusaurus",
     "start": "docusaurus start",

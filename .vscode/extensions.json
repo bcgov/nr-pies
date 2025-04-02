@@ -5,7 +5,9 @@
     "eamodio.gitlens",
     "editorconfig.editorconfig",
     "esbenp.prettier-vscode",
+    "gruntfuggly.todo-tree",
     "streetsidesoftware.code-spell-checker",
-    "unifiedjs.vscode-mdx"
+    "unifiedjs.vscode-mdx",
+    "usernamehw.errorlens"
   ]
 }

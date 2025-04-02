@@ -36,8 +36,5 @@
   "editor.formatOnSave": true,
   "editor.rulers": [80, 120],
   "eslint.format.enable": true,
-  "files.insertFinalNewline": true,
-  "yaml.schemas": {
-    "https://json.schemastore.org/github-workflow.json": "file:///Users/jerho/source/PADS/nr-pies/.github/workflows/deploy.yaml"
-  }
+  "files.insertFinalNewline": true
 }
