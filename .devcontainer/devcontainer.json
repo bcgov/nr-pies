@@ -1,0 +1,26 @@
+{
+  "name": "nr-pies",
+  "image": "mcr.microsoft.com/devcontainers/typescript-node:22",
+  "workspaceMount": "source=${localWorkspaceFolder},target=/workspace,type=bind",
+  "workspaceFolder": "/workspace",
+  "customizations": {
+    "vscode": {
+      "extensions": [
+        "davidanson.vscode-markdownlint",
+        "dbaeumer.vscode-eslint",
+        "eamodio.gitlens",
+        "editorconfig.editorconfig",
+        "esbenp.prettier-vscode",
+        "gruntfuggly.todo-tree",
+        "ms-azuretools.vscode-docker",
+        "streetsidesoftware.code-spell-checker",
+        "unifiedjs.vscode-mdx",
+        "usernamehw.errorlens"
+      ]
+    }
+  },
+  "forwardPorts": [3000],
+  "postCreateCommand": "npm ci",
+  "waitFor": "postCreateCommand",
+  "remoteUser": "node"
+}
