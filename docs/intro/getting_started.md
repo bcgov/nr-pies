@@ -16,7 +16,7 @@ can't integrate without a common language.
 
 This standard specifies the foundational set of core descriptive data types and elements required to enable the
 compatibility and interoperability of Natural Resource permitting and authorization ecosystems, as well as define the
-purpose and characteristics of permitting.  It will enable better business intelligence (ie. providing evidence for
+purpose and characteristics of permitting. It will enable better business intelligence (ie. providing evidence for
 policy shifts) and permitting process improvements while enabling flexibility to adapt to shifts in direction on
 permitting.
 

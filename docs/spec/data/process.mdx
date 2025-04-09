@@ -6,14 +6,14 @@ tags:
   - developer
 ---
 
-import CodeBlock from "@theme/CodeBlock";
-import JSONSchemaViewer from "@theme/JSONSchemaViewer";
-import Tabs from "@theme/Tabs";
-import TabItem from "@theme/TabItem";
+import CodeBlock from '@theme/CodeBlock';
+import JSONSchemaViewer from '@theme/JSONSchemaViewer';
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
 
-import { generateResolverOptions } from "@site/src/components/shared";
-import example from "@site/docs/spec/data/process.example.json";
-import schema from "@site/docs/spec/data/process.schema.json";
+import { generateResolverOptions } from '@site/src/components/shared';
+import example from '@site/docs/spec/data/process.example.json';
+import schema from '@site/docs/spec/data/process.schema.json';
 
 [![Maturity:Trial](https://img.shields.io/badge/Maturity-Trial-green)](../overview#maturity)
 
@@ -29,42 +29,58 @@ Loosely taking inspiration from [HL7 Timing](https://www.hl7.org/fhir/datatypes.
 
 - A Process shall always contain a `class` and `concept` attribute.
   - The `class` ordered set shall have at least one concept, and no more than four concepts defined. Classes do not
-  require the full path hierarchy defined depending on what the intention of the concept being shared.
+    require the full path hierarchy defined depending on what the intention of the concept being shared.
 - A Process may contain a `status` attribute.
   - The `status` attribute acts as a free text field which represents the specific status value that may be stored or
-  encoded in the transmitting system.
+    encoded in the transmitting system.
   - If `status` is defined, the `description` and `status_code` attributes may optionally be defined as well.
 - The recipient system shall primarily rely on the `class` and `concept` attributes.
   - Recipient systems may choose to parse the `status`, `description` and `status_code` attributes as auxiliary or
-  supplementary data.
+    supplementary data.
   - Recipient systems shall not depend on these attributes as they are not guaranteed to exist, nor do they convey the
-  standard concept hierarchy as defined by this specification.
+    standard concept hierarchy as defined by this specification.
 
-| Name | Cardinality | Type | Description & Constraints |
-| --- | --- | --- | --- |
-| class | 1..* | `string[]` | An ordered set of process tracking terms. |
-| concept | 1..1 | `string` | A URI reference to the concept map encodings used. |
-| description | 0..1 | `string` | An optional description of the status if present. |
-| status | 0..1 | `string` | An optional description of the current condition or update of an application or authorization. Additional details about the current state are frequently conveyed (e.g., 'Pending Review', 'Under Inspection'). Statuses may be defined by the line of business. |
-| status_code | 0..1 | [Code](./code) | An optional codified representation of the status attribute. Status codes may be defined by the line of business. |
+| Name        | Cardinality | Type           | Description & Constraints                                                                                                                                                                                                                                        |
+| ----------- | ----------- | -------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| class       | 1..\*       | `string[]`     | An ordered set of process tracking terms.                                                                                                                                                                                                                        |
+| concept     | 1..1        | `string`       | A URI reference to the concept map encodings used.                                                                                                                                                                                                               |
+| description | 0..1        | `string`       | An optional description of the status if present.                                                                                                                                                                                                                |
+| status      | 0..1        | `string`       | An optional description of the current condition or update of an application or authorization. Additional details about the current state are frequently conveyed (e.g., 'Pending Review', 'Under Inspection'). Statuses may be defined by the line of business. |
+| status_code | 0..1        | [Code](./code) | An optional codified representation of the status attribute. Status codes may be defined by the line of business.                                                                                                                                                |
 
 ## Specification
 
 <Tabs queryString="tab">
-  <TabItem value="schema" label="Schema" default>
+  <TabItem
+    value="schema"
+    label="Schema"
+    default
+  >
     <JSONSchemaViewer
-      resolverOptions={generateResolverOptions({ "remote": true })}
+      resolverOptions={generateResolverOptions({ remote: true })}
       schema={schema}
       viewerOptions={{ showExamples: true }}
     />
   </TabItem>
-  <TabItem value="source" label="Source">
-    <CodeBlock language="json" showLineNumbers>
+  <TabItem
+    value="source"
+    label="Source"
+  >
+    <CodeBlock
+      language="json"
+      showLineNumbers
+    >
       {JSON.stringify(schema, null, 2)}
     </CodeBlock>
   </TabItem>
-  <TabItem value="example" label="Example">
-    <CodeBlock language="json" showLineNumbers>
+  <TabItem
+    value="example"
+    label="Example"
+  >
+    <CodeBlock
+      language="json"
+      showLineNumbers
+    >
       {JSON.stringify(example, null, 2)}
     </CodeBlock>
   </TabItem>

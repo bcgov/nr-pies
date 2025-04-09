@@ -6,17 +6,17 @@ tags:
   - developer
 ---
 
-import CodeBlock from "@theme/CodeBlock";
-import JSONSchemaViewer from "@theme/JSONSchemaViewer";
-import Tabs from "@theme/Tabs";
-import TabItem from "@theme/TabItem";
+import CodeBlock from '@theme/CodeBlock';
+import JSONSchemaViewer from '@theme/JSONSchemaViewer';
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
 
-import { generateResolverOptions } from "@site/src/components/shared";
-import exampleDateRange from "@site/docs/spec/data/event.example.date_range.json";
-import exampleDateStart from "@site/docs/spec/data/event.example.date_start.json";
-import exampleDateTimeRange from "@site/docs/spec/data/event.example.datetime_range.json";
-import exampleDateTimeStart from "@site/docs/spec/data/event.example.datetime_start.json";
-import schema from "@site/docs/spec/data/event.schema.json";
+import { generateResolverOptions } from '@site/src/components/shared';
+import exampleDateRange from '@site/docs/spec/data/event.example.date_range.json';
+import exampleDateStart from '@site/docs/spec/data/event.example.date_start.json';
+import exampleDateTimeRange from '@site/docs/spec/data/event.example.datetime_range.json';
+import exampleDateTimeStart from '@site/docs/spec/data/event.example.datetime_start.json';
+import schema from '@site/docs/spec/data/event.schema.json';
 
 [![Maturity:Trial](https://img.shields.io/badge/Maturity-Trial-green)](../overview#maturity)
 
@@ -36,43 +36,68 @@ and context of an event will be dependent on which [resource type](../../categor
   - If `start_date` is defined, an optional `end_date` may be specified.
   - If `start_datetime` is defined, an optional `end_datetime` may be specified.
 
-| Name | Cardinality | Type | Description & Constraints |
-| --- | --- | --- | --- |
-| start_date | 0..1 | `string` | The start date of the event in `YYYY-MM-DD` format. |
-| start_datetime | 0..1 | `string` | The start datetime of the event in ISO 8601 format (e.g., `2024-12-01T10:00:00Z`). |
-| end_date | 0..1 | `string` | The end date of the event in `YYYY-MM-DD` format. This is optional if `start_date` is used. |
-| end_datetime | 0..1 | `string` | The end datetime of the event in ISO 8601 format. This is optional if `start_datetime` is used. |
+| Name           | Cardinality | Type     | Description & Constraints                                                                       |
+| -------------- | ----------- | -------- | ----------------------------------------------------------------------------------------------- |
+| start_date     | 0..1        | `string` | The start date of the event in `YYYY-MM-DD` format.                                             |
+| start_datetime | 0..1        | `string` | The start datetime of the event in ISO 8601 format (e.g., `2024-12-01T10:00:00Z`).              |
+| end_date       | 0..1        | `string` | The end date of the event in `YYYY-MM-DD` format. This is optional if `start_date` is used.     |
+| end_datetime   | 0..1        | `string` | The end datetime of the event in ISO 8601 format. This is optional if `start_datetime` is used. |
 
 ## Specification
 
 <Tabs queryString="tab">
-  <TabItem value="schema" label="Schema" default>
+  <TabItem
+    value="schema"
+    label="Schema"
+    default
+  >
     <JSONSchemaViewer
-      resolverOptions={generateResolverOptions({ "remote": true })}
+      resolverOptions={generateResolverOptions({ remote: true })}
       schema={schema}
       viewerOptions={{ showExamples: true }}
     />
   </TabItem>
-  <TabItem value="source" label="Source">
-    <CodeBlock language="json" showLineNumbers>
+  <TabItem
+    value="source"
+    label="Source"
+  >
+    <CodeBlock
+      language="json"
+      showLineNumbers
+    >
       {JSON.stringify(schema, null, 2)}
     </CodeBlock>
   </TabItem>
-  <TabItem value="example" label="Examples">
+  <TabItem
+    value="example"
+    label="Examples"
+  >
     **Date Start**
-    <CodeBlock language="json" showLineNumbers>
+    <CodeBlock
+      language="json"
+      showLineNumbers
+    >
       {JSON.stringify(exampleDateStart, null, 2)}
     </CodeBlock>
     **Date Range**
-    <CodeBlock language="json" showLineNumbers>
+    <CodeBlock
+      language="json"
+      showLineNumbers
+    >
       {JSON.stringify(exampleDateRange, null, 2)}
     </CodeBlock>
     **DateTime Start**
-    <CodeBlock language="json" showLineNumbers>
+    <CodeBlock
+      language="json"
+      showLineNumbers
+    >
       {JSON.stringify(exampleDateTimeStart, null, 2)}
     </CodeBlock>
     **DateTime Range**
-    <CodeBlock language="json" showLineNumbers>
+    <CodeBlock
+      language="json"
+      showLineNumbers
+    >
       {JSON.stringify(exampleDateTimeRange, null, 2)}
     </CodeBlock>
   </TabItem>
@@ -87,10 +112,10 @@ consider the intent of the transmission, and whether the time component would ai
 the conveyed information. We offer the following guidance:
 
 - Reporting normally uses day resolution. If you know your message is intended to be used for reporting purposes, use
-the `date` format over `date-time`.
+  the `date` format over `date-time`.
 - System logging and auditing uses should lean towards using the `date-time` format if the time component is available.
 - When the usage intent is unknown and the time component is available, use the `date-time` format as it will contain
-a higher degree of information fidelity.
+  a higher degree of information fidelity.
 
 ### Transformation Specificity
 

@@ -6,14 +6,14 @@ tags:
   - developer
 ---
 
-import CodeBlock from "@theme/CodeBlock";
-import JSONSchemaViewer from "@theme/JSONSchemaViewer";
-import Tabs from "@theme/Tabs";
-import TabItem from "@theme/TabItem";
+import CodeBlock from '@theme/CodeBlock';
+import JSONSchemaViewer from '@theme/JSONSchemaViewer';
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
 
-import { generateResolverOptions } from "@site/src/components/shared";
-import example from "@site/docs/spec/data/header.example.json";
-import schema from "@site/docs/spec/data/header.schema.json";
+import { generateResolverOptions } from '@site/src/components/shared';
+import example from '@site/docs/spec/data/header.example.json';
+import schema from '@site/docs/spec/data/header.schema.json';
 
 [![Maturity:Draft](https://img.shields.io/badge/Maturity-Draft-yellow)](../overview#maturity)
 
@@ -27,32 +27,48 @@ data structure is not intended for standalone use.
 
 ## Structure
 
-| Name | Cardinality | Type | Description & Constraints |
-| --- | --- | --- | --- |
-| transaction_id | 1..1 | `string` | A unique UUIDv7 assigned for this specific message. |
-| version | 1..1 | `string` | The PIES specification version this message complies to. Value shall be a valid semantic version formatted string. |
-| kind | 1..1 | `string` | The specific kind of PIES message data type this message represents. |
-| system_id | 1..1 | [Code](./code) | A valid [NRIDS IT Service Management](https://apps.nrs.gov.bc.ca/int/jira/secure/ObjectSchema.jspa?id=1&typeId=5) code which identifies the source system, service or asset that the data originates from. |
-| record_id | 1..1 | `string` | The record or primary key representing what the data this message is directly associated to. |
-| record_kind | 1..1 | `string` | The kind of record the source system stores this record as (i.e. Permit, Project, Submission or Tracking). |
+| Name           | Cardinality | Type           | Description & Constraints                                                                                                                                                                                  |
+| -------------- | ----------- | -------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| transaction_id | 1..1        | `string`       | A unique UUIDv7 assigned for this specific message.                                                                                                                                                        |
+| version        | 1..1        | `string`       | The PIES specification version this message complies to. Value shall be a valid semantic version formatted string.                                                                                         |
+| kind           | 1..1        | `string`       | The specific kind of PIES message data type this message represents.                                                                                                                                       |
+| system_id      | 1..1        | [Code](./code) | A valid [NRIDS IT Service Management](https://apps.nrs.gov.bc.ca/int/jira/secure/ObjectSchema.jspa?id=1&typeId=5) code which identifies the source system, service or asset that the data originates from. |
+| record_id      | 1..1        | `string`       | The record or primary key representing what the data this message is directly associated to.                                                                                                               |
+| record_kind    | 1..1        | `string`       | The kind of record the source system stores this record as (i.e. Permit, Project, Submission or Tracking).                                                                                                 |
 
 ## Specification
 
 <Tabs queryString="tab">
-  <TabItem value="schema" label="Schema" default>
+  <TabItem
+    value="schema"
+    label="Schema"
+    default
+  >
     <JSONSchemaViewer
-      resolverOptions={generateResolverOptions({ "remote": true })}
+      resolverOptions={generateResolverOptions({ remote: true })}
       schema={schema}
       viewerOptions={{ showExamples: true }}
     />
   </TabItem>
-  <TabItem value="source" label="Source">
-    <CodeBlock language="json" showLineNumbers>
+  <TabItem
+    value="source"
+    label="Source"
+  >
+    <CodeBlock
+      language="json"
+      showLineNumbers
+    >
       {JSON.stringify(schema, null, 2)}
     </CodeBlock>
   </TabItem>
-  <TabItem value="example" label="Example">
-    <CodeBlock language="json" showLineNumbers>
+  <TabItem
+    value="example"
+    label="Example"
+  >
+    <CodeBlock
+      language="json"
+      showLineNumbers
+    >
       {JSON.stringify(example, null, 2)}
     </CodeBlock>
   </TabItem>

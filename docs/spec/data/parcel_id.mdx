@@ -6,14 +6,14 @@ tags:
   - developer
 ---
 
-import CodeBlock from "@theme/CodeBlock";
-import JSONSchemaViewer from "@theme/JSONSchemaViewer";
-import Tabs from "@theme/Tabs";
-import TabItem from "@theme/TabItem";
+import CodeBlock from '@theme/CodeBlock';
+import JSONSchemaViewer from '@theme/JSONSchemaViewer';
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
 
-import { generateResolverOptions } from "@site/src/components/shared";
-import example from "@site/docs/spec/data/parcel_id.example.json";
-import schema from "@site/docs/spec/data/parcel_id.schema.json";
+import { generateResolverOptions } from '@site/src/components/shared';
+import example from '@site/docs/spec/data/parcel_id.example.json';
+import schema from '@site/docs/spec/data/parcel_id.schema.json';
 
 [![Maturity:Draft](https://img.shields.io/badge/Maturity-Draft-yellow)](../overview#maturity)
 
@@ -34,30 +34,46 @@ The parcel identification number (PIN) is the Crown Land Registry Parcel Identif
 - A valid Parcel Identifier shall at minimum contain either a `pin` or at least one `pid`.
 - A Parcel Identifier may contain a `legal_description` and/or a `parcel_name`.
 
-| Name | Cardinality | Type | Description & Constraints |
-| --- | --- | --- | --- |
-| legal_description | 0..1 | `string` | The full legal description of the parcel and is primarily recorded from the Land Title Register. Where recorded only in the Crown Land Registry, this attribute is to be populated from Tantalis for the fabric compilation, but maintained by PMBC during on-going operations. |
-| parcel_name | 0..1 | `string` | The same as the PID, if there is one. If there is a PIN but no PID, then parcel name is the PIN. If there is no PID nor PIN, then it is the parcel class value, e.g., COMMON OWNERSHIP, BUILDING STRATA, AIR SPACE, ROAD, PARK. |
-| pid | 0..* | `integer` | Parcel ID is the Land Title Register parcel identifier, a nine-digit number that uniquely identifies a parcel in the land title register of in British Columbia. The registrar assigns PID numbers to parcels for which a title is being entered as a registered title. The Land Title Act refers to the PID as the permanent parcel identifier. |
-| pin | 0..1 | `integer` | The parcel identification number (PIN) is the Crown Land Registry Parcel Identifier. |
+| Name              | Cardinality | Type      | Description & Constraints                                                                                                                                                                                                                                                                                                                        |
+| ----------------- | ----------- | --------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| legal_description | 0..1        | `string`  | The full legal description of the parcel and is primarily recorded from the Land Title Register. Where recorded only in the Crown Land Registry, this attribute is to be populated from Tantalis for the fabric compilation, but maintained by PMBC during on-going operations.                                                                  |
+| parcel_name       | 0..1        | `string`  | The same as the PID, if there is one. If there is a PIN but no PID, then parcel name is the PIN. If there is no PID nor PIN, then it is the parcel class value, e.g., COMMON OWNERSHIP, BUILDING STRATA, AIR SPACE, ROAD, PARK.                                                                                                                  |
+| pid               | 0..\*       | `integer` | Parcel ID is the Land Title Register parcel identifier, a nine-digit number that uniquely identifies a parcel in the land title register of in British Columbia. The registrar assigns PID numbers to parcels for which a title is being entered as a registered title. The Land Title Act refers to the PID as the permanent parcel identifier. |
+| pin               | 0..1        | `integer` | The parcel identification number (PIN) is the Crown Land Registry Parcel Identifier.                                                                                                                                                                                                                                                             |
 
 ## Specification
 
 <Tabs queryString="tab">
-  <TabItem value="schema" label="Schema" default>
+  <TabItem
+    value="schema"
+    label="Schema"
+    default
+  >
     <JSONSchemaViewer
-      resolverOptions={generateResolverOptions({ "remote": true })}
+      resolverOptions={generateResolverOptions({ remote: true })}
       schema={schema}
       viewerOptions={{ showExamples: true }}
     />
   </TabItem>
-  <TabItem value="source" label="Source">
-    <CodeBlock language="json" showLineNumbers>
+  <TabItem
+    value="source"
+    label="Source"
+  >
+    <CodeBlock
+      language="json"
+      showLineNumbers
+    >
       {JSON.stringify(schema, null, 2)}
     </CodeBlock>
   </TabItem>
-  <TabItem value="example" label="Example">
-    <CodeBlock language="json" showLineNumbers>
+  <TabItem
+    value="example"
+    label="Example"
+  >
+    <CodeBlock
+      language="json"
+      showLineNumbers
+    >
       {JSON.stringify(example, null, 2)}
     </CodeBlock>
   </TabItem>

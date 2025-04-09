@@ -1,9 +1,6 @@
 {
   "legal_description": "legal_description",
   "parcel_name": "parcel_name",
-  "pid": [
-    123456789,
-    456789123
-  ],
+  "pid": [123456789, 456789123],
   "pin": 987654321
 }

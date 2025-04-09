@@ -6,13 +6,13 @@ tags:
   - developer
 ---
 
-import CodeBlock from "@theme/CodeBlock";
-import JSONSchemaViewer from "@theme/JSONSchemaViewer";
-import Tabs from "@theme/Tabs";
-import TabItem from "@theme/TabItem";
+import CodeBlock from '@theme/CodeBlock';
+import JSONSchemaViewer from '@theme/JSONSchemaViewer';
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
 
-import { generateResolverOptions } from "@site/src/components/shared";
-import schema from "@site/docs/spec/data/code.schema.json";
+import { generateResolverOptions } from '@site/src/components/shared';
+import schema from '@site/docs/spec/data/code.schema.json';
 
 [![Maturity:Trial](https://img.shields.io/badge/Maturity-Trial-green)](../overview#maturity)
 
@@ -25,23 +25,33 @@ concept, element or idea.
 
 ## Structure
 
-| Attribute | Value | Description & Constraints |
-| --- | --- | --- |
-| Type | `string` | Shall be represented in UTF-8 format, as specified in [RFC 3629](https://datatracker.ietf.org/doc/html/rfc3629), which is an extension of the [ISO 10646-1](https://www.iso.org/standard/76835.html) standard. |
-| Regex Pattern | `^[^\s]+( [^\s]+)*$` | String which has at least one character and no leading or trailing whitespace, and where there is no whitespace other than single spaces in the contents. |
+| Attribute     | Value                | Description & Constraints                                                                                                                                                                                      |
+| ------------- | -------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Type          | `string`             | Shall be represented in UTF-8 format, as specified in [RFC 3629](https://datatracker.ietf.org/doc/html/rfc3629), which is an extension of the [ISO 10646-1](https://www.iso.org/standard/76835.html) standard. |
+| Regex Pattern | `^[^\s]+( [^\s]+)*$` | String which has at least one character and no leading or trailing whitespace, and where there is no whitespace other than single spaces in the contents.                                                      |
 
 ## Specification
 
 <Tabs queryString="tab">
-  <TabItem value="schema" label="Schema" default>
+  <TabItem
+    value="schema"
+    label="Schema"
+    default
+  >
     <JSONSchemaViewer
-      resolverOptions={generateResolverOptions({ "remote": true })}
+      resolverOptions={generateResolverOptions({ remote: true })}
       schema={schema}
       viewerOptions={{ showExamples: true }}
     />
   </TabItem>
-  <TabItem value="source" label="Source">
-    <CodeBlock language="json" showLineNumbers>
+  <TabItem
+    value="source"
+    label="Source"
+  >
+    <CodeBlock
+      language="json"
+      showLineNumbers
+    >
       {JSON.stringify(schema, null, 2)}
     </CodeBlock>
   </TabItem>

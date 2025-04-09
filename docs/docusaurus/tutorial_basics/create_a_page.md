@@ -13,9 +13,9 @@ Add **Markdown or React** files to `src/pages` to create a **standalone page**:
 ---
 
 - Please use `snake_case` when naming files with multiple subjects in order to be consistent with the rest of the
-repository.
+  repository.
 - When you create a new `.md` or `.mdx` file, please make sure to add in the appropriate
-[Front Matter](../tutorial_basics/markdown_features.mdx#front-matter) so that your content is properly categorized.
+  [Front Matter](../tutorial_basics/markdown_features.mdx#front-matter) so that your content is properly categorized.
 
 ## Create your first React Page
 

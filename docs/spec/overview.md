@@ -18,13 +18,13 @@ The PIES specification is still actively being developed. While it has been deve
 for practical purposes, some areas of the specification will not be as fully defined or have not yet been tested.
 Refer to the following table for a description of each maturity level.
 
-| Maturity Level | Emoji | Badge | Description |
-| --- | --- | --- | --- |
-| Deprecated | ⚠️ | [![Maturity:Deprecated](https://img.shields.io/badge/Maturity-Deprecated-lightgrey)](#maturity) | This artifact is no longer recommended for use and may be removed in a future release. |
-| Planning | 🚧 | [![Maturity:Planning](https://img.shields.io/badge/Maturity-Planning-orange)](#maturity) | This artifact is still in the early stages, where brainstorming, research, and organization are taking place. It is not yet ready for use yet. |
-| Draft | 📝 | [![Maturity:Draft](https://img.shields.io/badge/Maturity-Draft-yellow)](#maturity) | This artifact has a preliminary structure and is being reviewed for accuracy, completeness, and usability. It could be used, but some areas may still need improvement and may have major changes over time. |
-| Trial | 🔬 | [![Maturity:Trial](https://img.shields.io/badge/Maturity-Trial-green)](#maturity) | This artifact has been developed to a point where it may be used for practical purposes. It may be used, but some areas may still need refinement and may have minor changes over time. |
-| Standard | None | [![Maturity:Standard](https://img.shields.io/badge/Maturity-Standard-blue)](#maturity) | This artifact has been fully developed and has been ratified as a part of the standard. It can be used in production environments. |
+| Maturity Level | Emoji | Badge                                                                                           | Description                                                                                                                                                                                                  |
+| -------------- | ----- | ----------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| Deprecated     | ⚠️    | [![Maturity:Deprecated](https://img.shields.io/badge/Maturity-Deprecated-lightgrey)](#maturity) | This artifact is no longer recommended for use and may be removed in a future release.                                                                                                                       |
+| Planning       | 🚧    | [![Maturity:Planning](https://img.shields.io/badge/Maturity-Planning-orange)](#maturity)        | This artifact is still in the early stages, where brainstorming, research, and organization are taking place. It is not yet ready for use yet.                                                               |
+| Draft          | 📝    | [![Maturity:Draft](https://img.shields.io/badge/Maturity-Draft-yellow)](#maturity)              | This artifact has a preliminary structure and is being reviewed for accuracy, completeness, and usability. It could be used, but some areas may still need improvement and may have major changes over time. |
+| Trial          | 🔬    | [![Maturity:Trial](https://img.shields.io/badge/Maturity-Trial-green)](#maturity)               | This artifact has been developed to a point where it may be used for practical purposes. It may be used, but some areas may still need refinement and may have minor changes over time.                      |
+| Standard       | None  | [![Maturity:Standard](https://img.shields.io/badge/Maturity-Standard-blue)](#maturity)          | This artifact has been fully developed and has been ratified as a part of the standard. It can be used in production environments.                                                                           |
 
 Each artifact in the specification may potentially be suffixed by an emoji indicating their maturity level. In addition,
 each artifact's page will also contain a maturity level badge.
@@ -34,11 +34,11 @@ each artifact's page will also contain a maturity level badge.
 The PIES specification is organized into a hierarchy of artifacts, each with its own purpose and functionality. The
 following table provides an overview of the hierarchy:
 
-| Type Class | Description |
-| --- | --- |
-| [Data](../category/data-types) | Represents core, atomic data structures and their inherent attributes or properties. |
-| [Resource](../category/resource-types) | Represents a composed or combined set of data types. The composition defines higher order relational concepts between the data types. |
-| [Message](../category/message-types) | Represents a composition of resource and data types. Message types are normally used for API based communication between systems or applications. |
+| Type Class                             | Description                                                                                                                                       |
+| -------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------- |
+| [Data](../category/data-types)         | Represents core, atomic data structures and their inherent attributes or properties.                                                              |
+| [Resource](../category/resource-types) | Represents a composed or combined set of data types. The composition defines higher order relational concepts between the data types.             |
+| [Message](../category/message-types)   | Represents a composition of resource and data types. Message types are normally used for API based communication between systems or applications. |
 
 ### Type Hierarchy
 
@@ -87,13 +87,13 @@ A JSON Schema will typically contain the following attributes:
 - `$schema` - This describes the draft level this JSON Schema complies to. For PIES, this property will normally be `https://json-schema.org/draft-07/schema`.
 - `$id` - The unique URI for this schema. The path should ideally contain an obvious versioning nomenclature.
 - `$comment` - A free text field for conveying out of band information about the schema. Comments are useful for
-specification readers and editors to understand further nuances for certain properties and structures, but should not
-be relied upon for implementation as they may be skipped over or stripped when parsed by machines.
+  specification readers and editors to understand further nuances for certain properties and structures, but should not
+  be relied upon for implementation as they may be skipped over or stripped when parsed by machines.
 - `title` - The intent of the schema. This should be brief and concise.
 - `description` - A brief description about the schema. This should provide a quick overview for the context of usage.
 - `properties` - A set of attributes that are expected to show up in this document type.
 - `required` - An array defining the set of `properties` that must be present for the document to be considered valid.
-Anything defined that is not in this array is implied to be optional.
+  Anything defined that is not in this array is implied to be optional.
 - `type` - The type primitive constraint for the property.
 
 ## References

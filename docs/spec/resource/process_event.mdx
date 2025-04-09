@@ -6,14 +6,14 @@ tags:
   - developer
 ---
 
-import CodeBlock from "@theme/CodeBlock";
-import JSONSchemaViewer from "@theme/JSONSchemaViewer";
-import Tabs from "@theme/Tabs";
-import TabItem from "@theme/TabItem";
+import CodeBlock from '@theme/CodeBlock';
+import JSONSchemaViewer from '@theme/JSONSchemaViewer';
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
 
-import { generateResolverOptions } from "@site/src/components/shared";
-import example from "@site/docs/spec/resource/process_event.example.json";
-import schema from "@site/docs/spec/resource/process_event.schema.json";
+import { generateResolverOptions } from '@site/src/components/shared';
+import example from '@site/docs/spec/resource/process_event.example.json';
+import schema from '@site/docs/spec/resource/process_event.schema.json';
 
 [![Maturity:Trial](https://img.shields.io/badge/Maturity-Trial-green)](../overview#maturity)
 
@@ -27,28 +27,44 @@ Loosely taking inspiration from [HL7 Timing](https://www.hl7.org/fhir/datatypes.
 
 ## Structure
 
-| Name | Cardinality | Type | Description & Constraints |
-| --- | --- | --- | --- |
-| event | 1..1 | [Event](../data/event) | An event concept. This attribute should solely describe the raw known factual information a specific temporal event. |
-| process | 1..1 | [Process](../data/process) | An process tracking concept. This attribute should represent the core concept of a defined process. |
+| Name    | Cardinality | Type                       | Description & Constraints                                                                                            |
+| ------- | ----------- | -------------------------- | -------------------------------------------------------------------------------------------------------------------- |
+| event   | 1..1        | [Event](../data/event)     | An event concept. This attribute should solely describe the raw known factual information a specific temporal event. |
+| process | 1..1        | [Process](../data/process) | An process tracking concept. This attribute should represent the core concept of a defined process.                  |
 
 ## Specification
 
 <Tabs queryString="tab">
-  <TabItem value="schema" label="Schema" default>
+  <TabItem
+    value="schema"
+    label="Schema"
+    default
+  >
     <JSONSchemaViewer
-      resolverOptions={generateResolverOptions({ "remote": true })}
+      resolverOptions={generateResolverOptions({ remote: true })}
       schema={schema}
       viewerOptions={{ showExamples: true }}
     />
   </TabItem>
-  <TabItem value="source" label="Source">
-    <CodeBlock language="json" showLineNumbers>
+  <TabItem
+    value="source"
+    label="Source"
+  >
+    <CodeBlock
+      language="json"
+      showLineNumbers
+    >
       {JSON.stringify(schema, null, 2)}
     </CodeBlock>
   </TabItem>
-  <TabItem value="example" label="Example">
-    <CodeBlock language="json" showLineNumbers>
+  <TabItem
+    value="example"
+    label="Example"
+  >
+    <CodeBlock
+      language="json"
+      showLineNumbers
+    >
       {JSON.stringify(example, null, 2)}
     </CodeBlock>
   </TabItem>

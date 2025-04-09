@@ -27,7 +27,7 @@ const config: Config = {
   // Support the @docusaurus/faster stack introduced in 3.6
   // Ref: https://docusaurus.io/blog/releases/3.6#adoption-strategy
   future: {
-    experimental_faster: true,
+    experimental_faster: true
   },
 
   // Even if you don't use internationalization, you can use this field to set
@@ -195,7 +195,7 @@ const config: Config = {
     },
     tableOfContents: {
       minHeadingLevel: 2,
-      maxHeadingLevel: 4,
+      maxHeadingLevel: 4
     },
     mermaid: {
       theme: { light: 'default', dark: 'dark' }

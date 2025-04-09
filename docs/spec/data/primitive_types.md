@@ -97,11 +97,11 @@ cases, uuid v4 will be used. When a uuid is used, it shall comply with
 be `/^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$/i` in order to remain version agnostic and maximize
 compatibility.
 
-  :::info
-  While there is [RFC 9562](https://datatracker.ietf.org/doc/html/rfc9562) which extends RFC 4122 by adding in uuid
-  versions 6-8, these are likely not supportable with the `uuid` format yet and will require further review if and when
-  these newer uuid versions are used.
-  :::
+:::info
+While there is [RFC 9562](https://datatracker.ietf.org/doc/html/rfc9562) which extends RFC 4122 by adding in uuid
+versions 6-8, these are likely not supportable with the `uuid` format yet and will require further review if and when
+these newer uuid versions are used.
+:::
 ::::
 
 ### URI Template

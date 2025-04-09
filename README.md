@@ -50,7 +50,7 @@ You will need the following installed on your machine before you can proceed:
 - Install [VSCode](https://code.visualstudio.com)
 - Install VSCode [Recommended Extensions](https://code.visualstudio.com/docs/editor/extension-marketplace#_workspace-recommended-extensions)
   - This can be done by searching `@recommended` in the Extensions tab, and then
-  clicking the `Install Workspace Recommended Extensions` button.
+    clicking the `Install Workspace Recommended Extensions` button.
 
 ### Install
 
@@ -83,10 +83,10 @@ served using any static contents hosting service.
 Releasing a version requires the following actions to be done in order:
 
 1. Run `npm version` with argument `patch`, `minor` or `major` depending on the
-desired outcome (e.g. `npm version minor`).
+   desired outcome (e.g. `npm version minor`).
 2. Run `npm run version` with the semver version to be published (e.g.
-`npm run version 0.1.0`). This will create a new Docusaurus version, and run a
-script to align all the schema references appropriately.
+   `npm run version 0.1.0`). This will create a new Docusaurus version, and run a
+   script to align all the schema references appropriately.
 
 _Note: You may run `npm run postversion` directly in the event you need to
 manually align all the schema references._

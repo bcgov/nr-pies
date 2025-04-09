@@ -32,9 +32,11 @@
   "[yaml]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
+  "debug.javascript.autoAttachFilter": "disabled",
   "editor.defaultFormatter": "esbenp.prettier-vscode",
   "editor.formatOnSave": true,
   "editor.rulers": [80, 120],
   "eslint.format.enable": true,
+  "eslint.useFlatConfig": true,
   "files.insertFinalNewline": true
 }

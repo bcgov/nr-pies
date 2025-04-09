@@ -7,14 +7,14 @@ tags:
   - developer
 ---
 
-import CodeBlock from "@theme/CodeBlock";
-import JSONSchemaViewer from "@theme/JSONSchemaViewer";
-import Tabs from "@theme/Tabs";
-import TabItem from "@theme/TabItem";
+import CodeBlock from '@theme/CodeBlock';
+import JSONSchemaViewer from '@theme/JSONSchemaViewer';
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
 
-import { generateResolverOptions } from "@site/src/components/shared";
-import example from "@site/docs/spec/message/process_event_set.example.json";
-import schema from "@site/docs/spec/message/process_event_set.schema.json";
+import { generateResolverOptions } from '@site/src/components/shared';
+import example from '@site/docs/spec/message/process_event_set.example.json';
+import schema from '@site/docs/spec/message/process_event_set.schema.json';
 
 [![Maturity:Draft](https://img.shields.io/badge/Maturity-Draft-yellow)](../overview#maturity)
 
@@ -34,27 +34,43 @@ possible for this message to only contain a subset of all known ProcessEvents.
 A Process Event Set shall contain every standard message [Header](../data/header#structure) property, in addition to
 the following properties:
 
-| Name | Cardinality | Type | Description & Constraints |
-| --- | --- | --- | --- |
-| process_event | 1..1 | [ProcessEvent](../resource/process_event) | A set of ProcessEvents. Represents a set of process concepts at a specific event in time. |
+| Name          | Cardinality | Type                                      | Description & Constraints                                                                 |
+| ------------- | ----------- | ----------------------------------------- | ----------------------------------------------------------------------------------------- |
+| process_event | 1..1        | [ProcessEvent](../resource/process_event) | A set of ProcessEvents. Represents a set of process concepts at a specific event in time. |
 
 ## Specification
 
 <Tabs queryString="tab">
-  <TabItem value="schema" label="Schema" default>
+  <TabItem
+    value="schema"
+    label="Schema"
+    default
+  >
     <JSONSchemaViewer
-      resolverOptions={generateResolverOptions({ "remote": true })}
+      resolverOptions={generateResolverOptions({ remote: true })}
       schema={schema}
       viewerOptions={{ showExamples: true }}
     />
   </TabItem>
-  <TabItem value="source" label="Source">
-    <CodeBlock language="json" showLineNumbers>
+  <TabItem
+    value="source"
+    label="Source"
+  >
+    <CodeBlock
+      language="json"
+      showLineNumbers
+    >
       {JSON.stringify(schema, null, 2)}
     </CodeBlock>
   </TabItem>
-  <TabItem value="example" label="Example">
-    <CodeBlock language="json" showLineNumbers>
+  <TabItem
+    value="example"
+    label="Example"
+  >
+    <CodeBlock
+      language="json"
+      showLineNumbers
+    >
       {JSON.stringify(example, null, 2)}
     </CodeBlock>
   </TabItem>

@@ -142,8 +142,8 @@ All classification codes shall be encoded in UTF-8. However, only ASCII characte
 following characters are allowed:
 
 - **a-z** (lowercase only)
-- **0-9** (digits - *Permitted, but discouraged for use in classification codes.*)
-- **_** (underscore)
+- **0-9** (digits - _Permitted, but discouraged for use in classification codes._)
+- **\_** (underscore)
 
 ## Type Descriptors
 
