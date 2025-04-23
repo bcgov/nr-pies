@@ -1,6 +1,6 @@
 {
   "$id": "https://raw.githubusercontent.com/bcgov/nr-pies/refs/heads/main/docs/spec/data/project_bundle.schema.json",
-  "$schema": "https://json-schema.org/draft-07/schema",
+  "$schema": "https://json-schema.org/draft-07/schema#",
   "title": "Project Bundle",
   "description": "An identifier for a specific area with clear boundaries.",
   "type": "object",
