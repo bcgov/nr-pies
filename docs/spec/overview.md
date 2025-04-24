@@ -84,8 +84,10 @@ describing expected structures, describing conceptual relationships between rela
 
 A JSON Schema will typically contain the following attributes:
 
-- `$schema` - This describes the draft level this JSON Schema complies to. For PIES, this property will be `https://json-schema.org/draft-07/schema#`.
-  - This must be verbatim, including the hash at the end or certain parsers like AJV will fail to parse it correctly.
+- `$schema` - This describes the draft level this JSON Schema complies to.
+  - This property value SHALL be `http://json-schema.org/draft-07/schema#`.
+  - This must be verbatim, with `http` and the trailing `#`. Any deviations will cause certain parsers like AJV to fail
+    to parse correctly.
 - `$id` - The unique URI for this schema. The path should ideally contain an obvious versioning nomenclature.
 - `$comment` - A free text field for conveying out of band information about the schema. Comments are useful for
   specification readers and editors to understand further nuances for certain properties and structures, but should not

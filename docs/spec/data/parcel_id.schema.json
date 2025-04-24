@@ -1,6 +1,6 @@
 {
   "$id": "https://raw.githubusercontent.com/bcgov/nr-pies/refs/heads/main/docs/spec/data/parcel_id.schema.json",
-  "$schema": "https://json-schema.org/draft-07/schema#",
+  "$schema": "http://json-schema.org/draft-07/schema#",
   "title": "Parcel Identifier",
   "description": "An identifier for a specific area with clear boundaries.",
   "type": "object",
