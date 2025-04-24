@@ -54,10 +54,6 @@ title: Application Process Concept Hierarchy
     application
   end
 
-  subgraph type
-    app_type
-  end
-
   subgraph phase
     application
   end
