@@ -13,8 +13,7 @@ This page outlines the conceptual hierarchy and terminology embeddings which can
 
 ## Classifications
 
-Refer to the [Process Tracking Terminology](/docs/intro/terminology#process-tracking) to understand the definitions
-behind each classification level.
+Refer to the [Process Tracking Terminology](/docs/intro/terminology#process-tracking) to understand the definitions behind each level.
 
 ## Concept Map
 
@@ -22,40 +21,34 @@ behind each classification level.
 ---
 title: Application Process Concept Hierarchy
 ---
-flowchart LR
-  app_type@{ shape: comment, label: "new
-  amendment
-  transfer
-  cancel" }
-
-  application --> screening
-  application --> submission
-  application --> review
+  application --> preapplication
+  application --> initial_submission_review
+  application --> technical_review_comment
   application --> decision
-  application --> effect
-  application --> app_type
+  application --> issuance
 
-  submission --> draft
-  submission --> submitted
-  review --> assessment
-  review --> on_hold
-  decision --> approved
-  decision --> declined
-  decision --> cancelled
-  decision --> abandoned
-  effect --> withdrawn
-  effect --> expired
+  preapplication --> draft
+  preapplication --> submitted
 
-  assessment --> under_review
-  assessment --> in_referral
-  assessment --> with_client
-  on_hold --> deferred
-  on_hold --> paused
-  approved --> conditional
-  approved --> offered
-  approved --> issued
+  initial_submission_review --> submission_review
 
-  state --> status
+  technical_review_comment --> technical_review
+  technical_review_comment --> referral
+  technical_review_comment --> first_nations_consultation
+  technical_review_comment --> tech_review_withdrawn
+  technical_review_comment --> tech_review_rejected
+  technical_review_comment --> tech_review_completed
+
+  decision --> decision_review
+  decision --> allowed
+  decision --> disallowed
+  decision --> decision_withdrawn
+
+  issuance --> offered
+  issuance --> issued
+  issuance --> declined
+
+  state <-- status
 
   subgraph lifecycle
     application
@@ -66,86 +59,49 @@ flowchart LR
   end
 
   subgraph phase
-    screening
-    submission
-    review
-    decision
-    effect
+    application
   end
 
   subgraph stage
-    draft
-    submitted
-    assessment
-    on_hold
-    approved
-    declined
-    cancelled
-    abandoned
-    withdrawn
-    expired
+    preapplication
+    initial_submission_review
+    technical_review_comment
+    decision
+    issuance
   end
 
   subgraph state
-    under_review
-    in_referral
-    with_client
-    deferred
-    paused
-    conditional
+    draft
+    submitted
+    submission_review
+    technical_review
+    referral
+    first_nations_consultation
+    tech_review_withdrawn
+    tech_review_rejected
+    tech_review_completed
+    decision_review
+    allowed
+    disallowed
+    decision_withdrawn
     offered
     issued
-  end
-```
-
-```mermaid
----
-title: Authorization Process Concept Hierarchy
----
-flowchart LR
-  auth_type@{ shape: comment, label: "permit
-  license
-  right
-  grant"}
-
-  authorization --> active
-  authorization --> inactive
-  authorization --> requested
-  authorization --> suspended
-  authorization --> auth_type
-
-  phase --> status
-
-  subgraph lifecycle
-    authorization
-  end
-
-  subgraph type
-    auth_type
-  end
-
-  subgraph phase
-    active
-    inactive
-    requested
-    suspended
+    declined
   end
 ```
 
 ## Code Sets
 
-Each classification within the context of a specific kind of lifecycle will have a codified and enumerated concept. TBD.
+Each classification within the context of a specific level will have a codified and enumerated concept. TBD.
 
 ### Code Formatting
 
-All classification codes shall be encoded in UTF-8. However, only ASCII characters will be allowed. In a nutshell, the
-following characters are allowed:
+All classification codes shall be encoded in UTF-8. However, only ASCII characters will be allowed. The following characters are accepted:
 
 - **a-z** (lowercase only)
-- **0-9** (digits - _Permitted, but discouraged for use in classification codes._)
+- **0-9** (digits)
 - **\_** (underscore)
 
 ## Type Descriptors
 
-Each kind of lifecycle may be described by a type descriptor. For example, an application may be an amendment type, or
-it may be a transfer type. TBD
+Each kind of phase level may be described by a type descriptor. For example, to descibe past the application phase when it has been inssued or after when it needs to be renewed. This is still being reviewed for implimentation and identification of the different phases.
