@@ -1,0 +1,120 @@
+---
+id: process
+title: Process 🔬
+description: Represents a process tracking concept.
+tags:
+  - developer
+---
+
+import CodeBlock from '@theme/CodeBlock';
+import JSONSchemaViewer from '@theme/JSONSchemaViewer';
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
+
+import { generateResolverOptions } from '@site/src/components/shared';
+import example from '@site/docs/spec/element/data/process.example.json';
+import schema from '@site/docs/spec/element/data/process.schema.json';
+
+[![Maturity:Trial](https://img.shields.io/badge/Maturity-Trial-green)](/docs/spec#maturity)
+
+Represents a process tracking concept.
+
+## Scope
+
+This data type is intended to represent the core concept of a defined process.
+
+Loosely taking inspiration from [HL7 Timing](https://www.hl7.org/fhir/datatypes.html#timing).
+
+## Structure
+
+- A Process shall always contain a `class` and `concept` attribute.
+  - The `class` ordered set shall have at least one concept, and no more than four concepts defined. Classes do not
+    require the full path hierarchy defined depending on what the intention of the concept being shared.
+- A Process may contain a `status` attribute.
+  - The `status` attribute acts as a free text field which represents the specific status value that may be stored or
+    encoded in the transmitting system.
+  - If `status` is defined, the `description` and `status_code` attributes may optionally be defined as well.
+- The recipient system shall primarily rely on the `class` and `concept` attributes.
+  - Recipient systems may choose to parse the `status`, `description` and `status_code` attributes as auxiliary or
+    supplementary data.
+  - Recipient systems shall not depend on these attributes as they are not guaranteed to exist, nor do they convey the
+    standard concept hierarchy as defined by this specification.
+
+| Name        | Cardinality | Type           | Description & Constraints                                                                                                                                                                                                                                        |
+| ----------- | ----------- | -------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| class       | 1..\*       | `string[]`     | An ordered set of process tracking terms.                                                                                                                                                                                                                        |
+| concept     | 1..1        | `string`       | A URI reference to the concept map encodings used.                                                                                                                                                                                                               |
+| description | 0..1        | `string`       | An optional description of the status if present.                                                                                                                                                                                                                |
+| status      | 0..1        | `string`       | An optional description of the current condition or update of an application or authorization. Additional details about the current state are frequently conveyed (e.g., 'Pending Review', 'Under Inspection'). Statuses may be defined by the line of business. |
+| status_code | 0..1        | [Code](./code) | An optional codified representation of the status attribute. Status codes may be defined by the line of business.                                                                                                                                                |
+
+## Specification
+
+<Tabs queryString="tab">
+  <TabItem
+    value="schema"
+    label="Schema"
+    default
+  >
+    <JSONSchemaViewer
+      resolverOptions={generateResolverOptions({ remote: true })}
+      schema={schema}
+      viewerOptions={{ showExamples: true }}
+    />
+  </TabItem>
+  <TabItem
+    value="source"
+    label="Source"
+  >
+    <CodeBlock
+      language="json"
+      showLineNumbers
+    >
+      {JSON.stringify(schema, null, 2)}
+    </CodeBlock>
+  </TabItem>
+  <TabItem
+    value="example"
+    label="Example"
+  >
+    <CodeBlock
+      language="json"
+      showLineNumbers
+    >
+      {JSON.stringify(example, null, 2)}
+    </CodeBlock>
+  </TabItem>
+</Tabs>
+
+## Implementation Notes
+
+The core of the process type is the representation of one of the paths in the
+[Process Tracking Concept Map](/docs/spec/codesystem/process_tracking). This is represented in the `class` attribute as an ordered
+tuple. Each entry in the ordered set represents a specific detail level in the hierarchy. For example, the array value
+of `["Application", "Review", "Assessment"]` would indicate that the process concept being conveyed is representing the
+`Assessment` Stage within the `Review` Phase of an `Application` Lifecycle.
+
+The class array may be populated with fewer elements in situations where the concept being mapped represents a higher
+level concept. For example, if the `class` attribute only contains the array value of `["Application", "Review"]`, that
+means that only the `Review` Phase of an `Application` Lifecycle is represented; the more detailed Stage concept is not
+encoded. Systems reading the `class` attribute may extract a subset of the transmitted ordered array for processing
+since the lower level concepts map to higher level concepts in the concept map.
+
+The `concept` attribute is a static URI reference to the documentation for the current concept map being used. This URI
+is not intended to be machine readable as it is designed to act as a signal for human readers to see and understand the
+context of which terminologies and concepts are being conveyed.
+
+The `status` attribute is optional, but is designed to be an explicit "escape hatch" for specific lines of business to
+share their most detailed system concepts, should they choose to do so. Statuses declared here will be implicitly
+mapped under the declared `class` ordered tuple. If a `status` is defined, the `description` and `status_code`
+attributes may also be defined in order to assist with clarifying the status value.
+
+Recipient systems may look at `status`, `status_code` and `description` as a reference point. However, the core intent
+of this data type is to ensure that the core `class` attribute to be the main source of truth when handling and
+interpreting the data for processing. Recipient systems SHOULD NOT depend on either `status`, `status_code` or
+`description` attributes when parsing and interpreting the process concept.
+
+## References
+
+- [Code](./code)
+- [Process Tracking Concept Map](/docs/spec/codesystem/process_tracking)

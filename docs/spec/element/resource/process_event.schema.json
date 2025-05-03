@@ -1,0 +1,16 @@
+{
+  "$id": "https://raw.githubusercontent.com/bcgov/nr-pies/refs/heads/main/docs/spec/element/resource/process_event.schema.json",
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "Process Event",
+  "description": "Represents a process concept at a specific event in time.",
+  "type": "object",
+  "properties": {
+    "event": {
+      "$ref": "https://raw.githubusercontent.com/bcgov/nr-pies/refs/heads/main/docs/spec/element/data/event.schema.json"
+    },
+    "process": {
+      "$ref": "https://raw.githubusercontent.com/bcgov/nr-pies/refs/heads/main/docs/spec/element/data/process.schema.json"
+    }
+  },
+  "required": ["event", "process"]
+}

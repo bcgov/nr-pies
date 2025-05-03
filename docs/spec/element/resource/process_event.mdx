@@ -1,0 +1,83 @@
+---
+id: process_event
+title: Process Event 🔬
+description: Represents a process concept at a specific event in time.
+tags:
+  - developer
+---
+
+import CodeBlock from '@theme/CodeBlock';
+import JSONSchemaViewer from '@theme/JSONSchemaViewer';
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
+
+import { generateResolverOptions } from '@site/src/components/shared';
+import example from '@site/docs/spec/element/resource/process_event.example.json';
+import schema from '@site/docs/spec/element/resource/process_event.schema.json';
+
+[![Maturity:Trial](https://img.shields.io/badge/Maturity-Trial-green)](/docs/spec#maturity)
+
+Represents a process concept at a specific event in time.
+
+## Scope
+
+This data type is intended to represent an instance of a temporal event within a defined process.
+
+Loosely taking inspiration from [HL7 Timing](https://www.hl7.org/fhir/datatypes.html#timing).
+
+## Structure
+
+| Name    | Cardinality | Type                               | Description & Constraints                                                                                            |
+| ------- | ----------- | ---------------------------------- | -------------------------------------------------------------------------------------------------------------------- |
+| event   | 1..1        | [Event](/docs/spec/element/data/event)     | An event concept. This attribute should solely describe the raw known factual information a specific temporal event. |
+| process | 1..1        | [Process](/docs/spec/element/data/process) | An process tracking concept. This attribute should represent the core concept of a defined process.                  |
+
+## Specification
+
+<Tabs queryString="tab">
+  <TabItem
+    value="schema"
+    label="Schema"
+    default
+  >
+    <JSONSchemaViewer
+      resolverOptions={generateResolverOptions({ remote: true })}
+      schema={schema}
+      viewerOptions={{ showExamples: true }}
+    />
+  </TabItem>
+  <TabItem
+    value="source"
+    label="Source"
+  >
+    <CodeBlock
+      language="json"
+      showLineNumbers
+    >
+      {JSON.stringify(schema, null, 2)}
+    </CodeBlock>
+  </TabItem>
+  <TabItem
+    value="example"
+    label="Example"
+  >
+    <CodeBlock
+      language="json"
+      showLineNumbers
+    >
+      {JSON.stringify(example, null, 2)}
+    </CodeBlock>
+  </TabItem>
+</Tabs>
+
+## Implementation Notes
+
+The Process Event type is designed to act as a container data type representing a cartesian product between the
+[Event](/docs/spec/element/data/event) and [Process](/docs/spec/element/data/process) data types. Both data types are required in order to have a
+semantically coherent Process Event. Recipient systems will be able to associate a specific process happening at a
+defined time using this data type.
+
+## References
+
+- [Event](/docs/spec/element/data/event)
+- [Process](/docs/spec/element/data/process)

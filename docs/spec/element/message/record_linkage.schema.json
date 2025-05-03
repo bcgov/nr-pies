@@ -1,0 +1,29 @@
+{
+  "$id": "https://raw.githubusercontent.com/bcgov/nr-pies/refs/heads/main/docs/spec/element/message/record_linkage.schema.json",
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "Record Linkage",
+  "description": "Represents an assertion for a specific record to be related or linked together.",
+  "type": "object",
+  "properties": {
+    "linked_system_id": {
+      "type": "string",
+      "description": "A valid NRIDS IT Service Management code which identifies the source system, service or asset that the linked data originates from.",
+      "pattern": "^ITSM-\\d{4,5}$"
+    },
+    "linked_record_id": {
+      "type": "string",
+      "description": "The record or primary key representing what record should be linked with the primary header record."
+    },
+    "linked_record_kind": {
+      "type": "string",
+      "description": "The kind of record the source system stores this linked record as (i.e. Permit, Project, Submission or Tracking).",
+      "enum": ["Permit", "Project", "Submission", "Tracking"]
+    }
+  },
+  "allOf": [
+    {
+      "$ref": "https://raw.githubusercontent.com/bcgov/nr-pies/refs/heads/main/docs/spec/element/data/header.schema.json"
+    }
+  ],
+  "required": ["linked_record_id", "linked_record_kind", "linked_system_id"]
+}

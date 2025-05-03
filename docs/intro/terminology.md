@@ -7,7 +7,7 @@ tags:
   - developer
 ---
 
-[![Maturity:Planning](https://img.shields.io/badge/Maturity-Planning-orange)](../spec/overview#maturity)
+[![Maturity:Planning](https://img.shields.io/badge/Maturity-Planning-orange)](/docs/spec#maturity)
 
 This page provides an overview and guide to the PIES resources, operations and concepts used for representing and
 communicating coded, structured data within this specification. Collectively, these concepts are used to provide a

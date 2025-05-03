@@ -1,0 +1,32 @@
+{
+  "resource_type": "CodeSystem",
+  "id": "application_process",
+  "url": "https://bcgov.github.io/nr-pies/docs/spec/codesystem/application_process",
+  "identifier": [
+    {
+      "system": "urn:ietf:rfc:3986",
+      "value": "urn:oid:0.1.2.3.4"
+    }
+  ],
+  "version": "0.1.0",
+  "name": "ApplicationProcess",
+  "title": "Application Process",
+  "description": "The type of an Application Process Tracking attribute value.",
+  "status": "planning",
+  "value_set": "https://bcgov.github.io/nr-pies/docs/spec/valueset/application_process",
+  "content": "complete",
+  "concept": [
+    {
+      "code": "application",
+      "display": "Application",
+      "definition": "A concept representing the application process.",
+      "concept": [
+        {
+          "code": "decision",
+          "display": "Decision",
+          "definition": "A concept representing the decision process."
+        }
+      ]
+    }
+  ]
+}

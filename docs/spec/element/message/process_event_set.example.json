@@ -1,0 +1,34 @@
+{
+  "transaction_id": "01950719-b154-72f5-8437-5572df032a69",
+  "version": "0.1.0",
+  "kind": "ProcessEventSet",
+  "system_id": "ITSM-5917",
+  "record_id": "06bc53dc-3e4f-420b-801c-bd9cc0ea01b2",
+  "record_kind": "Permit",
+  "process_event": [
+    {
+      "event": {
+        "start_date": "2024-12-01",
+        "end_date": "2024-12-31"
+      },
+      "process": {
+        "class": ["application", "tech_review_comment", "referral"],
+        "concept": "https://bcgov.github.io/nr-pies/docs/spec/codesystem/application_process",
+        "description": "The authorization request is under review by subject matter expert.",
+        "status": "Auditing",
+        "status_code": "AU"
+      }
+    },
+    {
+      "event": {
+        "start_date": "2025-01-01"
+      },
+      "process": {
+        "class": ["application", "decision", "disallowed"],
+        "concept": "https://bcgov.github.io/nr-pies/docs/spec/codesystem/application_process",
+        "description": "The authorization request has not been allowed due to a conflict of interest.",
+        "status": "DeclinedConflict"
+      }
+    }
+  ]
+}

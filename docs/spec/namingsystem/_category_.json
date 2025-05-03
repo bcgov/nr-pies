@@ -1,0 +1,8 @@
+{
+  "label": "Naming System",
+  "position": 40,
+  "link": {
+    "type": "generated-index",
+    "description": "A NamingSystem defines the unique identifiers (namespaces) used for codes. It provides metadata about the identifier system, such as its purpose and usage."
+  }
+}

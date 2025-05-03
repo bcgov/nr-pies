@@ -1,0 +1,8 @@
+{
+  "label": "Code System",
+  "position": 10,
+  "link": {
+    "type": "generated-index",
+    "description": "A CodeSystem defines a set of codes and their meanings. It serves as the authoritative source for a particular set of concepts."
+  }
+}
