@@ -18,6 +18,12 @@ behind each classification level.
 
 ## Concept Map
 
+<details>
+<summary>Old Process Tracking Examples</summary>
+
+These are old Process Tracking hierarchy concepts. While useful as an orientation guide, they no longer reflect the
+latest code words that are used in the specification.
+
 ```mermaid
 ---
 title: Process Tracking
@@ -131,6 +137,8 @@ flowchart LR
     suspended
   end
 ```
+
+</details>
 
 ## Code Sets
 

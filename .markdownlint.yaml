@@ -1,10 +1,16 @@
 # Ref: https://github.com/DavidAnson/markdownlint/blob/main/schema/.markdownlint.yaml
 ---
-# MD013/line-length : Line length : https://github.com/DavidAnson/markdownlint/blob/v0.35.0/doc/md013.md
+# MD013/line-length : Line length : https://github.com/DavidAnson/markdownlint/blob/main/doc/md013.md
 MD013:
   line_length: 120 # Extend default line length allowance
   code_blocks: false # Ignore length for code blocks
   tables: false # Ignore length for tables
 
-# MD034/no-bare-urls : Bare URL used : https://github.com/DavidAnson/markdownlint/blob/v0.35.0/doc/md034.md
+# MD033/no-inline-html : Inline HTML : https://github.com/DavidAnson/markdownlint/blob/main/doc/md033.md
+MD033:
+  allowed_elements: # Allow certain HTML elements
+    - details
+    - summary
+
+# MD034/no-bare-urls : Bare URL used : https://github.com/DavidAnson/markdownlint/blob/main/doc/md034.md
 MD034: false # Disabled as it conflicts with MDX parsing
