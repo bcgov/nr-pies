@@ -1,7 +1,7 @@
 ---
-id: overview
-title: Overview 🚧
-description: PIES naming system
+id: meta
+title: Meta 🚧
+description: PIES Value Set
 sidebar_position: 1
 tags:
   - business
@@ -10,7 +10,8 @@ tags:
 
 [![Maturity:Planning](https://img.shields.io/badge/Maturity-Planning-orange)](/docs/spec#maturity)
 
-Example Page Structure
+A ValueSet is a collection of codes from one or more Code Systems. It specifies which codes are allowed or required in a
+particular context.
 
 ## Expansion
 

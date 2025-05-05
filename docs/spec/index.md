@@ -36,11 +36,11 @@ each artifact's page will also contain a maturity level badge.
 The PIES specification is organized into a hierarchy of artifacts, each with its own purpose and functionality. The
 following table provides an overview of the hierarchy:
 
-| Type Class                                     | Description                                                                                                                                       |
-| ---------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------- |
-| [Data](/docs/category/data-types)                 | Represents core, atomic data structures and their inherent attributes or properties.                                                              |
+| Type Class                                | Description                                                                                                                                       |
+| ----------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------- |
+| [Data](/docs/category/data-types)         | Represents core, atomic data structures and their inherent attributes or properties.                                                              |
 | [Resource](/docs/category/resource-types) | Represents a composed or combined set of data types. The composition defines higher order relational concepts between the data types.             |
-| [Message](/docs/category/message-types)           | Represents a composition of resource and data types. Message types are normally used for API based communication between systems or applications. |
+| [Message](/docs/category/message-types)   | Represents a composition of resource and data types. Message types are normally used for API based communication between systems or applications. |
 
 ### Type Hierarchy
 

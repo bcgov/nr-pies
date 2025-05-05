@@ -1,7 +1,7 @@
 ---
-id: overview
-title: Overview 🚧
-description: PIES naming system
+id: meta
+title: Meta 🚧
+description: PIES Naming System
 sidebar_position: 1
 tags:
   - business
@@ -10,7 +10,8 @@ tags:
 
 [![Maturity:Planning](https://img.shields.io/badge/Maturity-Planning-orange)](/docs/spec#maturity)
 
-Example Page Structure
+A NamingSystem defines the unique identifiers (namespaces) used for codes. It provides metadata about the identifier
+system, such as its purpose and usage.
 
 ## Content
 
