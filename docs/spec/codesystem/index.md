@@ -12,7 +12,9 @@ tags:
 
 Official URL: `https://bcgov.github.io/nr-pies/docs/spec/codesystem`
 
-This Code System is used in the following Value Sets: [TBD](.)
+This Code System is used or referenced by:
+
+- Value Set: [TBD](.)
 
 ## Definition
 

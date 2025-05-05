@@ -10,7 +10,7 @@ tags:
 
 [![Maturity:Planning](https://img.shields.io/badge/Maturity-Planning-orange)](/docs/spec#maturity)
 
-A NamingSystem defines the unique identifiers (namespaces) used for codes. It provides metadata about the identifier
+A Naming System defines the unique identifiers (namespaces) used for codes. It provides metadata about the identifier
 system, such as its purpose and usage.
 
 ## Content

@@ -1,7 +1,7 @@
 ---
 id: process_tracking
 title: Process Tracking 🚧
-description: A conceptual hierarchy for tracking a common process.
+description: A conceptual hierarchy for tracking a common process flow.
 tags:
   - business
   - developer
@@ -9,151 +9,46 @@ tags:
 
 [![Maturity:Planning](https://img.shields.io/badge/Maturity-Planning-orange)](/docs/spec#maturity)
 
-This page outlines the conceptual hierarchy and terminology embeddings which can describe the tracking of a process.
+Official URL: `https://bcgov.github.io/nr-pies/docs/spec/codesystem/process_tracking`
 
-## Classifications
+This Code System is used or referenced by:
 
-Refer to the [Process Tracking Terminology](/docs/intro/terminology#process-tracking) to understand the definitions
-behind each classification level.
+- Code System: [Application Process](/docs/spec/codesystem/application_process)
 
-## Concept Map
+## Definition
 
-<details>
-<summary>Old Process Tracking Examples</summary>
+A conceptual hierarchy for tracking a common process flow.
 
-These are old Process Tracking hierarchy concepts. While useful as an orientation guide, they no longer reflect the
-latest code words that are used in the specification.
+## Content
 
-```mermaid
----
-title: Process Tracking
----
-flowchart LR
-  app_type@{ shape: comment, label: "new
-  amendment
-  transfer
-  cancel" }
-
-  application --> screening
-  application --> submission
-  application --> review
-  application --> decision
-  application --> effect
-  application --> app_type
-
-  submission --> draft
-  submission --> submitted
-  review --> assessment
-  review --> on_hold
-  decision --> approved
-  decision --> declined
-  decision --> cancelled
-  decision --> abandoned
-  effect --> withdrawn
-  effect --> expired
-
-  assessment --> under_review
-  assessment --> in_referral
-  assessment --> with_client
-  on_hold --> deferred
-  on_hold --> paused
-  approved --> conditional
-  approved --> offered
-  approved --> issued
-
-  state --> status
-
-  subgraph lifecycle
-    application
-  end
-
-  subgraph type
-    app_type
-  end
-
-  subgraph phase
-    screening
-    submission
-    review
-    decision
-    effect
-  end
-
-  subgraph stage
-    draft
-    submitted
-    assessment
-    on_hold
-    approved
-    declined
-    cancelled
-    abandoned
-    withdrawn
-    expired
-  end
-
-  subgraph state
-    under_review
-    in_referral
-    with_client
-    deferred
-    paused
-    conditional
-    offered
-    issued
-  end
-```
+### Ontology
 
 ```mermaid
 ---
-title: Authorization Process Concept Hierarchy
+title: Process Tracking Concept Map
 ---
 flowchart LR
-  auth_type@{ shape: comment, label: "permit
-  license
-  right
-  grant"}
+  Status@{ shape: processes }
 
-  authorization --> active
-  authorization --> inactive
-  authorization --> requested
-  authorization --> suspended
-  authorization --> auth_type
-
-  phase --> status
-
-  subgraph lifecycle
-    authorization
-  end
-
-  subgraph type
-    auth_type
-  end
-
-  subgraph phase
-    active
-    inactive
-    requested
-    suspended
+  subgraph Lifecycle
+    subgraph Phase
+      subgraph Stage
+        subgraph State
+          Status
+        end
+      end
+    end
   end
 ```
 
-</details>
+### Concepts
 
-## Code Sets
+| Code        | Display   | Description                                                                                                                                                                                                                                                                                                                                      |
+| ----------- | --------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| `lifecycle` | Lifecycle | Represents the complete ordered sequencing of phases that an application and an authorization may pass through. A lifecycle should describe the entire scope of processing that can occur from beginning to end.                                                                                                                                 |
+| `phase`     | Phase     | A distinct period or division within a lifecycle. A phase will represent a broader set of stages and usually comes with specific objectives or outcomes. A phase shall be a defined member of a specific lifecycle.                                                                                                                              |
+| `stage`     | Stage     | A discrete, ordered set or collection of states. A stage defines a sequential order of states that the process must go through. A stage shall be a defined member of a phase.                                                                                                                                                                    |
+| `state`     | State     | A description of the current condition of an application or authorization within the larger process or workflow (e.g., "Submitted", "Approved"). A state shall map to a broader stage definition.                                                                                                                                                |
+| `status`    | Status    | A description of the current condition or update of an application or authorization. Additional details about the current state are frequently conveyed (e.g., "Pending Review", "Under Inspection"). Statuses may be defined by the line of business. All defined statuses shall have a concept mapping to a broader state definition or above. |
 
-Each classification within the context of a specific kind of lifecycle will have a codified and enumerated concept. TBD.
-
-### Code Formatting
-
-All classification codes shall be encoded in UTF-8. However, only ASCII characters will be allowed. In a nutshell, the
-following characters are allowed:
-
-- **a-z** (lowercase only)
-- **0-9** (digits - _Permitted, but discouraged for use in classification codes._)
-- **\_** (underscore)
-
-## Type Descriptors
-
-Each kind of lifecycle may be described by a type descriptor. For example, an application may be an amendment type, or
-it may be a transfer type. TBD
+## Errata
