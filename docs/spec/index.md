@@ -14,6 +14,49 @@ This article outlines PIES specification maturity, type hierarchy, and formattin
 the terminology, syntax, encoding and the file format used by PIES, as well as how our type categories relate to each
 other.
 
+## Ontology
+
+The PIES specification module provides an overview and guide to the resources, operations, coded datatypes and
+externally-defined standards used. Collectively, these resources provide the underlying functionality to support the use
+of coded data in PIES throughout the specification.
+
+The primary specification-related structures and their relationships are shown below:
+
+```mermaid
+---
+title: PIES Specification Ontology
+---
+
+flowchart TB
+  code_system@{ label: "Code System" }
+  concept_map@{ label: "Concept map" }
+  element_definition@{ label: "Element Definition" }
+  element_instance@{ label: "Element Instance" }
+  naming_system@{ label: "Naming System" }
+  value_set@{ label: "Value Set" }
+
+  code_system -->|Source| concept_map
+  concept_map -->|Target| code_system
+  concept_map -->|Target| value_set
+  element_definition -->|Binds| value_set
+  element_instance -->|Conforms to| element_definition
+  element_instance -->|References| code_system
+  naming_system -->|Identifies| code_system
+  value_set -->|Subset of| code_system
+  value_set -->|Source| concept_map
+```
+
+Inspired by [HL7](https://hl7.org/fhir/terminology-module.html), each PIES resource serves a specific function:
+
+| Resource                                                | Description                                                                                                                                                                                                                                                                                       |
+| ------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| [Code System](/docs/category/code-system)               | A Code System defines a set of codes and their meanings. It serves as the authoritative source for a particular set of concepts.                                                                                                                                                                  |
+| [Concept Map](/docs/category/concept-map)               | A Concept Map is a resource that defines relationships between concepts in different code systems or value sets. It facilitates interoperability by mapping equivalent or related concepts across various terminologies, enabling systems to understand and process each other's data accurately. |
+| [Element Definition](/docs/category/element-definition) | An Element refers to a data type definition containing one or a set of values. When this value is coded, it is typically represented as a Coding data type, which is associated with a Code System.                                                                                               |
+| Element Instance                                        | A specific implementation or occurrence of a data element that adheres to its corresponding definition. It represents a concrete instance of the abstract structure defined by the Element Definition.                                                                                            |
+| [Naming System](/docs/category/naming-system)           | A NamingSystem defines the unique identifiers (namespaces) used for codes. It provides metadata about the identifier system, such as its purpose and usage.                                                                                                                                       |
+| [Value Set](/docs/category/value-set)                   | A ValueSet is a collection of codes from one or more CodeSystems. It specifies which codes are allowed or required in a particular context.                                                                                                                                                       |
+
 ## Maturity
 
 The PIES specification is still actively being developed. While it has been developed to a point where it may be used
