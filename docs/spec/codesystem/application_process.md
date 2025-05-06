@@ -88,27 +88,27 @@ flowchart LR
 
 ### Concepts
 
-| Level | Code                         | Display                    | Description                                                              |
-| ----- | ---------------------------- | -------------------------- | ------------------------------------------------------------------------ |
-| 3     | `allowed`                    | Allowed                    | The application has been approved.                                       |
-| 2     | `decision`                   | Decision                   | The stage where a decision is made on the application.                   |
-| 3     | `decision_review`            | Decision Review            | A review of the decision made on the application.                        |
-| 3     | `declined`                   | Declined                   | The applicant has declined the offered authorization.                    |
-| 3     | `disallowed`                 | Disallowed                 | The application has been rejected.                                       |
-| 3     | `draft`                      | Draft                      | A preliminary version of the application.                                |
-| 3     | `first_nations_consultation` | First Nations Consultation | Consultation with First Nations as part of the review process.           |
-| 2     | `initial_submission_review`  | Initial Submission Review  | The first review of the submitted application.                           |
-| 2     | `issuance`                   | Issuance                   | The stage where the authorization is issued or finalized.                |
-| 2     | `preapplication`             | Pre-Application            | The stage before an application is formally submitted.                   |
-| 3     | `offered`                    | Offered                    | The authorization has been offered to the applicant.                     |
-| 1     | `application`                | Application                | A submitted form(s) with the intent to obtain or amend an authorization. |
-| 3     | `referral`                   | Referral                   | The application is referred to another party for input or review.        |
-| 3     | `submission_review`          | Submission Review          | A detailed review of the submitted application.                          |
-| 3     | `submitted`                  | Submitted                  | The application has been formally submitted.                             |
-| 3     | `tech_review_completed`      | Technical Review Completed | The technical review phase has been completed.                           |
-| 2     | `technical_review_comment`   | Technical Review Comment   | Comments or feedback during the technical review phase.                  |
-| 3     | `technical_review`           | Technical Review           | A detailed technical evaluation of the application.                      |
-| 3     | `issued`                     | Issued                     | The authorization has been formally issued.                              |
+| Level | Code                         | Display                    | Description |
+| ----- | ---------------------------- | -------------------------- | ----------- |
+| 3     | `allowed`                    | Allowed                    |             |
+| 2     | `decision`                   | Decision                   |             |
+| 3     | `decision_review`            | Decision Review            |             |
+| 3     | `declined`                   | Declined                   |             |
+| 3     | `disallowed`                 | Disallowed                 |             |
+| 3     | `draft`                      | Draft                      |             |
+| 3     | `first_nations_consultation` | First Nations Consultation |             |
+| 2     | `initial_submission_review`  | Initial Submission Review  |             |
+| 2     | `issuance`                   | Issuance                   |             |
+| 2     | `preapplication`             | Pre-Application            |             |
+| 3     | `offered`                    | Offered                    |             |
+| 1     | `application`                | Application                |             |
+| 3     | `referral`                   | Referral                   |             |
+| 3     | `submission_review`          | Submission Review          |             |
+| 3     | `submitted`                  | Submitted                  |             |
+| 3     | `tech_review_completed`      | Technical Review Completed |             |
+| 2     | `technical_review_comment`   | Technical Review Comment   |             |
+| 3     | `technical_review`           | Technical Review           |             |
+| 3     | `issued`                     | Issued                     |             |
 
 ## Errata
 
