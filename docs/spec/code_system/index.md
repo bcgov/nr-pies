@@ -10,7 +10,7 @@ tags:
 
 [![Maturity:Planning](https://img.shields.io/badge/Maturity-Planning-orange)](/docs/spec#maturity)
 
-Official URL: `https://bcgov.github.io/nr-pies/docs/spec/codesystem`
+Official URL: `https://bcgov.github.io/nr-pies/docs/spec/code_system`
 
 This Code System is used or referenced by:
 

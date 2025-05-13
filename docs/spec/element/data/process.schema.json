@@ -24,7 +24,7 @@
       "type": "string",
       "description": "A URI reference to the concept map encodings used.",
       "format": "uri",
-      "pattern": "^https://bcgov.github.io/nr-pies/docs/spec/codesystem/.*$"
+      "pattern": "^https://bcgov.github.io/nr-pies/docs/spec/code_system/.*$"
     },
     "status": {
       "type": "string",

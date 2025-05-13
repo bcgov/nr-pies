@@ -9,7 +9,7 @@ tags:
 
 [![Maturity:Planning](https://img.shields.io/badge/Maturity-Planning-orange)](/docs/spec#maturity)
 
-Official URL: `https://bcgov.github.io/nr-pies/docs/spec/codesystem/concept_map_relationship`
+Official URL: `https://bcgov.github.io/nr-pies/docs/spec/code_system/concept_map_relationship`
 
 This Code System is used or referenced by:
 

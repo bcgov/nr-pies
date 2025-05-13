@@ -13,7 +13,7 @@
       },
       "process": {
         "class": ["application", "tech_review_comment", "referral"],
-        "concept": "https://bcgov.github.io/nr-pies/docs/spec/codesystem/application_process",
+        "concept": "https://bcgov.github.io/nr-pies/docs/spec/code_system/application_process",
         "description": "The authorization request is under review by subject matter expert.",
         "status": "Auditing",
         "status_code": "AU"
@@ -25,7 +25,7 @@
       },
       "process": {
         "class": ["application", "decision", "disallowed"],
-        "concept": "https://bcgov.github.io/nr-pies/docs/spec/codesystem/application_process",
+        "concept": "https://bcgov.github.io/nr-pies/docs/spec/code_system/application_process",
         "description": "The authorization request has not been allowed due to a conflict of interest.",
         "status": "DeclinedConflict"
       }

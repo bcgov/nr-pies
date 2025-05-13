@@ -93,7 +93,7 @@ Loosely taking inspiration from [HL7 Timing](https://www.hl7.org/fhir/datatypes.
 ## Implementation Notes
 
 The core of the process type is the representation of one of the paths in the
-[Process Tracking Concept Map](/docs/spec/codesystem/process_tracking). This is represented in the `class` attribute as an ordered
+[Process Tracking Concept Map](/docs/spec/code_system/process_tracking). This is represented in the `class` attribute as an ordered
 tuple. Each entry in the ordered set represents a specific detail level in the hierarchy. For example, the array value
 of `["Application", "Review", "Assessment"]` would indicate that the process concept being conveyed is representing the
 `Assessment` Stage within the `Review` Phase of an `Application` Lifecycle.
@@ -121,4 +121,4 @@ interpreting the data for processing. Recipient systems SHOULD NOT depend on eit
 ## References
 
 - [Code](./code)
-- [Process Tracking Concept Map](/docs/spec/codesystem/process_tracking)
+- [Process Tracking Concept Map](/docs/spec/code_system/process_tracking)

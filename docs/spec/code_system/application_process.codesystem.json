@@ -1,7 +1,7 @@
 {
   "resource_type": "CodeSystem",
   "id": "application_process",
-  "url": "https://bcgov.github.io/nr-pies/docs/spec/codesystem/application_process",
+  "url": "https://bcgov.github.io/nr-pies/docs/spec/code_system/application_process",
   "identifier": [
     {
       "system": "urn:ietf:rfc:3986",

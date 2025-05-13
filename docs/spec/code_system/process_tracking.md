@@ -9,11 +9,11 @@ tags:
 
 [![Maturity:Planning](https://img.shields.io/badge/Maturity-Planning-orange)](/docs/spec#maturity)
 
-Official URL: `https://bcgov.github.io/nr-pies/docs/spec/codesystem/process_tracking`
+Official URL: `https://bcgov.github.io/nr-pies/docs/spec/code_system/process_tracking`
 
 This Code System is used or referenced by:
 
-- Code System: [Application Process](/docs/spec/codesystem/application_process)
+- Code System: [Application Process](/docs/spec/code_system/application_process)
 
 ## Definition
 

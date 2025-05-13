@@ -9,15 +9,15 @@ tags:
 
 [![Maturity:Planning](https://img.shields.io/badge/Maturity-Planning-orange)](/docs/spec#maturity)
 
-Official URL: `https://bcgov.github.io/nr-pies/docs/spec/codesystem/application_process`
+Official URL: `https://bcgov.github.io/nr-pies/docs/spec/code_system/application_process`
 
 This Code System is used or referenced by:
 
-- Code System: [Process Tracking](/docs/spec/codesystem/process_tracking)
+- Code System: [Process Tracking](/docs/spec/code_system/process_tracking)
 
 ## Definition
 
-A type of [Process Tracking](/docs/spec/codesystem/process_tracking) scoped to Application Process Tracking.
+A type of [Process Tracking](/docs/spec/code_system/process_tracking) scoped to Application Process Tracking.
 
 ## Content
 
