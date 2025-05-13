@@ -31,10 +31,10 @@ concept, element or idea.
 
 ## Structure
 
-| Attribute     | Value                | Description & Constraints                                                                                                                                                                                      |
-| ------------- | -------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| Type          | `string`             | Shall be represented in UTF-8 format, as specified in [RFC 3629](https://datatracker.ietf.org/doc/html/rfc3629), which is an extension of the [ISO 10646-1](https://www.iso.org/standard/76835.html) standard. |
-| Regex Pattern | `^[^\s]+( [^\s]+)*$` | String which has at least one character and no leading or trailing whitespace, and where there is no whitespace other than single spaces in the contents.                                                      |
+| Attribute     | Value                             | Description & Constraints                                                                                                                                                                                      |
+| ------------- | --------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Type          | `string`                          | Shall be represented in UTF-8 format, as specified in [RFC 3629](https://datatracker.ietf.org/doc/html/rfc3629), which is an extension of the [ISO 10646-1](https://www.iso.org/standard/76835.html) standard. |
+| Regex Pattern | `^[A-Z][A-Z0-9]*(?:_[A-Z0-9]+)*$` | String which starts with an uppercase letter, followed by uppercase letters or digits, optionally separated by underscores, with no leading or trailing whitespace.                                            |
 
 ## Specification
 

@@ -4,5 +4,5 @@
   "title": "Code",
   "description": "Code Data Type",
   "type": "string",
-  "pattern": "^[^\\s]+( [^\\s]+)*$"
+  "pattern": "^[A-Z][A-Z0-9]*(?:_[A-Z0-9]+)*$"
 }

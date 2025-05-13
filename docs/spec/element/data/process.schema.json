@@ -11,7 +11,7 @@
       "items": {
         "type": "string",
         "description": "A process tracking term.",
-        "pattern": "^[a-z0-9_]+$"
+        "pattern": "^[A-Z][A-Z0-9]*(?:_[A-Z0-9]+)*$"
       },
       "minItems": 1,
       "maxItems": 3,
@@ -33,8 +33,7 @@
     },
     "status_code": {
       "type": "string",
-      "description": "An optional codified representation of the status attribute. Status codes may be defined by the line of business.",
-      "pattern": "^[^\\s]+( [^\\s]+)*$"
+      "description": "An optional codified representation of the status attribute. Status codes may be defined by the line of business."
     }
   },
   "required": ["class", "concept"]
