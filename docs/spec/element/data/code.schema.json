@@ -2,7 +2,7 @@
   "$id": "https://raw.githubusercontent.com/bcgov/nr-pies/refs/heads/main/docs/spec/element/data/code.schema.json",
   "$schema": "http://json-schema.org/draft-07/schema#",
   "title": "Code",
-  "description": "A code symbol element.",
+  "description": "A code symbol representing the primary code value.",
   "type": "string",
   "pattern": "^[A-Z][A-Z0-9]*(?:_[A-Z0-9]+)*$"
 }

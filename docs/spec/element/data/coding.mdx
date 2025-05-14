@@ -1,7 +1,7 @@
 ---
 id: coding
 title: Coding 🔬
-description: A coding element.
+description: A representation of a defined concept using a symbol from a defined Code System.
 tags:
   - developer
 ---
@@ -43,6 +43,7 @@ a registered code system.
     - The code set shall contain at least one code symbol, but may contain multiple code symbols.
     - The code set shall not contain duplicate code symbols.
     - The last element of the code set shall be the primary code symbol and must be equal to the `code` attribute.
+    - For code systems with an embedded hierarchy, the code set shall contain the full path to resolve the `code` concept being shared.
   - The `code_system` attribute is an identifying string which represents the code system value.
 - A Coding may contain a `code_display` attribute.
   - The `code_display` attribute is a string which represents the human readable display name of the code value.

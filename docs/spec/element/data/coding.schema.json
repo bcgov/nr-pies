@@ -2,7 +2,7 @@
   "$id": "https://raw.githubusercontent.com/bcgov/nr-pies/refs/heads/main/docs/spec/element/data/coding.schema.json",
   "$schema": "http://json-schema.org/draft-07/schema#",
   "title": "Coding",
-  "description": "A coding element.",
+  "description": "A representation of a defined concept using a symbol from a defined Code System.",
   "type": "object",
   "properties": {
     "code": {
