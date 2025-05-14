@@ -5,27 +5,6 @@
   "description": "Represents a process tracking concept.",
   "type": "object",
   "properties": {
-    "code": {
-      "$ref": "https://raw.githubusercontent.com/bcgov/nr-pies/refs/heads/main/docs/spec/element/data/code.schema.json"
-    },
-    "code_set": {
-      "type": "array",
-      "description": "An ordered set of process tracking terms.",
-      "items": {
-        "type": "string",
-        "description": "A process tracking term.",
-        "pattern": "^[A-Z][A-Z0-9]*(?:_[A-Z0-9]+)*$"
-      },
-      "minItems": 1,
-      "maxItems": 3,
-      "uniqueItems": true
-    },
-    "code_system": {
-      "type": "string",
-      "description": "A URI reference to the concept map encodings used.",
-      "format": "uri",
-      "pattern": "^https://bcgov.github.io/nr-pies/docs/spec/code_system/.*$"
-    },
     "status": {
       "type": "string",
       "description": "An optional description of the current condition or update of an application or authorization. Additional details about the current state are frequently conveyed (e.g., 'Pending Review', 'Under Inspection'). Statuses may be defined by the line of business."
@@ -39,5 +18,9 @@
       "type": "string"
     }
   },
-  "required": ["code", "codeset", "codesystem"]
+  "allOf": [
+    {
+      "$ref": "https://raw.githubusercontent.com/bcgov/nr-pies/refs/heads/main/docs/spec/element/data/coding.schema.json"
+    }
+  ]
 }

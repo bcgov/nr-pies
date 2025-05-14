@@ -88,27 +88,27 @@ flowchart LR
 
 ### Concepts
 
-| Level | Code                         | Display                    | Description |
-| ----- | ---------------------------- | -------------------------- | ----------- |
-| 1     | `APPLICATION`                | Application                |             |
-| 3     | `ALLOWED`                    | Allowed                    |             |
-| 3     | `DECISION_REVIEW`            | Decision Review            |             |
-| 2     | `DECISION`                   | Decision                   |             |
-| 3     | `DECLINED`                   | Declined                   |             |
-| 3     | `DISALLOWED`                 | Disallowed                 |             |
-| 3     | `DRAFT`                      | Draft                      |             |
-| 3     | `FIRST_NATIONS_CONSULTATION` | First Nations Consultation |             |
-| 2     | `INITIAL_SUBMISSION_REVIEW`  | Initial Submission Review  |             |
-| 2     | `ISSUANCE`                   | Issuance                   |             |
-| 3     | `ISSUED`                     | Issued                     |             |
-| 3     | `OFFERED`                    | Offered                    |             |
-| 2     | `PRE_APPLICATION`            | Pre-Application            |             |
-| 3     | `REFERRAL`                   | Referral                   |             |
-| 3     | `SUBMISSION_REVIEW`          | Submission Review          |             |
-| 3     | `SUBMITTED`                  | Submitted                  |             |
-| 2     | `TECH_REVIEW_COMMENT`        | Technical Review Comment   |             |
-| 3     | `TECH_REVIEW_COMPLETED`      | Technical Review Completed |             |
-| 3     | `TECHNICAL_REVIEW`           | Technical Review           |             |
+| Level | Code                         | Display                      | Description |
+| ----- | ---------------------------- | ---------------------------- | ----------- |
+| 1     | `APPLICATION`                | Application                  |             |
+| 3     | `ALLOWED`                    | Allowed                      |             |
+| 3     | `DECISION_REVIEW`            | Decision Review              |             |
+| 2     | `DECISION`                   | Decision                     |             |
+| 3     | `DECLINED`                   | Declined                     |             |
+| 3     | `DISALLOWED`                 | Disallowed                   |             |
+| 3     | `DRAFT`                      | Draft                        |             |
+| 3     | `FIRST_NATIONS_CONSULTATION` | First Nations Consultation   |             |
+| 2     | `INITIAL_SUBMISSION_REVIEW`  | Initial Submission Review    |             |
+| 2     | `ISSUANCE`                   | Issuance                     |             |
+| 3     | `ISSUED`                     | Issued                       |             |
+| 3     | `OFFERED`                    | Offered                      |             |
+| 2     | `PRE_APPLICATION`            | Pre-Application              |             |
+| 3     | `REFERRAL`                   | Referral                     |             |
+| 3     | `SUBMISSION_REVIEW`          | Submission Review            |             |
+| 3     | `SUBMITTED`                  | Submitted                    |             |
+| 2     | `TECH_REVIEW_COMMENT`        | Technical Review and Comment |             |
+| 3     | `TECH_REVIEW_COMPLETED`      | Technical Review Completed   |             |
+| 3     | `TECHNICAL_REVIEW`           | Technical Review             |             |
 
 ## Errata
 
