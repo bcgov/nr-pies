@@ -1,0 +1,6 @@
+{
+  "code": "referral",
+  "code_display": "Referral",
+  "code_set": ["application", "tech_review_comment", "referral"],
+  "code_system": "https://bcgov.github.io/nr-pies/docs/spec/code_system/application_process"
+}

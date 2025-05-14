@@ -1,0 +1,33 @@
+{
+  "$id": "https://raw.githubusercontent.com/bcgov/nr-pies/refs/heads/main/docs/spec/element/data/coding.schema.json",
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "Coding",
+  "description": "A coding element.",
+  "type": "object",
+  "properties": {
+    "code": {
+      "$ref": "https://raw.githubusercontent.com/bcgov/nr-pies/refs/heads/main/docs/spec/element/data/code.schema.json"
+    },
+    "code_display": {
+      "type": "string",
+      "description": "A human-readable display name for the code value, intended for readability and not computation."
+    },
+    "code_set": {
+      "type": "array",
+      "description": "An ordered set of code symbols, where the last element must match the code attribute. The set must contain at least one symbol, preserve order, and not include duplicates.",
+      "items": {
+        "$ref": "https://raw.githubusercontent.com/bcgov/nr-pies/refs/heads/main/docs/spec/element/data/code.schema.json"
+      },
+      "minItems": 1,
+      "maxItems": 3,
+      "uniqueItems": true
+    },
+    "code_system": {
+      "type": "string",
+      "description": "An identifying URI string representing the source code system for the code value.",
+      "format": "uri",
+      "pattern": "^https://bcgov.github.io/nr-pies/docs/spec/code_system/.*$"
+    }
+  },
+  "required": ["code", "code_set", "code_system"]
+}

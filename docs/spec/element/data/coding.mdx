@@ -1,0 +1,107 @@
+---
+id: coding
+title: Coding 🔬
+description: A coding element.
+tags:
+  - developer
+---
+
+import CodeBlock from '@theme/CodeBlock';
+import JSONSchemaViewer from '@theme/JSONSchemaViewer';
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
+
+import { generateResolverOptions } from '@site/src/components/shared';
+import example from '@site/docs/spec/element/data/coding.example.json';
+import schema from '@site/docs/spec/element/data/coding.schema.json';
+
+[![Maturity:Trial](https://img.shields.io/badge/Maturity-Trial-green)](/docs/spec#maturity)
+
+Official URL: `https://bcgov.github.io/nr-pies/docs/spec/element/data/coding`
+
+JSON Schema URL: https://raw.githubusercontent.com/bcgov/nr-pies/refs/heads/main/docs/spec/element/data/coding.schema.json
+
+A Coding is a representation of a defined concept using a symbol from a defined
+[Code System](/docs/category/code-system). It is, at minimum, a combination of a `code`, a `code_set` and a
+`code_system`. A coding may contain a `code_display` name.
+
+The meaning of the Coding is defined by the `code`. The `code_system` provides the source of the definition of the code.
+The `code_display` is a human display for the text defined by the system; however it is not intended for computation.
+
+## Scope
+
+This data type is intended to represent an atomic representation of a specific, discrete concept, element or idea from
+a registered code system.
+
+## Structure
+
+- A Coding shall always contain a `code`, `code_set` and `code_system` attributes.
+  - The `code` attribute is a [Code](/docs/spec/element/data/code) string which represents the primary code value.
+    - Should the `code` and `code_set` attributes conflict, the `code` attribute shall take precedence.
+  - The `code_set` attribute is an array of [Code](/docs/spec/element/data/code) which represents the code set value.
+    - The code set is an ordered set of code symbols. The order of the code set is significant and shall be preserved.
+    - The code set shall contain at least one code symbol, but may contain multiple code symbols.
+    - The code set shall not contain duplicate code symbols.
+    - The last element of the code set shall be the primary code symbol and must be equal to the `code` attribute.
+  - The `code_system` attribute is an identifying string which represents the code system value.
+- A Coding may contain a `code_display` attribute.
+  - The `code_display` attribute is a string which represents the human readable display name of the code value.
+    - It is designed for human readability and not for computational purposes.
+
+| Name               | Cardinality | Type           | Description & Constraints                                                                                                                                                                                                                                        |
+| ------------------ | ----------- | -------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| code               | 1..1        | [Code](./code) | A code symbol representing the primary code value. It must match the last element of the `code_set`.                                                                                                                                                             |
+| code_display       | 0..1        | `string`       | A human-readable display name for the code value, intended for readability and not computation.                                                                                                                                                                  |
+| code_set           | 1..\*       | `string[]`     | An ordered set of code symbols, where the last element must match the `code` attribute. The set must contain at least one symbol, preserve order, and not include duplicates.                                                                                    |
+| code_system        | 1..1        | `string`       | An identifying URI string representing the source code system for the `code` value.                                                                                                                                                                              |
+| status             | 0..1        | `string`       | An optional description of the current condition or update of an application or authorization. Additional details about the current state are frequently conveyed (e.g., 'Pending Review', 'Under Inspection'). Statuses may be defined by the line of business. |
+| status_code        | 0..1        | `string`       | An optional codified representation of the status attribute. Status codes may be defined by the line of business.                                                                                                                                                |
+| status_description | 0..1        | `string`       | An optional description of the status if present.                                                                                                                                                                                                                |
+
+## Specification
+
+<Tabs queryString="tab">
+  <TabItem
+    value="schema"
+    label="Schema"
+    default
+  >
+    <JSONSchemaViewer
+      resolverOptions={generateResolverOptions({ remote: true })}
+      schema={schema}
+      viewerOptions={{ showExamples: true }}
+    />
+  </TabItem>
+  <TabItem
+    value="source"
+    label="Source"
+  >
+    <CodeBlock
+      language="json"
+      showLineNumbers
+    >
+      {JSON.stringify(schema, null, 2)}
+    </CodeBlock>
+  </TabItem>
+  <TabItem
+    value="example"
+    label="Example"
+  >
+    <CodeBlock
+      language="json"
+      showLineNumbers
+    >
+      {JSON.stringify(example, null, 2)}
+    </CodeBlock>
+  </TabItem>
+</Tabs>
+
+## Implementation Notes
+
+This data structure is mainly meant to illustrate and restrict what is allowed to be encoded for an arbitrary code
+value. This is meant to only be used as a semantic reference point. This data structure is loosely inspired by the
+[FHIR Code Type](https://www.hl7.org/fhir/datatypes.html#code).
+
+## References
+
+- [FHIR Code Type](https://www.hl7.org/fhir/datatypes.html#code)
