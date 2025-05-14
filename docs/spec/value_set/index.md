@@ -28,4 +28,4 @@ Every Value Set shall contain a table enumerating the set of relevant code words
 
 | Code          | System                                                                    | Display     | Description                                                              |
 | ------------- | ------------------------------------------------------------------------- | ----------- | ------------------------------------------------------------------------ |
-| `application` | https://bcgov.github.io/nr-pies/docs/spec/code_system/application_process | Application | A submitted form(s) with the intent to obtain or amend an authorization. |
+| `APPLICATION` | https://bcgov.github.io/nr-pies/docs/spec/code_system/application_process | Application | A submitted form(s) with the intent to obtain or amend an authorization. |

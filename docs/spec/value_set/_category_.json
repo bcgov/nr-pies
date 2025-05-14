@@ -3,6 +3,6 @@
   "position": 50,
   "link": {
     "type": "generated-index",
-    "description": "A ValueSet is a collection of codes from one or more CodeSystems. It specifies which codes are allowed or required in a particular context."
+    "description": "A Value Set is a collection of codes from one or more CodeSystems. It specifies which codes are allowed or required in a particular context."
   }
 }

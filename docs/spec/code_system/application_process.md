@@ -29,60 +29,60 @@ title: Application Process Tracking Hierarchy
 ---
 
 flowchart LR
-  anytime@{ shape: comment, label: "rejected
-  withdrawn" }
+  ANYTIME@{ shape: comment, label: "REJECTED
+  WITHDRAWN" }
 
-  application --> preapplication
-  application --> initial_submission_review
-  application --> technical_review_comment
-  application --> decision
-  application --> issuance
+  PRE_APPLICATION --> DRAFT
+  PRE_APPLICATION --> SUBMITTED
 
-  initial_submission_review  --> submission_review
+  APPLICATION --> PRE_APPLICATION
+  APPLICATION --> INITIAL_SUBMISSION_REVIEW
+  APPLICATION --> TECH_REVIEW_COMMENT
+  APPLICATION --> DECISION
+  APPLICATION --> ISSUANCE
 
-  technical_review_comment --> technical_review
-  technical_review_comment --> referral
-  technical_review_comment --> first_nations_consultation
-  technical_review_comment --> tech_review_completed
+  INITIAL_SUBMISSION_REVIEW  --> SUBMISSION_REVIEW
 
-  decision --> decision_review
-  decision --> allowed
-  decision --> disallowed
+  TECH_REVIEW_COMMENT --> TECHNICAL_REVIEW
+  TECH_REVIEW_COMMENT --> REFERRAL
+  TECH_REVIEW_COMMENT --> FIRST_NATIONS_CONSULTATION
+  TECH_REVIEW_COMMENT --> TECH_REVIEW_COMPLETED
 
-  issuance --> offered
-  issuance --> issued
-  issuance --> declined
+  DECISION --> DECISION_REVIEW
+  DECISION --> ALLOWED
+  DECISION --> DISALLOWED
 
-  preapplication --> draft
-  preapplication --> submitted
+  ISSUANCE --> OFFERED
+  ISSUANCE --> ISSUED
+  ISSUANCE --> DECLINED
 
-  subgraph phase
-   application
+  subgraph PHASE
+   APPLICATION
   end
 
-  subgraph stage
-    preapplication
-    initial_submission_review
-    technical_review_comment
-    decision
-    issuance
+  subgraph STAGE
+    PRE_APPLICATION
+    INITIAL_SUBMISSION_REVIEW
+    TECH_REVIEW_COMMENT
+    DECISION
+    ISSUANCE
   end
 
-  subgraph state
-    draft
-    submitted
-    submission_review
-    technical_review
-    referral
-    first_nations_consultation
-    tech_review_completed
-    decision_review
-    allowed
-    disallowed
-    offered
-    issued
-    declined
-    anytime
+  subgraph STATE
+    DRAFT
+    SUBMITTED
+    SUBMISSION_REVIEW
+    TECHNICAL_REVIEW
+    REFERRAL
+    FIRST_NATIONS_CONSULTATION
+    TECH_REVIEW_COMPLETED
+    DECISION_REVIEW
+    ALLOWED
+    DISALLOWED
+    OFFERED
+    ISSUED
+    DECLINED
+    ANYTIME
   end
 ```
 
@@ -90,25 +90,25 @@ flowchart LR
 
 | Level | Code                         | Display                    | Description |
 | ----- | ---------------------------- | -------------------------- | ----------- |
-| 3     | `allowed`                    | Allowed                    |             |
-| 2     | `decision`                   | Decision                   |             |
-| 3     | `decision_review`            | Decision Review            |             |
-| 3     | `declined`                   | Declined                   |             |
-| 3     | `disallowed`                 | Disallowed                 |             |
-| 3     | `draft`                      | Draft                      |             |
-| 3     | `first_nations_consultation` | First Nations Consultation |             |
-| 2     | `initial_submission_review`  | Initial Submission Review  |             |
-| 2     | `issuance`                   | Issuance                   |             |
-| 2     | `preapplication`             | Pre-Application            |             |
-| 3     | `offered`                    | Offered                    |             |
-| 1     | `application`                | Application                |             |
-| 3     | `referral`                   | Referral                   |             |
-| 3     | `submission_review`          | Submission Review          |             |
-| 3     | `submitted`                  | Submitted                  |             |
-| 3     | `tech_review_completed`      | Technical Review Completed |             |
-| 2     | `technical_review_comment`   | Technical Review Comment   |             |
-| 3     | `technical_review`           | Technical Review           |             |
-| 3     | `issued`                     | Issued                     |             |
+| 1     | `APPLICATION`                | Application                |             |
+| 3     | `ALLOWED`                    | Allowed                    |             |
+| 3     | `DECISION_REVIEW`            | Decision Review            |             |
+| 2     | `DECISION`                   | Decision                   |             |
+| 3     | `DECLINED`                   | Declined                   |             |
+| 3     | `DISALLOWED`                 | Disallowed                 |             |
+| 3     | `DRAFT`                      | Draft                      |             |
+| 3     | `FIRST_NATIONS_CONSULTATION` | First Nations Consultation |             |
+| 2     | `INITIAL_SUBMISSION_REVIEW`  | Initial Submission Review  |             |
+| 2     | `ISSUANCE`                   | Issuance                   |             |
+| 3     | `ISSUED`                     | Issued                     |             |
+| 3     | `OFFERED`                    | Offered                    |             |
+| 2     | `PRE_APPLICATION`            | Pre-Application            |             |
+| 3     | `REFERRAL`                   | Referral                   |             |
+| 3     | `SUBMISSION_REVIEW`          | Submission Review          |             |
+| 3     | `SUBMITTED`                  | Submitted                  |             |
+| 2     | `TECH_REVIEW_COMMENT`        | Technical Review Comment   |             |
+| 3     | `TECH_REVIEW_COMPLETED`      | Technical Review Completed |             |
+| 3     | `TECHNICAL_REVIEW`           | Technical Review           |             |
 
 ## Errata
 

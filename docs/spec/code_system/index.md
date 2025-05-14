@@ -18,8 +18,8 @@ This Code System is used or referenced by:
 
 ## Definition
 
-A Code System defines a set of codes and their meanings. It serves as the authoritative source for a particular set of
-concepts.
+A Code System defines a complete set of codes and their meanings. It serves as the authoritative source for a
+particular set of concepts.
 
 ## Content
 
