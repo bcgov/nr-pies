@@ -4,10 +4,11 @@
     "end_date": "2024-12-31"
   },
   "process": {
-    "class": ["application", "tech_review_comment", "referral"],
-    "concept": "https://bcgov.github.io/nr-pies/docs/spec/code_system/application_process",
-    "description": "The authorization request is under review by subject matter expert.",
+    "code": "REFERRAL",
+    "code_set": ["APPLICATION", "TECH_REVIEW_COMMENT", "REFERRAL"],
+    "code_system": "https://bcgov.github.io/nr-pies/docs/spec/code_system/application_process",
     "status": "Auditing",
-    "status_code": "AU"
+    "status_code": "AU",
+    "status_description": "The authorization request is under review by subject matter expert."
   }
 }
