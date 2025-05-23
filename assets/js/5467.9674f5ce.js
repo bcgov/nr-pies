@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunknr_pies=self.webpackChunknr_pies||[]).push([["5467"],{49638:function(e,s,n){n.r(s),n.d(s,{default:function(){return c}});let c=n.p+"assets/images/BCID_H_rgb_rev-47c2f603e621cdcc6735bfa85f39a4be.png"}}]);
