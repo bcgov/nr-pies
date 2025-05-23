@@ -7,5 +7,7 @@
   "minimumReleaseAge": "3 days",
   "prConcurrentLimit": 2,
   "pruneStaleBranches": true,
-  "rangeStrategy": "pin"
+  "rangeStrategy": "pin",
+  "schedule": ["* * * * 2"],
+  "timezone": "America/Vancouver"
 }

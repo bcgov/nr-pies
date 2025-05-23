@@ -12,7 +12,7 @@
         "editorconfig.editorconfig",
         "esbenp.prettier-vscode",
         "gruntfuggly.todo-tree",
-        "ms-azuretools.vscode-docker",
+        "ms-azuretools.vscode-containers",
         "streetsidesoftware.code-spell-checker",
         "unifiedjs.vscode-mdx",
         "usernamehw.errorlens"
