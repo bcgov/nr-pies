@@ -24,10 +24,17 @@ const config: Config = {
   onBrokenLinks: 'throw',
   onBrokenMarkdownLinks: 'throw',
 
-  // Support the @docusaurus/faster stack introduced in 3.6
-  // Ref: https://docusaurus.io/blog/releases/3.6#adoption-strategy
   future: {
-    experimental_faster: true
+    /**
+     * Opt-in to all of the @docusaurus/faster stack introduced in 3.6
+     * @see https://docusaurus.io/blog/releases/3.6#adoption-strategy
+     */
+    experimental_faster: true,
+    /**
+     * Opt-in to all incoming feature flags that will appear in Docusaurus 4.
+     * @see https://docusaurus.io/blog/releases/3.8#future-flags
+     */
+    v4: true
   },
 
   // Even if you don't use internationalization, you can use this field to set
