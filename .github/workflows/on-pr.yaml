@@ -44,7 +44,7 @@ jobs:
           BASE_URL: /nr-pies/pr-preview/pr-${{ github.event.pull_request.number }}
         run: npm run build
       - name: Deploy to/Cleanup GitHub Pages
-        uses: rossjrw/pr-preview-action@v1.6.1
+        uses: rossjrw/pr-preview-action@2fb559e4766555e23d07b73d313fe97c4f8c3cfe # v1.6.1
         if: github.event_name != 'merge_group'
         with:
           source-dir: ./build
