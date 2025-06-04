@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunknr_pies=self.webpackChunknr_pies||[]).push([["2054"],{59854:function(e,s,a){a.r(s),a.d(s,{default:()=>f});let f=a.p+"assets/images/favicon-ee85c1557e8b9fa72e712a9ef32efd77.ico"}}]);
