@@ -39,3 +39,8 @@ lerna-debug.log*
 
 # Temp Office files
 ~$*
+
+# OS files
+*.DS_Store
+*Desktop.ini
+*Thumbs.db
