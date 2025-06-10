@@ -24,10 +24,10 @@
     "typecheck": "tsc"
   },
   "dependencies": {
-    "@docusaurus/core": "3.8.0",
-    "@docusaurus/faster": "3.8.0",
-    "@docusaurus/preset-classic": "3.8.0",
-    "@docusaurus/theme-mermaid": "3.8.0",
+    "@docusaurus/core": "3.8.1",
+    "@docusaurus/faster": "3.8.1",
+    "@docusaurus/preset-classic": "3.8.1",
+    "@docusaurus/theme-mermaid": "3.8.1",
     "@mdx-js/react": "3.1.0",
     "clsx": "2.1.1",
     "docusaurus-json-schema-plugin": "1.14.0",
@@ -38,9 +38,9 @@
     "react-dom": "19.1.0"
   },
   "devDependencies": {
-    "@docusaurus/module-type-aliases": "3.8.0",
-    "@docusaurus/tsconfig": "3.8.0",
-    "@docusaurus/types": "3.8.0",
+    "@docusaurus/module-type-aliases": "3.8.1",
+    "@docusaurus/tsconfig": "3.8.1",
+    "@docusaurus/types": "3.8.1",
     "prettier": "3.5.3",
     "simple-git-hooks": "2.13.0",
     "typescript": "5.8.3"
