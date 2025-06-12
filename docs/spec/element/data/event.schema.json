@@ -7,23 +7,25 @@
   "properties": {
     "start_date": {
       "type": "string",
-      "format": "date",
-      "description": "The start date of the event in YYYY-MM-DD format."
+      "description": "The start date of the event in RFC 3339 format (e.g., `2024-12-01`).",
+      "format": "date"
     },
     "start_datetime": {
       "type": "string",
+      "description": "The start datetime of the event in RFC 3339 format (e.g., `2024-12-01T10:00:00.0000000Z`). Only UTC time is allowed.",
       "format": "date-time",
-      "description": "The start datetime of the event in ISO 8601 format (e.g., 2024-12-01T10:00:00Z)."
+      "pattern": "^\\d{4}-(0[1-9]|1[0-2])-(0[1-9]|[12][0-9]|3[01])T([01]?[0-9]|2[0-3]):([0-5][0-9]):([0-5][0-9])(\\.\\d{1,7})?Z$"
     },
     "end_date": {
       "type": "string",
-      "format": "date",
-      "description": "The end date of the event in YYYY-MM-DD format. This is optional if `start_date` is used."
+      "description": "The end date of the event in RFC 3339 format (e.g., `2024-12-01`). This is optional if `start_date` is used.",
+      "format": "date"
     },
     "end_datetime": {
       "type": "string",
+      "description": "The end datetime of the event in RFC 3339 format (e.g., `2024-12-01T10:00:00.0000000Z`). Only UTC time is allowed. This is optional if `start_datetime` is used.",
       "format": "date-time",
-      "description": "The end datetime of the event in ISO 8601 format. This is optional if `start_datetime` is used."
+      "pattern": "^\\d{4}-(0[1-9]|1[0-2])-(0[1-9]|[12][0-9]|3[01])T([01]?[0-9]|2[0-3]):([0-5][0-9]):([0-5][0-9])(\\.\\d{1,7})?Z$"
     }
   },
   "oneOf": [
