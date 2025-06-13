@@ -1,0 +1,8 @@
+{
+  "label": "Location",
+  "position": 20,
+  "link": {
+    "type": "generated-index",
+    "description": "Location of an application or issued authorization on the land base"
+  }
+}

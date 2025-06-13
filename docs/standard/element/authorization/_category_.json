@@ -1,0 +1,8 @@
+{
+  "label": "Authorization",
+  "position": 20,
+  "link": {
+    "type": "generated-index",
+    "description": "An authorization is the individual request for permission"
+  }
+}

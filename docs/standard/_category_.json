@@ -1,0 +1,8 @@
+{
+  "label": "Standard",
+  "position": 2,
+  "link": {
+    "type": "generated-index",
+    "description": "Standard data elements for the Permitting Data Interoperability Exchange Specification."
+  }
+}
