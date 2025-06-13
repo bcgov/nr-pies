@@ -1,0 +1,57 @@
+---
+id: phase
+title: Phase 📝
+description: Phase process event tracking
+tags:
+  - business
+  - developer
+  - executive
+---
+
+import CodeBlock from '@theme/CodeBlock';
+import JSONSchemaViewer from '@theme/JSONSchemaViewer';
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
+
+import { generateResolverOptions } from '@site/src/components/shared';
+import example from '@site/docs/spec/element/data/parcel_id.example.json';
+import schema from '@site/docs/spec/element/data/parcel_id.schema.json';
+
+[![Maturity:Draft](https://img.shields.io/badge/Maturity-Draft-yellow)](/docs/standard#maturity)
+
+Official URL: `https://bcgov.github.io/nr-pies/docs/standard/element/process_tracking/phase`
+
+## Purpose
+
+Phase divides the authorization process into two broad categories of work, depending on whether the authorization is still being developed (**Application**) or is already in force and being managed (**Post-issuance**)
+
+## Usage
+
+This level offers a high-level ability to enable reporting if an application or issued authorization is active or not and the ability to determine if the application has not yet started to be worked on by the intake or authorizing agency.
+Time ranges or events define the start and end of stages within the process.
+
+## Guidance
+
+- Exactly one Phase is active at any time.
+- Phases are about what type of work is happening, not when it happens or which team does it.
+
+## Structure
+
+- **phase** (string): Describes the distinct period or subdivision within a lifecycle. A subdivision of the lifecycle of an authorization that indicates whether it is in the Application (pre issuance) phase or in the Post-Issuance phase (after issuance).
+
+## Application level
+
+[![Maturity:Trial](https://img.shields.io/badge/Maturity-Trial-green)](/docs/standard#maturity)
+
+| Name          | Description                                                                                                                                          |
+| ------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Application   | Indicates that the authorization is currently undergoing the application process and has not yet been issued.                                        |
+| Post issuance | Indicates that the authorization has been issued and is now active or being managed (e.g., through amendments, renewals, or maintenance activities). |
+
+## Post issuance level
+
+[![Maturity:Planning](https://img.shields.io/badge/Maturity-Planning-orange)](/docs/standard#maturity)
+
+## Specification
+
+## References
