@@ -1,0 +1,8 @@
+{
+  "label": "Activity",
+  "position": 20,
+  "link": {
+    "type": "generated-index",
+    "description": "The activity is the purpose or intent a project"
+  }
+}

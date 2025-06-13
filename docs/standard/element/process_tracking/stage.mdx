@@ -1,0 +1,58 @@
+---
+id: stage
+title: Stage 📝
+description: Stage process event tracking
+tags:
+  - business
+  - developer
+  - executive
+---
+
+import CodeBlock from '@theme/CodeBlock';
+import JSONSchemaViewer from '@theme/JSONSchemaViewer';
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
+
+import { generateResolverOptions } from '@site/src/components/shared';
+import example from '@site/docs/spec/element/data/parcel_id.example.json';
+import schema from '@site/docs/spec/element/data/parcel_id.schema.json';
+
+[![Maturity:Draft](https://img.shields.io/badge/Maturity-Draft-yellow)](/docs/standard#maturity)
+
+Official URL: `https://bcgov.github.io/nr-pies/docs/standard/element/process_tracking/stage`
+
+## Purpose
+
+To identify the key categories of activity that an authorization moves through within a given Phase. Stages provide a standardized, high-level view of authorization progression within both the Phase and the broader Lifecycle.
+
+## Usage
+
+Stages occur in a defined, ordered sequence within each Phase. An authorization can only be in one Stage at a time, and it progresses through the Stages in order as it moves through the process.
+
+## Guidance
+
+## Structure
+
+- **stage** (string): A distinct step within a Phase that represents a key shift in the type of work being done (e.g., intake, review, decision). It helps identify where the authorization currently sits in the overall process.
+
+## Application level
+
+[![Maturity:Trial](https://img.shields.io/badge/Maturity-Trial-green)](/docs/standard#maturity)
+
+| Name                         | Description |
+| ---------------------------- | ----------- |
+| Pre-application              |
+| Initial submission review    |
+| Technical review and comment |
+| Decision preparation         |
+| Decision                     |
+
+## Post issuance level
+
+[![Maturity:Planning](https://img.shields.io/badge/Maturity-Planning-orange)](/docs/standard#maturity)
+
+## Specification
+
+## References
+
+- These terms are derived from previous permitting reform work defined as One Process
