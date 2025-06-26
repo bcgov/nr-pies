@@ -1,4 +1,4 @@
 {
   "pre-commit": "npm run format",
-  "pre-push": "npm run format"
+  "pre-push": "node --experimental-transform-types ./prepush.helper.ts"
 }
