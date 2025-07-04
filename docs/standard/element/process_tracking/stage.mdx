@@ -17,25 +17,37 @@ import { generateResolverOptions } from '@site/src/components/shared';
 import example from '@site/docs/spec/element/data/parcel_id.example.json';
 import schema from '@site/docs/spec/element/data/parcel_id.schema.json';
 
-[![Maturity:Draft](https://img.shields.io/badge/Maturity-Draft-yellow)](/docs/standard#maturity)
+[![Maturity:Draft](https://img.shields.io/badge/Maturity-Trial-green)](/docs/standard#maturity)
 
 Official URL: `https://bcgov.github.io/nr-pies/docs/standard/element/process_tracking/stage`
 
 ## Purpose
 
-To identify the key categories of activity that an authorization moves through within a given Phase. Stages provide a standardized, high-level view of authorization progression within both the Phase and the broader Lifecycle.
+Stage is the highest-level **operational category of work** within a Phase.
+It defines _what_ is currently being done on the authorization e.g., _Pre-application_, _Technical Review_, _Decision_, _Issuance_, giving a clear reference point for progress tracking.
 
 ## Usage
 
-Stages occur in a defined, ordered sequence within each Phase. An authorization can only be in one Stage at a time, and it progresses through the Stages in order as it moves through the process.
+Stage records the **current operational step** that an authorization is undergoing within its Phase.
 
 ## Guidance
 
-## Structure
+- Exactly **one** Stage is active at any moment.
+- Parallel or finer-grained work categories belong in **State**, not additional Stages.
+- Stages are about what type of work is happening, not when it happens (see Milestone dates).
 
-- **stage** (string): A distinct step within a Phase that represents a key shift in the type of work being done (e.g., intake, review, decision). It helps identify where the authorization currently sits in the overall process.
+## Properties
 
-## Application level
+- **Data format**: string
+- **Null**: Cannot be `null` – every authorization must have a phase.
+- **Relationships:**
+  - _Phase → Stage_: A Stage is a subset of a Phase (Phase → Stage is 1-to-many).
+  - _Stage → State_: A State is a subset of a Stage (Stage → State is 1-to-many).
+- **Change control:** an authorization may progress through successive Stages and return to an earlier Stage any number of times.
+
+## Allowed values (by Phase)
+
+### Application Phase
 
 [![Maturity:Trial](https://img.shields.io/badge/Maturity-Trial-green)](/docs/standard#maturity)
 
@@ -47,9 +59,12 @@ Stages occur in a defined, ordered sequence within each Phase. An authorization 
 | Decision preparation         |
 | Decision                     |
 
-## Post issuance level
+### Post issuance Phase
 
 [![Maturity:Planning](https://img.shields.io/badge/Maturity-Planning-orange)](/docs/standard#maturity)
+
+| Name | Description |
+| ---- | ----------- |
 
 ## Specification
 
