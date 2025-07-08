@@ -35,50 +35,46 @@ title: Process Tracking Hierarchy Standard
 ---
 
 flowchart TD
+  Onhold --> Reason1
+  Onhold --> Reason2
+  Onhold --> Reason3
+  Onhold --> Reason4
 
-Onhold --> Reason1
-Onhold --> Reason2
-Onhold --> Reason3
-Onhold --> Reason4
+  Phase1 --> Stage1
+  Phase1 --> Stage2
+  Phase1 --> Stage3
+  Phase1 --> Stage4
 
+  Stage1 --> State1
+  Stage1 --> State2
+  Stage2 --> State3
+  Stage2 --> State4
+  Stage3 --> State5
+  Stage3 --> State6
+  Stage4 --> State7
+  Stage4 --> State8
 
-Phase1 --> Stage1
-Phase1 --> Stage2
-Phase1 --> Stage3
-Phase1 --> Stage4
+  subgraph Phase
+  Phase1
+  end
 
-Stage1 --> State1
-Stage1 --> State2
-Stage2 --> State3
-Stage2 --> State4
-Stage3 --> State5
-Stage3 --> State6
-Stage4 --> State7
-Stage4 --> State8
+  subgraph Stage
+  Stage1
+  Stage2
+  Stage3
+  Stage4
+  end
 
-subgraph Phase
-Phase1
-end
-
-subgraph Stage
-Stage1
-Stage2
-Stage3
-Stage4
-end
-
-subgraph State
-State1
-State2
-State3
-State4
-State5
-State6
-State7
-State8
-
-
-end
+  subgraph State
+  State1
+  State2
+  State3
+  State4
+  State5
+  State6
+  State7
+  State8
+  end
 ```
 
 ```mermaid
@@ -87,27 +83,20 @@ title: Process Tracking Hierarchy Status
 ---
 
 flowchart TD
-
-subgraph Status [" "]
-Status1
-Status2
-Status3
-Status4
-Status5
-Status6
-Status7
-Status8
-Status9
-Status10
-Status11
-Status12
-
-
-end
-
-
-
-
+  subgraph Status [" "]
+    Status1
+    Status2
+    Status3
+    Status4
+    Status5
+    Status6
+    Status7
+    Status8
+    Status9
+    Status10
+    Status11
+    Status12
+  end
 ```
 
 ```mermaid
@@ -116,23 +105,14 @@ title: Process Tracking Hierarchy Milestone Standard
 ---
 
 flowchart TD
-
-subgraph Milestone  [" "]
-Milestone1
-Milestone2
-Milestone3
-Milestone4
-Milestone5
-Milestone6
-Milestone7
-Milestone8
-
-end
-
-
-
-```
-
-```
-
+  subgraph Milestone  [" "]
+  Milestone1
+  Milestone2
+  Milestone3
+  Milestone4
+  Milestone5
+  Milestone6
+  Milestone7
+  Milestone8
+  end
 ```
