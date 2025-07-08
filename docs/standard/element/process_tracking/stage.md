@@ -4,7 +4,6 @@ title: Stage 🔬
 description: Stage process event tracking
 tags:
   - business
-  - developer
   - executive
 ---
 

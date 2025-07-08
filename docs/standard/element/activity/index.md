@@ -5,7 +5,6 @@ description: Group authorizations by purpose
 sidebar_position: 1
 tags:
   - business
-  - developer
   - executive
 ---
 

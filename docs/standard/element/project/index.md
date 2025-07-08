@@ -5,7 +5,6 @@ description: Projects elements to identify all associated applications or author
 sidebar_position: 1
 tags:
   - business
-  - developer
   - executive
 ---
 

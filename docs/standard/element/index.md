@@ -5,7 +5,6 @@ description: Standard data elements defined
 sidebar_position: 1
 tags:
   - business
-  - developer
   - executive
 ---
 

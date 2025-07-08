@@ -5,7 +5,6 @@ description: Process tracking elements
 sidebar_position: 1
 tags:
   - business
-  - developer
   - executive
 ---
 

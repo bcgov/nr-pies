@@ -4,7 +4,6 @@ title: Lifecycle 🚧
 description: Lifecycle process event tracking
 tags:
   - business
-  - developer
   - executive
 ---
 

@@ -4,7 +4,6 @@ title: Milestone dates 📝
 description: Milestone process event tracking
 tags:
   - business
-  - developer
   - executive
 ---
 

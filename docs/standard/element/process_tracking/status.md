@@ -4,7 +4,6 @@ title: Status 🚧
 description: Status process event tracking.
 tags:
   - business
-  - developer
   - executive
 ---
 

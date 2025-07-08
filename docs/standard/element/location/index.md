@@ -5,7 +5,6 @@ description: Location elements to identify where on the land base an authorizati
 sidebar_position: 1
 tags:
   - business
-  - developer
   - executive
 ---
 

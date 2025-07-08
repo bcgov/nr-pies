@@ -4,7 +4,6 @@ title: On hold 🚧
 description: On hold process event tracking
 tags:
   - business
-  - developer
   - executive
 ---
 

@@ -5,7 +5,6 @@ description: Purpose and intent of the standard
 sidebar_position: 1
 tags:
   - business
-  - developer
   - executive
 ---
 

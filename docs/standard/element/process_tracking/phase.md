@@ -4,7 +4,6 @@ title: Phase 🔬
 description: Phase process event tracking
 tags:
   - business
-  - developer
   - executive
 ---
 

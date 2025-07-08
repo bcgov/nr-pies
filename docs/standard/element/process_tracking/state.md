@@ -4,7 +4,6 @@ title: State 📝
 description: Stage process event tracking
 tags:
   - business
-  - developer
   - executive
 ---
 
