@@ -7,11 +7,8 @@ const VERSIONS_FILE = 'versions.json';
 const VERSIONED_DOCS_DIR = 'versioned_docs';
 
 try {
-  const versions = JSON.parse(
-    readFileSync(VERSIONS_FILE, { encoding: 'utf-8' })
-  );
-  if (!Array.isArray(versions))
-    throw new Error(`File ${VERSIONS_FILE} is not a JSON array.`);
+  const versions = JSON.parse(readFileSync(VERSIONS_FILE, { encoding: 'utf-8' }));
+  if (!Array.isArray(versions)) throw new Error(`File ${VERSIONS_FILE} is not a JSON array.`);
 
   versions.forEach((version: string) => {
     const working_dir = `${VERSIONED_DOCS_DIR}/version-${version}/${SPEC_DIR}`;
