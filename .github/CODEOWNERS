@@ -2,3 +2,7 @@
 # Unless a later match takes precedence, the following users will be
 # requested for review when someone opens a pull request.
 * @bcgov/nr-pmt-pit-devops
+
+# The following directories and files will have the specified owners.
+/docs/intro @bcgov/nr-pmt-pit-devops @bcgov/nr-pmt-pdt
+/docs/standard @bcgov/nr-pmt-pit-devops @bcgov/nr-pmt-pdt
