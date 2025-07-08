@@ -11,9 +11,11 @@ tags:
 
 [![Maturity:Trial](https://img.shields.io/badge/Maturity-Draft-yellow)](/docs/standard#maturity)
 
-**Objective**: Define **one province-wide framework** for standardizing where every authorization is at from initial
-application to final closure, by mapping each record to a four-level hierarchy (Lifecycle, Phase, Stage, State) and
-capturing the mandatory date/timestamps that mark transitions between each.
+## Objective
+
+Define **one province-wide framework** for standardizing where every authorization is at from initial application to
+final closure, by mapping each record to a four-level hierarchy (Lifecycle → Phase → Stage → State) and capturing the
+mandatory date/timestamps that mark transitions between each.
 
 **This data element**:
 
