@@ -5,7 +5,6 @@ description: Purpose and intent of the standard
 sidebar_position: 1
 tags:
   - business
-  - developer
   - executive
 ---
 
@@ -13,18 +12,16 @@ tags:
 
 ## Purpose
 
-Permitting is a complex space. B.C.’s Natural Resource Ministries (NRM) has hundreds of authorization types with
-many ways to collect, process and store information from intake to decision to maintenance.
+Permitting is a complex space. B.C.’s Natural Resource Ministries (NRM) has hundreds of authorization types with many
+ways to collect, process and store information from intake to decision to maintenance.
 
-Analytics and reporting and permitting reform is difficult for many reasons including data quality and inconsistencies with
-collection and capture. For permitting systems to integrate there must be a common language.
+Analytics and reporting and permitting reform is difficult for many reasons including data quality and inconsistencies
+with collection and capture. For permitting systems to integrate there must be a common language.
 
-The Permitting Interoperability Exchange Specification (PIES) contains both the standards and the specifications to enable
-data integration.
-This section of PIES will be called the standard throughout the document. It defines the foundational set of core descriptive
-data elements required to enable the compatibility
-and interoperability of Natural Resource permitting ecosystems, as well as define the purpose and characteristics of
-permitting.
+The Permitting Interoperability Exchange Specification (PIES) contains both the standards and the specifications to
+enable data integration. This section of PIES will be called the standard throughout the document. It defines the
+foundational set of core descriptive data elements required to enable the compatibility and interoperability of Natural
+Resource permitting ecosystems, as well as define the purpose and characteristics of permitting.
 
 It will enable better business intelligence, i.e., providing evidence for policy shifts and permitting process
 improvements while enabling flexibility to adapt to shifts in direction on permitting.

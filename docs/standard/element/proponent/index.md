@@ -4,7 +4,6 @@ title: Objective 🔬
 description: Proponent or applicant information
 tags:
   - business
-  - developer
   - executive
 ---
 

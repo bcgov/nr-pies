@@ -1,21 +1,11 @@
 ---
 id: status
-title: Status 📝
+title: Status 🚧
 description: Status process event tracking.
 tags:
   - business
-  - developer
   - executive
 ---
-
-import CodeBlock from '@theme/CodeBlock';
-import JSONSchemaViewer from '@theme/JSONSchemaViewer';
-import Tabs from '@theme/Tabs';
-import TabItem from '@theme/TabItem';
-
-import { generateResolverOptions } from '@site/src/components/shared';
-import example from '@site/docs/spec/element/data/parcel_id.example.json';
-import schema from '@site/docs/spec/element/data/parcel_id.schema.json';
 
 [![Maturity:Draft](https://img.shields.io/badge/Maturity-Planning-orange)](/docs/standard#maturity)
 

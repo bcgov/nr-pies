@@ -2,8 +2,7 @@
 
 import { spawnSync } from 'node:child_process';
 
-const validBranchRegex =
-  /^(main|(?:bugfix|chore|ci|docs|feature|release|renovate)\/[a-z0-9.-]+)$/;
+const validBranchRegex = /^(main|(?:bugfix|chore|ci|docs|feature|release|renovate)\/[a-z0-9.-]+)$/;
 
 /**
  * Gets the current Git branch name or exits on failure.
@@ -16,8 +15,7 @@ function getCurrentBranch(): string {
       shell: true,
       stdio: ['ignore', 'pipe', 'inherit']
     });
-    if (branch.status !== 0)
-      throw new Error('Failed to get current branch name.');
+    if (branch.status !== 0) throw new Error('Failed to get current branch name.');
     return branch.stdout.trim();
   } catch (error) {
     console.error('Error determining current branch:', error); // eslint-disable-line no-console
@@ -47,9 +45,7 @@ function main() {
   const branch = getCurrentBranch();
   if (!validBranchRegex.test(branch)) {
     // eslint-disable-next-line no-console
-    console.error(
-      `Invalid branch name '${branch}'. Branches must match: ${validBranchRegex}. Rename to proceed.`
-    );
+    console.error(`Invalid branch name '${branch}'. Branches must match: ${validBranchRegex}. Rename to proceed.`);
     process.exit(1);
   } else {
     console.info(`Branch name '${branch}' is valid.`); // eslint-disable-line no-console

@@ -64,9 +64,8 @@
   --ifm-color-primary-lightest: var(--bc-blue-40);
   --ifm-color-primary: var(--bc-blue-70);
   --ifm-font-family-base:
-    BC Sans, system-ui, -apple-system, Segoe UI, Roboto, Ubuntu, Cantarell,
-    Noto Sans, sans-serif, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial,
-    sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol';
+    BC Sans, system-ui, -apple-system, Segoe UI, Roboto, Ubuntu, Cantarell, Noto Sans, sans-serif, BlinkMacSystemFont,
+    'Segoe UI', Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol';
   --ifm-footer-background-color: var(--bc-primary-invert);
   --ifm-footer-padding-vertical: 1rem;
   --ifm-line-height-base: 1.5;

@@ -5,7 +5,6 @@ description: Details of an authorization
 sidebar_position: 1
 tags:
   - business
-  - developer
   - executive
 ---
 

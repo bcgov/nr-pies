@@ -13,21 +13,13 @@ const FeatureList: FeatureItem[] = [
     title: 'Easy to Use',
     Svg: require('@site/static/img/easytouse.svg').default,
     description: (
-      <>
-        PIES was designed from the ground up to be easily understood and
-        installed in your application quickly.
-      </>
+      <>PIES was designed from the ground up to be easily understood and installed in your application quickly.</>
     )
   },
   {
     title: 'Interoperable',
     Svg: require('@site/static/img/interoperable.svg').default,
-    description: (
-      <>
-        PIES lets you focus on your data. Let your systems communicate to each
-        other with ease.
-      </>
-    )
+    description: <>PIES lets you focus on your data. Let your systems communicate to each other with ease.</>
   },
   {
     title: 'Open Source',
@@ -35,10 +27,7 @@ const FeatureList: FeatureItem[] = [
     description: (
       <>
         Want to improve PIES? We welcome your{' '}
-        <a href="https://github.com/bcgov/nr-permit-interoperability-exchange-specification">
-          contributions
-        </a>
-        !
+        <a href="https://github.com/bcgov/nr-permit-interoperability-exchange-specification">contributions</a>!
       </>
     )
   }

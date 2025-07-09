@@ -1,21 +1,11 @@
 ---
 id: on-hold
-title: On hold 📝
+title: On hold 🚧
 description: On hold process event tracking
 tags:
   - business
-  - developer
   - executive
 ---
-
-import CodeBlock from '@theme/CodeBlock';
-import JSONSchemaViewer from '@theme/JSONSchemaViewer';
-import Tabs from '@theme/Tabs';
-import TabItem from '@theme/TabItem';
-
-import { generateResolverOptions } from '@site/src/components/shared';
-import example from '@site/docs/spec/element/data/parcel_id.example.json';
-import schema from '@site/docs/spec/element/data/parcel_id.schema.json';
 
 [![Maturity:Draft](https://img.shields.io/badge/Maturity-Planning-orange)](/docs/standard#maturity)
 
@@ -30,7 +20,8 @@ Accurate tracking helps improve processes and reduce backlog.
 
 ## Usage
 
-This level offers a high level ability to enable reporting if an application or issued authorization is active or not and the ability to determine if the application has not yet started to be worked on by the intake or authorizing agency.
+This level offers a high level ability to enable reporting if an application or issued authorization is active or not
+and the ability to determine if the application has not yet started to be worked on by the intake or authorizing agency.
 Time ranges or events define the start and end of stages within the process.
 
 ## Guidance

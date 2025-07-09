@@ -4,18 +4,8 @@ title: State 📝
 description: Stage process event tracking
 tags:
   - business
-  - developer
   - executive
 ---
-
-import CodeBlock from '@theme/CodeBlock';
-import JSONSchemaViewer from '@theme/JSONSchemaViewer';
-import Tabs from '@theme/Tabs';
-import TabItem from '@theme/TabItem';
-
-import { generateResolverOptions } from '@site/src/components/shared';
-import example from '@site/docs/spec/element/data/parcel_id.example.json';
-import schema from '@site/docs/spec/element/data/parcel_id.schema.json';
 
 [![Maturity:Draft](https://img.shields.io/badge/Maturity-Draft-yellow)](/docs/standard#maturity)
 
@@ -29,11 +19,13 @@ The state tracks the progress of an authorization through its entire process flo
 
 The status encoding shall be arbitrarily defined by the Line of Business system.
 
-All statuses shall have a declarative mapping with one of the four higher order process concepts (lifecycle, phase, stage, state).
+All statuses shall have a declarative mapping with one of the four higher order process concepts (lifecycle, phase,
+stage, state).
 
 ## Guidance
 
-This list is not intended to be exhaustive or a prescriptive list of all statuses enabled to support line of business process management.
+This list is not intended to be exhaustive or a prescriptive list of all statuses enabled to support line of business
+process management.
 
 This list is to create a common terminology and definitions to the minimum common events terms.
 

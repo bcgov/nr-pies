@@ -4,18 +4,8 @@ title: Milestone dates 📝
 description: Milestone process event tracking
 tags:
   - business
-  - developer
   - executive
 ---
-
-import CodeBlock from '@theme/CodeBlock';
-import JSONSchemaViewer from '@theme/JSONSchemaViewer';
-import Tabs from '@theme/Tabs';
-import TabItem from '@theme/TabItem';
-
-import { generateResolverOptions } from '@site/src/components/shared';
-import example from '@site/docs/spec/element/data/parcel_id.example.json';
-import schema from '@site/docs/spec/element/data/parcel_id.schema.json';
 
 [![Maturity:Draft](https://img.shields.io/badge/Maturity-Draft-yellow)](/docs/standard#maturity)
 
@@ -23,18 +13,21 @@ Official URL: `https://bcgov.github.io/nr-pies/docs/standard/element/process_tra
 
 ## Purpose
 
-This data grouping is designed to track and capture key dates throughout the authorization application process, enabling interested parties to monitor the progress of applications, ensure compliance with timelines, and support reporting and auditing.
+This data grouping is designed to track and capture key dates throughout the authorization application process,
+enabling interested parties to monitor the progress of applications, ensure compliance with timelines, and support
+reporting and auditing.
 
 ## Usage
 
-The fields provide transparency and accountability, particularly in relation to decision points and start and end processes during the identified tracking process hierarchy.
+The fields provide transparency and accountability, particularly in relation to decision points and start and end
+processes during the identified tracking process hierarchy.
 
 ## Guidance
 
 **Milestone** dates: Ensure key dates are captured, including those that occur after adjudication.
 **Timestamps**: Be aware of the different ways timestamps may be captured across systems (local time, time zones, UTC, etc.).
-System integration: Integrating data from multiple systems may involve challenges, including varying time formats (UTC, local time, daylight savings).
-All date and time data should be stored as **Coordinated Universal Time (UTC).**
+System integration: Integrating data from multiple systems may involve challenges, including varying time formats (UTC,
+local time, daylight savings). All date and time data shall be stored as **Coordinated Universal Time (UTC).**
 
 ## Structure
 

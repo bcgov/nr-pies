@@ -1,21 +1,11 @@
 ---
 id: stage
-title: Stage 📝
+title: Stage 🔬
 description: Stage process event tracking
 tags:
   - business
-  - developer
   - executive
 ---
-
-import CodeBlock from '@theme/CodeBlock';
-import JSONSchemaViewer from '@theme/JSONSchemaViewer';
-import Tabs from '@theme/Tabs';
-import TabItem from '@theme/TabItem';
-
-import { generateResolverOptions } from '@site/src/components/shared';
-import example from '@site/docs/spec/element/data/parcel_id.example.json';
-import schema from '@site/docs/spec/element/data/parcel_id.schema.json';
 
 [![Maturity:Draft](https://img.shields.io/badge/Maturity-Trial-green)](/docs/standard#maturity)
 
@@ -24,7 +14,8 @@ Official URL: `https://bcgov.github.io/nr-pies/docs/standard/element/process_tra
 ## Purpose
 
 Stage is the highest-level **operational category of work** within a Phase.
-It defines _what_ is currently being done on the authorization e.g., _Pre-application_, _Technical Review_, _Decision_, _Issuance_, giving a clear reference point for progress tracking.
+It defines _what_ is currently being done on the authorization e.g., _Pre-application_, _Technical Review_, _Decision_,
+_Issuance_, giving a clear reference point for progress tracking.
 
 ## Usage
 
@@ -43,7 +34,8 @@ Stage records the **current operational step** that an authorization is undergoi
 - **Relationships:**
   - _Phase → Stage_: A Stage is a subset of a Phase (Phase → Stage is 1-to-many).
   - _Stage → State_: A State is a subset of a Stage (Stage → State is 1-to-many).
-- **Change control:** an authorization may progress through successive Stages and return to an earlier Stage any number of times.
+- **Change control:** an authorization may progress through successive Stages and return to an earlier Stage any number
+  of times.
 
 ## Allowed values (by Phase)
 
@@ -53,11 +45,11 @@ Stage records the **current operational step** that an authorization is undergoi
 
 | Name                         | Description |
 | ---------------------------- | ----------- |
-| Pre-application              |
-| Initial submission review    |
-| Technical review and comment |
-| Decision preparation         |
-| Decision                     |
+| Pre-application              |             |
+| Initial submission review    |             |
+| Technical review and comment |             |
+| Decision preparation         |             |
+| Decision                     |             |
 
 ### Post issuance Phase
 

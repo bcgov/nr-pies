@@ -35,12 +35,5 @@
       "enum": ["Permit", "Project", "Submission", "Tracking"]
     }
   },
-  "required": [
-    "transaction_id",
-    "version",
-    "kind",
-    "system_id",
-    "record_id",
-    "record_kind"
-  ]
+  "required": ["transaction_id", "version", "kind", "system_id", "record_id", "record_kind"]
 }

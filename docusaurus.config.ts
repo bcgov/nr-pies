@@ -4,8 +4,7 @@ import type * as Preset from '@docusaurus/preset-classic';
 
 const config: Config = {
   title: 'Permitting Interoperability Exchange Specification',
-  tagline:
-    'An easy as pie way to exchange standardized permitting information. 🥧',
+  tagline: 'An easy as pie way to exchange standardized permitting information. 🥧',
   favicon: 'img/favicon.ico',
 
   // Set the production url of your site here
