@@ -3,7 +3,7 @@
 [![Lifecycle:Maturing](https://img.shields.io/badge/Lifecycle-Maturing-007EC6)](https://github.com/bcgov/repomountie/blob/master/doc/lifecycle-badges.md)
 [![Powered By](https://img.shields.io/badge/Powered%20By-Docusaurus-3ECC5F?logo=docusaurus)](https://docusaurus.io/)
 
-An easy as pie way to exchange standardized permitting information. 🥧
+An easy-as-pie way to exchange standardized permitting information. 🥧
 
 This website is built using [Docusaurus](https://docusaurus.io/), a modern
 static website generator.
