@@ -29,9 +29,6 @@ title: Application Process Tracking Hierarchy
 ---
 
 flowchart LR
-  ANYTIME@{ shape: comment, label: "REJECTED
-  WITHDRAWN" }
-
   PRE_APPLICATION --> DRAFT
   PRE_APPLICATION --> SUBMITTED
 
@@ -40,6 +37,8 @@ flowchart LR
   APPLICATION --> TECH_REVIEW_COMMENT
   APPLICATION --> DECISION
   APPLICATION --> ISSUANCE
+  APPLICATION --> REJECTED
+  APPLICATION --> WITHDRAWN
 
   INITIAL_SUBMISSION_REVIEW  --> SUBMISSION_REVIEW
 
@@ -66,6 +65,8 @@ flowchart LR
     TECH_REVIEW_COMMENT
     DECISION
     ISSUANCE
+    REJECTED
+    WITHDRAWN
   end
 
   subgraph STATE
@@ -82,7 +83,6 @@ flowchart LR
     OFFERED
     ISSUED
     DECLINED
-    ANYTIME
   end
 ```
 
@@ -104,11 +104,13 @@ flowchart LR
 | 3     | `OFFERED`                    | Offered                      |             |
 | 2     | `PRE_APPLICATION`            | Pre-Application              |             |
 | 3     | `REFERRAL`                   | Referral                     |             |
+| 2     | `REJECTED`                   | Rejected                     |             |
 | 3     | `SUBMISSION_REVIEW`          | Submission Review            |             |
 | 3     | `SUBMITTED`                  | Submitted                    |             |
 | 2     | `TECH_REVIEW_COMMENT`        | Technical Review and Comment |             |
 | 3     | `TECH_REVIEW_COMPLETED`      | Technical Review Completed   |             |
 | 3     | `TECHNICAL_REVIEW`           | Technical Review             |             |
+| 2     | `WITHDRAWN`                  | Withdrawn                    |             |
 
 ## Errata
 
