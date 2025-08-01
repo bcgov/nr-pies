@@ -88,29 +88,29 @@ flowchart LR
 
 ### Concepts
 
-| Level | Code                         | Display                      | Description |
-| ----- | ---------------------------- | ---------------------------- | ----------- |
-| 1     | `APPLICATION`                | Application                  |             |
-| 3     | `ALLOWED`                    | Allowed                      |             |
-| 3     | `DECISION_REVIEW`            | Decision Review              |             |
-| 2     | `DECISION`                   | Decision                     |             |
-| 3     | `DECLINED`                   | Declined                     |             |
-| 3     | `DISALLOWED`                 | Disallowed                   |             |
-| 3     | `DRAFT`                      | Draft                        |             |
-| 3     | `FIRST_NATIONS_CONSULTATION` | First Nations Consultation   |             |
-| 2     | `INITIAL_SUBMISSION_REVIEW`  | Initial Submission Review    |             |
-| 2     | `ISSUANCE`                   | Issuance                     |             |
-| 3     | `ISSUED`                     | Issued                       |             |
-| 3     | `OFFERED`                    | Offered                      |             |
-| 2     | `PRE_APPLICATION`            | Pre-Application              |             |
-| 3     | `REFERRAL`                   | Referral                     |             |
-| 2     | `REJECTED`                   | Rejected                     |             |
-| 3     | `SUBMISSION_REVIEW`          | Submission Review            |             |
-| 3     | `SUBMITTED`                  | Submitted                    |             |
-| 2     | `TECH_REVIEW_COMMENT`        | Technical Review and Comment |             |
-| 3     | `TECH_REVIEW_COMPLETED`      | Technical Review Completed   |             |
-| 3     | `TECHNICAL_REVIEW`           | Technical Review             |             |
-| 2     | `WITHDRAWN`                  | Withdrawn                    |             |
+| Level | Code                         | Display                      | Description                                                                                                                                                                      |
+| ----- | ---------------------------- | ---------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| 1     | `APPLICATION`                | Application                  |                                                                                                                                                                                  |
+| 3     | `ALLOWED`                    | Allowed                      | The application has met all requirements, and the decision has been made to allow to move forward with the request.                                                              |
+| 3     | `DECISION_REVIEW`            | Decision Review              |                                                                                                                                                                                  |
+| 2     | `DECISION`                   | Decision                     |                                                                                                                                                                                  |
+| 3     | `DECLINED`                   | Declined                     | The applicant has declined the offer proposed by the issuing agency. Further changes to the offer may occur to be reviewed prior to finally being declined or issued.            |
+| 3     | `DISALLOWED`                 | Disallowed                   | The request has not met all requirements, conflicts with other uses or is non-compliant with regulations. Has been officially denied. The applicant is notified of the decision. |
+| 3     | `DRAFT`                      | Draft                        | The application is being prepared but has not yet been submitted. The applicant can make changes.                                                                                |
+| 3     | `FIRST_NATIONS_CONSULTATION` | First Nations Consultation   | The application has been sent off for consultation. This may occur at the same time as being reviewed by the primary authority.                                                  |
+| 2     | `INITIAL_SUBMISSION_REVIEW`  | Initial Submission Review    |                                                                                                                                                                                  |
+| 2     | `ISSUANCE`                   | Issuance                     |                                                                                                                                                                                  |
+| 3     | `ISSUED`                     | Issued                       | The application process is fully completed, approved and offer accepted (if required), and the necessary actions to issue the authorization.                                     |
+| 3     | `OFFERED`                    | Offered                      | The application process is fully completed, approved and offer sent out.                                                                                                         |
+| 2     | `PRE_APPLICATION`            | Pre-Application              |                                                                                                                                                                                  |
+| 3     | `REFERRAL`                   | Referral                     | The application is being referred to another relevant authority for review. This may occur at the same time as under review by the primary authority.                            |
+| 2     | `REJECTED`                   | Rejected                     | The reviewing authority requirements not achieved and application has been rejected. The applicant is informed of the reasons.                                                   |
+| 3     | `SUBMISSION_REVIEW`          | Submission Review            | The application is being evaluated by the relevant authority or team. This may involve assessment of documents and qualifications.                                               |
+| 3     | `SUBMITTED`                  | Submitted                    | The application has been officially submitted for review. No further changes can be made at this point.                                                                          |
+| 2     | `TECH_REVIEW_COMMENT`        | Technical Review and Comment |                                                                                                                                                                                  |
+| 3     | `TECH_REVIEW_COMPLETED`      | Technical Review Completed   |                                                                                                                                                                                  |
+| 3     | `TECHNICAL_REVIEW`           | Technical Review             | The application is being reviewed by the primary authority. This may occur at the same time as referrals or consultation.                                                        |
+| 2     | `WITHDRAWN`                  | Withdrawn                    | The application has been withdrawn by applicant. This may occur at any stage prior to issuance.                                                                                  |
 
 ## Errata
 
