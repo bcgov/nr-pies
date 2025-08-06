@@ -42,8 +42,8 @@
     "@docusaurus/tsconfig": "3.8.1",
     "@docusaurus/types": "3.8.1",
     "prettier": "3.6.2",
-    "simple-git-hooks": "2.13.0",
-    "typescript": "5.8.3"
+    "simple-git-hooks": "2.13.1",
+    "typescript": "5.9.2"
   },
   "browserslist": {
     "production": [
