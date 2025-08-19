@@ -1,11 +1,11 @@
 {
   "$schema": "https://docs.renovatebot.com/renovate-schema.json",
-  "extends": ["github>bcgov/renovate-config"],
+  "extends": ["github>bcgov/renovate-config#v1.0.0"],
   "automerge": true,
   "dependencyDashboard": true,
   "draftPR": false,
   "minimumReleaseAge": "3 days",
-  "prConcurrentLimit": 2,
+  "prConcurrentLimit": 3,
   "pruneStaleBranches": true,
   "rangeStrategy": "pin",
   "schedule": ["* * * * 2"],
