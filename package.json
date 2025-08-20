@@ -7,7 +7,7 @@
   "author": "NRM Permitting and Data Solutions <NRM.PermittingAndData@gov.bc.ca>",
   "scripts": {
     "docusaurus": "docusaurus",
-    "format": "prettier --write \"**/*.{css,json,md,mdx,ts,tsx,yaml}\"",
+    "format": "prettier --write \"**/*.{css,js,json,md,mdx,ts,tsx,yaml}\"",
     "start": "docusaurus start --host 0.0.0.0",
     "build": "docusaurus build",
     "swizzle": "docusaurus swizzle",
@@ -16,7 +16,7 @@
     "serve": "docusaurus serve",
     "version": "docusaurus docs:version",
     "prebuild": "npm run typecheck",
-    "postinstall": "simple-git-hooks",
+    "postinstall": "lefthook install",
     "postversion": "npm run version:fix",
     "version:fix": "node --experimental-strip-types ./versionUtils.ts",
     "write-translations": "docusaurus write-translations",
@@ -41,8 +41,8 @@
     "@docusaurus/module-type-aliases": "3.8.1",
     "@docusaurus/tsconfig": "3.8.1",
     "@docusaurus/types": "3.8.1",
+    "lefthook": "1.12.3",
     "prettier": "3.6.2",
-    "simple-git-hooks": "2.13.1",
     "typescript": "5.9.2"
   },
   "browserslist": {

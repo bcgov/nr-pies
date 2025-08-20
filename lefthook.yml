@@ -1,0 +1,16 @@
+# Refer for explanation to following link: https://lefthook.dev/configuration/
+assert_lefthook_installed: true
+colors: false
+
+pre-commit:
+  parallel: true
+  jobs:
+    - name: Format Source and Tests
+      glob: '*.{css,js,json,md,mdx,ts,tsx,yaml}'
+      run: npm run format
+
+pre-push:
+  parallel: true
+  jobs:
+    - name: Validate Branch Naming
+      run: node prepush.helper.ts
