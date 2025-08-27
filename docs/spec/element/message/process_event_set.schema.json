@@ -5,7 +5,7 @@
   "description": "Represents a process concept at a specific event in time.",
   "type": "object",
   "properties": {
-    "process_event": {
+    "process_event_set": {
       "type": "array",
       "items": {
         "$ref": "https://raw.githubusercontent.com/bcgov/nr-pies/refs/heads/main/docs/spec/element/resource/process_event.schema.json"
@@ -19,5 +19,5 @@
       "$ref": "https://raw.githubusercontent.com/bcgov/nr-pies/refs/heads/main/docs/spec/element/data/header.schema.json"
     }
   ],
-  "required": ["process_event"]
+  "required": ["process_event_set"]
 }

@@ -5,7 +5,7 @@
   "system_id": "ITSM-5917",
   "record_id": "06bc53dc-3e4f-420b-801c-bd9cc0ea01b2",
   "record_kind": "Permit",
-  "process_event": [
+  "process_event_set": [
     {
       "event": {
         "start_datetime": "2024-11-30T00:21:20.575Z"
