@@ -38,7 +38,7 @@ version value follows semver, this attribute is named `version` and will also be
 
 PIES messages are categorized into different message types. These different kinds of messages will be structured to
 contain different fields and structures. This attribute is named `kind` and will also be a `string`. For example, the
-ProcessEventSetMessage data type would have kind set to "ProcessEventSet". This attribute is necessary because there
+Record Message data type would have kind set to "Record". This attribute is necessary because there
 needs to be a clean way for parsing systems to quickly identify what kind of document is being transmitted. Inferring
 the message kind without this attribute could lead to errors in parsing and processing the message.
 
