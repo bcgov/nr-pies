@@ -1,0 +1,16 @@
+{
+  "$id": "https://raw.githubusercontent.com/bcgov/nr-pies/refs/heads/main/docs/spec/element/resource/coding_event.schema.json",
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "Coding Event",
+  "description": "Represents a coding concept at a specific event in time.",
+  "type": "object",
+  "properties": {
+    "coding": {
+      "$ref": "https://raw.githubusercontent.com/bcgov/nr-pies/refs/heads/main/docs/spec/element/data/coding.schema.json"
+    },
+    "event": {
+      "$ref": "https://raw.githubusercontent.com/bcgov/nr-pies/refs/heads/main/docs/spec/element/data/event.schema.json"
+    }
+  },
+  "required": ["coding", "event"]
+}

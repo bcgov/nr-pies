@@ -1,0 +1,11 @@
+{
+  "event": {
+    "start_date": "2024-12-01",
+    "end_date": "2024-12-31"
+  },
+  "coding": {
+    "code": "MISSING_INFORMATION",
+    "code_set": ["MISSING_INFORMATION"],
+    "code_system": "https://bcgov.github.io/nr-pies/docs/spec/code_system/on_hold_process"
+  }
+}

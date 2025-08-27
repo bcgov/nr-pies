@@ -1,0 +1,87 @@
+---
+id: coding_event
+title: Coding Event 📝
+description: Represents a coding concept at a specific event in time.
+tags:
+  - developer
+---
+
+import CodeBlock from '@theme/CodeBlock';
+import JSONSchemaViewer from '@theme/JSONSchemaViewer';
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
+
+import { generateResolverOptions } from '@site/src/components/shared';
+import example from '@site/docs/spec/element/resource/coding_event.example.json';
+import schema from '@site/docs/spec/element/resource/coding_event.schema.json';
+
+[![Maturity:Draft](https://img.shields.io/badge/Maturity-Draft-yellow)](/docs/spec#maturity)
+
+Official URL: `https://bcgov.github.io/nr-pies/docs/spec/element/resource/coding_event`
+
+JSON Schema URL: https://raw.githubusercontent.com/bcgov/nr-pies/refs/heads/main/docs/spec/element/resource/coding_event.schema.json
+
+Represents a coding concept at a specific event in time.
+
+## Scope
+
+This data type is intended to represent an instance of a temporal event within a defined coding.
+
+Loosely taking inspiration from [HL7 Timing](https://www.hl7.org/fhir/datatypes.html#timing).
+
+## Structure
+
+| Name   | Cardinality | Type                                     | Description & Constraints                                                                                            |
+| ------ | ----------- | ---------------------------------------- | -------------------------------------------------------------------------------------------------------------------- |
+| coding | 1..1        | [Coding](/docs/spec/element/data/coding) | A coding concept. This attribute should represent the core concept of a defined coding.                              |
+| event  | 1..1        | [Event](/docs/spec/element/data/event)   | An event concept. This attribute should solely describe the raw known factual information a specific temporal event. |
+
+## Specification
+
+<Tabs queryString="tab">
+  <TabItem
+    value="schema"
+    label="Schema"
+    default
+  >
+    <JSONSchemaViewer
+      resolverOptions={generateResolverOptions({ remote: true })}
+      schema={schema}
+      viewerOptions={{ showExamples: true }}
+    />
+  </TabItem>
+  <TabItem
+    value="source"
+    label="Source"
+  >
+    <CodeBlock
+      language="json"
+      showLineNumbers
+    >
+      {JSON.stringify(schema, null, 2)}
+    </CodeBlock>
+  </TabItem>
+  <TabItem
+    value="example"
+    label="Example"
+  >
+    <CodeBlock
+      language="json"
+      showLineNumbers
+    >
+      {JSON.stringify(example, null, 2)}
+    </CodeBlock>
+  </TabItem>
+</Tabs>
+
+## Implementation Notes
+
+The Coding Event type is designed to act as a container data type representing a cartesian product between the
+[Coding](/docs/spec/element/data/coding) and [Event](/docs/spec/element/data/event) data types. Both data types are
+required in order to have a semantically coherent Coding Event. Recipient systems will be able to associate a specific
+coding happening at a defined time using this data type.
+
+## References
+
+- [Coding](/docs/spec/element/data/coding)
+- [Event](/docs/spec/element/data/event)
