@@ -1,7 +1,7 @@
 ---
 id: application_process
 title: Application Process 🚧
-description: A hierarchy for tracking an application process.
+description: Represents a process tracking classifcation.
 tags:
   - business
   - developer
@@ -17,7 +17,9 @@ This Code System is used or referenced by:
 
 ## Definition
 
-A type of [Process Tracking](/docs/spec/code_system/process_tracking) scoped to Application Process Tracking.
+Represents a [Process Tracking](/docs/spec/code_system/process_tracking) classifcation, tracking an authorization
+through its entire lifecycle from application, issuance, amendments/extensions, until closure/removal of the
+authorization.
 
 ## Content
 

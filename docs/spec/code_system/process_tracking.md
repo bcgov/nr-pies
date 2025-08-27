@@ -1,7 +1,7 @@
 ---
 id: process_tracking
 title: Process Tracking 🚧
-description: A conceptual hierarchy for tracking a common process flow.
+description: A conceptual hierarchy for tracking a process flow.
 tags:
   - business
   - developer
@@ -17,7 +17,7 @@ This Code System is used or referenced by:
 
 ## Definition
 
-A conceptual hierarchy for tracking a common process flow.
+A conceptual hierarchy for tracking a process flow.
 
 ## Content
 

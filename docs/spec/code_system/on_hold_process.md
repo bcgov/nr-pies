@@ -1,7 +1,7 @@
 ---
 id: on_hold_process
 title: On Hold Process 🚧
-description: An element definition for tracking an on hold process.
+description: Represents the reason a record is paused.
 tags:
   - business
   - developer
@@ -17,8 +17,8 @@ This Code System is used or referenced by:
 
 ## Definition
 
-An element definition for tracking periods when a record is paused, preventing it from being actioned on. It is
-intended to be excluded from processing time.
+Represents the reason a [Record](/docs/spec/element/message/record) is paused, preventing it
+from being actioned on. It is intended to be excluded from processing time.
 
 ## Content
 

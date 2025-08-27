@@ -1,0 +1,95 @@
+---
+id: record
+title: Record 📝
+description: Represents a set of process events associated to a specific record
+tags:
+  - business
+  - developer
+---
+
+import CodeBlock from '@theme/CodeBlock';
+import JSONSchemaViewer from '@theme/JSONSchemaViewer';
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
+
+import { generateResolverOptions } from '@site/src/components/shared';
+import example from '@site/docs/spec/element/message/record.example.json';
+import schema from '@site/docs/spec/element/message/record.schema.json';
+
+[![Maturity:Draft](https://img.shields.io/badge/Maturity-Draft-yellow)](/docs/spec#maturity)
+
+Official URL: `https://bcgov.github.io/nr-pies/docs/spec/element/message/record`
+
+JSON Schema URL: https://raw.githubusercontent.com/bcgov/nr-pies/refs/heads/main/docs/spec/element/message/record.schema.json
+
+Represents a specific record.
+
+## Scope
+
+This message type is intended to represent an atomic Record originating from a source system. This will commonly be
+used for sharing a record's process and on hold history. Use cases may include auditing, reporting or compliance.
+
+Note that this message type does not guarantee nor expect all known attributes to be present. It is possible for this
+message to only represent a subset of a canonically complete Record.
+
+## Structure
+
+A Record shall contain every standard message [Header](/docs/spec/element/data/header#structure) property, in addition
+to the following properties:
+
+| Name              | Cardinality | Type                                                      | Description & Constraints                                                                 |
+| ----------------- | ----------- | --------------------------------------------------------- | ----------------------------------------------------------------------------------------- |
+| on_hold_event_set | 1..1        | [CodingEvent](/docs/spec/element/resource/coding_event)   | A set of CodingEvents. Represents a set of on hold concepts at a specific event in time.  |
+| process_event_set | 1..1        | [ProcessEvent](/docs/spec/element/resource/process_event) | A set of ProcessEvents. Represents a set of process concepts at a specific event in time. |
+
+## Specification
+
+<Tabs queryString="tab">
+  <TabItem
+    value="schema"
+    label="Schema"
+    default
+  >
+    <JSONSchemaViewer
+      resolverOptions={generateResolverOptions({ remote: true })}
+      schema={schema}
+      viewerOptions={{ showExamples: true }}
+    />
+  </TabItem>
+  <TabItem
+    value="source"
+    label="Source"
+  >
+    <CodeBlock
+      language="json"
+      showLineNumbers
+    >
+      {JSON.stringify(schema, null, 2)}
+    </CodeBlock>
+  </TabItem>
+  <TabItem
+    value="example"
+    label="Example"
+  >
+    <CodeBlock
+      language="json"
+      showLineNumbers
+    >
+      {JSON.stringify(example, null, 2)}
+    </CodeBlock>
+  </TabItem>
+</Tabs>
+
+## Implementation Notes
+
+The Record message type is designed to act as an aggregation of on hold
+[CodingEvent](/docs/spec/element/resource/coding_event)s and [ProcessEvent](/docs/spec/element/resource/process_event)s.
+Systems creating this message type should provide all known element definitions associated to a record if possible.
+Recipient systems should not assume that the message will provide the full data horizon of all attributes. If the full
+data horizon is required, recipient systems must ensure that they request for any other relevant associated Records.
+
+## References
+
+- [CodingEvent](/docs/spec/element/resource/coding_event)
+- [Header](/docs/spec/element/data/header)
+- [ProcessEvent](/docs/spec/element/resource/process_event)

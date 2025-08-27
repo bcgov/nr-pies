@@ -1,0 +1,30 @@
+{
+  "$id": "https://raw.githubusercontent.com/bcgov/nr-pies/refs/heads/main/docs/spec/element/message/record.schema.json",
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "Process Event Set",
+  "description": "Represents a specific record.",
+  "type": "object",
+  "properties": {
+    "on_hold_event_set": {
+      "type": "array",
+      "items": {
+        "$ref": "https://raw.githubusercontent.com/bcgov/nr-pies/refs/heads/main/docs/spec/element/resource/coding_event.schema.json"
+      },
+      "uniqueItems": true
+    },
+    "process_event_set": {
+      "type": "array",
+      "items": {
+        "$ref": "https://raw.githubusercontent.com/bcgov/nr-pies/refs/heads/main/docs/spec/element/resource/process_event.schema.json"
+      },
+      "minItems": 1,
+      "uniqueItems": true
+    }
+  },
+  "allOf": [
+    {
+      "$ref": "https://raw.githubusercontent.com/bcgov/nr-pies/refs/heads/main/docs/spec/element/data/header.schema.json"
+    }
+  ],
+  "required": ["on_hold_event_set", "process_event_set"]
+}
