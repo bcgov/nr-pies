@@ -1,7 +1,7 @@
 {
   "$id": "https://raw.githubusercontent.com/bcgov/nr-pies/refs/heads/main/docs/spec/element/message/record.schema.json",
   "$schema": "http://json-schema.org/draft-07/schema#",
-  "title": "Process Event Set",
+  "title": "Record",
   "description": "Represents a specific record.",
   "type": "object",
   "properties": {
