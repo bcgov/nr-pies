@@ -22,7 +22,6 @@ const config: Config = {
 
   onBrokenAnchors: 'throw',
   onBrokenLinks: 'throw',
-  onBrokenMarkdownLinks: 'throw',
 
   future: {
     /**
@@ -93,6 +92,9 @@ const config: Config = {
   ],
 
   markdown: {
+    hooks: {
+      onBrokenMarkdownLinks: 'throw'
+    },
     mermaid: true
   },
 
