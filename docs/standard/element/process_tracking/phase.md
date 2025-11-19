@@ -52,7 +52,7 @@ reporting logic, signalling whether the authorization remains in development or 
 
 [![Maturity:Trial](https://img.shields.io/badge/Maturity-Trial-green)](/docs/standard#maturity)
 
-| Name          | Description                                                                                                                                         |
+| Phase         | Description                                                                                                                                         |
 | ------------- | --------------------------------------------------------------------------------------------------------------------------------------------------- |
 | Application   | Indicates that the authorization is currently undergoing the application process e.g. creating, vetting, evaluating... and has not yet been issued. |
 | Post issuance | Indicates that the authorization has been issued and is now active or being managed e.g., through amendments, renewals, or maintenance activities.  |
