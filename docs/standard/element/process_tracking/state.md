@@ -16,17 +16,10 @@ Official URL: `https://bcgov.github.io/nr-pies/docs/standard/element/process_tra
 State is the lowest-level operational category of work captured on an authorization and is a subset of Stage.
 Together the States describe the internal lifecycle of a Stage.
 
-<!-- OLD:  The state tracks the progress of an authorization through its entire process flow. -->
-
 ## Usage
 
 Use State to record the specific activity or condition occurring within the current Stage.
 States may be concurrent when parallel activities are valid.
-
-<!-- OLD: The status encoding shall be arbitrarily defined by the Line of Business system.
-
-All statuses shall have a declarative mapping with one of the four higher order process concepts (lifecycle, phase,
-stage, state). -->
 
 ## Guidance
 
@@ -34,14 +27,9 @@ stage, state). -->
 
 - Some states are unique to their respective stage, while others may appear in multiple stages, see definitions below.
 
-- States do NOT carry timing; dates and durations come from Milestones.
+- States do not carry timing; dates and durations come from Milestones.
 
-- If On-hold is used, capture a reason, see [On-hold](/docs/standard/element/process_tracking/on-hold) for reasons.
-
-<!--OLD: This list is not intended to be exhaustive or a prescriptive list of all statuses enabled to support line of business
-process management.
-
-This list is to create a common terminology and definitions to the minimum common events terms. -->
+- If On hold is used, capture a reason, see [On hold](/docs/standard/element/process_tracking/on-hold) for reasons.
 
 ## Properties
 
@@ -76,12 +64,12 @@ This list is to create a common terminology and definitions to the minimum commo
 | Referral                   | Referral                                 | The application is being referred to another relevant authorities for review. This may occur at the same time as technical by the deciding authority.                               |
 | Accepted                   | Submission accepted                      | The application has been accepted by the initial reviewing authority.                                                                                                               |
 | Submission review          | Submission review                        | The application is being evaluated by the relevant authority or team. This may involve assessment of documents and qualifications.                                                  |
-| Submitted                  | Submitted                                | The application has been submitted for review. No further changes can be made at this point.                                                                                        |
+| Submitted                  | Submitted                                | The application has been submitted for review.                                                                                                                                      |
 | Technical review           | Technical review                         | The application is being reviewed by the deciding authority. This may occur at the same time as referrals or consultation.                                                          |
 | Review completed           | Review completion and/or recommendations | The application has been reviewed/recommendation and comment. prepared.                                                                                                             |
 | Rejected                   | Rejected                                 | The application has been rejected by deciding. authority                                                                                                                            |
 | Withdrawn                  | Withdrawn                                | The application has been withdrawn by applicant. This may occur at any stage prior to a final decision or issuance.                                                                 |
-| On hold                    | On hold '''with reason'''                | The application has been put on hold for a defined set of reasons. See [On hold](/docs/standard/element/process_tracking/on-hold) section.                                          |
+| On hold                    | On hold ''with reason''                  | The application has been put on hold for a defined set of reasons. See [On hold](/docs/standard/element/process_tracking/on-hold) section.                                          |
 
 ## Post issuance level
 
