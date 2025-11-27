@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunknr_pies=self.webpackChunknr_pies||[]).push([["2506"],{94657:function(e,s,c){c.d(s,{createPieServices:()=>i.f});var i=c(1126);c(81310)}}]);
