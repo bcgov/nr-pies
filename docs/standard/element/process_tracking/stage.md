@@ -30,7 +30,7 @@ Stage records the **current operational step** that an authorization is undergoi
 ## Properties
 
 - **Data format**: string
-- **Null**: Cannot be `null` – every authorization must have a phase.
+- **Null**: Cannot be `null` – every authorization must have a stage.
 - **Relationships:**
   - _Phase → Stage_: A Stage is a subset of a Phase (Phase → Stage is 1-to-many).
   - _Stage → State_: A State is a subset of a Stage (Stage → State is 1-to-many).
@@ -43,13 +43,13 @@ Stage records the **current operational step** that an authorization is undergoi
 
 [![Maturity:Trial](https://img.shields.io/badge/Maturity-Trial-green)](/docs/standard#maturity)
 
-| Name                         | Description |
-| ---------------------------- | ----------- |
-| Pre-application              |             |
-| Initial submission review    |             |
-| Technical review and comment |             |
-| Decision preparation         |             |
-| Decision                     |             |
+| Stage                        | Description                                                                                                                                                                                                                                                                                                                               |
+| ---------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Pre-application              | No formal submission or review is underway; the file remains entirely with the proponent.                                                                                                                                                                                                                                                 |
+| Initial submission review    | Upon submission, the receiving office or intake system performs preliminary (often automated) checks for completeness and basic eligibility, validates required documents/fees, and requests corrections if needed. No formal technical assessment occurs here; this stage only determines readiness to enter Technical Review & Comment. |
+| Technical review and comment | Subject-matter evaluation by internal and/or external reviewers (may include referrals and First Nations consultation, where applicable). This stage ends when all required reviews are completed and documented with comments/recommendations.                                                                                           |
+| Decision                     | The designated decision-maker considers the record and issues a determination (e.g., allow, disallowed)                                                                                                                                                                                                                                   |
+| Issuance                     | The application is prepared and finalized. Where an offer is required, it is issued and acceptance is recorded; upon meeting any prerequisites, the authorization is issued.                                                                                                                                                              |
 
 ### Post issuance Phase
 
