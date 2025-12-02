@@ -1,6 +1,6 @@
 {
   "name": "nr-pies",
-  "image": "mcr.microsoft.com/devcontainers/typescript-node:22@sha256:453cd81ed5d55380beb36a84b9bc69e35714efc693c8ef68f9c3355698b531a0",
+  "image": "mcr.microsoft.com/devcontainers/typescript-node:22@sha256:b99bdcd3a5c1d9ae6dee2121afbc26ce5182198e6770137bea82d9686609f154",
   "workspaceMount": "source=${localWorkspaceFolder},target=/workspace,type=bind",
   "workspaceFolder": "/workspace",
   "customizations": {
