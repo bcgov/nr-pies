@@ -32,17 +32,17 @@
     "clsx": "2.1.1",
     "docusaurus-json-schema-plugin": "1.15.0",
     "docusaurus-lunr-search": "3.6.0",
-    "mermaid": "11.12.1",
+    "mermaid": "11.12.2",
     "prism-react-renderer": "2.4.1",
-    "react": "19.2.0",
-    "react-dom": "19.2.0"
+    "react": "19.2.1",
+    "react-dom": "19.2.1"
   },
   "devDependencies": {
     "@docusaurus/module-type-aliases": "3.9.2",
     "@docusaurus/tsconfig": "3.9.2",
     "@docusaurus/types": "3.9.2",
-    "lefthook": "2.0.4",
-    "prettier": "3.7.3",
+    "lefthook": "2.0.8",
+    "prettier": "3.7.4",
     "typescript": "5.9.3"
   },
   "browserslist": {
