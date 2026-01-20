@@ -17,7 +17,6 @@
       "items": {
         "$ref": "https://raw.githubusercontent.com/bcgov/nr-pies/refs/heads/main/docs/spec/element/resource/process_event.schema.json"
       },
-      "minItems": 1,
       "uniqueItems": true
     }
   },
