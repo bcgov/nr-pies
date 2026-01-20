@@ -24,6 +24,5 @@
     {
       "$ref": "https://raw.githubusercontent.com/bcgov/nr-pies/refs/heads/main/docs/spec/element/data/header.schema.json"
     }
-  ],
-  "required": ["on_hold_event_set", "process_event_set"]
+  ]
 }
