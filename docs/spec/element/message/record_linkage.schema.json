@@ -16,8 +16,8 @@
     },
     "linked_record_kind": {
       "type": "string",
-      "description": "The kind of record the source system stores this linked record as (i.e. Anchor, Permit, Project, Submission or Tracking).",
-      "enum": ["Anchor", "Permit", "Project", "Submission", "Tracking"]
+      "description": "The kind of record the source system stores this linked record as (i.e. Anchor or Permit).",
+      "enum": ["Anchor", "Permit"]
     }
   },
   "allOf": [

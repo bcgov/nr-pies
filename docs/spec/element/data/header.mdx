@@ -38,7 +38,7 @@ data structure is not intended for standalone use.
 | kind           | 1..1        | `string`       | The specific kind of PIES message data type this message represents.                                                                                                                                       |
 | system_id      | 1..1        | [Code](./code) | A valid [NRIDS IT Service Management](https://apps.nrs.gov.bc.ca/int/jira/secure/ObjectSchema.jspa?id=1&typeId=5) code which identifies the source system, service or asset that the data originates from. |
 | record_id      | 1..1        | `string`       | The record or primary key representing what the data this message is directly associated to.                                                                                                               |
-| record_kind    | 1..1        | `string`       | The kind of record the source system stores this record as (i.e. Anchor, Permit, Project, Submission or Tracking).                                                                                         |
+| record_kind    | 1..1        | `string`       | The kind of record the source system stores this record as (i.e. Anchor or Permit).                                                                                                                        |
 
 ## Specification
 
