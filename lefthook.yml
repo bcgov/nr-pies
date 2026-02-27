@@ -2,15 +2,32 @@
 assert_lefthook_installed: true
 colors: false
 
+commit-msg:
+  commands:
+    'Git Lint Commit Message':
+      run: node_modules/.bin/commitlint --edit {1}
+
 pre-commit:
-  parallel: true
-  jobs:
-    - name: Format Source and Tests
+  commands:
+    'Source Format':
       glob: '*.{css,js,json,md,mdx,ts,tsx,yaml}'
-      run: npm run format
+      run: node_modules/.bin/prettier --check --write {staged_files}
+      stage_fixed: true
 
 pre-push:
-  parallel: true
-  jobs:
-    - name: Validate Branch Naming
-      run: node prepush.helper.ts
+  commands:
+    'Git Lint Branch Naming':
+      run: |
+        BRANCH=$(git rev-parse --abbrev-ref HEAD | tr -d '[:space:]')
+        VALID_REGEX='^(main|((bugfix|chore|ci|docs|feature|hotfix|perf|refactor|release|renovate|security|style|test)\/[a-z0-9]+([.-][a-z0-9]+)*))$'
+
+        if echo "$BRANCH" | grep -Eq "$VALID_REGEX"; then
+          echo "Branch name '$BRANCH' is valid."
+        else
+          echo "Error: Invalid branch name '$BRANCH'."
+          echo "Branches must match: $VALID_REGEX"
+          exit 1
+        fi
+
+    'Source Typecheck':
+      run: node_modules/.bin/tsc --noEmit
