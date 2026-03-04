@@ -28,7 +28,7 @@ const config: Config = {
      * Opt-in to all of the @docusaurus/faster stack introduced in 3.6
      * @see https://docusaurus.io/blog/releases/3.6#adoption-strategy
      */
-    experimental_faster: true,
+    // experimental_faster: true, // TODO: Uncomment when Rspack is faster than webpack again
     /**
      * Opt-in to all incoming feature flags that will appear in Docusaurus 4.
      * @see https://docusaurus.io/blog/releases/3.8#future-flags
@@ -45,6 +45,32 @@ const config: Config = {
   },
 
   plugins: [
+    // TODO: Figure out why Rspack is building slower than webpack
+    // [
+    //   '@docusaurus/plugin-rsdoctor',
+    //   {
+    //     rsdoctorOptions: {
+    //       mode: 'lite' // Fast mode
+    //     }
+    //   }
+    // ],
+    // () => ({
+    //   name: 'rspack-tuning',
+    //   configureBundler(config) {
+    //     config.infrastructureLogging = { level: 'warn' };
+    //     config.stats = {
+    //       all: false,
+    //       errors: true,
+    //       logging: 'error',
+    //       warnings: true,
+    //       warningsFilter: [/ECMA-VERSION-CHECK/, /DUPLICATE-PACKAGE/] // Drop pedantic ES6 mismatch checks
+    //     };
+    //     config.target = ['web', 'es2020']; // Set Rspack to modern JS to kill the E1004 warnings
+    //     if (config.optimization) {
+    //       config.optimization.concatenateModules = false; // Avoid Rspack wasting time merging modules
+    //     }
+    //   }
+    // }),
     [
       require.resolve('docusaurus-lunr-search'),
       {
