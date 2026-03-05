@@ -1,13 +1,13 @@
 ---
 id: on_hold_process
-title: On Hold Process 🚧
+title: On Hold Process 📝
 description: Represents the reason a record is paused.
 tags:
   - business
   - developer
 ---
 
-[![Maturity:Planning](https://img.shields.io/badge/Maturity-Planning-orange)](/docs/spec#maturity)
+[![Maturity:Draft](https://img.shields.io/badge/Maturity-Draft-yellow)](/docs/spec#maturity)
 
 Official URL: `https://bcgov.github.io/nr-pies/docs/spec/code_system/on_hold_process`
 

@@ -1,13 +1,13 @@
 ---
 id: application_process
-title: Application Process 🚧
+title: Application Process 📝
 description: Represents a process tracking classifcation.
 tags:
   - business
   - developer
 ---
 
-[![Maturity:Planning](https://img.shields.io/badge/Maturity-Planning-orange)](/docs/spec#maturity)
+[![Maturity:Draft](https://img.shields.io/badge/Maturity-Draft-yellow)](/docs/spec#maturity)
 
 Official URL: `https://bcgov.github.io/nr-pies/docs/spec/code_system/application_process`
 
