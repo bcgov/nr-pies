@@ -1,6 +1,8 @@
+#!/usr/bin/env node
+
 // This script updates all path references to use the right directory
-import { readdirSync, readFileSync, statSync, writeFileSync } from 'fs';
-import { join } from 'path';
+import { readdirSync, readFileSync, statSync, writeFileSync } from 'node:fs';
+import { join } from 'node:path';
 
 const SPEC_DIR = 'spec';
 const VERSIONS_FILE = 'versions.json';
@@ -13,12 +15,12 @@ try {
   versions.forEach((version: string) => {
     const working_dir = `${VERSIONED_DOCS_DIR}/version-${version}/${SPEC_DIR}`;
 
-    if (!statSync(working_dir, { throwIfNoEntry: false })) {
-      console.warn(`Version directory ${working_dir} does not exist.`);
-    } else {
+    if (statSync(working_dir, { throwIfNoEntry: false })) {
       const files = walk(working_dir);
       patch(files, '.mdx', '@site/docs/spec', `@site/${working_dir}`);
       patch(files, '.schema.json', 'docs/spec', `${working_dir}`);
+    } else {
+      console.warn(`Version directory ${working_dir} does not exist.`);
     }
   });
 } catch (err) {
@@ -44,7 +46,7 @@ function patch(files: Array<string>, ext: string, from: string, to: string) {
 
   schemas.forEach((file) => {
     const oldSchema = readFileSync(file, { encoding: 'utf-8' });
-    if (oldSchema.match(from)) {
+    if (new RegExp(from).exec(oldSchema)) {
       const newSchema = oldSchema.replaceAll(from, to);
       writeFileSync(file, newSchema, { encoding: 'utf-8' });
       console.log(`Patched file ${file}`);
@@ -67,7 +69,7 @@ function walk(dir: string): Array<string> {
     file = join(dir, file);
     const stat = statSync(file);
 
-    if (stat && stat.isDirectory()) {
+    if (stat?.isDirectory()) {
       results = [...results, ...walk(file)];
     } else {
       results.push(file);

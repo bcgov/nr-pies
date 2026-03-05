@@ -1,13 +1,13 @@
 ---
 id: application_process
-title: Application Process 🚧
+title: Application Process 📝
 description: Represents a process tracking classifcation.
 tags:
   - business
   - developer
 ---
 
-[![Maturity:Planning](https://img.shields.io/badge/Maturity-Planning-orange)](/docs/spec#maturity)
+[![Maturity:Draft](https://img.shields.io/badge/Maturity-Draft-yellow)](/docs/spec#maturity)
 
 Official URL: `https://bcgov.github.io/nr-pies/docs/spec/code_system/application_process`
 
@@ -43,6 +43,7 @@ flowchart LR
   APPLICATION --> WITHDRAWN
 
   INITIAL_SUBMISSION_REVIEW  --> SUBMISSION_REVIEW
+  INITIAL_SUBMISSION_REVIEW  --> ACCEPTED
 
   TECH_REVIEW_COMMENT --> TECHNICAL_REVIEW
   TECH_REVIEW_COMMENT --> REFERRAL
@@ -75,6 +76,7 @@ flowchart LR
     DRAFT
     SUBMITTED
     SUBMISSION_REVIEW
+    ACCEPTED
     TECHNICAL_REVIEW
     REFERRAL
     FIRST_NATIONS_CONSULTATION
@@ -90,29 +92,30 @@ flowchart LR
 
 ### Concepts
 
-| Level | Code                         | Display                      | Description                                                                                                                                                                      |
-| ----- | ---------------------------- | ---------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| 1     | `APPLICATION`                | Application                  |                                                                                                                                                                                  |
-| 3     | `ALLOWED`                    | Allowed                      | The application has met all requirements, and the decision has been made to allow to move forward with the request.                                                              |
-| 3     | `DECISION_REVIEW`            | Decision Review              |                                                                                                                                                                                  |
-| 2     | `DECISION`                   | Decision                     |                                                                                                                                                                                  |
-| 3     | `DECLINED`                   | Declined                     | The applicant has declined the offer proposed by the issuing agency. Further changes to the offer may occur to be reviewed prior to finally being declined or issued.            |
-| 3     | `DISALLOWED`                 | Disallowed                   | The request has not met all requirements, conflicts with other uses or is non-compliant with regulations. Has been officially denied. The applicant is notified of the decision. |
-| 3     | `DRAFT`                      | Draft                        | The application is being prepared but has not yet been submitted. The applicant can make changes.                                                                                |
-| 3     | `FIRST_NATIONS_CONSULTATION` | First Nations Consultation   | The application has been sent off for consultation. This may occur at the same time as being reviewed by the primary authority.                                                  |
-| 2     | `INITIAL_SUBMISSION_REVIEW`  | Initial Submission Review    |                                                                                                                                                                                  |
-| 2     | `ISSUANCE`                   | Issuance                     |                                                                                                                                                                                  |
-| 3     | `ISSUED`                     | Issued                       | The application process is fully completed, approved and offer accepted (if required), and the necessary actions to issue the authorization.                                     |
-| 3     | `OFFERED`                    | Offered                      | The application process is fully completed, approved and offer sent out.                                                                                                         |
-| 2     | `PRE_APPLICATION`            | Pre-Application              |                                                                                                                                                                                  |
-| 3     | `REFERRAL`                   | Referral                     | The application is being referred to another relevant authority for review. This may occur at the same time as under review by the primary authority.                            |
-| 2     | `REJECTED`                   | Rejected                     | The reviewing authority requirements not achieved and application has been rejected. The applicant is informed of the reasons.                                                   |
-| 3     | `SUBMISSION_REVIEW`          | Submission Review            | The application is being evaluated by the relevant authority or team. This may involve assessment of documents and qualifications.                                               |
-| 3     | `SUBMITTED`                  | Submitted                    | The application has been officially submitted for review. No further changes can be made at this point.                                                                          |
-| 2     | `TECH_REVIEW_COMMENT`        | Technical Review and Comment |                                                                                                                                                                                  |
-| 3     | `TECH_REVIEW_COMPLETED`      | Technical Review Completed   |                                                                                                                                                                                  |
-| 3     | `TECHNICAL_REVIEW`           | Technical Review             | The application is being reviewed by the primary authority. This may occur at the same time as referrals or consultation.                                                        |
-| 2     | `WITHDRAWN`                  | Withdrawn                    | The application has been withdrawn by applicant. This may occur at any stage prior to issuance.                                                                                  |
+| Level | Code                         | Display                      | Description                                                                                                                                                                                                                                                                                                                               |
+| ----- | ---------------------------- | ---------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| 3     | `ACCEPTED`                   | Accepted                     | The application has been accepted by the initial reviewing authority.                                                                                                                                                                                                                                                                     |
+| 3     | `ALLOWED`                    | Allowed                      | The application has met all requirements, and the decision has been made to allow to move forward with the request.                                                                                                                                                                                                                       |
+| 1     | `APPLICATION`                | Application                  | Indicates that the authorization is currently undergoing the application process e.g. creating, vetting, evaluating... and has not yet been issued.                                                                                                                                                                                       |
+| 3     | `DECISION_REVIEW`            | Decision Review              | The application has made it past the technical review and comment and slated for final decision.                                                                                                                                                                                                                                          |
+| 2     | `DECISION`                   | Decision                     | The designated decision-maker considers the record and issues a determination (e.g., allow, disallowed)                                                                                                                                                                                                                                   |
+| 3     | `DECLINED`                   | Declined                     | The applicant has declined the offer proposed by the issuing agency. Further changes to the offer may occur to be reviewed prior to finally being declined or issued.                                                                                                                                                                     |
+| 3     | `DISALLOWED`                 | Disallowed                   | The request has not met all requirements, conflicts with other uses or is non-compliant with regulations. Has been officially denied. The applicant is notified of the decision.                                                                                                                                                          |
+| 3     | `DRAFT`                      | Draft                        | The application is being prepared but has not yet been submitted. The applicant can make changes.                                                                                                                                                                                                                                         |
+| 3     | `FIRST_NATIONS_CONSULTATION` | First Nations Consultation   | The application has been sent off for consultation. This may occur at the same time as being reviewed by the primary authority.                                                                                                                                                                                                           |
+| 2     | `INITIAL_SUBMISSION_REVIEW`  | Initial Submission Review    | Upon submission, the receiving office or intake system performs preliminary (often automated) checks for completeness and basic eligibility, validates required documents/fees, and requests corrections if needed. No formal technical assessment occurs here; this stage only determines readiness to enter Technical Review & Comment. |
+| 2     | `ISSUANCE`                   | Issuance                     | The application is prepared and finalized. Where an offer is required, it is issued and acceptance is recorded; upon meeting any prerequisites, the authorization is issued.                                                                                                                                                              |
+| 3     | `ISSUED`                     | Issued                       | The application process is fully completed, approved and offer accepted (if required), and the necessary actions to issue the authorization.                                                                                                                                                                                              |
+| 3     | `OFFERED`                    | Offered                      | The application process is fully completed, approved and offer sent out.                                                                                                                                                                                                                                                                  |
+| 2     | `PRE_APPLICATION`            | Pre-Application              | No formal submission or review is underway; the file remains entirely with the proponent.                                                                                                                                                                                                                                                 |
+| 3     | `REFERRAL`                   | Referral                     | The application is being referred to another relevant authority for review. This may occur at the same time as under review by the primary authority.                                                                                                                                                                                     |
+| 2     | `REJECTED`                   | Rejected                     | The reviewing authority requirements not achieved and application has been rejected. The applicant is informed of the reasons.                                                                                                                                                                                                            |
+| 3     | `SUBMISSION_REVIEW`          | Submission Review            | The application is being evaluated by the relevant authority or team. This may involve assessment of documents and qualifications.                                                                                                                                                                                                        |
+| 3     | `SUBMITTED`                  | Submitted                    | The application has been officially submitted for review. No further changes can be made at this point.                                                                                                                                                                                                                                   |
+| 3     | `TECHNICAL_REVIEW`           | Technical Review             | The application is being reviewed by the primary authority. This may occur at the same time as referrals or consultation.                                                                                                                                                                                                                 |
+| 2     | `TECH_REVIEW_COMMENT`        | Technical Review and Comment | Subject-matter evaluation by internal and/or external reviewers (may include referrals and First Nations consultation, where applicable). This stage ends when all required reviews are completed and documented with comments/recommendations.                                                                                           |
+| 3     | `TECH_REVIEW_COMPLETED`      | Technical Review Completed   | The application has been reviewed/recommendation and comment. prepared.                                                                                                                                                                                                                                                                   |
+| 2     | `WITHDRAWN`                  | Withdrawn                    | The application has been withdrawn by applicant. This may occur at any stage prior to issuance.                                                                                                                                                                                                                                           |
 
 ## Errata
 
