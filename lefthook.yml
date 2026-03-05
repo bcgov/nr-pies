@@ -4,30 +4,20 @@ colors: false
 
 commit-msg:
   commands:
-    'Git Lint Commit Message':
+    lint-commit:
       run: node_modules/.bin/commitlint --edit {1}
 
 pre-commit:
   commands:
-    'Source Format':
+    format-source:
       glob: '*.{css,js,json,md,mdx,ts,tsx,yaml}'
       run: node_modules/.bin/prettier --check --write {staged_files}
       stage_fixed: true
 
 pre-push:
   commands:
-    'Git Lint Branch Naming':
-      run: |
-        BRANCH=$(git rev-parse --abbrev-ref HEAD | tr -d '[:space:]')
-        VALID_REGEX='^(main|((bugfix|chore|ci|docs|feature|hotfix|perf|refactor|release|renovate|security|style|test)\/[a-z0-9]+([.-][a-z0-9]+)*))$'
+    lint-branch:
+      run: node branch.helper.ts
 
-        if echo "$BRANCH" | grep -Eq "$VALID_REGEX"; then
-          echo "Branch name '$BRANCH' is valid."
-        else
-          echo "Error: Invalid branch name '$BRANCH'."
-          echo "Branches must match: $VALID_REGEX"
-          exit 1
-        fi
-
-    'Source Typecheck':
+    typecheck-source:
       run: node_modules/.bin/tsc --noEmit
