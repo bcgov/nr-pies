@@ -3,8 +3,11 @@
 import { existsSync, lstatSync, readFileSync } from 'node:fs';
 import { dirname, join, isAbsolute, parse, resolve } from 'node:path';
 
-const validBranchRegex =
-  /^(main|((bugfix|chore|ci|docs|feature|hotfix|perf|refactor|release|renovate|security|style|test)\/[a-z0-9]+([.-][a-z0-9]+)*))$/; // eslint-disable-line max-len
+/**
+ * Conventional Branch Naming Convention
+ * @see https://conventional-branch.github.io
+ */
+const conventionalBranchRegex = /^(main|((bugfix|chore|feature|hotfix|release)\/[a-z0-9]+([.-][a-z0-9]+)*))$/; // eslint-disable-line max-len
 
 /**
  * Finds the actual git directory. Handles standard .git folders and worktree .git files.
@@ -64,12 +67,20 @@ function getCurrentBranch(): string {
 function main() {
   const branch = getCurrentBranch();
 
-  if (validBranchRegex.test(branch)) {
+  if (conventionalBranchRegex.test(branch)) {
     process.stdout.write(`Branch name '${branch}' is valid.\n`);
     process.exit(0);
   } else {
-    process.stderr.write(`Error: Invalid branch name '${branch}'.\n`);
-    process.stderr.write(`Branches must match: ${validBranchRegex.source}\n`);
+    process.stderr.write(`
+Error: Invalid branch name '${branch}'.
+
+This project enforces Conventional Branches.
+See: https://conventional-branch.github.io
+Example: feature/login-page or bugfix/ticket-123
+
+Rename your current branch with:
+git branch -m <type>/<description>
+`);
     process.exit(1);
   }
 }
