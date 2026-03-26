@@ -17,7 +17,7 @@ pre-commit:
 pre-push:
   commands:
     lint-branch:
-      run: node branch.helper.ts
+      run: node branch.helper.mts
 
     typecheck-source:
       run: node_modules/.bin/tsc --noEmit
