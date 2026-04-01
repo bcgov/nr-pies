@@ -35,13 +35,13 @@ try {
 /**
  * @function patch
  * @description Patches a set of files matching a certain extension and pattern
- * @param {Array<string>} files The set of file paths
+ * @param {string[]} files The set of file paths
  * @param {string} ext The file extension to filter on
  * @param {string} from The pattern to look for
  * @param {string} to The pattern to replace with
  * @throws
  */
-function patch(files: Array<string>, ext: string, from: string, to: string) {
+function patch(files: string[], ext: string, from: string, to: string): void {
   const schemas = files.filter((f) => f.endsWith(ext));
 
   schemas.forEach((file) => {
@@ -58,13 +58,13 @@ function patch(files: Array<string>, ext: string, from: string, to: string) {
  * @function walk
  * @description Recursively walks a directory and yields a set of files
  * @param {string} dir The directory to walk through
- * @returns {Array<string>} A complete set of file paths within the directory
+ * @returns {string[]} A complete set of file paths within the directory
  * @throws
  */
-function walk(dir: string): Array<string> {
+function walk(dir: string): string[] {
   const list = readdirSync(dir);
 
-  let results = [];
+  let results: string[] = [];
   list.forEach((file) => {
     file = join(dir, file);
     const stat = statSync(file);

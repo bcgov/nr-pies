@@ -10,7 +10,7 @@ type Params = {
 export default function generateResolverOptions(params: Params) {
   const { basePath, jsonPointer, remote } = params;
 
-  let config = {};
+  let config: Record<string, any> = {};
 
   if (basePath) {
     config['resolvers'] = {
