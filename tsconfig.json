@@ -2,9 +2,25 @@
   // This file is not used in compilation. It is here just for a nice editor experience.
   "extends": "@docusaurus/tsconfig",
   "compilerOptions": {
-    "baseUrl": ".",
+    "allowJs": true,
+    "baseUrl": null,
+    "esModuleInterop": true,
+    "isolatedModules": true,
+    "lib": ["es2022", "dom", "dom.iterable"],
+    "module": "preserve",
+    "moduleDetection": "force",
+    "noEmit": true,
+    "noImplicitOverride": true,
+    "noUncheckedIndexedAccess": true,
+    "paths": { "@site/*": ["./*"] },
     "resolveJsonModule": true,
+    "skipLibCheck": true,
+    "strict": true,
+    "target": "es2022",
     // Extending "@tsconfig/docusaurus/tsconfig.json".types with "docusaurus-json-schema-plugin"
-    "types": ["node", "@docusaurus/module-type-aliases", "@docusaurus/theme-classic", "docusaurus-json-schema-plugin"]
-  }
+    "types": ["node", "@docusaurus/module-type-aliases", "@docusaurus/theme-classic", "docusaurus-json-schema-plugin"],
+    "verbatimModuleSyntax": true
+  },
+  "include": ["**/*.mts", "**/*.mdx", "**/*.ts", "**/*.tsx"],
+  "exclude": ["node_modules"]
 }

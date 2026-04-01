@@ -7,7 +7,7 @@ import { dirname, join, isAbsolute, parse, resolve } from 'node:path';
  * Conventional Branch Naming Convention
  * @see https://conventional-branch.github.io
  */
-const conventionalBranchRegex = /^(main|((bugfix|chore|feature|hotfix|release)\/[a-z0-9]+([.-][a-z0-9]+)*))$/; // eslint-disable-line max-len
+const conventionalBranchRegex = /^(main|((bugfix|chore|feature|hotfix|release)\/[a-z0-9]+([.-][a-z0-9]+)*))$/;
 
 /**
  * Finds the actual git directory. Handles standard .git folders and worktree .git files.
@@ -24,7 +24,7 @@ function getGitDir(): string {
       if (stats.isFile()) {
         const content = readFileSync(dotGitPath, 'utf-8');
         const match = /^gitdir:\s+(.*)$/m.exec(content);
-        if (match) {
+        if (match?.[1]) {
           const gitDir = match[1].trim();
           // If worktree path is relative, resolve it relative to the .git file location
           return isAbsolute(gitDir) ? gitDir : resolve(currentDir, gitDir);
