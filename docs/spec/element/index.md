@@ -19,6 +19,6 @@ represented as a Coding data type, which is associated with a Code System.
 
 ## Specification
 
-## Implementation Notes
+## Implementation Guidance
 
 ## References
