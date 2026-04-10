@@ -90,6 +90,85 @@ flowchart LR
   end
 ```
 
+### Canonical Flow
+
+While systems may transition between states based on specific business domain requirements, the following represents
+the standard lifecycle model of an application.
+
+When mapping data to this code system, consuming systems should assume a chronological progression; concepts are listed
+in the order they occur.
+**For a visual representation of this sequence, follow the diagram below from start to finish.**
+Reference the Implementation Guidance in the [Record](/docs/spec/element/message/record#implementation-guidance) message
+element definition for more details.
+
+:::info
+Both `WITHDRAWN` and `REJECTED` are terminal codes. Once a record enters either code, no further transitions are permitted.
+:::
+:::info
+Any prior non-terminal state can transition directly to either `WITHDRAWN` or `REJECTED` codes.
+:::
+
+```mermaid
+---
+title: Application Process Tracking Flow
+---
+
+flowchart TD
+  EN@{ shape: fr-circ, label: "End" }
+  ST@{ shape: sm-circ, label: "Start" }
+
+  ST -.-> DRAFT
+
+  DRAFT -.-> SUBMITTED
+  SUBMITTED -.-> SUBMISSION_REVIEW
+  SUBMISSION_REVIEW -.-> ACCEPTED
+  ACCEPTED -.-> TECHNICAL_REVIEW
+  TECHNICAL_REVIEW -.-> REFERRAL
+  REFERRAL -.-> FIRST_NATIONS_CONSULTATION
+  FIRST_NATIONS_CONSULTATION -.-> TECH_REVIEW_COMPLETED
+  TECH_REVIEW_COMPLETED -.-> DECISION_REVIEW
+  DECISION_REVIEW -.-> ALLOWED
+  DECISION_REVIEW -.-> DISALLOWED
+  DISALLOWED -.-> EN
+  ALLOWED -.-> OFFERED
+  OFFERED -.-> ISSUED
+  OFFERED -.-> DECLINED
+
+  ISSUED -.-> EN
+  DECLINED -.-> EN
+  WITHDRAWN -.-> EN
+  REJECTED -.-> EN
+
+  subgraph PRE_APPLICATION
+    DRAFT
+    SUBMITTED
+  end
+
+  subgraph INITIAL_SUBMISSION_REVIEW
+    SUBMISSION_REVIEW
+    ACCEPTED
+  end
+
+  subgraph TECH_REVIEW_COMMENT
+    TECHNICAL_REVIEW
+    REFERRAL
+    FIRST_NATIONS_CONSULTATION
+    TECH_REVIEW_COMPLETED
+  end
+
+  subgraph DECISION
+    DECISION_REVIEW
+    ALLOWED
+    DISALLOWED
+  end
+
+  subgraph ISSUANCE
+    OFFERED
+    ISSUED
+    DECLINED
+  end
+```
+
 ### Concepts
 
 | Level | Code                         | Display                      | Description                                                                                                                                                                                                                                                                                                                               |
