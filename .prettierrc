@@ -3,6 +3,12 @@
   "bracketSameLine": false,
   "bracketSpacing": true,
   "htmlWhitespaceSensitivity": "ignore",
+  "overrides": [
+    {
+      "files": "*.mdx",
+      "options": { "parser": "mdx" }
+    }
+  ],
   "printWidth": 120,
   "semi": true,
   "singleAttributePerLine": true,
