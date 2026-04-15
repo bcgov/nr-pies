@@ -6,7 +6,7 @@
 
 ## Related Issues/Tickets
 
-<!-- List related issues or discussions, e.g. "Closes #123" or "Related to PADS-456" -->
+<!-- List related issues or discussions, such as "Closes #123" or "Related to PADS-456" -->
 
 ## Type of Change
 

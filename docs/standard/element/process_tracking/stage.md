@@ -14,7 +14,7 @@ Official URL: `https://bcgov.github.io/nr-pies/docs/standard/element/process_tra
 ## Purpose
 
 Stage is the highest-level **operational category of work** within a Phase.
-It defines _what_ is currently being done on the authorization e.g., _Pre-application_, _Technical Review_, _Decision_,
+It defines _what_ is currently being done on the authorization such as _Pre-application_, _Technical Review_, _Decision_,
 _Issuance_, giving a clear reference point for progress tracking.
 
 ## Usage
@@ -48,7 +48,7 @@ Stage records the **current operational step** that an authorization is undergoi
 | Pre-application              | No formal submission or review is underway; the file remains entirely with the proponent.                                                                                                                                                                                                                                                 |
 | Initial submission review    | Upon submission, the receiving office or intake system performs preliminary (often automated) checks for completeness and basic eligibility, validates required documents/fees, and requests corrections if needed. No formal technical assessment occurs here; this stage only determines readiness to enter Technical Review & Comment. |
 | Technical review and comment | Subject-matter evaluation by internal and/or external reviewers (may include referrals and First Nations consultation, where applicable). This stage ends when all required reviews are completed and documented with comments/recommendations.                                                                                           |
-| Decision                     | The designated decision-maker considers the record and issues a determination (e.g., allow, disallowed)                                                                                                                                                                                                                                   |
+| Decision                     | The designated decision-maker considers the record and issues a determination (such as allow, disallowed)                                                                                                                                                                                                                                 |
 | Issuance                     | The application is prepared and finalized. Where an offer is required, it is issued and acceptance is recorded; upon meeting any prerequisites, the authorization is issued.                                                                                                                                                              |
 
 ### Post issuance Phase

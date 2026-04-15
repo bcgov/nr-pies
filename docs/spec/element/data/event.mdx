@@ -41,18 +41,18 @@ and context of an event will be dependent on which [resource type](/docs/categor
   - If `start_datetime` is defined, an optional `end_datetime` may be specified.
 - All Date and DateTime values shall be represented in RFC 3339 format.
   - The `date` format is represented as `YYYY-MM-DD`.
-    - The `date` format must contain leading padding zeroes where necessary (e.g., `2024-12-01`).
+    - The `date` format must contain leading padding zeroes where necessary (such as `2024-12-01`).
   - The `date-time` format is represented as `YYYY-MM-DDTHH:mm:ss.sssssssZ`.
     - The `Z` at the end indicates that the time is in UTC (Coordinated Universal Time).
-    - Sub-second precision is optional. (e.g., `2024-12-01T10:00:00Z`)
-    - The number of digits after the decimal point can vary from 1 to 7 (e.g., `2024-12-01T10:00:00.0000000Z`).
+    - Sub-second precision is optional. (such as `2024-12-01T10:00:00Z`)
+    - The number of digits after the decimal point can vary from 1 to 7 (such as `2024-12-01T10:00:00.0000000Z`).
 
-| Name           | Cardinality | Type     | Description & Constraints                                                                                                                                        |
-| -------------- | ----------- | -------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| start_date     | 0..1        | `string` | The start date of the event in RFC 3339 format (e.g., `2024-12-01`).                                                                                             |
-| start_datetime | 0..1        | `string` | The start datetime of the event in RFC 3339 format (e.g., `2024-12-01T10:00:00.0000000Z`). Only UTC time is allowed.                                             |
-| end_date       | 0..1        | `string` | The end date of the event in RFC 3339 format (e.g., `2024-12-01`). This is optional if `start_date` is used.                                                     |
-| end_datetime   | 0..1        | `string` | The end datetime of the event in RFC 3339 format (e.g., `2024-12-01T10:00:00.0000000Z`). Only UTC time is allowed. This is optional if `start_datetime` is used. |
+| Name           | Cardinality | Type     | Description & Constraints                                                                                                                                          |
+| -------------- | ----------- | -------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| start_date     | 0..1        | `string` | The start date of the event in RFC 3339 format (such as `2024-12-01`).                                                                                             |
+| start_datetime | 0..1        | `string` | The start datetime of the event in RFC 3339 format (such as `2024-12-01T10:00:00.0000000Z`). Only UTC time is allowed.                                             |
+| end_date       | 0..1        | `string` | The end date of the event in RFC 3339 format (such as `2024-12-01`). This is optional if `start_date` is used.                                                     |
+| end_datetime   | 0..1        | `string` | The end datetime of the event in RFC 3339 format (such as `2024-12-01T10:00:00.0000000Z`). Only UTC time is allowed. This is optional if `start_datetime` is used. |
 
 ## Specification
 
@@ -131,8 +131,8 @@ the conveyed information. We offer the following guidance:
 ### Transformation Specificity
 
 Conversion and inference between the `date` and `date-time` formats can be tricky as it is not possible to do a lossless
-bidirectional transformation between the two formats (i.e. if you drop the time from date-time, you will have a hard
-time getting the time value back).
+bidirectional transformation between the two formats. For example, if you drop the time from date-time, you will have a
+hard time getting the time value back.
 
 - When converting from `date-time` to `date`, the transformation shall account for the timezone offset.
   - As all dates are recorded in UTC time, it is not sufficient to simply truncate the time portion.
@@ -143,8 +143,8 @@ time getting the time value back).
 ### Ongoing Events
 
 The Event data type only supports representing a specific moment with just a start, or a finite duration with a start
-and an end. Event does not support conveying an ongoing event (e.g. there exists a start date, but no end date is
-provided because it is still current or ongoing). This is because the message specification needs to support
+and an end. Event does not support conveying an ongoing event (for example, there exists a start date, but no end date
+is provided because it is still current or ongoing). This is because the message specification needs to support
 asynchronous communication workloads; it may be possible for an ongoing event to no longer hold true by the time the
 message has been parsed by the recipient system.
 

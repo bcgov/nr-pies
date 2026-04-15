@@ -31,7 +31,7 @@
     },
     "record_kind": {
       "type": "string",
-      "description": "The kind of record the source system stores this record as (i.e. Anchor or Permit).",
+      "description": "The kind of record the source system stores this record as (for example, Anchor or Permit).",
       "enum": ["Anchor", "Permit"]
     }
   },

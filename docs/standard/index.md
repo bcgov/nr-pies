@@ -23,7 +23,7 @@ enable data integration. This section of PIES will be called the standard throug
 foundational set of core descriptive data elements required to enable the compatibility and interoperability of Natural
 Resource permitting ecosystems, as well as define the purpose and characteristics of permitting.
 
-It will enable better business intelligence, i.e., providing evidence for policy shifts and permitting process
+It will enable better business intelligence, providing evidence for policy shifts and permitting process
 improvements while enabling flexibility to adapt to shifts in direction on permitting.
 
 ## Description
@@ -66,10 +66,10 @@ Evaluate the permitting services for your program and determine when a data elem
 - For new permitting systems this specification is to be leveraged as a basis for implementation of the collection of data.
 - The exact structure of these column names may depend on other standards that are in place for the specific programming
   language or database management systems. Possibilities include:
-  - Underscores between words, e.g., submitted_date
-  - Upper case, e.g., SUBMITTED_DATE
-  - Camel case, e.g., submittedDate
-  - Title case, e.g., SubmittedDate
+  - Underscores between words, such as submitted_date
+  - Upper case, such as SUBMITTED_DATE
+  - Camel case, such as submittedDate
+  - Title case, such as SubmittedDate
 
 ### Element format
 
@@ -77,7 +77,7 @@ Evaluate the permitting services for your program and determine when a data elem
 | --------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | Purpose:  | A clear summary of the intent or function of the data element. Describes the conceptual role it plays in the permitting process, including what type of information it aims to capture or categorize. | To capture the distinct phases that an authorization passes through during the application lifecycle, providing a standardized structure for tracking and reporting. |
 | Usage:    | An explanation of how this data element is expected to be applied with respect on an authorization. Focuses on how and when the element is used in permitting related systems.                        | Used by a permitting system to capture the high-level position of an application within its process flow.                                                            |
-| Guidance: | Practical advice for applying the element consistently. Clarifies common points of confusion, boundaries for interpretation, and things to avoid.                                                     | Do not use the same label for a Stage and a Status. Stage names should reflect high-level work categories (e.g. Intake, Review), not procedural states.              |
+| Guidance: | Practical advice for applying the element consistently. Clarifies common points of confusion, boundaries for interpretation, and things to avoid.                                                     | Do not use the same label for a Stage and a Status. Stage names should reflect high-level work categories (such as Intake, Review), not procedural states.           |
 
 ## Maturity
 
