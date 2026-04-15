@@ -97,7 +97,7 @@ The `process_event_set` represents the lifecycle of a record. To ensure this his
 The application process follows an implicit chronological progression (such as from `SUBMITTED` to `TECHNICAL_REVIEW` to `ALLOWED`).
 
 - While the message may represent a subset of data, the events within the set should be sequence-aware.
-- "Backward" jumps in state are not allowed in the [Application Process](/docs/spec/code_system/application_process)
+- "Backward" jumps in state are strongly discouraged in the [Application Process](/docs/spec/code_system/application_process)
   workflow.
 
 Reference the Canonical Flow in the [Application Process](/docs/spec/code_system/application_process#canonical-flow)
@@ -113,7 +113,7 @@ To maintain a clean parseable process event sequence, all `process_event_set` el
 
 #### Handling Stalls and Overlaps
 
-When a process is stalled (such as waiting for client information during a technical review), use the `on_hold_event_set` to provide additional context.
+When a process is stalled (such as waiting for applicant information during a technical review), use the `on_hold_event_set` to provide additional context.
 
 - A stalled `process_event` with multiple associated `on_hold_event` records should remain open and in effect for the duration of the stall.
 - Populate the `on_hold_event_set` with granular events to explain the delay. This enables recipient systems to calculate the "net time" by subtracting on-hold duration from total `process_event` duration.
