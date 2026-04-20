@@ -12,7 +12,7 @@
     },
     "parcel_name": {
       "type": "string",
-      "description": "The same as the PID, if there is one. If there is a PIN but no PID, then parcel name is the PIN. If there is no PID nor PIN, then it is the parcel class value, e.g., COMMON OWNERSHIP, BUILDING STRATA, AIR SPACE, ROAD, PARK."
+      "description": "The same as the PID, if there is one. If there is a PIN but no PID, then parcel name is the PIN. If there is no PID nor PIN, then it is the parcel class value, such as COMMON OWNERSHIP, BUILDING STRATA, AIR SPACE, ROAD, PARK."
     },
     "pid": {
       "type": "array",

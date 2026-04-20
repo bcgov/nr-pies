@@ -7,7 +7,7 @@
   "properties": {
     "status": {
       "type": "string",
-      "description": "An optional description of the current condition or update of an application or authorization. Additional details about the current state are frequently conveyed (e.g., 'Pending Review', 'Under Inspection'). Statuses may be defined by the line of business."
+      "description": "An optional description of the current condition or update of an application or authorization. Additional details about the current state are frequently conveyed (such as 'Pending Review', 'Under Inspection'). Statuses may be defined by the line of business."
     },
     "status_code": {
       "type": "string",

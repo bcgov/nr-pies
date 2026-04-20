@@ -90,15 +90,94 @@ flowchart LR
   end
 ```
 
+### Canonical Flow
+
+While systems may transition between states based on specific business domain requirements, the following represents
+the standard lifecycle model of an application.
+
+When mapping data to this code system, consuming systems should assume a chronological progression; concepts are listed
+in the order they occur.
+**For a visual representation of this sequence, follow the diagram below from start to finish.**
+Reference the Implementation Guidance in the [Record](/docs/spec/element/message/record#implementation-guidance) message
+element definition for more details.
+
+:::info
+Both `WITHDRAWN` and `REJECTED` are terminal codes. Once a record enters either code, no further transitions are permitted.
+:::
+:::info
+Any prior non-terminal state can transition directly to either `WITHDRAWN` or `REJECTED` codes.
+:::
+
+```mermaid
+---
+title: Application Process Tracking Flow
+---
+
+flowchart TD
+  EN@{ shape: fr-circ, label: "End" }
+  ST@{ shape: sm-circ, label: "Start" }
+
+  ST -.-> DRAFT
+
+  DRAFT -.-> SUBMITTED
+  SUBMITTED -.-> SUBMISSION_REVIEW
+  SUBMISSION_REVIEW -.-> ACCEPTED
+  ACCEPTED -.-> TECHNICAL_REVIEW
+  TECHNICAL_REVIEW -.-> REFERRAL
+  REFERRAL -.-> FIRST_NATIONS_CONSULTATION
+  FIRST_NATIONS_CONSULTATION -.-> TECH_REVIEW_COMPLETED
+  TECH_REVIEW_COMPLETED -.-> DECISION_REVIEW
+  DECISION_REVIEW -.-> ALLOWED
+  DECISION_REVIEW -.-> DISALLOWED
+  DISALLOWED -.-> EN
+  ALLOWED -.-> OFFERED
+  OFFERED -.-> ISSUED
+  OFFERED -.-> DECLINED
+
+  ISSUED -.-> EN
+  DECLINED -.-> EN
+  WITHDRAWN -.-> EN
+  REJECTED -.-> EN
+
+  subgraph PRE_APPLICATION
+    DRAFT
+    SUBMITTED
+  end
+
+  subgraph INITIAL_SUBMISSION_REVIEW
+    SUBMISSION_REVIEW
+    ACCEPTED
+  end
+
+  subgraph TECH_REVIEW_COMMENT
+    TECHNICAL_REVIEW
+    REFERRAL
+    FIRST_NATIONS_CONSULTATION
+    TECH_REVIEW_COMPLETED
+  end
+
+  subgraph DECISION
+    DECISION_REVIEW
+    ALLOWED
+    DISALLOWED
+  end
+
+  subgraph ISSUANCE
+    OFFERED
+    ISSUED
+    DECLINED
+  end
+```
+
 ### Concepts
 
 | Level | Code                         | Display                      | Description                                                                                                                                                                                                                                                                                                                               |
 | ----- | ---------------------------- | ---------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | 3     | `ACCEPTED`                   | Accepted                     | The application has been accepted by the initial reviewing authority.                                                                                                                                                                                                                                                                     |
 | 3     | `ALLOWED`                    | Allowed                      | The application has met all requirements, and the decision has been made to allow to move forward with the request.                                                                                                                                                                                                                       |
-| 1     | `APPLICATION`                | Application                  | Indicates that the authorization is currently undergoing the application process e.g. creating, vetting, evaluating... and has not yet been issued.                                                                                                                                                                                       |
+| 1     | `APPLICATION`                | Application                  | Indicates that the authorization is currently undergoing the application process such as creating, vetting, evaluating... and has not yet been issued.                                                                                                                                                                                    |
 | 3     | `DECISION_REVIEW`            | Decision Review              | The application has made it past the technical review and comment and slated for final decision.                                                                                                                                                                                                                                          |
-| 2     | `DECISION`                   | Decision                     | The designated decision-maker considers the record and issues a determination (e.g., allow, disallowed)                                                                                                                                                                                                                                   |
+| 2     | `DECISION`                   | Decision                     | The designated decision-maker considers the record and issues a determination (such as allow, disallowed)                                                                                                                                                                                                                                 |
 | 3     | `DECLINED`                   | Declined                     | The applicant has declined the offer proposed by the issuing agency. Further changes to the offer may occur to be reviewed prior to finally being declined or issued.                                                                                                                                                                     |
 | 3     | `DISALLOWED`                 | Disallowed                   | The request has not met all requirements, conflicts with other uses or is non-compliant with regulations. Has been officially denied. The applicant is notified of the decision.                                                                                                                                                          |
 | 3     | `DRAFT`                      | Draft                        | The application is being prepared but has not yet been submitted. The applicant can make changes.                                                                                                                                                                                                                                         |
