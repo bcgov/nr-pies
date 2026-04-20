@@ -28,15 +28,15 @@ This element is used to:
 - Provide context for analysis and metrics.
 
 The On Hold element can apply to both application and post-issuance phases of an authorization and may be used multiple
-times throughout the lifecycle of an authorization. Each On Hold record must include a start and end date, a reason,
-and the user who initiated the hold.
+times throughout the lifecycle of an authorization. Each On Hold record must include a start date and end date when no
+longer on hold, a reason,and the user who initiated the hold.
 
 ## Guidance
 
 - On Hold periods must be time-stamped
 - Only one active On Hold record may exist at a time.
-- Applications must be manually taken Off Hold to resume processing.
-- O Hold may be referred to as “Parked” in some systems; the effect is the same
+- On Hold applications must be manually taken Off Hold by setting and end date to resume processing.
+- On Hold may be referred to as “Parked” in some systems; the effect is the same
 
 ## Properties
 
