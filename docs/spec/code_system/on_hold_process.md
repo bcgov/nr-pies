@@ -17,8 +17,16 @@ This Code System is used or referenced by:
 
 ## Definition
 
-Represents the reason a [Record](/docs/spec/element/message/record) is paused, preventing it
-from being actioned on. It is intended to be excluded from processing time.
+The purpose of the On Hold data element is to track periods during which an application is paused due to circumstances
+that prevent a [Record](/docs/spec/element/message/record) from being actioned.
+
+## Standard Reference
+
+This specification implements the following:
+
+- [`<On Hold>` Standard](/docs/standard/element/process_tracking/onhold)
+
+In the event of conflict, the Standard definition is authoritative.
 
 ## Content
 
@@ -28,11 +36,11 @@ Not Applicable
 
 ### Concepts
 
-| Code                        | Display                   | Description                                                                                                      |
-| --------------------------- | ------------------------- | ---------------------------------------------------------------------------------------------------------------- |
-| `CLIENT_REQUEST`            | Client Request            | The client requests the application be paused for a valid reason supported by staff.                             |
-| `LEGAL_ACTION`              | Legal Action              | Legal proceedings or advice from legal counsel require the application to be paused.                             |
-| `MISSING_INFORMATION`       | Missing Information       | Application requirements are not met during the review and additional information is required from the proponent |
-| `PENDING_EXTERNAL_DECISION` | Pending External Decision | Awaiting input or decisions from other agencies or processes that affect the application.                        |
+| Code                        | Display                   | Description                                                                                              |
+| --------------------------- | ------------------------- | -------------------------------------------------------------------------------------------------------- |
+| `APPLICANT_REQUEST`         | Applicant Request         | The application is paused as requested by applicant and supported by staff.                              |
+| `LEGAL_ACTION`              | Legal Action              | The application is subject to legal proceedings, or legal counsel has advised that processing be paused. |
+| `MISSING_INFORMATION`       | Missing Information       | More information is required from the applicant to proceed with the review.                              |
+| `PENDING_EXTERNAL_DECISION` | Pending External Decision | The application requires decision, approval, or input from another agency or an external process.        |
 
 ## Errata
