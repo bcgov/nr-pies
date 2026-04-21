@@ -44,9 +44,9 @@
     "@docusaurus/plugin-rsdoctor": "3.10.0",
     "@docusaurus/tsconfig": "3.10.0",
     "@docusaurus/types": "3.10.0",
-    "lefthook": "2.1.5",
-    "prettier": "3.8.2",
-    "typescript": "6.0.2"
+    "lefthook": "2.1.6",
+    "prettier": "3.8.3",
+    "typescript": "6.0.3"
   },
   "browserslist": {
     "production": [
