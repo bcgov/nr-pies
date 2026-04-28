@@ -1,5 +1,5 @@
 ---
-id: on-hold
+id: on_hold
 title: On hold 📝
 description: On hold process event tracking
 tags:
@@ -9,7 +9,7 @@ tags:
 
 [![Maturity:Trial](https://img.shields.io/badge/Maturity-Draft-yellow)](/docs/standard#maturity)
 
-Official URL: `https://bcgov.github.io/nr-pies/docs/standard/element/process_tracking/onhold`
+Official URL: `https://bcgov.github.io/nr-pies/docs/standard/element/process_tracking/on_hold`
 
 ## Purpose
 
@@ -29,7 +29,7 @@ This element is used to:
 
 The On Hold element can apply to both application and post-issuance phases of an authorization and may be used multiple
 times throughout the lifecycle of an authorization. Each On Hold record must include a start date and end date when no
-longer on hold, a reason,and the user who initiated the hold.
+longer on hold, a reason, and the user who initiated the hold.
 
 ## Guidance
 
@@ -40,11 +40,12 @@ longer on hold, a reason,and the user who initiated the hold.
 
 ## Properties
 
-- **Data format**: string
-- **Null**: Cannot be `null` – every authorization must have a reason
-- **Relationships:**
-  - See [Milestone](/docs/standard/element/process_tracking/milestone) Dates: On hold start and end dates.
-- **Change control:** an authorization may be put on hold multiple times through it's phases.
+| Property       | Definition                                                                                 |
+| -------------- | ------------------------------------------------------------------------------------------ |
+| Type           | `string`                                                                                   |
+| Mandatory      | Yes                                                                                        |
+| Relationships  | [Milestone](/docs/standard/element/process_tracking/milestone) On hold start and end dates |
+| Change Control | May be put on hold multiple times                                                          |
 
 ## Application level
 
@@ -63,9 +64,6 @@ longer on hold, a reason,and the user who initiated the hold.
 
 This element is utilized in the technical implementation:
 
-- See: [`<On Hold Process>` Specification](/docs/spec/code_system/on_hold_process)
-
-The specification defines format, structure, and validation rules,
-but does not alter the meaning or intent of this element.
+- See: [On Hold Process](/docs/spec/code_system/on_hold_process) Specification
 
 ## References

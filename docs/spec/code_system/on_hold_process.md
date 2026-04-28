@@ -24,9 +24,7 @@ that prevent a [Record](/docs/spec/element/message/record) from being actioned.
 
 This specification implements the following:
 
-- [`<On Hold>` Standard](/docs/standard/element/process_tracking/on-hold)
-
-In the event of conflict, the Standard definition is authoritative.
+- [On Hold](/docs/standard/element/process_tracking/on_hold) Standard
 
 ## Content
 
