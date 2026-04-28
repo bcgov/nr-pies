@@ -29,7 +29,7 @@ States may be concurrent when parallel activities are valid.
 
 - States do not carry timing; dates and durations come from Milestones.
 
-- If On hold is used, capture a reason, see [On hold](/docs/standard/element/process_tracking/on-hold) for reasons.
+- If On hold is used, capture a reason, see [On hold](/docs/standard/element/process_tracking/on_hold) for reasons.
 
 ## Properties
 
@@ -69,7 +69,7 @@ States may be concurrent when parallel activities are valid.
 | Review completed           | Review completion and/or recommendations | The application has been reviewed/recommendation and comment. prepared.                                                                                                             |
 | Rejected                   | Rejected                                 | The application has been rejected by deciding. authority                                                                                                                            |
 | Withdrawn                  | Withdrawn                                | The application has been withdrawn by applicant. This may occur at any stage prior to a final decision or issuance.                                                                 |
-| On hold                    | On hold ''with reason''                  | The application has been put on hold for a defined set of reasons. See [On hold](/docs/standard/element/process_tracking/on-hold) section.                                          |
+| On hold                    | On hold ''with reason''                  | The application has been put on hold for a defined set of reasons. See [On hold](/docs/standard/element/process_tracking/on_hold) section.                                          |
 
 ## Post issuance level
 
