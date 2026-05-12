@@ -38,8 +38,8 @@
     "react-dom": "19.2.6"
   },
   "devDependencies": {
-    "@commitlint/cli": "20.5.3",
-    "@commitlint/config-conventional": "20.5.3",
+    "@commitlint/cli": "21.0.0",
+    "@commitlint/config-conventional": "21.0.0",
     "@docusaurus/module-type-aliases": "3.10.1",
     "@docusaurus/plugin-rsdoctor": "3.10.1",
     "@docusaurus/tsconfig": "3.10.1",
