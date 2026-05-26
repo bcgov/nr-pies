@@ -44,7 +44,7 @@
     "@docusaurus/plugin-rsdoctor": "3.10.1",
     "@docusaurus/tsconfig": "3.10.1",
     "@docusaurus/types": "3.10.1",
-    "lefthook": "2.1.6",
+    "lefthook": "2.1.8",
     "prettier": "3.8.3",
     "typescript": "6.0.3"
   },
