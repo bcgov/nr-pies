@@ -7,7 +7,7 @@
   "properties": {
     "linked_system_id": {
       "type": "string",
-      "description": "A valid NRIDS IT Service Management code which identifies the source system, service or asset that the linked data originates from.",
+      "description": "A valid CSNR IT Service Management code which identifies the source system, service or asset that the linked data originates from.",
       "pattern": "^ITSM-\\d{4,5}$"
     },
     "linked_record_id": {

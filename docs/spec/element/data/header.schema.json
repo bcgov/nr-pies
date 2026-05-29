@@ -2,7 +2,7 @@
   "$id": "https://raw.githubusercontent.com/bcgov/nr-pies/refs/heads/main/docs/spec/element/data/header.schema.json",
   "$schema": "http://json-schema.org/draft-07/schema#",
   "title": "Header",
-  "description": "Represents a set of standardized attributes needed for identification and attribution.",
+  "description": "Represents the standard message tracking envelope, incorporating specific asset attributes for system and record identification.",
   "type": "object",
   "properties": {
     "transaction_id": {
@@ -19,21 +19,12 @@
       "type": "string",
       "description": "The specific kind of PIES message data type this message represents.",
       "enum": ["Record", "RecordLinkage"]
-    },
-    "system_id": {
-      "type": "string",
-      "description": "A valid NRIDS IT Service Management code which identifies the source system, service or asset that the data originates from.",
-      "pattern": "^ITSM-\\d{4,5}$"
-    },
-    "record_id": {
-      "type": "string",
-      "description": "The record or primary key representing what the data this message is directly associated to."
-    },
-    "record_kind": {
-      "type": "string",
-      "description": "The kind of record the source system stores this record as (for example, Anchor or Permit).",
-      "enum": ["Anchor", "Permit"]
     }
   },
-  "required": ["transaction_id", "version", "kind", "system_id", "record_id", "record_kind"]
+  "allOf": [
+    {
+      "$ref": "https://raw.githubusercontent.com/bcgov/nr-pies/refs/heads/main/docs/spec/element/data/asset.schema.json"
+    }
+  ],
+  "required": ["transaction_id", "version", "kind"]
 }
