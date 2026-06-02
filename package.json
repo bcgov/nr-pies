@@ -38,13 +38,13 @@
     "react-dom": "19.2.6"
   },
   "devDependencies": {
-    "@commitlint/cli": "21.0.1",
-    "@commitlint/config-conventional": "21.0.1",
+    "@commitlint/cli": "21.0.2",
+    "@commitlint/config-conventional": "21.0.2",
     "@docusaurus/module-type-aliases": "3.10.1",
     "@docusaurus/plugin-rsdoctor": "3.10.1",
     "@docusaurus/tsconfig": "3.10.1",
     "@docusaurus/types": "3.10.1",
-    "lefthook": "2.1.8",
+    "lefthook": "2.1.9",
     "prettier": "3.8.3",
     "typescript": "6.0.3"
   },
