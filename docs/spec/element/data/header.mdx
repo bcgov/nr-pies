@@ -1,7 +1,7 @@
 ---
 id: header
 title: Header 📝
-description: Represents a set of standardized attributes needed for identification and attribution.
+description: Represents the standard message tracking envelope, incorporating specific asset attributes for system and record identification.
 tags:
   - developer
 ---
@@ -22,7 +22,7 @@ Official URL: `https://bcgov.github.io/nr-pies/docs/spec/element/data/header`
 JSON Schema URL: https://raw.githubusercontent.com/bcgov/nr-pies/refs/heads/main/docs/spec/element/data/header.schema.json
 
 Standard message header attributes present for all PIES message data types. All defined attributes are needed for
-identification and attribution.
+asset identification and attribution.
 
 ## Scope
 
@@ -31,14 +31,14 @@ data structure is not intended for standalone use.
 
 ## Structure
 
-| Name           | Cardinality | Type           | Description & Constraints                                                                                                                                                                                  |
-| -------------- | ----------- | -------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| transaction_id | 1..1        | `string`       | A unique UUIDv7 assigned for this specific message.                                                                                                                                                        |
-| version        | 1..1        | `string`       | The PIES specification version this message complies to. Value shall be a valid semantic version formatted string.                                                                                         |
-| kind           | 1..1        | `string`       | The specific kind of PIES message data type this message represents.                                                                                                                                       |
-| system_id      | 1..1        | [Code](./code) | A valid [NRIDS IT Service Management](https://apps.nrs.gov.bc.ca/int/jira/secure/ObjectSchema.jspa?id=1&typeId=5) code which identifies the source system, service or asset that the data originates from. |
-| record_id      | 1..1        | `string`       | The record or primary key representing what the data this message is directly associated to.                                                                                                               |
-| record_kind    | 1..1        | `string`       | The kind of record the source system stores this record as (for example, Anchor or Permit).                                                                                                                |
+A header shall contain every [Asset](/docs/spec/element/data/asset#structure) data property, in addition
+to the following properties:
+
+| Name           | Cardinality | Type     | Description & Constraints                                                                                          |
+| -------------- | ----------- | -------- | ------------------------------------------------------------------------------------------------------------------ |
+| transaction_id | 1..1        | `string` | A unique UUIDv7 assigned for this specific message.                                                                |
+| version        | 1..1        | `string` | The PIES specification version this message complies to. Value shall be a valid semantic version formatted string. |
+| kind           | 1..1        | `string` | The specific kind of PIES message data type this message represents.                                               |
 
 ## Specification
 
@@ -80,7 +80,8 @@ data structure is not intended for standalone use.
 
 ## Implementation Guidance
 
-All header attributes are mandatory. A valid PIES message datagram must define all of the header attributes.
+All header and asset attributes are mandatory. A valid PIES message datagram must define all of the header and asset
+attributes.
 
 ## References
 
