@@ -4,25 +4,35 @@
   "title": "Record",
   "description": "Represents a specific record.",
   "type": "object",
-  "properties": {
-    "on_hold_event_set": {
-      "type": "array",
-      "items": {
-        "$ref": "https://raw.githubusercontent.com/bcgov/nr-pies/refs/heads/main/docs/spec/element/resource/coding_event.schema.json"
-      },
-      "uniqueItems": true
-    },
-    "process_event_set": {
-      "type": "array",
-      "items": {
-        "$ref": "https://raw.githubusercontent.com/bcgov/nr-pies/refs/heads/main/docs/spec/element/resource/process_event.schema.json"
-      },
-      "uniqueItems": true
-    }
-  },
   "allOf": [
     {
       "$ref": "https://raw.githubusercontent.com/bcgov/nr-pies/refs/heads/main/docs/spec/element/data/header.schema.json"
+    },
+    {
+      "if": { "properties": { "record_kind": { "const": "Permit" } } },
+      "then": {
+        "properties": {
+          "on_hold_event_set": {
+            "type": "array",
+            "items": {
+              "$ref": "https://raw.githubusercontent.com/bcgov/nr-pies/refs/heads/main/docs/spec/element/resource/coding_event.schema.json"
+            },
+            "uniqueItems": true
+          },
+          "process_event_set": {
+            "type": "array",
+            "items": {
+              "$ref": "https://raw.githubusercontent.com/bcgov/nr-pies/refs/heads/main/docs/spec/element/resource/process_event.schema.json"
+            },
+            "uniqueItems": true
+          }
+        },
+        "required": ["on_hold_event_set", "process_event_set"]
+      }
+    },
+    {
+      "if": { "properties": { "record_kind": { "const": "Anchor" } } },
+      "then": true
     }
   ]
 }
