@@ -48,6 +48,27 @@
     "prettier": "3.8.4",
     "typescript": "6.0.3"
   },
+  "allowScripts": {
+    "@swc/core@1.15.40": true,
+    "core-js@3.49.0": true,
+    "fsevents@2.3.3": true,
+    "lefthook@2.1.9": true
+  },
+  "devEngines": {
+    "runtime": {
+      "name": "node",
+      "version": ">=24.15.0",
+      "onFail": "error"
+    },
+    "packageManager": {
+      "name": "npm",
+      "version": ">=11.16.0",
+      "onFail": "warn"
+    }
+  },
+  "engines": {
+    "node": ">=24.15.0"
+  },
   "browserslist": {
     "production": [
       ">0.5%",
@@ -59,8 +80,5 @@
       "last 3 firefox version",
       "last 5 safari version"
     ]
-  },
-  "engines": {
-    "node": ">=24.0"
   }
 }
