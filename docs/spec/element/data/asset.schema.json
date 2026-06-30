@@ -17,7 +17,7 @@
     "record_kind": {
       "type": "string",
       "description": "The kind of record the source system stores this record as (for example, Anchor or Permit).",
-      "enum": ["Anchor", "Permit"]
+      "enum": ["Anchor", "ANCHOR", "Permit", "PERMIT"]
     }
   },
   "required": ["system_id", "record_id", "record_kind"]

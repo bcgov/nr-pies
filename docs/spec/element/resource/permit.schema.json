@@ -1,0 +1,24 @@
+{
+  "$id": "https://raw.githubusercontent.com/bcgov/nr-pies/refs/heads/main/docs/spec/element/resource/permit.schema.json",
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "Permit",
+  "description": "Represents a permit.",
+  "type": "object",
+  "properties": {
+    "on_hold_event_set": {
+      "type": "array",
+      "items": {
+        "$ref": "https://raw.githubusercontent.com/bcgov/nr-pies/refs/heads/main/docs/spec/element/resource/coding_event.schema.json"
+      },
+      "uniqueItems": true
+    },
+    "process_event_set": {
+      "type": "array",
+      "items": {
+        "$ref": "https://raw.githubusercontent.com/bcgov/nr-pies/refs/heads/main/docs/spec/element/resource/process_event.schema.json"
+      },
+      "uniqueItems": true
+    }
+  },
+  "required": ["on_hold_event_set", "process_event_set"]
+}
