@@ -32,20 +32,20 @@
     "clsx": "2.1.1",
     "docusaurus-json-schema-plugin": "1.15.1",
     "docusaurus-lunr-search": "3.6.0",
-    "mermaid": "11.15.0",
+    "mermaid": "11.16.0",
     "prism-react-renderer": "2.4.1",
     "react": "19.2.7",
     "react-dom": "19.2.7"
   },
   "devDependencies": {
-    "@commitlint/cli": "21.0.2",
-    "@commitlint/config-conventional": "21.0.2",
+    "@commitlint/cli": "21.1.0",
+    "@commitlint/config-conventional": "21.1.0",
     "@docusaurus/module-type-aliases": "3.10.1",
     "@docusaurus/plugin-rsdoctor": "3.10.1",
     "@docusaurus/tsconfig": "3.10.1",
     "@docusaurus/types": "3.10.1",
     "lefthook": "2.1.9",
-    "prettier": "3.8.4",
+    "prettier": "3.9.0",
     "typescript": "6.0.3"
   },
   "allowScripts": {
