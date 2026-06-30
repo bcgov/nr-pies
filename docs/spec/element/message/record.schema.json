@@ -9,30 +9,22 @@
       "$ref": "https://raw.githubusercontent.com/bcgov/nr-pies/refs/heads/main/docs/spec/element/data/header.schema.json"
     },
     {
-      "if": { "properties": { "record_kind": { "const": "Permit" } } },
+      "title": "Permit",
+      "description": "Represents a permit.",
+      "type": "object",
+      "if": { "properties": { "record_kind": { "enum": ["Permit", "PERMIT"] } } },
       "then": {
-        "properties": {
-          "on_hold_event_set": {
-            "type": "array",
-            "items": {
-              "$ref": "https://raw.githubusercontent.com/bcgov/nr-pies/refs/heads/main/docs/spec/element/resource/coding_event.schema.json"
-            },
-            "uniqueItems": true
-          },
-          "process_event_set": {
-            "type": "array",
-            "items": {
-              "$ref": "https://raw.githubusercontent.com/bcgov/nr-pies/refs/heads/main/docs/spec/element/resource/process_event.schema.json"
-            },
-            "uniqueItems": true
-          }
-        },
-        "required": ["on_hold_event_set", "process_event_set"]
+        "$ref": "https://raw.githubusercontent.com/bcgov/nr-pies/refs/heads/main/docs/spec/element/resource/permit.schema.json"
       }
     },
     {
-      "if": { "properties": { "record_kind": { "const": "Anchor" } } },
-      "then": true
+      "title": "Anchor",
+      "description": "Represents an anchor.",
+      "type": "object",
+      "if": { "properties": { "record_kind": { "enum": ["Anchor", "ANCHOR"] } } },
+      "then": {
+        "$ref": "https://raw.githubusercontent.com/bcgov/nr-pies/refs/heads/main/docs/spec/element/resource/anchor.schema.json"
+      }
     }
   ]
 }
