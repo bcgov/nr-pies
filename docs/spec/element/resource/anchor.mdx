@@ -21,16 +21,17 @@ Official URL: `https://bcgov.github.io/nr-pies/docs/spec/element/resource/anchor
 
 JSON Schema URL: https://raw.githubusercontent.com/bcgov/nr-pies/refs/heads/main/docs/spec/element/resource/anchor.schema.json
 
-Represents an anchor.
+Represents an anchor. An anchor serves as a foundational reference point within the PIES system.
 
 ## Scope
 
-This data type is intended to represent the set of properties associated with an anchor record. An anchor serves as a
-foundational reference point within the PIES system.
+This resource type may be transmitted within a Record message by setting `record_kind` to `ANCHOR`. However, Anchor is defined as an independent, composable resource type and may be used in other message contexts.
+
+Refer to [Record](/docs/spec/element/message/record) for details on the message envelope pattern and how resource types are selected.
 
 ## Structure
 
-This structure contains no properties and is functionally equivalent to an empty object set.
+This structure contains no properties and is functionally equivalent to an empty object.
 
 | Name | Cardinality | Type | Description & Constraints |
 | ---- | ----------- | ---- | ------------------------- |

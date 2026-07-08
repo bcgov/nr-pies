@@ -21,12 +21,16 @@ Official URL: `https://bcgov.github.io/nr-pies/docs/spec/element/resource/permit
 
 JSON Schema URL: https://raw.githubusercontent.com/bcgov/nr-pies/refs/heads/main/docs/spec/element/resource/permit.schema.json
 
-Represents a permit.
+Represents a permit. A permit may capture both hold period information and process event history throughout an application process.
 
 ## Scope
 
 This data type is intended to represent the set of properties associated with a permit record. A permit captures both
 hold period information and process event history throughout the application process.
+
+This resource type may be transmitted within a Record message by setting `record_kind` to `PERMIT`. However, Permit is defined as an independent, composable resource type and may be used in other message contexts.
+
+Refer to [Record](/docs/spec/element/message/record) for details on the message envelope pattern and how resource types are selected.
 
 ## Structure
 
@@ -77,6 +81,8 @@ hold period information and process event history throughout the application pro
 
 The Permit resource type defines specific constraints for maintaining reliable process history within the [Application Process](/docs/spec/code_system/application_process) and [On Hold Process](/docs/spec/code_system/on_hold_process) workflows. It is designed to aggregate [CodingEvent](/docs/spec/element/resource/coding_event) and [ProcessEvent](/docs/spec/element/resource/process_event) resources respectively.
 
+When a Permit resource is aggregated and transmitted, the following constraints apply to maintain reliable process history:
+
 ### Temporal Integrity and Workflow
 
 The `process_event_set` represents the lifecycle of a record. To ensure this history is actionable for auditing and reporting, implementations should follow these constraints:
@@ -93,7 +99,7 @@ Reference the [Canonical Flow](/docs/spec/code_system/application_process#canoni
 
 #### Uniqueness of Event Sets
 
-To maintain a clean parseable process event sequence, all `process_event_set` elements must have unique codes.
+To maintain a clean parsable process event sequence, all `process_event_set` elements must have unique codes.
 
 - Systems shall not emit or repeat multiple active `process_event` entries with the same code for the same record.
 - Map business domain transitions directly to the [Application Process](/docs/spec/code_system/application_process) code
@@ -103,14 +109,12 @@ To maintain a clean parseable process event sequence, all `process_event_set` el
 
 When a process is stalled (such as waiting for applicant information during a technical review), use the `on_hold_event_set` to provide additional context.
 
-- A stalled `process_event` with multiple associated `on_hold_event` records should remain open and in effect for the duration of the stall.
+- A process event that is stalled should remain open while its associated on-hold events explain the delay.
 - Populate the `on_hold_event_set` with granular events to explain the delay. This enables recipient systems to calculate the "net time" by subtracting on-hold duration from total `process_event` duration.
 
 The Permit resource type is intended to represent a permit record and its full lifecycle across the [Application Process](/docs/spec/code_system/application_process). In addition, it also provides tracking capabilities for [On Hold Process](/docs/spec/code_system/on_hold_process).
 
-It provides dual tracking capabilities for both on hold events and process events, allowing systems to maintain a complete history of the permit's journey.
-
-The structure provides dual tracking capabilities:
+It provides dual tracking capabilities for both on hold events and process events, allowing systems to maintain a complete history of the permit's journey:
 
 - **on_hold_event_set**: Captures any periods when permit processing was suspended or placed on hold, typically due to
   missing information or other blockers.

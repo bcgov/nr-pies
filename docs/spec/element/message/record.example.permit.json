@@ -4,7 +4,7 @@
   "kind": "Record",
   "system_id": "ITSM-5917",
   "record_id": "06bc53dc-3e4f-420b-801c-bd9cc0ea01b2",
-  "record_kind": "Permit",
+  "record_kind": "PERMIT",
   "on_hold_event_set": [
     {
       "event": {

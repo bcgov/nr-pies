@@ -1,7 +1,7 @@
 ---
 id: record
 title: Record 📝
-description: Represents a set of process events associated to a specific record
+description: Represents a message envelope for transmitting asset records.
 tags:
   - business
   - developer
@@ -13,7 +13,8 @@ import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
 import { generateResolverOptions } from '@site/src/components/shared';
-import example from '@site/docs/spec/element/message/record.example.json';
+import exampleAnchor from '@site/docs/spec/element/message/record.example.anchor.json';
+import examplePermit from '@site/docs/spec/element/message/record.example.permit.json';
 import schema from '@site/docs/spec/element/message/record.schema.json';
 
 [![Maturity:Draft](https://img.shields.io/badge/Maturity-Draft-yellow)](/docs/spec#maturity)
@@ -22,30 +23,34 @@ Official URL: `https://bcgov.github.io/nr-pies/docs/spec/element/message/record`
 
 JSON Schema URL: https://raw.githubusercontent.com/bcgov/nr-pies/refs/heads/main/docs/spec/element/message/record.schema.json
 
-Represents a specific record.
+Represents a message envelope for transmitting asset records.
 
 ## Scope
 
-This message type is intended to represent an atomic Record originating from a source system. This will commonly be
-used for sharing a record's process and on hold history. Use cases may include auditing, reporting or compliance.
+This message type serves as a transport envelope for transmitting records between systems. A Record message combines
+Header metadata (transaction tracking, asset identification) with a resource payload selected via `record_kind`.
 
-Note that this message type does not guarantee nor expect all known attributes to be present. It is possible for this
-message to only represent a subset of a canonically complete Record.
+The Record message can be composed of either an [Anchor](/docs/spec/element/resource/anchor) or
+[Permit](/docs/spec/element/resource/permit) resource type defined in the specification. Refer to the
+[Type Hierarchy](/docs/spec#hierarchy) for how messages, resources and data types compose together.
 
 ## Structure
 
-A Record message consists of:
+A Record message consists of all flattened [Header](/docs/spec/element/data/header) properties, along with a resource
+payload selected via `record_kind`:
 
-| Name            | Cardinality | Type                                     | Description                                                           |
-| --------------- | ----------- | ---------------------------------------- | --------------------------------------------------------------------- |
-| (header fields) | (varies)    | [Header](/docs/spec/element/data/header) | Standard Header properties, including Asset metadata (see note below) |
+| Name            | Cardinality | Type                                     | Description & Constraints                                                    |
+| --------------- | ----------- | ---------------------------------------- | ---------------------------------------------------------------------------- |
+| (header fields) | (varies)    | [Header](/docs/spec/element/data/header) | Standard Header properties, including the `record_kind` selector (see below) |
 
-The `record_kind` field that determines which resource flavor applies should be part of the headers present in the message.
+**Resource Type Selection via `record_kind`:**
 
-The `record_kind` value identifies which additional flavor-specific properties are present in the message payload. See the flavor documentation for details:
+The `record_kind` field acts as a type selector, identifying which resource type this message contains:
 
-- **`Anchor`**: See [Anchor](/docs/spec/element/resource/anchor#structure)
-- **`Permit`**: See [Permit](/docs/spec/element/resource/permit#structure)
+- **record_kind: `ANCHOR`** - Message payload conforms to [Anchor](/docs/spec/element/resource/anchor) resource schema
+- **record_kind: `PERMIT`** - Message payload conforms to [Permit](/docs/spec/element/resource/permit) resource schema
+
+This selection is enforced at the schema level via conditional `if/then` logic.
 
 ## Specification
 
@@ -76,42 +81,74 @@ The `record_kind` value identifies which additional flavor-specific properties a
     value="example"
     label="Example"
   >
+    **Anchor kind**
     <CodeBlock
       language="json"
       showLineNumbers
     >
-      {JSON.stringify(example, null, 2)}
+      {JSON.stringify(exampleAnchor, null, 2)}
+    </CodeBlock>
+    **Permit kind**
+    <CodeBlock
+      language="json"
+      showLineNumbers
+    >
+      {JSON.stringify(examplePermit, null, 2)}
     </CodeBlock>
   </TabItem>
 </Tabs>
 
 ## Implementation Guidance
 
-### Message Transport and Kind Selection Pattern
+### Type Selection Pattern
 
-The Record message uses a kind selection pattern to route between different resource types:
+The Record message uses a type selector pattern:
 
-- The Asset within the [Header](/docs/spec/element/data/header) declares the resource type via `asset.record_kind`
-- This kind selector determines which resource-specific schema applies (Permit, Anchor, etc.)
-- The kind selector value must match the actual resource type in the message payload
+- The `record_kind` field declares which resource type the payload contains
+- Systems generating records must populate this field with the correct resource type name
+- The values must match the actual resource schema of the message payload
+- Schema validation uses `if/then` logic to enforce the match
 
-### Kind-Specific Constraints
+### Resource-Specific Constraints
 
-Different Record kinds define their own implementation requirements. Refer to the appropriate kind documentation:
+Each resource type that can be composed with Record defines its own constraints. Refer to the appropriate resource
+documentation:
 
-- [Anchor](/docs/spec/element/resource/anchor) - A foundational reference point record
-- [Permit](/docs/spec/element/resource/permit) - Tracks application process and events for permits
+- [Anchor](/docs/spec/element/resource/anchor) - Foundational reference point
+- [Permit](/docs/spec/element/resource/permit) - A permit record
 
-Systems generating this message should:
+Systems should provide all known element definitions whenever available. Recipient systems must not assume a single
+message provides the complete data horizon. Recipient systems should request additional Records if needed.
 
-- Populate `header.asset.record_kind` with the correct resource type
-- Ensure the kind selector value matches the actual resource type in the payload
-- Provide all known element definitions associated with that resource kind whenever possible
+### Choosing a Resource Type
 
-Recipient systems must not assume that a single message provides the full data horizon. If a comprehensive dataset is required, request additional associated Records.
+When generating a Record message, use `record_kind` to select the appropriate resource type:
+
+Use record_kind `ANCHOR` when the message is a reference point without state:
+
+- Establishing a baseline or foundational record
+- Registering a record for future association
+- Signaling record existence without process or hold context
+
+Use record_kind `PERMIT` when the message carries process or hold state:
+
+- Sharing a permit's journey through an application workflow
+- Conveying hold periods and reasons for review delays
+- Providing an auditable event history
 
 ## References
 
-- [Anchor](/docs/spec/element/resource/anchor)
+### Message Structure
+
+- [Asset](/docs/spec/element/data/asset)
 - [Header](/docs/spec/element/data/header)
+
+### Composable Resource Types
+
+- [Anchor](/docs/spec/element/resource/anchor)
 - [Permit](/docs/spec/element/resource/permit)
+
+### Design Principles
+
+- [Guidelines](/docs/spec/element/message/guidelines)
+- [Type Hierarchy](/docs/spec#hierarchy)
