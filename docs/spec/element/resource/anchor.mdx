@@ -1,0 +1,83 @@
+---
+id: anchor
+title: Anchor 📝
+description: Represents an anchor.
+tags:
+  - developer
+---
+
+import CodeBlock from '@theme/CodeBlock';
+import JSONSchemaViewer from '@theme/JSONSchemaViewer';
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
+
+import { generateResolverOptions } from '@site/src/components/shared';
+import example from '@site/docs/spec/element/resource/anchor.example.json';
+import schema from '@site/docs/spec/element/resource/anchor.schema.json';
+
+[![Maturity:Draft](https://img.shields.io/badge/Maturity-Draft-yellow)](/docs/spec#maturity)
+
+Official URL: `https://bcgov.github.io/nr-pies/docs/spec/element/resource/anchor`
+
+JSON Schema URL: https://raw.githubusercontent.com/bcgov/nr-pies/refs/heads/main/docs/spec/element/resource/anchor.schema.json
+
+Represents an anchor.
+
+## Scope
+
+This data type is intended to represent the set of properties associated with an anchor record. An anchor serves as a
+foundational reference point within the PIES system.
+
+## Structure
+
+This structure contains no properties and is functionally equivalent to an empty object set.
+
+| Name | Cardinality | Type | Description & Constraints |
+| ---- | ----------- | ---- | ------------------------- |
+
+## Specification
+
+<Tabs queryString="tab">
+  <TabItem
+    value="schema"
+    label="Schema"
+    default
+  >
+    <JSONSchemaViewer
+      resolverOptions={generateResolverOptions({ remote: true })}
+      schema={schema}
+      viewerOptions={{ showExamples: true }}
+    />
+  </TabItem>
+  <TabItem
+    value="source"
+    label="Source"
+  >
+    <CodeBlock
+      language="json"
+      showLineNumbers
+    >
+      {JSON.stringify(schema, null, 2)}
+    </CodeBlock>
+  </TabItem>
+  <TabItem
+    value="example"
+    label="Example"
+  >
+    <CodeBlock
+      language="json"
+      showLineNumbers
+    >
+      {JSON.stringify(example, null, 2)}
+    </CodeBlock>
+  </TabItem>
+</Tabs>
+
+## Implementation Guidance
+
+The Anchor resource type is an empty set object and does not define any properties. Systems parsing anchors should
+ignore any unexpected properties that may be present.
+
+## References
+
+No references are defined for this resource type.

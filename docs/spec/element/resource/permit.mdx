@@ -1,0 +1,128 @@
+---
+id: permit
+title: Permit 📝
+description: Represents a permit.
+tags:
+  - developer
+---
+
+import CodeBlock from '@theme/CodeBlock';
+import JSONSchemaViewer from '@theme/JSONSchemaViewer';
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
+
+import { generateResolverOptions } from '@site/src/components/shared';
+import example from '@site/docs/spec/element/resource/permit.example.json';
+import schema from '@site/docs/spec/element/resource/permit.schema.json';
+
+[![Maturity:Draft](https://img.shields.io/badge/Maturity-Draft-yellow)](/docs/spec#maturity)
+
+Official URL: `https://bcgov.github.io/nr-pies/docs/spec/element/resource/permit`
+
+JSON Schema URL: https://raw.githubusercontent.com/bcgov/nr-pies/refs/heads/main/docs/spec/element/resource/permit.schema.json
+
+Represents a permit.
+
+## Scope
+
+This data type is intended to represent the set of properties associated with a permit record. A permit captures both
+hold period information and process event history throughout the application process.
+
+## Structure
+
+| Name              | Cardinality | Type                                                      | Description & Constraints                                                                        |
+| ----------------- | ----------- | --------------------------------------------------------- | ------------------------------------------------------------------------------------------------ |
+| on_hold_event_set | 0..1        | [CodingEvent](/docs/spec/element/resource/coding_event)   | A set of CodingEvents. Represents a set of on hold concepts at a specific event in time.         |
+| process_event_set | 0..1        | [ProcessEvent](/docs/spec/element/resource/process_event) | A set of ProcessEvents. Represents a set of unique process concepts at a specific event in time. |
+
+## Specification
+
+<Tabs queryString="tab">
+  <TabItem
+    value="schema"
+    label="Schema"
+    default
+  >
+    <JSONSchemaViewer
+      resolverOptions={generateResolverOptions({ remote: true })}
+      schema={schema}
+      viewerOptions={{ showExamples: true }}
+    />
+  </TabItem>
+  <TabItem
+    value="source"
+    label="Source"
+  >
+    <CodeBlock
+      language="json"
+      showLineNumbers
+    >
+      {JSON.stringify(schema, null, 2)}
+    </CodeBlock>
+  </TabItem>
+  <TabItem
+    value="example"
+    label="Example"
+  >
+    <CodeBlock
+      language="json"
+      showLineNumbers
+    >
+      {JSON.stringify(example, null, 2)}
+    </CodeBlock>
+  </TabItem>
+</Tabs>
+
+## Implementation Guidance
+
+The Permit resource type defines specific constraints for maintaining reliable process history within the [Application Process](/docs/spec/code_system/application_process) and [On Hold Process](/docs/spec/code_system/on_hold_process) workflows. It is designed to aggregate [CodingEvent](/docs/spec/element/resource/coding_event) and [ProcessEvent](/docs/spec/element/resource/process_event) resources respectively.
+
+### Temporal Integrity and Workflow
+
+The `process_event_set` represents the lifecycle of a record. To ensure this history is actionable for auditing and reporting, implementations should follow these constraints:
+
+#### Implicit Linear Flow
+
+The application process follows an implicit chronological progression (such as from `SUBMITTED` to `TECHNICAL_REVIEW` to `ALLOWED`).
+
+- While the message may represent a subset of data, the events within the set should be sequence-aware.
+- "Backward" jumps in state are strongly discouraged in the [Application Process](/docs/spec/code_system/application_process)
+  workflow.
+
+Reference the [Canonical Flow](/docs/spec/code_system/application_process#canonical-flow) in the Application Process code system for specific details.
+
+#### Uniqueness of Event Sets
+
+To maintain a clean parseable process event sequence, all `process_event_set` elements must have unique codes.
+
+- Systems shall not emit or repeat multiple active `process_event` entries with the same code for the same record.
+- Map business domain transitions directly to the [Application Process](/docs/spec/code_system/application_process) code
+  system. Avoid intermediary code transformations that alias or misrepresent the source event.
+
+#### Handling Stalls and Overlaps
+
+When a process is stalled (such as waiting for applicant information during a technical review), use the `on_hold_event_set` to provide additional context.
+
+- A stalled `process_event` with multiple associated `on_hold_event` records should remain open and in effect for the duration of the stall.
+- Populate the `on_hold_event_set` with granular events to explain the delay. This enables recipient systems to calculate the "net time" by subtracting on-hold duration from total `process_event` duration.
+
+The Permit resource type is intended to represent a permit record and its full lifecycle across the [Application Process](/docs/spec/code_system/application_process). In addition, it also provides tracking capabilities for [On Hold Process](/docs/spec/code_system/on_hold_process).
+
+It provides dual tracking capabilities for both on hold events and process events, allowing systems to maintain a complete history of the permit's journey.
+
+The structure provides dual tracking capabilities:
+
+- **on_hold_event_set**: Captures any periods when permit processing was suspended or placed on hold, typically due to
+  missing information or other blockers.
+- **process_event_set**: Documents the progression through defined process stages (e.g., APPLICATION, TECH_REVIEW_COMMENT,
+  REFERRAL) with associated status information.
+
+Systems managing permit records should maintain both event histories as necessary.
+
+## References
+
+- [Coding Event](/docs/spec/element/resource/coding_event)
+- [Coding](/docs/spec/element/data/coding)
+- [Event](/docs/spec/element/data/event)
+- [Process Event](/docs/spec/element/resource/process_event)
+- [Process](/docs/spec/element/data/process)
