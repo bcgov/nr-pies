@@ -9,8 +9,8 @@ tags:
 
 import CodeBlock from '@theme/CodeBlock';
 import JSONSchemaViewer from '@theme/JSONSchemaViewer';
-import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
+import Tabs from '@theme/Tabs';
 
 import { generateResolverOptions } from '@site/src/components/shared';
 import exampleAnchor from '@site/docs/spec/element/message/record.example.anchor.json';
@@ -118,7 +118,7 @@ documentation:
 - [Permit](/docs/spec/element/resource/permit) - A permit record
 
 Systems should provide all known element definitions whenever available. Recipient systems must not assume a single
-message provides the complete data horizon. Recipient systems should request additional Records if needed.
+message provides the full transactional state. Recipient systems should request additional Records if needed.
 
 ### Choosing a Resource Type
 

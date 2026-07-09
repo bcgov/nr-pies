@@ -8,8 +8,8 @@ tags:
 
 import CodeBlock from '@theme/CodeBlock';
 import JSONSchemaViewer from '@theme/JSONSchemaViewer';
-import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
+import Tabs from '@theme/Tabs';
 
 import { generateResolverOptions } from '@site/src/components/shared';
 import example from '@site/docs/spec/element/resource/permit.example.json';
@@ -21,14 +21,13 @@ Official URL: `https://bcgov.github.io/nr-pies/docs/spec/element/resource/permit
 
 JSON Schema URL: https://raw.githubusercontent.com/bcgov/nr-pies/refs/heads/main/docs/spec/element/resource/permit.schema.json
 
-Represents a permit. A permit may capture both hold period information and process event history throughout an application process.
+Represents a permit. A permit may capture both on hold period information and process event history throughout an application process.
 
 ## Scope
 
-This data type is intended to represent the set of properties associated with a permit record. A permit captures both
-hold period information and process event history throughout the application process.
+This resource type is intended to represent the set of properties associated with a permit record. A permit captures both on hold period information and process event history throughout the application process.
 
-This resource type may be transmitted within a Record message by setting `record_kind` to `PERMIT`. However, Permit is defined as an independent, composable resource type and may be used in other message contexts.
+This resource type is transmitted within a Record message by setting `record_kind` to `PERMIT`. A Permit is defined as an independent, composable resource type and may be used in other message contexts.
 
 Refer to [Record](/docs/spec/element/message/record) for details on the message envelope pattern and how resource types are selected.
 
@@ -105,12 +104,12 @@ To maintain a clean parsable process event sequence, all `process_event_set` ele
 - Map business domain transitions directly to the [Application Process](/docs/spec/code_system/application_process) code
   system. Avoid intermediary code transformations that alias or misrepresent the source event.
 
-#### Handling Stalls and Overlaps
+#### Handling Holds and Overlaps
 
-When a process is stalled (such as waiting for applicant information during a technical review), use the `on_hold_event_set` to provide additional context.
+When a process is put on hold (such as waiting for applicant information during a technical review), use the `on_hold_event_set` to provide additional context.
 
-- A process event that is stalled should remain open while its associated on-hold events explain the delay.
-- Populate the `on_hold_event_set` with granular events to explain the delay. This enables recipient systems to calculate the "net time" by subtracting on-hold duration from total `process_event` duration.
+- A process event that is stalled should remain open while its associated on hold events explain the delay.
+- Populate the `on_hold_event_set` with granular events to explain the delay. This enables recipient systems to calculate the "net time" by subtracting on hold duration from total `process_event` duration.
 
 The Permit resource type is intended to represent a permit record and its full lifecycle across the [Application Process](/docs/spec/code_system/application_process). In addition, it also provides tracking capabilities for [On Hold Process](/docs/spec/code_system/on_hold_process).
 
