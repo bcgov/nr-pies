@@ -8,8 +8,8 @@ tags:
 
 import CodeBlock from '@theme/CodeBlock';
 import JSONSchemaViewer from '@theme/JSONSchemaViewer';
-import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
+import Tabs from '@theme/Tabs';
 
 import { generateResolverOptions } from '@site/src/components/shared';
 import example from '@site/docs/spec/element/resource/anchor.example.json';
@@ -25,16 +25,13 @@ Represents an anchor. An anchor serves as a foundational reference point within 
 
 ## Scope
 
-This resource type may be transmitted within a Record message by setting `record_kind` to `ANCHOR`. However, Anchor is defined as an independent, composable resource type and may be used in other message contexts.
+This resource type is transmitted within a Record message by setting `record_kind` to `ANCHOR`. An Anchor is defined as an independent, composable resource type and may be used in other message contexts.
 
 Refer to [Record](/docs/spec/element/message/record) for details on the message envelope pattern and how resource types are selected.
 
 ## Structure
 
 This structure contains no properties and is functionally equivalent to an empty object.
-
-| Name | Cardinality | Type | Description & Constraints |
-| ---- | ----------- | ---- | ------------------------- |
 
 ## Specification
 
@@ -76,8 +73,8 @@ This structure contains no properties and is functionally equivalent to an empty
 
 ## Implementation Guidance
 
-The Anchor resource type is an empty set object and does not define any properties. Systems parsing anchors should
-ignore any unexpected properties that may be present.
+The Anchor resource type is an empty object and does not define any properties. Systems parsing anchors should
+ignore any unexpected properties.
 
 ## References
 
