@@ -1,0 +1,83 @@
+---
+id: collection
+title: Collection 📝
+description: Represents a collection.
+tags:
+  - developer
+---
+
+import CodeBlock from '@theme/CodeBlock';
+import JSONSchemaViewer from '@theme/JSONSchemaViewer';
+import TabItem from '@theme/TabItem';
+import Tabs from '@theme/Tabs';
+
+import { generateResolverOptions } from '@site/src/components/shared';
+import example from '@site/docs/spec/element/resource/collection.example.json';
+import schema from '@site/docs/spec/element/resource/collection.schema.json';
+
+[![Maturity:Draft](https://img.shields.io/badge/Maturity-Draft-yellow)](/docs/spec#maturity)
+
+Official URL: `https://bcgov.github.io/nr-pies/docs/spec/element/resource/collection`
+
+JSON Schema URL: https://raw.githubusercontent.com/bcgov/nr-pies/refs/heads/main/docs/spec/element/resource/collection.schema.json
+
+Represents a collection. A collection serves as a common construct for describing data elements that group other data
+elements together.
+
+## Scope
+
+This resource type is only transmitted within a Record message by setting `asset_kind` to `PROJECT`. A Collection is
+defined as an independent, composable resource type and may be used in other message contexts.
+
+Refer to [Record](/docs/spec/element/message/record) for details on the message envelope pattern and how resource types are selected.
+
+## Structure
+
+This structure contains no properties at this time and is functionally equivalent to an empty object.
+
+## Specification
+
+<Tabs queryString="tab">
+  <TabItem
+    value="schema"
+    label="Schema"
+    default
+  >
+    <JSONSchemaViewer
+      resolverOptions={generateResolverOptions({ remote: true })}
+      schema={schema}
+      viewerOptions={{ showExamples: true }}
+    />
+  </TabItem>
+  <TabItem
+    value="source"
+    label="Source"
+  >
+    <CodeBlock
+      language="json"
+      showLineNumbers
+    >
+      {JSON.stringify(schema, null, 2)}
+    </CodeBlock>
+  </TabItem>
+  <TabItem
+    value="example"
+    label="Example"
+  >
+    <CodeBlock
+      language="json"
+      showLineNumbers
+    >
+      {JSON.stringify(example, null, 2)}
+    </CodeBlock>
+  </TabItem>
+</Tabs>
+
+## Implementation Guidance
+
+The Collection resource type is an empty object and does not define any properties. Systems parsing collections should
+ignore any unexpected properties.
+
+## References
+
+No references are defined for this resource type.
