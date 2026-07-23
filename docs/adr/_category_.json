@@ -1,0 +1,8 @@
+{
+  "label": "ADR",
+  "position": 4,
+  "link": {
+    "type": "generated-index",
+    "description": "PIES Architecture Decision Records (ADRs) are a lightweight, high-precision pattern designed to capture critical decisions."
+  }
+}
