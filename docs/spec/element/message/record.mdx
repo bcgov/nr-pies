@@ -1,7 +1,7 @@
 ---
 id: record
 title: Record 📝
-description: Represents a set of process events associated to a specific record
+description: Represents a message envelope for transmitting asset records.
 tags:
   - business
   - developer
@@ -9,11 +9,12 @@ tags:
 
 import CodeBlock from '@theme/CodeBlock';
 import JSONSchemaViewer from '@theme/JSONSchemaViewer';
-import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
+import Tabs from '@theme/Tabs';
 
 import { generateResolverOptions } from '@site/src/components/shared';
-import example from '@site/docs/spec/element/message/record.example.json';
+import exampleAnchor from '@site/docs/spec/element/message/record.example.anchor.json';
+import examplePermit from '@site/docs/spec/element/message/record.example.permit.json';
 import schema from '@site/docs/spec/element/message/record.schema.json';
 
 [![Maturity:Draft](https://img.shields.io/badge/Maturity-Draft-yellow)](/docs/spec#maturity)
@@ -22,25 +23,34 @@ Official URL: `https://bcgov.github.io/nr-pies/docs/spec/element/message/record`
 
 JSON Schema URL: https://raw.githubusercontent.com/bcgov/nr-pies/refs/heads/main/docs/spec/element/message/record.schema.json
 
-Represents a specific record.
+Represents a message envelope for transmitting asset records.
 
 ## Scope
 
-This message type is intended to represent an atomic Record originating from a source system. This will commonly be
-used for sharing a record's process and on hold history. Use cases may include auditing, reporting or compliance.
+This message type serves as a transport envelope for transmitting records between systems. A Record message combines
+Header metadata (transaction tracking, asset identification) with a resource payload selected via `record_kind`.
 
-Note that this message type does not guarantee nor expect all known attributes to be present. It is possible for this
-message to only represent a subset of a canonically complete Record.
+The Record message can be composed of either an [Anchor](/docs/spec/element/resource/anchor) or
+[Permit](/docs/spec/element/resource/permit) resource type defined in the specification. Refer to the
+[Type Hierarchy](/docs/spec#hierarchy) for how messages, resources and data types compose together.
 
 ## Structure
 
-A Record shall contain every standard message [Header](/docs/spec/element/data/header#structure) property, in addition
-to the following properties:
+A Record message consists of all flattened [Header](/docs/spec/element/data/header) properties, along with a resource
+payload selected via `record_kind`:
 
-| Name              | Cardinality | Type                                                      | Description & Constraints                                                                        |
-| ----------------- | ----------- | --------------------------------------------------------- | ------------------------------------------------------------------------------------------------ |
-| on_hold_event_set | 0..1        | [CodingEvent](/docs/spec/element/resource/coding_event)   | A set of CodingEvents. Represents a set of on hold concepts at a specific event in time.         |
-| process_event_set | 0..1        | [ProcessEvent](/docs/spec/element/resource/process_event) | A set of ProcessEvents. Represents a set of unique process concepts at a specific event in time. |
+| Name            | Cardinality | Type                                     | Description & Constraints                                                    |
+| --------------- | ----------- | ---------------------------------------- | ---------------------------------------------------------------------------- |
+| (header fields) | (varies)    | [Header](/docs/spec/element/data/header) | Standard Header properties, including the `record_kind` selector (see below) |
+
+**Resource Type Selection via `record_kind`:**
+
+The `record_kind` field acts as a type selector, identifying which resource type this message contains:
+
+- **record_kind: `ANCHOR`** - Message payload conforms to [Anchor](/docs/spec/element/resource/anchor) resource schema
+- **record_kind: `PERMIT`** - Message payload conforms to [Permit](/docs/spec/element/resource/permit) resource schema
+
+This selection is enforced at the schema level via conditional `if/then` logic.
 
 ## Specification
 
@@ -71,54 +81,74 @@ to the following properties:
     value="example"
     label="Example"
   >
+    **Anchor kind**
     <CodeBlock
       language="json"
       showLineNumbers
     >
-      {JSON.stringify(example, null, 2)}
+      {JSON.stringify(exampleAnchor, null, 2)}
+    </CodeBlock>
+    **Permit kind**
+    <CodeBlock
+      language="json"
+      showLineNumbers
+    >
+      {JSON.stringify(examplePermit, null, 2)}
     </CodeBlock>
   </TabItem>
 </Tabs>
 
 ## Implementation Guidance
 
-The Record message type is designed to aggregate [CodingEvent](/docs/spec/element/resource/coding_event) and [ProcessEvent](/docs/spec/element/resource/process_event) resources.
+### Type Selection Pattern
 
-Systems generating this message should provide all known element definitions associated with a record whenever possible.
-However, recipient systems must not assume that a single message provides the full data horizon of all attributes. If a
-comprehensive data set is required, recipient systems must request any additional associated Records.
+The Record message uses a type selector pattern:
 
-### Temporal Integrity and Workflow
+- The `record_kind` field declares which resource type the payload contains
+- Systems generating records must populate this field with the correct resource type name
+- The values must match the actual resource schema of the message payload
+- Schema validation uses `if/then` logic to enforce the match
 
-The `process_event_set` represents the lifecycle of a record. To ensure this history is actionable for auditing and reporting, implementations should follow these constraints:
+### Resource-Specific Constraints
 
-#### Implicit Linear Flow
+Each resource type that can be composed with Record defines its own constraints. Refer to the appropriate resource
+documentation:
 
-The application process follows an implicit chronological progression (such as from `SUBMITTED` to `TECHNICAL_REVIEW` to `ALLOWED`).
+- [Anchor](/docs/spec/element/resource/anchor) - Foundational reference point
+- [Permit](/docs/spec/element/resource/permit) - A permit record
 
-- While the message may represent a subset of data, the events within the set should be sequence-aware.
-- "Backward" jumps in state are strongly discouraged in the [Application Process](/docs/spec/code_system/application_process)
-  workflow.
+Systems should provide all known element definitions whenever available. Recipient systems must not assume a single
+message provides the full transactional state. Recipient systems should request additional Records if needed.
 
-Reference the [Canonical Flow](/docs/spec/code_system/application_process#canonical-flow) in the Application Process code system for specific details.
+### Choosing a Resource Type
 
-#### Uniqueness of Event Sets
+When generating a Record message, use `record_kind` to select the appropriate resource type:
 
-To maintain a clean parseable process event sequence, all `process_event_set` elements must have unique codes.
+Use record_kind `ANCHOR` when the message is a reference point without state:
 
-- Systems shall not emit or repeat multiple active `process_event` entries with the same code for the same record.
-- Map business domain transitions directly to the [Application Process](/docs/spec/code_system/application_process) code
-  system. Avoid intermediary code transformations that alias or misrepresent the source event.
+- Establishing a baseline or foundational record
+- Registering a record for future association
+- Signaling record existence without process or hold context
 
-#### Handling Stalls and Overlaps
+Use record_kind `PERMIT` when the message carries process or hold state:
 
-When a process is stalled (such as waiting for applicant information during a technical review), use the `on_hold_event_set` to provide additional context.
-
-- A stalled `process_event` with multiple associated `on_hold_event` records should remain open and in effect for the duration of the stall.
-- Populate the `on_hold_event_set` with granular events to explain the delay. This enables recipient systems to calculate the "net time" by subtracting on-hold duration from total `process_event` duration.
+- Sharing a permit's journey through an application workflow
+- Conveying hold periods and reasons for review delays
+- Providing an auditable event history
 
 ## References
 
-- [CodingEvent](/docs/spec/element/resource/coding_event)
+### Message Structure
+
+- [Asset](/docs/spec/element/data/asset)
 - [Header](/docs/spec/element/data/header)
-- [ProcessEvent](/docs/spec/element/resource/process_event)
+
+### Composable Resource Types
+
+- [Anchor](/docs/spec/element/resource/anchor)
+- [Permit](/docs/spec/element/resource/permit)
+
+### Design Principles
+
+- [Guidelines](/docs/spec/element/message/guidelines)
+- [Type Hierarchy](/docs/spec#hierarchy)

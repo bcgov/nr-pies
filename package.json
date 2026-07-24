@@ -52,7 +52,7 @@
     "@swc/core@1.15.40": true,
     "core-js@3.49.0": true,
     "fsevents@2.3.3": true,
-    "lefthook@2.1.9": true
+    "lefthook@2.1.10": true
   },
   "devEngines": {
     "runtime": {

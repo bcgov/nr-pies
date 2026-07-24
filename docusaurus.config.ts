@@ -158,6 +158,12 @@ const config: Config = {
         // },
         {
           type: 'docSidebar',
+          sidebarId: 'adrSidebar',
+          position: 'right',
+          label: 'ADRs'
+        },
+        {
+          type: 'docSidebar',
           sidebarId: 'docSidebar',
           position: 'right',
           label: 'Docs'
