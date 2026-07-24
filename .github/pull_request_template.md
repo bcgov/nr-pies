@@ -10,11 +10,13 @@
 
 ## Type of Change
 
+<!-- An ADR is required if this PR introduces a design decision, engineering tradeoff, or boundary change. -->
 <!-- Please check all that apply: -->
 
 - [ ] Bug fix (non-breaking change)
 - [ ] New feature (non-breaking change)
 - [ ] Breaking change (fix or feature that changes existing behavior)
+- [ ] Architecture or schema decision (requires ADR - see guidance)
 - [ ] Documentation update
 
 ## Checklist
