@@ -4,5 +4,6 @@
 * @bcgov/nr-pmt-pit-devops
 
 # The following directories and files will have the specified owners.
+/docs/adr @bcgov/nr-pmt-pit-devops @bcgov/nr-pmt-pdt
 /docs/intro @bcgov/nr-pmt-pit-devops @bcgov/nr-pmt-pdt
 /docs/standard @bcgov/nr-pmt-pit-devops @bcgov/nr-pmt-pdt
