@@ -7,8 +7,17 @@ sidebar_position: 1
 
 import DocCardList from '@theme/DocCardList';
 
-Welcome! This repository outlines PIES Architecture Decision Records (ADRs). Topics covered include the purpose,
-structure, and content of ADRs, as well as how these decisions fit into the overall PIES specification.
+Welcome! This repository documents the key Architecture Decision Records (ADRs) behind the PIES specification. Each record explains the problem being solved, the choice that was made, and the trade-offs that came with that decision. Topics covered include the purpose, structure, and content of these records, along with how each architecture decision fits into the overall system. If you are new to the project, this page is here to explain not just _what_ was built, but _why_ it was built that way.
+
+:::info
+Architecture decision records capture a decision together with its background and consequences. They help future maintainers avoid reopening the same debate without context, and they give new team members a faster way to understand the specification.
+:::
+
+## Start Here
+
+Architecture Decision Record [ADR-000](./adr/ADR_000) is the foundation that explains why the rest of this
+infrastructure exists. Read this first if you want the big-picture explanation before reviewing the more specific
+decisions.
 
 ## Best Practices
 
@@ -57,6 +66,10 @@ When an ADR is replaced by a newer one:
 ### Template Guidance
 
 - **Status:** Use one of four states: Proposed, Accepted, Deprecated (no longer recommended but not formally superseded), or Superseded (replaced by a newer ADR).
+  - `Proposed`: Under active review and open for feedback.
+  - `Accepted`: Approved by deciders and active standard.
+  - `Deprecated`: Obsolete pattern with no direct replacement.
+  - `Superseded`: Replaced by a newer decision record.
 - **Assumptions:** List underlying beliefs the decision depends on. When assumptions change, the decision may need revisiting.
 - **Options Considered:** Include all serious contenders. At minimum, show the chosen option and 1-2 rejected alternatives with reasons.
 - **Consequences:** Be specific. Vague consequences ("harder to maintain") are less useful than concrete ones ("adds 15% build time for validation step").
@@ -72,6 +85,8 @@ Make sure to update the following conventions:
   - The title cannot contain special characters such as colons. Only use a dash to separate ADR number from the title.
 - The `description` field in the front matter should provide a brief summary of the decision and its context.
 - The `tags` field in the front matter shall not be populated.
+- Do not put in other Docusaurus front matter fields such as `sidebar_label`, or `sidebar_position`.
+  - This is present on this index page only to ensure it appears in the sidebar first. Individual ADRs do not need it.
 - All content sections must be present in the ADR template, even if they are empty for consistency.
 
 ```md
