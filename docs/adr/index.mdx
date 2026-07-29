@@ -1,0 +1,156 @@
+---
+id: adr
+title: Architecture Decision Records
+description: PIES Architecture Decision Records (ADRs) are a lightweight, high-precision pattern designed to capture critical decisions.
+sidebar_position: 1
+---
+
+import DocCardList from '@theme/DocCardList';
+
+Welcome! This repository documents the key Architecture Decision Records (ADRs) behind the PIES specification. Each record explains the problem being solved, the choice that was made, and the trade-offs that came with that decision. Topics covered include the purpose, structure, and content of these records, along with how each architecture decision fits into the overall system. If you are new to the project, this page is here to explain not just _what_ was built, but _why_ it was built that way.
+
+:::info
+Architecture decision records capture a decision together with its background and consequences. They help future maintainers avoid reopening the same debate without context, and they give new team members a faster way to understand the specification.
+:::
+
+## Start Here
+
+Architecture Decision Record [ADR-000](./adr/ADR_000) is the foundation that explains why the rest of this
+infrastructure exists. Read this first if you want the big-picture explanation before reviewing the more specific
+decisions.
+
+## Best Practices
+
+### When to Write an ADR
+
+Write an ADR when a decision meets one or more of these criteria:
+
+- Affects multiple components, teams, or specification areas
+- Has significant long-term consequences or introduces architectural patterns
+- Resolves conflicting approaches or design constraints
+- Represents a strategic choice with clear alternatives
+- Should be documented for future team members or stakeholders
+
+Not every decision requires an ADR. Use judgment to avoid ADR fatigue. Routine implementation choices, bug fixes, and
+minor refactorings do not need ADRs.
+
+### Who Participates
+
+- **Deciders:** Core team members responsible for the decision. List names or roles. All deciders should review and agree before accepting.
+- **Stakeholders:** Others affected by the decision. They may comment and provide input, but deciders make the final call.
+- **Process:** Create the ADR as Proposed, gather feedback, revise as needed, then move to Accepted when consensus is reached.
+
+### Timeline
+
+- Proposed ADRs should remain open for at least one review cycle (typically 1-2 weeks) to allow stakeholder input.
+- Accepted ADRs represent committed decisions. They do not change without explicit supersession.
+- If an Accepted ADR must change, create a new ADR that supersedes it rather than editing the original.
+
+### Living Documents vs. Immutable Records
+
+ADRs are decision records, not implementation guides. Once Accepted, the ADR itself should not be edited to match
+implementation details that diverge. If the implementation reveals the decision was flawed, create a new Superseded ADR
+rather than rewriting history.
+
+Minor corrections (typos, clarity) are acceptable. Major content changes require a new ADR and a supersession link.
+
+### Handling Supersession
+
+When an ADR is replaced by a newer one:
+
+1. Update the old ADR status to Superseded (do not remove it).
+2. Add a link in the old ADR under Related ADRs: "Superseded by ADR-NNN".
+3. Add a link in the new ADR under Related ADRs: "Supersedes ADR-NNN".
+4. In the new ADR, briefly explain why the old decision no longer holds (context or assumptions changed).
+
+### Template Guidance
+
+- **Status:** Use one of four states: Proposed, Accepted, Deprecated (no longer recommended but not formally superseded), or Superseded (replaced by a newer ADR).
+  - `Proposed`: Under active review and open for feedback.
+  - `Accepted`: Approved by deciders and active standard.
+  - `Deprecated`: Obsolete pattern with no direct replacement.
+  - `Superseded`: Replaced by a newer decision record.
+- **Assumptions:** List underlying beliefs the decision depends on. When assumptions change, the decision may need revisiting.
+- **Options Considered:** Include all serious contenders. At minimum, show the chosen option and 1-2 rejected alternatives with reasons.
+- **Consequences:** Be specific. Vague consequences ("harder to maintain") are less useful than concrete ones ("adds 15% build time for validation step").
+
+## Template
+
+All PIES ADRs follow a standard template. The following is a sample ADR template that can be used to create new ADRs.
+Make sure to update the following conventions:
+
+- File names must follow the format `ADR_XXX.md`, where `XXX` is a unique number for each ADR.
+- The `id` field in the front matter must match the file name (e.g., `ADR_001` for `ADR_001.md`).
+- The `title` field in the front matter must match the file name (e.g., `ADR-001` for `ADR_001.md`).
+  - The title cannot contain special characters such as colons. Only use a dash to separate ADR number from the title.
+- The `description` field in the front matter should provide a brief summary of the decision and its context.
+- The `tags` field in the front matter shall not be populated.
+- Do not put in other Docusaurus front matter fields such as `sidebar_label`, or `sidebar_position`.
+  - This is present on this index page only to ensure it appears in the sidebar first. Individual ADRs do not need it.
+- All content sections must be present in the ADR template, even if they are empty for consistency.
+
+```md
+---
+id: ADR_XXX
+title: ADR-XXX - Title
+description: A brief description of the decision and its context.
+---
+
+- **Status:** [Proposed | Accepted | Deprecated | Superseded]
+- **Decision Date:** YYYY-MM-DD
+- **Deciders:** [List of names]
+- **Category:** [Security | Networking | Ontology | Documentation | etc.]
+
+## Context
+
+State the driving problem, technical constraint, or business force in two to
+three sentences. Focus on current reality and hard requirements, not opinions.
+
+## Decision
+
+State the exact technical path chosen in one or two direct sentences.
+Use clear, active verbs.
+
+## Rationale
+
+State why this decision was made over alternatives.
+
+### Assumptions
+
+- [Key assumption 1]
+- [Key assumption 2]
+- [Key assumption 3]
+
+## Options Considered
+
+- **[Option A - Chosen]:** Brief summary. Key reason it won.
+- **[Option B]:** Brief summary. Primary reason for rejection.
+- **[Option C]:** Brief summary. Primary reason for rejection.
+
+## Consequences
+
+### Positive
+
+- What becomes faster, safer, or cleaner.
+- Concrete architectural benefit.
+
+### Negative
+
+- Operational overhead or limitations accepted.
+- Known technical debt introduced.
+
+## References
+
+- Links to relevant docs, diagrams, discussions.
+
+### Related ADRs
+
+- Supersedes ADR-YYY
+- Related to ADR-ZZZ
+```
+
+---
+
+## Pages
+
+<DocCardList />
