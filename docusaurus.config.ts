@@ -28,7 +28,7 @@ const config: Config = {
      * Opt-in to all of the @docusaurus/faster stack introduced in 3.6
      * @see https://docusaurus.io/blog/releases/3.6#adoption-strategy
      */
-    // experimental_faster: true, // TODO: Uncomment when Rspack is faster than webpack again
+    faster: true,
     /**
      * Opt-in to all incoming feature flags that will appear in Docusaurus 4.
      * @see https://docusaurus.io/blog/releases/3.8#future-flags
