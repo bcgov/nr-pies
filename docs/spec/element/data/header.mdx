@@ -34,11 +34,11 @@ data structure is not intended for standalone use.
 A header shall contain every [Asset](/docs/spec/element/data/asset#structure) data property, in addition
 to the following properties:
 
-| Name           | Cardinality | Type     | Description & Constraints                                                                                          |
-| -------------- | ----------- | -------- | ------------------------------------------------------------------------------------------------------------------ |
-| transaction_id | 1..1        | `string` | A unique UUIDv7 assigned for this specific message.                                                                |
-| version        | 1..1        | `string` | The PIES specification version this message complies to. Value shall be a valid semantic version formatted string. |
-| kind           | 1..1        | `string` | The specific kind of PIES message data type this message represents.                                               |
+| Name           | Cardinality | Type           | Description & Constraints                                                                                                                              |
+| -------------- | ----------- | -------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| transaction_id | 1..1        | `string`       | A unique UUIDv7 assigned for this specific message.                                                                                                    |
+| version        | 1..1        | `string`       | The PIES specification version this message complies to. Value shall be a valid semantic version formatted string.                                     |
+| kind           | 1..1        | [Code](./code) | A valid [Message Kind](/docs/spec/code_system/message_kind) code which identifies the specific kind of PIES message data type this message represents. |
 
 ## Specification
 
