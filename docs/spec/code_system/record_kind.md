@@ -27,10 +27,10 @@ Not Applicable
 
 ### Concepts
 
-| Code     | Display | Description                                                                                                       |
-| -------- | ------- | ----------------------------------------------------------------------------------------------------------------- |
-| `ANCHOR` | Anchor  | The record message represents a foundational reference point.                                                     |
-| `GROUP`  | Group   | The record message represents a grouping or collection of related records. (TBD should this be here?)             |
-| `PERMIT` | Permit  | The record message represents a permit resource, containing on hold period information and process event history. |
+| Code      | Display | Description                                                                                                       |
+| --------- | ------- | ----------------------------------------------------------------------------------------------------------------- |
+| `ANCHOR`  | Anchor  | The record message represents a foundational reference point.                                                     |
+| `PERMIT`  | Permit  | The record message represents a permit resource, containing on hold period information and process event history. |
+| `PROJECT` | Project | The record message represents a grouping or collection of related records.                                        |
 
 ## Errata

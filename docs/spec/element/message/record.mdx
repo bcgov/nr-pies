@@ -36,19 +36,25 @@ The Record message can be composed of either an [Anchor](/docs/spec/element/reso
 
 ## Structure
 
-A Record message consists of all flattened [Header](/docs/spec/element/data/header) properties, along with a resource
-payload selected via `record_kind`:
+A Record message shall contain all flattened [Header](/docs/spec/element/data/header#structure) properties.
+
+All records shall be denoted with a `kind` property value of `RECORD` as defined in
+[Message Kind](/docs/spec/code_system/message_kind).
+
+Records shall declare a `record_kind` property value as defined in
+[Record Kind](/docs/spec/code_system/record_kind):
 
 | Name            | Cardinality | Type                                     | Description & Constraints                                                    |
 | --------------- | ----------- | ---------------------------------------- | ---------------------------------------------------------------------------- |
 | (header fields) | (varies)    | [Header](/docs/spec/element/data/header) | Standard Header properties, including the `record_kind` selector (see below) |
 
-**Resource Type Selection via `record_kind`:**
+### Bindings
 
-The `record_kind` field acts as a type selector, identifying which resource type this message contains:
+The `record_kind` field acts as a type selector, binding and identifying which resource type this message contains:
 
 - **record_kind: `ANCHOR`** - Message payload conforms to [Anchor](/docs/spec/element/resource/anchor) resource schema
 - **record_kind: `PERMIT`** - Message payload conforms to [Permit](/docs/spec/element/resource/permit) resource schema
+- **record_kind: `PROJECT`** - Message payload conforms to [Project](/docs/spec/element/resource/project) resource schema
 
 This selection is enforced at the schema level via conditional `if/then` logic.
 
