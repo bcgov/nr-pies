@@ -111,7 +111,7 @@ This selection is enforced at the schema level via conditional `if/then` logic.
 The Record message uses a type selector pattern:
 
 - The `record_kind` field declares which resource type the payload contains
-- Systems generating records must populate this field with the correct resource type name
+- Systems generating records must declare a valid [Record Kind](/docs/spec/code_system/record_kind) type
 - The values must match the actual resource schema of the message payload
 - Schema validation uses `if/then` logic to enforce the match
 
@@ -122,6 +122,7 @@ documentation:
 
 - [Anchor](/docs/spec/element/resource/anchor) - Foundational reference point
 - [Permit](/docs/spec/element/resource/permit) - A permit record
+- [Project](/docs/spec/element/resource/project) - A grouping of related records
 
 Systems should provide all known element definitions whenever available. Recipient systems must not assume a single
 message provides the full transactional state. Recipient systems should request additional Records if needed.
@@ -142,6 +143,10 @@ Use record_kind `PERMIT` when the message carries process or hold state:
 - Conveying hold periods and reasons for review delays
 - Providing an auditable event history
 
+Use record_kind `PROJECT` when the message is describing a grouping of related records:
+
+- Defining a project that encompasses multiple related records
+
 ## References
 
 ### Message Structure
@@ -153,6 +158,7 @@ Use record_kind `PERMIT` when the message carries process or hold state:
 
 - [Anchor](/docs/spec/element/resource/anchor)
 - [Permit](/docs/spec/element/resource/permit)
+- [Project](/docs/spec/element/resource/project)
 
 ### Design Principles
 
