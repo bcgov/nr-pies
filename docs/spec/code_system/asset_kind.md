@@ -1,7 +1,7 @@
 ---
-id: record_kind
-title: Record Kind 📝
-description: Represents the kind of record.
+id: asset_kind
+title: Asset Kind 📝
+description: Represents the kind of asset.
 tags:
   - business
   - developer
@@ -9,7 +9,7 @@ tags:
 
 [![Maturity:Draft](https://img.shields.io/badge/Maturity-Draft-yellow)](/docs/spec#maturity)
 
-Official URL: `https://bcgov.github.io/nr-pies/docs/spec/code_system/record_kind`
+Official URL: `https://bcgov.github.io/nr-pies/docs/spec/code_system/asset_kind`
 
 This Code System is used or referenced by:
 
@@ -17,7 +17,7 @@ This Code System is used or referenced by:
 
 ## Definition
 
-The purpose of the Record Kind data element is to declare the type of contents present in the record.
+The purpose of Asset Kind is to declare the type of contents present in the asset.
 
 ## Content
 
