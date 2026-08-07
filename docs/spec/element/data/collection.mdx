@@ -12,24 +12,23 @@ import TabItem from '@theme/TabItem';
 import Tabs from '@theme/Tabs';
 
 import { generateResolverOptions } from '@site/src/components/shared';
-import example from '@site/docs/spec/element/resource/collection.example.json';
-import schema from '@site/docs/spec/element/resource/collection.schema.json';
+import example from '@site/docs/spec/element/data/collection.example.json';
+import schema from '@site/docs/spec/element/data/collection.schema.json';
 
 [![Maturity:Draft](https://img.shields.io/badge/Maturity-Draft-yellow)](/docs/spec#maturity)
 
-Official URL: `https://bcgov.github.io/nr-pies/docs/spec/element/resource/collection`
+Official URL: `https://bcgov.github.io/nr-pies/docs/spec/element/data/collection`
 
-JSON Schema URL: https://raw.githubusercontent.com/bcgov/nr-pies/refs/heads/main/docs/spec/element/resource/collection.schema.json
+JSON Schema URL: https://raw.githubusercontent.com/bcgov/nr-pies/refs/heads/main/docs/spec/element/data/collection.schema.json
 
-Represents a collection. A collection serves as a common construct for describing data elements that group other data
-elements together.
+Represents a collection. A collection serves as a common construct for describing resource data elements that group
+other data elements together.
 
 ## Scope
 
-This resource type is only transmitted within a Record message by setting `asset_kind` to `PROJECT`. A Collection is
-defined as an independent, composable resource type and may be used in other message contexts.
-
-Refer to [Record](/docs/spec/element/message/record) for details on the message envelope pattern and how resource types are selected.
+This data type is intended to only be transmitted as a part of any resource data element focusing on grouping or
+aggregating other data elements together. A collection is defined as an independent, common composable data type and may
+be used in other message contexts.
 
 ## Structure
 
@@ -75,9 +74,9 @@ This structure contains no properties at this time and is functionally equivalen
 
 ## Implementation Guidance
 
-The Collection resource type is an empty object and does not define any properties. Systems parsing collections should
+The Collection data type is an empty object and does not define any properties. Systems parsing collections should
 ignore any unexpected properties.
 
 ## References
 
-No references are defined for this resource type.
+No references are defined for this data type.
