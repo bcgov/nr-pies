@@ -17,7 +17,7 @@ This Code System is used or referenced by:
 
 ## Definition
 
-The purpose of the Relation Kind data element is to declare the type of relation in a linkage.
+The purpose of Relation Kind is to declare the type of relation in a linkage.
 
 ## Content
 
@@ -27,9 +27,11 @@ Not Applicable
 
 ### Concepts
 
-| Code      | Display | Description                                                                   |
-| --------- | ------- | ----------------------------------------------------------------------------- |
-| `PROJECT` | Project | The linkage relation represents a member or part of a project.                |
-| `SELF`    | Self    | The linkage relation represents another aspect or facet of the record itself. |
+| Code      | Display | Description                                                                          |
+| --------- | ------- | ------------------------------------------------------------------------------------ |
+| `MERGES`  | Merges  | The linkage relation represents the combination of two or more records into one.     |
+| `RELATES` | Relates | The linkage relation represents a relationship between two records.                  |
+| `SELF`    | Self    | The linkage relation represents another aspect or facet of the record itself.        |
+| `SPLITS`  | Splits  | The linkage relation represents the division of one record into two or more records. |
 
 ## Errata

@@ -17,7 +17,7 @@ This Code System is used or referenced by:
 
 ## Definition
 
-The purpose of the Message Kind data element is to declare the shape and type of contents present in the message.
+The purpose of the Message Kind is to declare the shape and type of contents present in the message.
 
 ## Content
 
