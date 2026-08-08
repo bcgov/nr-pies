@@ -28,7 +28,7 @@ Represents a message envelope for transmitting asset records.
 ## Scope
 
 This message type serves as a transport envelope for transmitting records between systems. A Record message combines
-Header metadata (transaction tracking, asset identification) with a resource payload selected via `record_kind`.
+Header metadata (transaction tracking, asset identification) with a resource payload selected via `asset_kind`.
 
 The Record message can be composed of either an [Anchor](/docs/spec/element/resource/anchor) or
 [Permit](/docs/spec/element/resource/permit) resource type defined in the specification. Refer to the
@@ -41,20 +41,20 @@ A Record message shall contain all flattened [Header](/docs/spec/element/data/he
 All records shall be denoted with a `kind` property value of `RECORD` as defined in
 [Message Kind](/docs/spec/code_system/message_kind).
 
-Records shall declare a `record_kind` property value as defined in
-[Record Kind](/docs/spec/code_system/record_kind):
+Records shall declare an `asset_kind` property value as defined in
+[Asset Kind](/docs/spec/code_system/asset_kind):
 
-| Name            | Cardinality | Type                                     | Description & Constraints                                                    |
-| --------------- | ----------- | ---------------------------------------- | ---------------------------------------------------------------------------- |
-| (header fields) | (varies)    | [Header](/docs/spec/element/data/header) | Standard Header properties, including the `record_kind` selector (see below) |
+| Name            | Cardinality | Type                                     | Description & Constraints                                                   |
+| --------------- | ----------- | ---------------------------------------- | --------------------------------------------------------------------------- |
+| (header fields) | (varies)    | [Header](/docs/spec/element/data/header) | Standard Header properties, including the `asset_kind` selector (see below) |
 
 ### Bindings
 
-The `record_kind` field acts as a type selector, binding and identifying which resource type this message contains:
+The `asset_kind` field acts as a type selector, binding and identifying which resource type this message contains:
 
-- **record_kind: `ANCHOR`** - Message payload conforms to [Anchor](/docs/spec/element/resource/anchor) resource schema
-- **record_kind: `PERMIT`** - Message payload conforms to [Permit](/docs/spec/element/resource/permit) resource schema
-- **record_kind: `PROJECT`** - Message payload conforms to [Project](/docs/spec/element/resource/project) resource schema
+-- **asset_kind: `ANCHOR`** - Message payload conforms to [Anchor](/docs/spec/element/resource/anchor) resource schema
+-- **asset_kind: `PERMIT`** - Message payload conforms to [Permit](/docs/spec/element/resource/permit) resource schema
+-- **asset_kind: `PROJECT`** - Message payload conforms to [Project](/docs/spec/element/resource/project) resource schema
 
 This selection is enforced at the schema level via conditional `if/then` logic.
 
@@ -110,10 +110,10 @@ This selection is enforced at the schema level via conditional `if/then` logic.
 
 The Record message uses a type selector pattern:
 
-- The `record_kind` field declares which resource type the payload contains
-- Systems generating records must declare a valid [Record Kind](/docs/spec/code_system/record_kind) type
-- The values must match the actual resource schema of the message payload
-- Schema validation uses `if/then` logic to enforce the match
+-- The `asset_kind` field declares which resource type the payload contains
+-- Systems generating records must declare a valid [Asset Kind](/docs/spec/code_system/asset_kind) type
+-- The values must match the actual resource schema of the message payload
+-- Schema validation uses `if/then` logic to enforce the match
 
 ### Resource-Specific Constraints
 
@@ -129,21 +129,21 @@ message provides the full transactional state. Recipient systems should request 
 
 ### Choosing a Resource Type
 
-When generating a Record message, use `record_kind` to select the appropriate resource type:
+When generating a Record message, use `asset_kind` to select the appropriate resource type:
 
-Use record_kind `ANCHOR` when the message is a reference point without state:
+Use asset_kind `ANCHOR` when the message is a reference point without state:
 
 - Establishing a baseline or foundational record
 - Registering a record for future association
 - Signaling record existence without process or hold context
 
-Use record_kind `PERMIT` when the message carries process or hold state:
+Use asset_kind `PERMIT` when the message carries process or hold state:
 
 - Sharing a permit's journey through an application workflow
 - Conveying hold periods and reasons for review delays
 - Providing an auditable event history
 
-Use record_kind `PROJECT` when the message is describing a grouping of related records:
+Use asset_kind `PROJECT` when the message is describing a grouping of related records:
 
 - Defining a project that encompasses multiple related records
 

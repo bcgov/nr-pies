@@ -5,6 +5,15 @@
   "description": "Represents a set of standardized attributes needed for identification and attribution.",
   "type": "object",
   "properties": {
+    "asset_id": {
+      "type": "string",
+      "description": "The asset or primary key representing what the data this message is directly associated to."
+    },
+    "asset_kind": {
+      "type": "string",
+      "description": "The kind of asset the source system stores this as (for example, Anchor, Permit or Project).",
+      "enum": ["ANCHOR", "PERMIT", "PROJECT"]
+    },
     "system_id": {
       "type": "string",
       "description": "A valid CSNR IT Service Management code which identifies the source system, service or asset that the data originates from.",
@@ -16,9 +25,9 @@
     },
     "record_kind": {
       "type": "string",
-      "description": "The kind of record the source system stores this record as (for example, Anchor or Permit).",
-      "enum": ["Anchor", "ANCHOR", "Permit", "PERMIT"]
+      "description": "The kind of record the source system stores this record as (for example, Anchor, Permit or Project).",
+      "enum": ["Anchor", "Permit"]
     }
   },
-  "required": ["system_id", "record_id", "record_kind"]
+  "required": ["system_id"]
 }
