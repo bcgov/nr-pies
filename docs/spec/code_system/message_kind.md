@@ -27,10 +27,10 @@ Not Applicable
 
 ### Concepts
 
-| Code      | Display | Description                                                                                                |
-| --------- | ------- | ---------------------------------------------------------------------------------------------------------- |
-| `GROUP`   | Group   | The message represents a grouping or collection of related records.                                        |
-| `LINKAGE` | Linkage | The message represents a linkage between records.                                                          |
-| `RECORD`  | Record  | The message represents a record resource, containing on hold period information and process event history. |
+| Code      | Display | Description                                                        |
+| --------- | ------- | ------------------------------------------------------------------ |
+| `GROUP`   | Group   | The message represents a grouping or collection of related assets. |
+| `LINKAGE` | Linkage | The message represents a linkage between assets.                   |
+| `RECORD`  | Record  | The message represents information pertaining to the asset itself. |
 
 ## Errata

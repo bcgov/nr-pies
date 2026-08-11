@@ -9,15 +9,6 @@
       "$ref": "https://raw.githubusercontent.com/bcgov/nr-pies/refs/heads/main/docs/spec/element/data/header.schema.json"
     },
     {
-      "title": "Anchor",
-      "description": "Represents an anchor via asset_kind.",
-      "type": "object",
-      "if": { "properties": { "asset_kind": { "const": "ANCHOR" } } },
-      "then": {
-        "$ref": "https://raw.githubusercontent.com/bcgov/nr-pies/refs/heads/main/docs/spec/element/resource/anchor.schema.json"
-      }
-    },
-    {
       "title": "Permit",
       "description": "Represents a permit via asset_kind.",
       "type": "object",
@@ -33,6 +24,15 @@
       "if": { "properties": { "record_kind": { "const": "Permit" } } },
       "then": {
         "$ref": "https://raw.githubusercontent.com/bcgov/nr-pies/refs/heads/main/docs/spec/element/resource/permit.schema.json"
+      }
+    },
+    {
+      "title": "Anchor",
+      "description": "Represents an anchor via asset_kind.",
+      "type": "object",
+      "if": { "properties": { "asset_kind": { "const": "ANCHOR" } } },
+      "then": {
+        "$ref": "https://raw.githubusercontent.com/bcgov/nr-pies/refs/heads/main/docs/spec/element/resource/anchor.schema.json"
       }
     },
     {

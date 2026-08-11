@@ -13,6 +13,7 @@ Official URL: `https://bcgov.github.io/nr-pies/docs/spec/code_system/asset_kind`
 
 This Code System is used or referenced by:
 
+- Element Definition: [Asset](/docs/spec/element/data/asset)
 - Value Set: [TBD](.)
 
 ## Definition

@@ -29,5 +29,6 @@
       "enum": ["Anchor", "Permit"]
     }
   },
+  "anyOf": [{ "required": ["asset_id", "asset_kind"] }, { "required": ["record_id", "record_kind"] }],
   "required": ["system_id"]
 }

@@ -30,9 +30,10 @@ Represents a message envelope for transmitting asset records.
 This message type serves as a transport envelope for transmitting records between systems. A Record message combines
 Header metadata (transaction tracking, asset identification) with a resource payload selected via `asset_kind`.
 
-The Record message can be composed of either an [Anchor](/docs/spec/element/resource/anchor) or
-[Permit](/docs/spec/element/resource/permit) resource type defined in the specification. Refer to the
-[Type Hierarchy](/docs/spec#hierarchy) for how messages, resources and data types compose together.
+The Record message can be composed of either an [Anchor](/docs/spec/element/resource/anchor),
+[Permit](/docs/spec/element/resource/permit), or [Project](/docs/spec/element/resource/project) resource type defined in
+the specification. Refer to the [Type Hierarchy](/docs/spec#hierarchy) for how messages, resources and data types
+compose together.
 
 ## Structure
 
@@ -52,9 +53,9 @@ Records shall declare an `asset_kind` property value as defined in
 
 The `asset_kind` field acts as a type selector, binding and identifying which resource type this message contains:
 
--- **asset_kind: `ANCHOR`** - Message payload conforms to [Anchor](/docs/spec/element/resource/anchor) resource schema
--- **asset_kind: `PERMIT`** - Message payload conforms to [Permit](/docs/spec/element/resource/permit) resource schema
--- **asset_kind: `PROJECT`** - Message payload conforms to [Project](/docs/spec/element/resource/project) resource schema
+- **asset_kind: `ANCHOR`** - Message payload conforms to [Anchor](/docs/spec/element/resource/anchor) resource schema
+- **asset_kind: `PERMIT`** - Message payload conforms to [Permit](/docs/spec/element/resource/permit) resource schema
+- **asset_kind: `PROJECT`** - Message payload conforms to [Project](/docs/spec/element/resource/project) resource schema
 
 This selection is enforced at the schema level via conditional `if/then` logic.
 

@@ -1,5 +1,5 @@
 {
-  "$id": "https://raw.githubusercontent.com/bcgov/nr-pies/refs/heads/main/docs/spec/element/resource/collection.schema.json",
+  "$id": "https://raw.githubusercontent.com/bcgov/nr-pies/refs/heads/main/docs/spec/element/data/collection.schema.json",
   "$schema": "http://json-schema.org/draft-07/schema#",
   "title": "Collection",
   "description": "Represents a collection.",
