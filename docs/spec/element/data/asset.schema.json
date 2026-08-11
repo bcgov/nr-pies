@@ -11,7 +11,7 @@
     },
     "asset_kind": {
       "type": "string",
-      "description": "The kind of asset the source system stores this as (for example, Anchor, Permit or Project).",
+      "description": "A valid Asset Kind code that specifies the precise type of asset contained in this message.",
       "enum": ["ANCHOR", "PERMIT", "PROJECT"]
     },
     "system_id": {
