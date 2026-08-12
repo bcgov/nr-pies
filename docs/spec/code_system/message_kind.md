@@ -13,7 +13,11 @@ Official URL: `https://bcgov.github.io/nr-pies/docs/spec/code_system/message_kin
 
 This Code System is used or referenced by:
 
+- Element Definition: [Group](.)
 - Element Definition: [Header](/docs/spec/element/data/header)
+- Element Definition: [Linkage](.)
+- Element Definition: [Record](/docs/spec/element/message/record)
+- Value Set: [TBD](.)
 
 ## Definition
 

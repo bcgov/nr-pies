@@ -21,13 +21,14 @@ Official URL: `https://bcgov.github.io/nr-pies/docs/spec/element/resource/projec
 
 JSON Schema URL: https://raw.githubusercontent.com/bcgov/nr-pies/refs/heads/main/docs/spec/element/resource/project.schema.json
 
-Represents a project. A project serves as a grouping of related records within the PIES system.
+Represents a project. A project serves as a grouping of related assets within the PIES system.
 
 ## Scope
 
-This resource type is transmitted within a Record message by setting `asset_kind` to `PROJECT`. It is designed to
-describe the properties of the grouping of related records within the PIES system. This is typically framed from the
-perspective of the system that is transmitting the project record, and may not reflect the perspective of other systems.
+This resource type is transmitted within a [Record](/docs/spec/element/message/record) message by setting `asset_kind`
+to `PROJECT`. It is designed to describe the properties of the grouping of related assets within the PIES system. This
+is typically framed from the perspective of the system that is declaring the asset, and may not reflect the perspective
+of other systems.
 
 Refer to [Record](/docs/spec/element/message/record) for details on the message envelope pattern and how resource types
 are selected.

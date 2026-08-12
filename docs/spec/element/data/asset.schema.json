@@ -16,7 +16,7 @@
     },
     "system_id": {
       "type": "string",
-      "description": "A valid CSNR IT Service Management code which identifies the source system, service or asset that the data originates from.",
+      "description": "A valid CSNR IT Service Management code which identifies the source system or service that the data originates from.",
       "pattern": "^ITSM-\\d{4,5}$"
     },
     "record_id": {
@@ -25,7 +25,7 @@
     },
     "record_kind": {
       "type": "string",
-      "description": "The kind of record the source system stores this record as (for example, Anchor, Permit or Project).",
+      "description": "The kind of record the source system stores this record as (for example, Anchor or Permit).",
       "enum": ["Anchor", "Permit"]
     }
   },

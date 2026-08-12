@@ -27,11 +27,11 @@ Not Applicable
 
 ### Concepts
 
-| Code      | Display | Description                                                                          |
-| --------- | ------- | ------------------------------------------------------------------------------------ |
-| `MERGES`  | Merges  | The linkage relation represents the combination of two or more records into one.     |
-| `RELATES` | Relates | The linkage relation represents a relationship between two records.                  |
-| `SELF`    | Self    | The linkage relation represents another aspect or facet of the record itself.        |
-| `SPLITS`  | Splits  | The linkage relation represents the division of one record into two or more records. |
+| Code      | Display | Description                                                                        |
+| --------- | ------- | ---------------------------------------------------------------------------------- |
+| `MERGES`  | Merges  | The linkage relation represents the combination of two or more assets into one.    |
+| `RELATES` | Relates | The linkage relation represents a relationship between two assets.                 |
+| `SELF`    | Self    | The linkage relation represents another aspect or facet of the asset itself.       |
+| `SPLITS`  | Splits  | The linkage relation represents the division of one asset into two or more assets. |
 
 ## Errata

@@ -132,21 +132,21 @@ message provides the full transactional state. Recipient systems should request 
 
 When generating a Record message, use `asset_kind` to select the appropriate resource type:
 
-Use asset_kind `ANCHOR` when the message is a reference point without state:
+Use asset_kind `ANCHOR` when the message is a reference point without state, for instance:
 
 - Establishing a baseline or foundational record
 - Registering a record for future association
 - Signaling record existence without process or hold context
 
-Use asset_kind `PERMIT` when the message carries process or hold state:
+Use asset_kind `PERMIT` when the message carries a permit's state, for instance:
 
 - Sharing a permit's journey through an application workflow
 - Conveying hold periods and reasons for review delays
 - Providing an auditable event history
 
-Use asset_kind `PROJECT` when the message is describing a grouping of related records:
+Use asset_kind `PROJECT` when the message is describing a grouping of related assets, for instance:
 
-- Defining a project that encompasses multiple related records
+- Defining a project that encompasses multiple related assets
 
 ## References
 
