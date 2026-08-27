@@ -2,27 +2,47 @@
   "$id": "https://raw.githubusercontent.com/bcgov/nr-pies/refs/heads/main/docs/spec/element/message/record.schema.json",
   "$schema": "http://json-schema.org/draft-07/schema#",
   "title": "Record",
-  "description": "Represents a specific record.",
+  "description": "Represents a message envelope for transmitting asset records.",
   "type": "object",
-  "properties": {
-    "on_hold_event_set": {
-      "type": "array",
-      "items": {
-        "$ref": "https://raw.githubusercontent.com/bcgov/nr-pies/refs/heads/main/docs/spec/element/resource/coding_event.schema.json"
-      },
-      "uniqueItems": true
-    },
-    "process_event_set": {
-      "type": "array",
-      "items": {
-        "$ref": "https://raw.githubusercontent.com/bcgov/nr-pies/refs/heads/main/docs/spec/element/resource/process_event.schema.json"
-      },
-      "uniqueItems": true
-    }
-  },
   "allOf": [
     {
       "$ref": "https://raw.githubusercontent.com/bcgov/nr-pies/refs/heads/main/docs/spec/element/data/header.schema.json"
+    },
+    {
+      "title": "Permit",
+      "description": "Represents a permit via asset_kind.",
+      "type": "object",
+      "if": { "properties": { "asset_kind": { "const": "PERMIT" } } },
+      "then": {
+        "$ref": "https://raw.githubusercontent.com/bcgov/nr-pies/refs/heads/main/docs/spec/element/resource/permit.schema.json"
+      }
+    },
+    {
+      "title": "Permit (Legacy)",
+      "description": "Represents a permit via record_kind.",
+      "type": "object",
+      "if": { "properties": { "record_kind": { "const": "Permit" } } },
+      "then": {
+        "$ref": "https://raw.githubusercontent.com/bcgov/nr-pies/refs/heads/main/docs/spec/element/resource/permit.schema.json"
+      }
+    },
+    {
+      "title": "Anchor",
+      "description": "Represents an anchor via asset_kind.",
+      "type": "object",
+      "if": { "properties": { "asset_kind": { "const": "ANCHOR" } } },
+      "then": {
+        "$ref": "https://raw.githubusercontent.com/bcgov/nr-pies/refs/heads/main/docs/spec/element/resource/anchor.schema.json"
+      }
+    },
+    {
+      "title": "Project",
+      "description": "Represents a project via asset_kind.",
+      "type": "object",
+      "if": { "properties": { "asset_kind": { "const": "PROJECT" } } },
+      "then": {
+        "$ref": "https://raw.githubusercontent.com/bcgov/nr-pies/refs/heads/main/docs/spec/element/resource/project.schema.json"
+      }
     }
   ]
 }

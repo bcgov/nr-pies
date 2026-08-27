@@ -1,0 +1,31 @@
+{
+  "on_hold_event_set": [
+    {
+      "event": {
+        "start_date": "2024-12-10",
+        "end_date": "2024-12-20"
+      },
+      "coding": {
+        "code": "MISSING_INFORMATION",
+        "code_set": ["MISSING_INFORMATION"],
+        "code_system": "https://bcgov.github.io/nr-pies/docs/spec/code_system/on_hold_process"
+      }
+    }
+  ],
+  "process_event_set": [
+    {
+      "event": {
+        "start_date": "2024-12-01",
+        "end_date": "2024-12-31"
+      },
+      "process": {
+        "code": "REFERRAL",
+        "code_set": ["APPLICATION", "TECH_REVIEW_COMMENT", "REFERRAL"],
+        "code_system": "https://bcgov.github.io/nr-pies/docs/spec/code_system/application_process",
+        "status": "Auditing",
+        "status_code": "AU",
+        "status_description": "The authorization request is under review by subject matter expert."
+      }
+    }
+  ]
+}

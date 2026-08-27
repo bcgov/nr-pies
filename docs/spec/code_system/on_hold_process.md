@@ -17,7 +17,7 @@ This Code System is used or referenced by:
 
 ## Definition
 
-The purpose of the On Hold data element is to track periods during which an application is paused due to circumstances
+The purpose of On Hold is to track periods during which an application is paused due to circumstances
 that prevent a [Record](/docs/spec/element/message/record) from being actioned.
 
 ## Standard Reference

@@ -49,11 +49,11 @@ time, we do not yet know if there is a data/system registrar that will authorita
 interim, we will address this by creating an attribute named `system_id`. This field may either be a `string`, or it
 may be an array of strings, should it be derived from multiple systems.
 
-### Record Identification
+### Asset Identification
 
-Finally, to ensure that the content is properly attributed to the right record in the system, we will have an attribute
-named `record_id`. This field will have a type of `string`, and will likely be representative of the primary key of the
-record in the source system. An associated `record_kind` will describe what kind of record it represents. This
+Finally, to ensure that the content is properly attributed to the right asset in the system, we will have an attribute
+named `asset_id`. This field will have a type of `string`, and will likely be representative of the primary key of the
+asset in the source system. An associated `asset_kind` will describe what kind of asset it represents. This
 attribute will also be a `string`.
 
 ## Security Considerations
