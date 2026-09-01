@@ -32,7 +32,7 @@
     "clsx": "2.1.1",
     "docusaurus-json-schema-plugin": "1.15.1",
     "docusaurus-lunr-search": "3.6.0",
-    "mermaid": "11.17.0",
+    "mermaid": "11.17.2",
     "prism-react-renderer": "2.4.1",
     "react": "19.2.8",
     "react-dom": "19.2.8"
@@ -44,7 +44,7 @@
     "@docusaurus/plugin-rsdoctor": "3.10.2",
     "@docusaurus/tsconfig": "3.10.2",
     "@docusaurus/types": "3.10.2",
-    "lefthook": "2.1.10",
+    "lefthook": "2.1.12",
     "prettier": "3.9.6",
     "typescript": "7.0.2"
   },
