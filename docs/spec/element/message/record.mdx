@@ -45,6 +45,9 @@ All records shall be denoted with a `kind` property value of `RECORD` as defined
 Records shall declare an `asset_kind` property value as defined in
 [Asset Kind](/docs/spec/code_system/asset_kind):
 
+Records shall declare the following properties in addition to flattened [Header](/docs/spec/element/data/header#structure)
+properties:
+
 | Name            | Cardinality | Type                                     | Description & Constraints                                                   |
 | --------------- | ----------- | ---------------------------------------- | --------------------------------------------------------------------------- |
 | (header fields) | (varies)    | [Header](/docs/spec/element/data/header) | Standard Header properties, including the `asset_kind` selector (see below) |

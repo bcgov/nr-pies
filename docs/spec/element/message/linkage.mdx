@@ -1,0 +1,123 @@
+---
+id: linkage
+title: Linkage 🚧
+description: Represents a message asserting a linkage between specific assets.
+tags:
+  - business
+  - developer
+---
+
+import CodeBlock from '@theme/CodeBlock';
+import JSONSchemaViewer from '@theme/JSONSchemaViewer';
+import TabItem from '@theme/TabItem';
+import Tabs from '@theme/Tabs';
+
+import { generateResolverOptions } from '@site/src/components/shared';
+import example from '@site/docs/spec/element/message/linkage.example.json';
+import schema from '@site/docs/spec/element/message/linkage.schema.json';
+
+[![Maturity:Planning](https://img.shields.io/badge/Maturity-Planning-orange)](/docs/spec#maturity)
+
+Official URL: `https://bcgov.github.io/nr-pies/docs/spec/element/message/linkage`
+
+JSON Schema URL: https://raw.githubusercontent.com/bcgov/nr-pies/refs/heads/main/docs/spec/element/message/linkage.schema.json
+
+Represents a message asserting a linkage between specific assets.
+
+## Scope
+
+This message type allows systems to assert a relationship between two specific assets. The message represents an
+assertion from the originating system's perspective. Consuming systems must validate the relationship and implicitly
+trust the assertion source.
+
+A Linkage message is scoped to a single pair of assets and captures the relationship between them, similar in structure
+to a group message but specific to asset pairs.
+
+## Structure
+
+A linkage message shall contain all flattened [Header](/docs/spec/element/data/header#structure) properties.
+
+All linkages shall be denoted with a `kind` property value of `LINKAGE` as defined in
+[Message Kind](/docs/spec/code_system/message_kind).
+
+Linkages shall declare the following properties in addition to flattened [Header](/docs/spec/element/data/header#structure)
+properties:
+
+| Name              | Cardinality | Type                                   | Description & Constraints                                                                                                                                                      |
+| ----------------- | ----------- | -------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| asset_group       | 1..1        | [Asset](/docs/spec/element/data/asset) | A binding asset entity that tracks the relationship between a primary asset and a linked asset.                                                                                |
+| linked_asset_id   | 1..1        | `string`                               | The unique identifier or primary key of the asset to be linked.                                                                                                                |
+| linked_asset_kind | 1..1        | `string`                               | The asset type or classification within the source system (for example, Anchor or Permit).                                                                                     |
+| linked_system_id  | 1..1        | `string`                               | A valid [CSNR IT Service Management](https://apps.nrs.gov.bc.ca/int/jira/secure/ObjectSchema.jspa?id=1&typeId=5) identifying the originating source system, service, or asset. |
+
+### Binding Constraints
+
+The `asset_group` field binds the relationship and typically originates from the declaring system:
+
+- The `asset_group` represents a classification or grouping for the relationship as defined by the asset-owning system
+- The `relation_kind` specifies the nature of the link (MERGES, RELATES, SELF, SPLITS)
+- A Linkage connects the primary asset (defined in Header) to a linked asset via this asset group
+
+## Specification
+
+<Tabs queryString="tab">
+  <TabItem
+    value="schema"
+    label="Schema"
+    default
+  >
+    <JSONSchemaViewer
+      resolverOptions={generateResolverOptions({ remote: true })}
+      schema={schema}
+      viewerOptions={{ showExamples: true }}
+    />
+  </TabItem>
+  <TabItem
+    value="source"
+    label="Source"
+  >
+    <CodeBlock
+      language="json"
+      showLineNumbers
+    >
+      {JSON.stringify(schema, null, 2)}
+    </CodeBlock>
+  </TabItem>
+  <TabItem
+    value="example"
+    label="Example"
+  >
+    <CodeBlock
+      language="json"
+      showLineNumbers
+    >
+      {JSON.stringify(example, null, 2)}
+    </CodeBlock>
+  </TabItem>
+</Tabs>
+
+## Implementation Guidance
+
+### Purpose
+
+The Linkage message defines a specific relationship between a primary asset and a linked asset. Consuming systems may
+use this message to bind assets together.
+
+### Creating Linkage Messages
+
+When generating a Linkage message:
+
+- Include the `linked_asset_id` and `linked_asset_kind` of the asset being linked
+- Specify the `linked_system_id` that owns the linked asset
+- Provide the `asset_group` entity from the declaring system that describes or groups the relationship
+- Declare the `relation_kind` to specify the nature of the link (MERGES, RELATES, SELF, SPLITS)
+- Create separate messages for each unique asset pair or relationship type
+
+### Single-System Assertion
+
+Each Linkage message must represent a single assertion from one system. Always create separate messages when an asset
+needs to assert multiple relationships.
+
+## References
+
+- [Header](/docs/spec/element/data/header)

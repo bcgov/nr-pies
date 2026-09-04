@@ -16,7 +16,7 @@
     },
     "system_id": {
       "type": "string",
-      "description": "A valid CSNR IT Service Management code which identifies the source system or service that the data originates from.",
+      "description": "A valid CSNR IT Service Management identifying the originating source system, service, or asset.",
       "pattern": "^ITSM-\\d{4,5}$"
     },
     "record_id": {

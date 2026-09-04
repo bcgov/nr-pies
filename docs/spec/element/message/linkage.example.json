@@ -7,5 +7,11 @@
   "system_id": "ITSM-5917",
   "linked_asset_id": "5d884469-d016-4b87-8d65-4a1520ae788b",
   "linked_asset_kind": "ANCHOR",
-  "linked_system_id": "ITSM-10235"
+  "linked_system_id": "ITSM-10235",
+  "relation_kind": "SELF",
+  "asset_group": {
+    "system_id": "ITSM-5917",
+    "asset_id": "13837ce4-1c93-4604-916f-777e33e8da0c",
+    "asset_kind": "PROJECT"
+  }
 }

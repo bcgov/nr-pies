@@ -31,13 +31,13 @@ This data structure is not intended for standalone use.
 
 ## Structure
 
-| Name        | Cardinality | Type           | Description & Constraints                                                                                                                                                                          |
-| ----------- | ----------- | -------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| asset_id    | 1..1        | `string`       | The asset or primary key representing what the data this message is directly associated to.                                                                                                        |
-| asset_kind  | 1..1        | [Code](./code) | A valid [Asset Kind](/docs/spec/code_system/asset_kind) code that specifies the precise type of asset contained in this message.                                                                   |
-| system_id   | 1..1        | [Code](./code) | A valid [CSNR IT Service Management](https://apps.nrs.gov.bc.ca/int/jira/secure/ObjectSchema.jspa?id=1&typeId=5) code which identifies the source system or service that the data originates from. |
-| record_id   | 1..1        | `string`       | The record or primary key representing what the data this message is directly associated to.                                                                                                       |
-| record_kind | 1..1        | `string`       | The kind of record the source system stores this record as (for example, Anchor or Permit).                                                                                                        |
+| Name        | Cardinality | Type           | Description & Constraints                                                                                                                                                      |
+| ----------- | ----------- | -------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| asset_id    | 1..1        | `string`       | The asset or primary key representing what the data this message is directly associated to.                                                                                    |
+| asset_kind  | 1..1        | [Code](./code) | A valid [Asset Kind](/docs/spec/code_system/asset_kind) code that specifies the precise type of asset contained in this message.                                               |
+| system_id   | 1..1        | [Code](./code) | A valid [CSNR IT Service Management](https://apps.nrs.gov.bc.ca/int/jira/secure/ObjectSchema.jspa?id=1&typeId=5) identifying the originating source system, service, or asset. |
+| record_id   | 1..1        | `string`       | The record or primary key representing what the data this message is directly associated to.                                                                                   |
+| record_kind | 1..1        | `string`       | The kind of record the source system stores this record as (for example, Anchor or Permit).                                                                                    |
 
 ## Specification
 
