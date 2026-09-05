@@ -1,0 +1,27 @@
+{
+  "$id": "https://raw.githubusercontent.com/bcgov/nr-pies/refs/heads/main/docs/spec/element/message/group.schema.json",
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "Group",
+  "description": "Represents a message envelope for grouping related assets together.",
+  "type": "object",
+  "properties": {
+    "asset_set": {
+      "type": "array",
+      "description": "An array of assets that are grouped together with the primary header asset.",
+      "items": {
+        "$ref": "https://raw.githubusercontent.com/bcgov/nr-pies/refs/heads/main/docs/spec/element/data/asset.schema.json"
+      }
+    },
+    "relation_kind": {
+      "type": "string",
+      "description": "The kind of relation between the primary asset and the linked asset (for example, MERGES, RELATES, SELF, SPLITS).",
+      "enum": ["MERGES", "RELATES", "SELF", "SPLITS"]
+    }
+  },
+  "allOf": [
+    {
+      "$ref": "https://raw.githubusercontent.com/bcgov/nr-pies/refs/heads/main/docs/spec/element/data/header.schema.json"
+    }
+  ],
+  "required": ["asset_set", "relation_kind"]
+}
