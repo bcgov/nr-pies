@@ -49,6 +49,7 @@ properties:
 | linked_asset_id   | 1..1        | `string`                               | The unique identifier or primary key of the asset to be linked.                                                                                                                |
 | linked_asset_kind | 1..1        | `string`                               | The asset type or classification within the source system (for example, Anchor or Permit).                                                                                     |
 | linked_system_id  | 1..1        | `string`                               | A valid [CSNR IT Service Management](https://apps.nrs.gov.bc.ca/int/jira/secure/ObjectSchema.jspa?id=1&typeId=5) identifying the originating source system, service, or asset. |
+| relation_kind     | 1..1        | [Code](/docs/spec/element/data/code)   | The kind of relation between the primary asset and the linked asset (for example, MERGES, RELATES, SELF, SPLITS).                                                              |
 
 ### Binding Constraints
 
@@ -101,7 +102,7 @@ The `asset_group` field binds the relationship and typically originates from the
 ### Purpose
 
 The Linkage message defines a specific relationship between a primary asset and a linked asset. Consuming systems may
-use this message to bind assets together.
+use this message to explicitly bind assets together.
 
 ### Creating Linkage Messages
 
@@ -117,6 +118,13 @@ When generating a Linkage message:
 
 Each Linkage message must represent a single assertion from one system. Always create separate messages when an asset
 needs to assert multiple relationships.
+
+### Group Orthogonality
+
+The Linkage message is orthogonal to the Group message, meaning that both can coexist and express the same relationships
+without conflict. While the Linkage message explicitly defines a relationship between individual asset pairs, the Group
+message implicitly binds a primary asset to a set of related assets. Systems may use both message types to
+represent different aspects of various asset relationships.
 
 ## References
 
