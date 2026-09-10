@@ -5,6 +5,9 @@
   "description": "Represents a message asserting a linkage between specific assets.",
   "type": "object",
   "properties": {
+    "asset_group": {
+      "$ref": "https://raw.githubusercontent.com/bcgov/nr-pies/refs/heads/main/docs/spec/element/data/asset.schema.json"
+    },
     "linked_asset_id": {
       "type": "string",
       "description": "The asset or primary key representing what asset is linked with the primary header asset."
@@ -16,7 +19,7 @@
     },
     "linked_system_id": {
       "type": "string",
-      "description": "A valid CSNR IT Service Management identifying the originating source system, service, or asset.",
+      "description": "A valid CSNR IT Service Management code identifying the originating source system, service, or asset.",
       "pattern": "^ITSM-\\d{4,5}$"
     },
     "relation_kind": {
@@ -30,5 +33,5 @@
       "$ref": "https://raw.githubusercontent.com/bcgov/nr-pies/refs/heads/main/docs/spec/element/data/header.schema.json"
     }
   ],
-  "required": ["linked_asset_id", "linked_asset_kind", "linked_system_id"]
+  "required": ["asset_group", "linked_asset_id", "linked_asset_kind", "linked_system_id", "relation_kind"]
 }

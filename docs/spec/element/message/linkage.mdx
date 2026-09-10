@@ -43,13 +43,13 @@ All linkages shall be denoted with a `kind` property value of `LINKAGE` as defin
 Linkages shall declare the following properties in addition to flattened [Header](/docs/spec/element/data/header#structure)
 properties:
 
-| Name              | Cardinality | Type                                   | Description & Constraints                                                                                                                                                      |
-| ----------------- | ----------- | -------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| asset_group       | 1..1        | [Asset](/docs/spec/element/data/asset) | A binding asset entity that tracks the relationship between a primary asset and a linked asset.                                                                                |
-| linked_asset_id   | 1..1        | `string`                               | The unique identifier or primary key of the asset to be linked.                                                                                                                |
-| linked_asset_kind | 1..1        | `string`                               | The asset type or classification within the source system (for example, Anchor or Permit).                                                                                     |
-| linked_system_id  | 1..1        | `string`                               | A valid [CSNR IT Service Management](https://apps.nrs.gov.bc.ca/int/jira/secure/ObjectSchema.jspa?id=1&typeId=5) identifying the originating source system, service, or asset. |
-| relation_kind     | 1..1        | [Code](/docs/spec/element/data/code)   | The kind of relation between the primary asset and the linked asset (for example, MERGES, RELATES, SELF, SPLITS).                                                              |
+| Name              | Cardinality | Type                                   | Description & Constraints                                                                                                                                                           |
+| ----------------- | ----------- | -------------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| asset_group       | 1..1        | [Asset](/docs/spec/element/data/asset) | A binding asset entity that tracks the relationship between a primary asset and a linked asset.                                                                                     |
+| linked_asset_id   | 1..1        | `string`                               | The unique identifier or primary key of the asset to be linked.                                                                                                                     |
+| linked_asset_kind | 1..1        | `string`                               | The asset type or classification within the source system (for example, Anchor or Permit).                                                                                          |
+| linked_system_id  | 1..1        | `string`                               | A valid [CSNR IT Service Management](https://apps.nrs.gov.bc.ca/int/jira/secure/ObjectSchema.jspa?id=1&typeId=5) code identifying the originating source system, service, or asset. |
+| relation_kind     | 1..1        | [Code](/docs/spec/element/data/code)   | The kind of relation between the primary asset and the linked asset (for example, MERGES, RELATES, SELF, SPLITS).                                                                   |
 
 ### Binding Constraints
 
@@ -122,9 +122,9 @@ needs to assert multiple relationships.
 ### Group Orthogonality
 
 The Linkage message is orthogonal to the Group message, meaning that both can coexist and express the same relationships
-without conflict. While the Linkage message explicitly defines a relationship between individual asset pairs, the Group
-message implicitly binds a primary asset to a set of related assets. Systems may use both message types to
-represent different aspects of various asset relationships.
+without conflict. While the Linkage message explicitly defines a relationship between an asset pair, the Group message
+implicitly binds a primary asset to a set of related assets. Systems may use both message types to represent different
+aspects of various asset relationships.
 
 ## References
 

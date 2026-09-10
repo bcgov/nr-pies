@@ -5,7 +5,7 @@
   "system_id": "ITSM-5917",
   "asset_id": "13837ce4-1c93-4604-916f-777e33e8da0c",
   "asset_kind": "PROJECT",
-  "relation_kind": "SELF",
+  "relation_kind": "RELATES",
   "asset_set": [
     {
       "asset_id": "06bc53dc-3e4f-420b-801c-bd9cc0ea01b2",

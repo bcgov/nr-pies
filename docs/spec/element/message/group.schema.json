@@ -8,6 +8,7 @@
     "asset_set": {
       "type": "array",
       "description": "An array of assets that are grouped together with the primary header asset.",
+      "minItems": 1,
       "items": {
         "$ref": "https://raw.githubusercontent.com/bcgov/nr-pies/refs/heads/main/docs/spec/element/data/asset.schema.json"
       }
