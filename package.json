@@ -49,8 +49,8 @@
     "typescript": "7.0.2"
   },
   "allowScripts": {
-    "@swc/core@1.15.47": true,
-    "core-js@3.49.0": true,
+    "@swc/core@1.16.2": true,
+    "core-js@3.50.0": true,
     "fsevents@2.3.3": true,
     "lefthook@2.1.12": true
   },
