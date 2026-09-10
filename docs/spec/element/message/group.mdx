@@ -1,0 +1,125 @@
+---
+id: group
+title: Group 🚧
+description: Represents a message envelope for grouping related assets together.
+tags:
+  - business
+  - developer
+---
+
+import CodeBlock from '@theme/CodeBlock';
+import JSONSchemaViewer from '@theme/JSONSchemaViewer';
+import TabItem from '@theme/TabItem';
+import Tabs from '@theme/Tabs';
+
+import { generateResolverOptions } from '@site/src/components/shared';
+import example from '@site/docs/spec/element/message/group.example.json';
+import schema from '@site/docs/spec/element/message/group.schema.json';
+
+[![Maturity:Planning](https://img.shields.io/badge/Maturity-Planning-orange)](/docs/spec#maturity)
+
+Official URL: `https://bcgov.github.io/nr-pies/docs/spec/element/message/group`
+
+JSON Schema URL: https://raw.githubusercontent.com/bcgov/nr-pies/refs/heads/main/docs/spec/element/message/group.schema.json
+
+Represents a message envelope for grouping related assets together.
+
+## Scope
+
+This message type allows systems to group related assets together. The message represents an assertion from the
+originating system's perspective. Consuming systems must validate the grouping and implicitly trust the assertion
+source.
+
+A Group message is scoped to a collection of related assets and captures the relationships between them, similar in
+structure to a linkage message but specific to asset groups.
+
+## Structure
+
+A group message shall contain all flattened [Header](/docs/spec/element/data/header#structure) properties.
+
+All groups shall be denoted with a `kind` property value of `GROUP` as defined in
+[Message Kind](/docs/spec/code_system/message_kind).
+
+Groups shall declare the following properties in addition to flattened [Header](/docs/spec/element/data/header#structure)
+properties:
+
+| Name          | Cardinality | Type                                     | Description & Constraints                                                                                         |
+| ------------- | ----------- | ---------------------------------------- | ----------------------------------------------------------------------------------------------------------------- |
+| asset_set     | 1..\*       | [Asset](/docs/spec/element/data/asset)[] | An array of assets that are grouped together with the primary header asset.                                       |
+| relation_kind | 1..1        | [Code](/docs/spec/element/data/code)     | The kind of relation between the primary asset and the linked asset (for example, MERGES, RELATES, SELF, SPLITS). |
+
+### Binding Constraints
+
+The `asset_set` field expresses membership of assets within the group and typically originates from the declaring system:
+
+- The `asset_set` represents a classification or grouping for the relationship as defined by the asset-owning system
+- The `relation_kind` specifies the nature of the link (MERGES, RELATES, SELF, SPLITS)
+- A Group connects the primary asset (defined in Header) to related assets via this asset set
+
+## Specification
+
+<Tabs queryString="tab">
+  <TabItem
+    value="schema"
+    label="Schema"
+    default
+  >
+    <JSONSchemaViewer
+      resolverOptions={generateResolverOptions({ remote: true })}
+      schema={schema}
+      viewerOptions={{ showExamples: true }}
+    />
+  </TabItem>
+  <TabItem
+    value="source"
+    label="Source"
+  >
+    <CodeBlock
+      language="json"
+      showLineNumbers
+    >
+      {JSON.stringify(schema, null, 2)}
+    </CodeBlock>
+  </TabItem>
+  <TabItem
+    value="example"
+    label="Example"
+  >
+    <CodeBlock
+      language="json"
+      showLineNumbers
+    >
+      {JSON.stringify(example, null, 2)}
+    </CodeBlock>
+  </TabItem>
+</Tabs>
+
+## Implementation Guidance
+
+### Purpose
+
+The Group message defines a specific relationship between a primary asset and a set of related assets. Consuming systems
+may use this message to implicitly bind assets together.
+
+### Creating Group Messages
+
+When generating a Group message:
+
+- Include the `asset_set` of assets being grouped
+- Declare the `relation_kind` to specify the nature of the link (MERGES, RELATES, SELF, SPLITS)
+
+### Single-Relation Assertion
+
+Each Group message must represent a single assertion from one system. Always create separate messages when an asset
+needs to assert different relationship kinds.
+
+### Linkage Orthogonality
+
+The Group message is orthogonal to the Linkage message, meaning that both can coexist and express the same relationships
+without conflict. While the Group message implicitly binds a primary asset to a set of related assets, the Linkage
+message explicitly defines a relationship between individual asset pairs. Systems may use both message types to
+represent different aspects of various asset relationships.
+
+## References
+
+- [Header](/docs/spec/element/data/header)
