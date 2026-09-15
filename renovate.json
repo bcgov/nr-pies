@@ -1,6 +1,6 @@
 {
   "$schema": "https://docs.renovatebot.com/renovate-schema.json",
-  "extends": ["github>bcgov/renovate-config#2026.8.18"],
+  "extends": ["github>bcgov/renovate-config#2026.9.9"],
   "automerge": true,
   "branchPrefix": "chore/",
   "dependencyDashboard": true,
