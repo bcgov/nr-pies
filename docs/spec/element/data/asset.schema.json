@@ -18,17 +18,7 @@
       "type": "string",
       "description": "A valid CSNR IT Service Management code identifying the originating source system, service, or asset.",
       "pattern": "^ITSM-\\d{4,5}$"
-    },
-    "record_id": {
-      "type": "string",
-      "description": "The record or primary key representing what the data this message is directly associated to."
-    },
-    "record_kind": {
-      "type": "string",
-      "description": "The kind of record the source system stores this record as (for example, Anchor or Permit).",
-      "enum": ["Anchor", "Permit"]
     }
   },
-  "anyOf": [{ "required": ["asset_id", "asset_kind"] }, { "required": ["record_id", "record_kind"] }],
-  "required": ["system_id"]
+  "required": ["asset_id", "asset_kind", "system_id"]
 }
