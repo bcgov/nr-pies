@@ -18,15 +18,6 @@
       }
     },
     {
-      "title": "Permit (Legacy)",
-      "description": "Represents a permit via record_kind.",
-      "type": "object",
-      "if": { "properties": { "record_kind": { "const": "Permit" } } },
-      "then": {
-        "$ref": "https://raw.githubusercontent.com/bcgov/nr-pies/refs/heads/main/docs/spec/element/resource/permit.schema.json"
-      }
-    },
-    {
       "title": "Anchor",
       "description": "Represents an anchor via asset_kind.",
       "type": "object",
