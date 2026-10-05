@@ -48,7 +48,8 @@ A **Record** extends the following data types and inherits all of their declared
 
 - **[Header](/docs/spec/element/data/header)**
 
-The table below lists only the direct properties declared by Record.
+The table below identifies the inherited data types (in parentheses) and lists the properties declared directly by
+Record.
 :::
 
 | Name       | Cardinality | Type                                     | Description & Constraints                                                                                                        |
@@ -57,7 +58,8 @@ The table below lists only the direct properties declared by Record.
 
 ### Bindings
 
-The `asset_kind` field acts as a type selector, binding and identifying which resource type this message contains:
+The `asset_kind` field acts as a type selector, binding and identifying which resource type attributes this message
+inherits:
 
 - **asset_kind: `ANCHOR`** - Message payload conforms to [Anchor](/docs/spec/element/resource/anchor) resource schema
 - **asset_kind: `PERMIT`** - Message payload conforms to [Permit](/docs/spec/element/resource/permit) resource schema
