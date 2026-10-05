@@ -1,7 +1,7 @@
 ---
 id: project
 title: Project 📝
-description: Represents a project.
+description: A project serves as a grouping of related assets within the PIES system.
 tags:
   - developer
 ---
@@ -21,7 +21,7 @@ Official URL: `https://bcgov.github.io/nr-pies/docs/spec/element/resource/projec
 
 JSON Schema URL: https://raw.githubusercontent.com/bcgov/nr-pies/refs/heads/main/docs/spec/element/resource/project.schema.json
 
-Represents a project. A project serves as a grouping of related assets within the PIES system.
+A project serves as a grouping of related assets within the PIES system.
 
 ## Scope
 
@@ -35,9 +35,19 @@ are selected.
 
 ## Structure
 
-A project shall contain every [Collection](/docs/spec/element/data/collection#structure) data property.
-
 This structure contains no properties and is functionally equivalent to an empty object.
+
+:::info
+A **Project** extends the following data types and inherits all of their declared attributes:
+
+- **[Collection](/docs/spec/element/data/collection)**
+
+The table below lists only the direct properties declared by Project.
+:::
+
+| Name           | Cardinality | Type                                             | Description & Constraints                                                                                                |
+| -------------- | ----------- | ------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------ |
+| _(Collection)_ | 1..1        | [Collection](/docs/spec/element/data/collection) | A collection serves as a common construct for describing resource data elements that group other data elements together. |
 
 ## Specification
 

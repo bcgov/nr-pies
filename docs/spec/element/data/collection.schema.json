@@ -2,7 +2,7 @@
   "$id": "https://raw.githubusercontent.com/bcgov/nr-pies/refs/heads/main/docs/spec/element/data/collection.schema.json",
   "$schema": "http://json-schema.org/draft-07/schema#",
   "title": "Collection",
-  "description": "Represents a collection.",
+  "description": "A collection serves as a common construct for describing resource data elements that group other data elements together.",
   "type": "object",
   "properties": {}
 }

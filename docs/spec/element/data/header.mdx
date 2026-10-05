@@ -21,8 +21,9 @@ Official URL: `https://bcgov.github.io/nr-pies/docs/spec/element/data/header`
 
 JSON Schema URL: https://raw.githubusercontent.com/bcgov/nr-pies/refs/heads/main/docs/spec/element/data/header.schema.json
 
-Standard message header attributes present for all PIES message data types. All defined attributes are needed for
-asset identification and attribution.
+Represents the standard message tracking envelope, incorporating specific asset attributes for system and record
+identification. All defined attributes are needed for asset identification and attribution and are present for all PIES
+message data types.
 
 ## Scope
 
@@ -39,11 +40,12 @@ A **Header** extends the following data types and inherits all of their declared
 The table below lists only the direct properties declared by Header.
 :::
 
-| Name           | Cardinality | Type           | Description & Constraints                                                                                                                              |
-| -------------- | ----------- | -------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| transaction_id | 1..1        | `string`       | A unique UUIDv7 assigned for this specific message.                                                                                                    |
-| version        | 1..1        | `string`       | The PIES specification version this message complies to. Value shall be a valid semantic version formatted string.                                     |
-| kind           | 1..1        | [Code](./code) | A valid [Message Kind](/docs/spec/code_system/message_kind) code which identifies the specific kind of PIES message data type this message represents. |
+| Name           | Cardinality | Type                                   | Description & Constraints                                                                                                                              |
+| -------------- | ----------- | -------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| _(Asset)_      | 1..1        | [Asset](/docs/spec/element/data/asset) | Standard message asset attributes present for all PIES message data types.                                                                             |
+| transaction_id | 1..1        | `string`                               | A unique UUIDv7 assigned for this specific message.                                                                                                    |
+| version        | 1..1        | `string`                               | The PIES specification version this message complies to. Value shall be a valid semantic version formatted string.                                     |
+| kind           | 1..1        | [Code](./code)                         | A valid [Message Kind](/docs/spec/code_system/message_kind) code which identifies the specific kind of PIES message data type this message represents. |
 
 ## Specification
 
