@@ -35,18 +35,23 @@ structure to a linkage message but specific to asset groups.
 
 ## Structure
 
-A group message shall contain all flattened [Header](/docs/spec/element/data/header#structure) properties.
-
 All groups shall be denoted with a `kind` property value of `GROUP` as defined in
 [Message Kind](/docs/spec/code_system/message_kind).
 
-Groups shall declare the following properties in addition to flattened [Header](/docs/spec/element/data/header#structure)
-properties:
+:::info
+A **Group** extends the following data types and inherits all of their declared attributes:
 
-| Name          | Cardinality | Type                                     | Description & Constraints                                                                                         |
-| ------------- | ----------- | ---------------------------------------- | ----------------------------------------------------------------------------------------------------------------- |
-| asset_set     | 1..\*       | [Asset](/docs/spec/element/data/asset)[] | An array of assets that are grouped together with the primary header asset.                                       |
-| relation_kind | 1..1        | [Code](/docs/spec/element/data/code)     | The kind of relation between the primary asset and the linked asset (for example, MERGES, RELATES, SELF, SPLITS). |
+- **[Header](/docs/spec/element/data/header)**
+
+The table below identifies the inherited data types (in parentheses) and lists the properties declared directly by
+Group.
+:::
+
+| Name          | Cardinality | Type                                     | Description & Constraints                                                                                                        |
+| ------------- | ----------- | ---------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------- |
+| _(Header)_    | 1..1        | [Header](/docs/spec/element/data/header) | Represents the standard message tracking envelope, incorporating specific asset attributes for system and record identification. |
+| asset_set     | 1..\*       | [Asset](/docs/spec/element/data/asset)[] | An array of assets that are grouped together with the primary header asset.                                                      |
+| relation_kind | 1..1        | [Code](/docs/spec/element/data/code)     | The kind of relation between the primary asset and the linked asset (for example, MERGES, RELATES, SELF, SPLITS).                |
 
 ### Binding Constraints
 

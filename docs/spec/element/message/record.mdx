@@ -37,24 +37,29 @@ compose together.
 
 ## Structure
 
-A Record message shall contain all flattened [Header](/docs/spec/element/data/header#structure) properties.
-
 All records shall be denoted with a `kind` property value of `RECORD` as defined in
 [Message Kind](/docs/spec/code_system/message_kind).
 
 Records shall declare an `asset_kind` property value as defined in
 [Asset Kind](/docs/spec/code_system/asset_kind):
 
-Records shall declare the following properties in addition to flattened [Header](/docs/spec/element/data/header#structure)
-properties:
+:::info
+A **Record** extends the following data types and inherits all of their declared attributes:
 
-| Name            | Cardinality | Type                                     | Description & Constraints                                                   |
-| --------------- | ----------- | ---------------------------------------- | --------------------------------------------------------------------------- |
-| (header fields) | (varies)    | [Header](/docs/spec/element/data/header) | Standard Header properties, including the `asset_kind` selector (see below) |
+- **[Header](/docs/spec/element/data/header)**
+
+The table below identifies the inherited data types (in parentheses) and lists the properties declared directly by
+Record.
+:::
+
+| Name       | Cardinality | Type                                     | Description & Constraints                                                                                                        |
+| ---------- | ----------- | ---------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------- |
+| _(Header)_ | 1..1        | [Header](/docs/spec/element/data/header) | Represents the standard message tracking envelope, incorporating specific asset attributes for system and record identification. |
 
 ### Bindings
 
-The `asset_kind` field acts as a type selector, binding and identifying which resource type this message contains:
+The `asset_kind` field acts as a type selector, binding and identifying which resource type attributes this message
+inherits:
 
 - **asset_kind: `ANCHOR`** - Message payload conforms to [Anchor](/docs/spec/element/resource/anchor) resource schema
 - **asset_kind: `PERMIT`** - Message payload conforms to [Permit](/docs/spec/element/resource/permit) resource schema

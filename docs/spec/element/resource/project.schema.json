@@ -2,7 +2,7 @@
   "$id": "https://raw.githubusercontent.com/bcgov/nr-pies/refs/heads/main/docs/spec/element/resource/project.schema.json",
   "$schema": "http://json-schema.org/draft-07/schema#",
   "title": "Project",
-  "description": "Represents a project.",
+  "description": "A project serves as a grouping of related assets within the PIES system.",
   "type": "object",
   "properties": {},
   "allOf": [
