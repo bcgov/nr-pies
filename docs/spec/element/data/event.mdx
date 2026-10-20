@@ -36,23 +36,25 @@ and context of an event will be dependent on which [resource type](/docs/categor
 - An Event shall always contain some `start_*` attribute.
   - A valid Event shall at minimum contain either a `start_date` or a `start_datetime`.
 - An Event shall be defined using either `date` or `date-time` specificity.
-  - Mixed usage of `date` and `date-time is prohibited`
+  - Mixed usage of `date` and `date-time` is prohibited.
   - If `start_date` is defined, an optional `end_date` may be specified.
   - If `start_datetime` is defined, an optional `end_datetime` may be specified.
 - All Date and DateTime values shall be represented in RFC 3339 format.
   - The `date` format is represented as `YYYY-MM-DD`.
     - The `date` format must contain leading padding zeroes where necessary (such as `2024-12-01`).
-  - The `date-time` format is represented as `YYYY-MM-DDTHH:mm:ss.sssssssZ`.
+  - The `date-time` format is represented as `YYYY-MM-DDTHH:mm:ss.sssZ`.
     - The `Z` at the end indicates that the time is in UTC (Coordinated Universal Time).
-    - Sub-second precision is optional. (such as `2024-12-01T10:00:00Z`)
-    - The number of digits after the decimal point can vary from 1 to 7 (such as `2024-12-01T10:00:00.0000000Z`).
+    - Sub-second precision may be omitted when it is unavailable (such as `2024-12-01T10:00:00Z`).
+    - Millisecond precision (3 fractional digits) is recommended (such as `2024-12-01T10:00:00.000Z`).
+      - Greater precisions of up to 7 fractional digits are permitted (such as `2024-12-01T10:00:00.0000000Z`).
+      - Precisions beyond 3 fractional digits are not guaranteed to be preserved or consistently truncated.
 
-| Name           | Cardinality | Type     | Description & Constraints                                                                                                                                          |
-| -------------- | ----------- | -------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| start_date     | 0..1        | `string` | The start date of the event in RFC 3339 format (such as `2024-12-01`).                                                                                             |
-| start_datetime | 0..1        | `string` | The start datetime of the event in RFC 3339 format (such as `2024-12-01T10:00:00.0000000Z`). Only UTC time is allowed.                                             |
-| end_date       | 0..1        | `string` | The end date of the event in RFC 3339 format (such as `2024-12-01`). This is optional if `start_date` is used.                                                     |
-| end_datetime   | 0..1        | `string` | The end datetime of the event in RFC 3339 format (such as `2024-12-01T10:00:00.0000000Z`). Only UTC time is allowed. This is optional if `start_datetime` is used. |
+| Name           | Cardinality | Type     | Description & Constraints                                                                                                                                      |
+| -------------- | ----------- | -------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| start_date     | 0..1        | `string` | The start date of the event in RFC 3339 format (such as `2024-12-01`).                                                                                         |
+| start_datetime | 0..1        | `string` | The start datetime of the event in RFC 3339 format (such as `2024-12-01T10:00:00.000Z`). Only UTC time is allowed.                                             |
+| end_date       | 0..1        | `string` | The end date of the event in RFC 3339 format (such as `2024-12-01`). This is optional if `start_date` is used.                                                 |
+| end_datetime   | 0..1        | `string` | The end datetime of the event in RFC 3339 format (such as `2024-12-01T10:00:00.000Z`). Only UTC time is allowed. This is optional if `start_datetime` is used. |
 
 ## Specification
 
